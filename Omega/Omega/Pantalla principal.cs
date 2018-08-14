@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Omega
 {
-    public partial class Form1 : Form
+    public partial class Pantalla_principal : Form
     {
-        public Form1()
+        public Pantalla_principal()
         {
             InitializeComponent();
         }
