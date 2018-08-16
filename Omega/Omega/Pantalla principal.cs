@@ -16,5 +16,10 @@ namespace Omega
         {
             InitializeComponent();
         }
+
+        private void Pantalla_principal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

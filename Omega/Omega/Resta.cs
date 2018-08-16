@@ -56,5 +56,10 @@ namespace Omega
                 MessageBox.Show("Muy bien!");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
