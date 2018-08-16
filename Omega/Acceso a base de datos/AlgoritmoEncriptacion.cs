@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Acceso_a_base_de_datos
 {
-    public class Encriptacion
+    public class AlgoritmoEncriptacion
     {
         public static string GetMD5(string str)
         {

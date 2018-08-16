@@ -69,5 +69,16 @@ namespace Omega.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_new_jersey_vietnam_student_teachers_day_vector_color_bulb_creative_5a8dd6d862f898_6493545315192450164054 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6" +
+                        "d862f898.6493545315192450164054", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

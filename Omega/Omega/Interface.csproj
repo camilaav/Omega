@@ -110,5 +110,8 @@
   <ItemGroup>
     <None Include="Resources\141198-OSX8PG-177.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6d862f898.6493545315192450164054.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
