@@ -18,24 +18,19 @@ namespace Regla_de_Negocios
             List<Usuario> listaUsuario = new List<Usuario>();
             List<SqlParameter> listaparametros = new List<SqlParameter>();
             var usuario = new SqlParameter();
-            usuario.ParameterName = "@"; //agregar nombre parametro
+            usuario.ParameterName = "@nombre";
             usuario.SqlDbType = SqlDbType.VarChar;
             usuario.Value = u.NombreUsuario; 
             listaparametros.Add(usuario);
-            string stored = ""; //nombre store
+            string stored = "sp_BuscarUsuarios";
             SqlDataReader reader = comandos.EjecutarReader(stored, listaparametros);
             while (reader.Read())
             {
-                var contraseña = new SqlParameter();
-                contraseña.ParameterName = "@"; //agregar nombre parametro
-                contraseña.SqlDbType = SqlDbType.VarChar;
-                contraseña.Value = Encriptacion.Encriptar(u.Contraseña);
-                listaparametros.Add(contraseña);
-                Usuario.IdUsuario = int.Parse(reader[""].ToString());
-                Usuario.NombreUsuario =  reader["Usuario"].ToString();
-                Usuario.FechaBloqueo = DateTime.Parse(reader["BloqueoUsuario"].ToString());
-                Usuario.Contraseña = reader["PasswordUsuario"].ToString();
-                Usuario.Eliminado = Boolean.Parse(reader[""].ToString());
+                Usuario.IdUsuario = int.Parse(reader["IdUsuario"].ToString());
+                Usuario.NombreUsuario =  reader["NombreUsuario"].ToString();
+                Usuario.FechaBloqueo = DateTime.Parse(reader["FechaBloqueo"].ToString());
+                Usuario.Contraseña = reader["Contraseña"].ToString();
+                Usuario.Eliminado = Boolean.Parse(reader["Eliminado"].ToString());
             }
             listaUsuario.Add(Usuario);
             return listaUsuario;
@@ -45,16 +40,16 @@ namespace Regla_de_Negocios
         {
             var listaParametros = new List<SqlParameter>();
             var fecha = new SqlParameter();
-            fecha.ParameterName = ""; //agregar nombre parametro
-            fecha.SqlDbType = SqlDbType.Date;
+            fecha.ParameterName = "@fecha";
+            fecha.SqlDbType = SqlDbType.DateTime;
             fecha.Value = u.FechaBloqueo;
             listaParametros.Add(fecha);
             var id = new SqlParameter();
-            id.ParameterName = ""; //agregar nombre parametro
+            id.ParameterName = "@id";
             id.DbType = DbType.Int32;
             id.Value = u.IdUsuario;
             listaParametros.Add(id);
-            string stored = ""; //nombre store
+            string stored = "sp_InsertarBloqueo";
             return comandos.EjecutarStore(stored, listaParametros);
         }
     }

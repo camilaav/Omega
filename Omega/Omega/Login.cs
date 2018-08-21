@@ -43,7 +43,7 @@ namespace Omega
                 if (txtUsuario.Text == usuario.NombreUsuario)
                 {
                     int id = usuario.IdUsuario;
-                    if (txtUsuario.Text == usuario.NombreUsuario && Encriptacion.Encriptar(txtContraseña.Text) == usuario.Contraseña)
+                    if (Encriptacion.Encriptar(txtContraseña.Text) == usuario.Contraseña)
                     {
                         if (usuario.FechaBloqueo < DateTime.Now)
                         {
