@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida.Designer.cs">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="Resta.Designer.cs">
       <DependentUpon>Resta.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bienvenida.resx">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

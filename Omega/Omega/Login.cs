@@ -75,5 +75,12 @@ namespace Omega
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Bienvenida b = new Bienvenida();
+            b.Show();
+            this.Hide();
+        }
     }
 }

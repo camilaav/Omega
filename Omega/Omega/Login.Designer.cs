@@ -33,6 +33,7 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,17 +72,28 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(234, 328);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 43);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Regresar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 380);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
@@ -99,6 +111,7 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Button button1;
     }
 }
 
