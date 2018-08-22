@@ -46,7 +46,7 @@
             // txtNumero1
             // 
             this.txtNumero1.Location = new System.Drawing.Point(98, 259);
-            this.txtNumero1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumero1.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumero1.Name = "txtNumero1";
             this.txtNumero1.Size = new System.Drawing.Size(76, 20);
             this.txtNumero1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // txtNumero2
             // 
             this.txtNumero2.Location = new System.Drawing.Point(269, 259);
-            this.txtNumero2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumero2.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(76, 20);
             this.txtNumero2.TabIndex = 1;
@@ -83,7 +83,7 @@
             // txtResultado
             // 
             this.txtResultado.Location = new System.Drawing.Point(466, 259);
-            this.txtResultado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtResultado.Margin = new System.Windows.Forms.Padding(2);
             this.txtResultado.Name = "txtResultado";
             this.txtResultado.Size = new System.Drawing.Size(76, 20);
             this.txtResultado.TabIndex = 4;
@@ -91,7 +91,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(117, 299);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 5;
@@ -102,7 +102,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(98, 138);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 41);
             this.pictureBox1.TabIndex = 6;
@@ -111,7 +111,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(269, 138);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(75, 41);
             this.pictureBox2.TabIndex = 7;
@@ -120,7 +120,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(466, 138);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(75, 41);
             this.pictureBox3.TabIndex = 8;
@@ -144,7 +144,7 @@
             this.Controls.Add(this.txtNumero1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Resta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resta";

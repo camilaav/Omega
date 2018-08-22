@@ -63,9 +63,59 @@ namespace Omega.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1086 {
+            get {
+                object obj = ResourceManager.GetObject("1086", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _141198_OSX8PG_177 {
             get {
                 object obj = ResourceManager.GetObject("141198-OSX8PG-177", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancel {
+            get {
+                object obj = ResourceManager.GetObject("cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check {
+            get {
+                object obj = ResourceManager.GetObject("check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap engranaje {
+            get {
+                object obj = ResourceManager.GetObject("engranaje", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap engranaje1 {
+            get {
+                object obj = ResourceManager.GetObject("engranaje1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -77,6 +127,16 @@ namespace Omega.Properties {
             get {
                 object obj = ResourceManager.GetObject("kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6" +
                         "d862f898.6493545315192450164054", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verified {
+            get {
+                object obj = ResourceManager.GetObject("verified", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

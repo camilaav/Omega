@@ -28,24 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.PictureBox btnIngresar;
+            System.Windows.Forms.PictureBox btnRegresar;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            btnIngresar = new System.Windows.Forms.PictureBox();
+            btnRegresar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(btnIngresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // btnIngresar
             // 
-            this.pictureBox1.BackgroundImage = global::Omega.Properties.Resources.kisspng_new_jersey_vietnam_student_teachers_day_vector_color_bulb_creative_5a8dd6d862f898_6493545315192450164054;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(191, 218);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            btnIngresar.BackColor = System.Drawing.Color.Transparent;
+            btnIngresar.BackgroundImage = global::Omega.Properties.Resources.check;
+            btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnIngresar.Location = new System.Drawing.Point(147, 328);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new System.Drawing.Size(50, 50);
+            btnIngresar.TabIndex = 6;
+            btnIngresar.TabStop = false;
+            btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click_1);
+            // 
+            // btnRegresar
+            // 
+            btnRegresar.BackColor = System.Drawing.Color.Transparent;
+            btnRegresar.BackgroundImage = global::Omega.Properties.Resources.cancel;
+            btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnRegresar.Location = new System.Drawing.Point(203, 328);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new System.Drawing.Size(50, 50);
+            btnRegresar.TabIndex = 5;
+            btnRegresar.TabStop = false;
+            btnRegresar.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // txtUsuario
             // 
@@ -62,33 +82,24 @@
             this.txtContraseña.Size = new System.Drawing.Size(191, 26);
             this.txtContraseña.TabIndex = 2;
             // 
-            // btnIngresar
+            // pictureBox1
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(117, 328);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 43);
-            this.btnIngresar.TabIndex = 3;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(234, 328);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 43);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Regresar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::Omega.Properties.Resources.kisspng_new_jersey_vietnam_student_teachers_day_vector_color_bulb_creative_5a8dd6d862f898_6493545315192450164054;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(62, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(191, 218);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 380);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnIngresar);
+            this.ClientSize = new System.Drawing.Size(314, 401);
+            this.Controls.Add(btnIngresar);
+            this.Controls.Add(btnRegresar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.pictureBox1);
@@ -99,6 +110,8 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(btnIngresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(btnRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -110,8 +123,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.Button button1;
     }
 }
 
