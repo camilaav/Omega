@@ -159,6 +159,7 @@
     <Content Include="Resources\7.png" />
     <Content Include="Resources\8.png" />
     <Content Include="Resources\9.png" />
+    <None Include="Resources\af97c0a93bf8d556333e5e942cf8dec0.png" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\check.png" />
     <None Include="Resources\engranaje1.png" />

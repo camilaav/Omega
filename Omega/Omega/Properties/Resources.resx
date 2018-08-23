@@ -124,6 +124,9 @@
   <data name="141198-OSX8PG-177" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\141198-OSX8PG-177.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1086" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1086.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,7 +142,7 @@
   <data name="kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6d862f898.6493545315192450164054" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6d862f898.6493545315192450164054.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="af97c0a93bf8d556333e5e942cf8dec0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\af97c0a93bf8d556333e5e942cf8dec0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
