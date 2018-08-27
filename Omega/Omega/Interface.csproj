@@ -71,6 +71,12 @@
     <Compile Include="Bienvenida.Designer.cs">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cantidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cantidades.Designer.cs">
+      <DependentUpon>Cantidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cantidades.resx">
+      <DependentUpon>Cantidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -151,10 +160,15 @@
     <Content Include="Resources\-.png" />
     <Content Include="Resources\0.png" />
     <Content Include="Resources\1.png" />
+    <None Include="Resources\depositphotos_41050245-stock-illustration-5-coral-fish.jpg" />
+    <None Include="Resources\2 conejos.jpg" />
     <Content Include="Resources\2.png" />
     <Content Include="Resources\3.png" />
+    <None Include="Resources\4 gatos.jpg" />
     <Content Include="Resources\4.png" />
     <Content Include="Resources\5.png" />
+    <None Include="Resources\6-razas-perro-origen-gales-1280x720x80xX.jpg" />
+    <None Include="Resources\57859-en-el-caribe-tres-loros-sobre-una-valla.jpg" />
     <Content Include="Resources\6.png" />
     <Content Include="Resources\7.png" />
     <Content Include="Resources\8.png" />
