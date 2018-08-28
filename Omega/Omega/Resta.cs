@@ -38,7 +38,7 @@ namespace Omega
                 resultado = (numero1 - numero2);
             }
             if (numero1 == 1)
-                pictureBox1.Image = Resources._11;
+                pictureBox1.Image = Resources._1;
             if (numero1 == 2)
                 pictureBox1.Image = Resources._2;
             if (numero1 == 3)
@@ -72,7 +72,7 @@ namespace Omega
 
             //numero2 = int.Parse(txtNumero2.Text);
             if (numero2 == 1)
-                pictureBox2.Image = Resources._11;
+                pictureBox2.Image = Resources._1;
             if (numero2 == 2)
                 pictureBox2.Image = Resources._2;
             if (numero2 == 3)
@@ -95,7 +95,7 @@ namespace Omega
             resultado = (numero1 - numero2);
 
             if (resultado == 1)
-                pictureBox3.Image = Resources._11;
+                pictureBox3.Image = Resources._1;
             if (resultado == 2)
                 pictureBox3.Image = Resources._2;
             if (resultado == 3)
