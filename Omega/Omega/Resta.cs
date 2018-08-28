@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Omega.Properties;
 
 namespace Omega
 {
@@ -23,25 +24,103 @@ namespace Omega
         {
             Random randommizer = new Random();
 
-           // if (numero1 == 0)
-           //     pictureBox1.Image 
+            pictureBox4.Image = Resources._;
+            pictureBox5.Image = Resources._;
+            pictureBox6.Image = Resources._;
 
-            txtNumero1.Text = randommizer.Next(10).ToString();
-            numero1 = int.Parse(txtNumero1.Text);
-            if (numero1 > 5)
+            numero1 = randommizer.Next(10);
+            numero2 = randommizer.Next(10);
+            resultado = (numero1 - numero2);
+            while (resultado < 0)
             {
-                txtNumero2.Text = randommizer.Next(5).ToString();
+                numero1 = randommizer.Next(10);
+                numero2 = randommizer.Next(10);
+                resultado = (numero1 - numero2);
             }
-            else
-                txtNumero2.Text = randommizer.Next(10).ToString();
+            if (numero1 == 1)
+                pictureBox1.Image = Resources._11;
+            if (numero1 == 2)
+                pictureBox1.Image = Resources._2;
+            if (numero1 == 3)
+                pictureBox1.Image = Resources._3;
+            if (numero1 == 4)
+                pictureBox1.Image = Resources._4;
+            if (numero1 == 5)
+                pictureBox1.Image = Resources._5;
+            if (numero1 == 6)
+                pictureBox1.Image = Resources._6;
+            if (numero1 == 7)
+                pictureBox1.Image = Resources._7;
+            if (numero1 == 8)
+                pictureBox1.Image = Resources._8;
+            if (numero1 == 9)
+                pictureBox1.Image = Resources._9;
+            if (numero1 == 0)
+                pictureBox1.Image = Resources._0;
 
-            numero2 = int.Parse(txtNumero2.Text);
+            //resultado = (numero1 - numero2);
 
-            resultado = numero1 + numero2;
-            if (txtResultado.Text == resultado.ToString())
-            {
-                MessageBox.Show("Muy bien!");
-            }
+
+
+            //if (numero1 > 5)
+            //{
+            //    txtNumero2.Text = randommizer.Next(5).ToString();
+            //}
+            //else
+            //    txtNumero2.Text = randommizer.Next(10).ToString();
+
+
+            //numero2 = int.Parse(txtNumero2.Text);
+            if (numero2 == 1)
+                pictureBox2.Image = Resources._11;
+            if (numero2 == 2)
+                pictureBox2.Image = Resources._2;
+            if (numero2 == 3)
+                pictureBox2.Image = Resources._3;
+            if (numero2 == 4)
+                pictureBox2.Image = Resources._4;
+            if (numero2 == 5)
+                pictureBox2.Image = Resources._5;
+            if (numero2 == 6)
+                pictureBox2.Image = Resources._6;
+            if (numero2 == 7)
+                pictureBox2.Image = Resources._7;
+            if (numero2 == 8)
+                pictureBox2.Image = Resources._8;
+            if (numero2 == 9)
+                pictureBox2.Image = Resources._9;
+            if (numero2 == 0)
+                pictureBox2.Image = Resources._0;
+
+            resultado = (numero1 - numero2);
+
+            if (resultado == 1)
+                pictureBox3.Image = Resources._11;
+            if (resultado == 2)
+                pictureBox3.Image = Resources._2;
+            if (resultado == 3)
+                pictureBox3.Image = Resources._3;
+            if (resultado == 4)
+                pictureBox3.Image = Resources._4;
+            if (resultado == 5)
+                pictureBox3.Image = Resources._5;
+            if (resultado == 6)
+                pictureBox3.Image = Resources._6;
+            if (resultado == 7)
+                pictureBox3.Image = Resources._7;
+            if (resultado == 8)
+                pictureBox3.Image = Resources._8;
+            if (resultado == 9)
+                pictureBox3.Image = Resources._9;
+            if (resultado == 0)
+                pictureBox3.Image = Resources._0;
+
+            // txtResultado.Text = resultado.ToString();
+
+            //if (txtResultado.Text == resultado.ToString())
+            //{
+            //    MessageBox.Show("Muy bien!");
+            //}
         }
 
         private void Resta_KeyPress(object sender, KeyPressEventArgs e)
