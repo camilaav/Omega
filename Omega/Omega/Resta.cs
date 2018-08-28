@@ -121,6 +121,33 @@ namespace Omega
             //{
             //    MessageBox.Show("Muy bien!");
             //}
+
+            int orden;
+            orden = randommizer.Next(3);
+
+            int fondo;
+            fondo = randommizer.Next(10);
+
+            if (resultado == 1)
+                pictureBox7.Image = Resources._1;
+            if (resultado == 2)
+                pictureBox7.Image = Resources._2;
+            if (resultado == 3)
+                pictureBox7.Image = Resources._3;
+            if (resultado == 4)
+                pictureBox7.Image = Resources._4;
+            if (resultado == 5)
+                pictureBox7.Image = Resources._5;
+            if (resultado == 6)
+                pictureBox7.Image = Resources._6;
+            if (resultado == 7)
+                pictureBox7.Image = Resources._7;
+            if (resultado == 8)
+                pictureBox7.Image = Resources._8;
+            if (resultado == 9)
+                pictureBox7.Image = Resources._9;
+            if (resultado == 0)
+                pictureBox7.Image = Resources._0;
         }
 
         private void Resta_KeyPress(object sender, KeyPressEventArgs e)
@@ -129,14 +156,16 @@ namespace Omega
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            if (txtResultado.Text == resultado.ToString())
-            {
-                MessageBox.Show("Muy bien!");
-            }
+        {            
+                MessageBox.Show("Muy bien!");            
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
         {
 
         }
