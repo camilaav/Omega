@@ -157,29 +157,53 @@
     <None Include="Resources\141198-OSX8PG-177.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\+.png" />
-    <Content Include="Resources\-.png" />
-    <None Include="Resources\9.png" />
-    <None Include="Resources\0.png" />
     <None Include="Resources\depositphotos_41050245-stock-illustration-5-coral-fish.jpg" />
     <None Include="Resources\2 conejos.jpg" />
-    <None Include="Resources\1.png" />
-    <None Include="Resources\2.png" />
     <None Include="Resources\4 gatos.jpg" />
-    <None Include="Resources\3.png" />
-    <None Include="Resources\4.png" />
     <None Include="Resources\6-razas-perro-origen-gales-1280x720x80xX.jpg" />
     <None Include="Resources\57859-en-el-caribe-tres-loros-sobre-una-valla.jpg" />
-    <None Include="Resources\5.png" />
-    <None Include="Resources\6.png" />
-    <None Include="Resources\7.png" />
-    <None Include="Resources\8.png" />
     <None Include="Resources\af97c0a93bf8d556333e5e942cf8dec0.png" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\check.png" />
     <None Include="Resources\engranaje1.png" />
     <None Include="Resources\engranaje.png" />
     <None Include="Resources\verified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\+.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
