@@ -42,7 +42,7 @@
             // btnIngresar
             // 
             btnIngresar.BackColor = System.Drawing.Color.Transparent;
-            btnIngresar.BackgroundImage = global::Omega.Properties.Resources.verified;
+            btnIngresar.BackgroundImage = global::Omega.Properties.Resources.Aceptar;
             btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnIngresar.Location = new System.Drawing.Point(326, 276);
             btnIngresar.Name = "btnIngresar";
@@ -54,7 +54,7 @@
             // btnProfesor
             // 
             btnProfesor.BackColor = System.Drawing.Color.Transparent;
-            btnProfesor.BackgroundImage = global::Omega.Properties.Resources.engranaje1;
+            btnProfesor.BackgroundImage = global::Omega.Properties.Resources.Engranaje1;
             btnProfesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnProfesor.Location = new System.Drawing.Point(12, 12);
             btnProfesor.Name = "btnProfesor";
@@ -85,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Omega.Properties.Resources._1086;
+            this.BackgroundImage = global::Omega.Properties.Resources.NiñosNube;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(426, 361);
             this.Controls.Add(this.label1);

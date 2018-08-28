@@ -118,46 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="engranaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Engranaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\engranaje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="141198-OSX8PG-177" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="FondoEscuela" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\141198-OSX8PG-177.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1086" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="NiñosNube" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1086.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="engranaje1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Engranaje1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\engranaje1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="verified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Aceptar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6d862f898.6493545315192450164054" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Lamparita" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6d862f898.6493545315192450164054.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="af97c0a93bf8d556333e5e942cf8dec0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Numeros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\af97c0a93bf8d556333e5e942cf8dec0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Foto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Perros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6-razas-perro-origen-gales-1280x720x80xX.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Foto2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Gato" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4 gatos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Foto3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Conejos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2 conejos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Foto4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Peces" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\depositphotos_41050245-stock-illustration-5-coral-fish.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Foto5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Loros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\57859-en-el-caribe-tres-loros-sobre-una-valla.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_" type="System.Resources.ResXFileRef, System.Windows.Forms">

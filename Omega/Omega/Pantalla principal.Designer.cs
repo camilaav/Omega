@@ -43,7 +43,7 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.BackgroundImage = global::Omega.Properties.Resources.verified;
+            pictureBox2.BackgroundImage = global::Omega.Properties.Resources.Aceptar;
             pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             pictureBox2.Location = new System.Drawing.Point(495, 70);
@@ -55,7 +55,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.BackgroundImage = global::Omega.Properties.Resources.verified;
+            pictureBox1.BackgroundImage = global::Omega.Properties.Resources.Aceptar;
             pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             pictureBox1.Location = new System.Drawing.Point(278, 70);
@@ -67,7 +67,7 @@
             // btnNumeros
             // 
             btnNumeros.BackColor = System.Drawing.Color.Transparent;
-            btnNumeros.BackgroundImage = global::Omega.Properties.Resources.af97c0a93bf8d556333e5e942cf8dec0;
+            btnNumeros.BackgroundImage = global::Omega.Properties.Resources.Numeros;
             btnNumeros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnNumeros.Cursor = System.Windows.Forms.Cursors.Hand;
             btnNumeros.Location = new System.Drawing.Point(62, 70);

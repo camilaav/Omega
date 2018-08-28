@@ -44,7 +44,7 @@
             // btnIngresar
             // 
             btnIngresar.BackColor = System.Drawing.Color.Transparent;
-            btnIngresar.BackgroundImage = global::Omega.Properties.Resources.check;
+            btnIngresar.BackgroundImage = global::Omega.Properties.Resources.Check;
             btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             btnIngresar.Location = new System.Drawing.Point(147, 328);
@@ -57,7 +57,7 @@
             // btnRegresar
             // 
             btnRegresar.BackColor = System.Drawing.Color.Transparent;
-            btnRegresar.BackgroundImage = global::Omega.Properties.Resources.cancel;
+            btnRegresar.BackgroundImage = global::Omega.Properties.Resources.Cancel;
             btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
             btnRegresar.Location = new System.Drawing.Point(203, 328);
@@ -85,7 +85,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Omega.Properties.Resources.kisspng_new_jersey_vietnam_student_teachers_day_vector_color_bulb_creative_5a8dd6d862f898_6493545315192450164054;
+            this.pictureBox1.BackgroundImage = global::Omega.Properties.Resources.Lamparita;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(62, 12);
             this.pictureBox1.Name = "pictureBox1";
