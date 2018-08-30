@@ -24,9 +24,9 @@ namespace Omega
         {
             Random randommizer = new Random();
 
-            pictureBox4.Image = Resources._;
-            pictureBox5.Image = Resources._;
-            pictureBox6.Image = Resources._;
+            pictureBox4.Image = Resources.Menos;
+            pictureBox5.Image = Resources.Menos;
+            pictureBox6.Image = Resources.Menos;
 
             numero1 = randommizer.Next(10);
             numero2 = randommizer.Next(10);

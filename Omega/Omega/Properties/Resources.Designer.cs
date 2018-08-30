@@ -63,16 +63,6 @@ namespace Omega.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _ {
-            get {
-                object obj = ResourceManager.GetObject("_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _0 {
             get {
                 object obj = ResourceManager.GetObject("_0", resourceCulture);
@@ -86,16 +76,6 @@ namespace Omega.Properties {
         internal static System.Drawing.Bitmap _1 {
             get {
                 object obj = ResourceManager.GetObject("_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _10 {
-            get {
-                object obj = ResourceManager.GetObject("_10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +256,26 @@ namespace Omega.Properties {
         internal static System.Drawing.Bitmap Loros {
             get {
                 object obj = ResourceManager.GetObject("Loros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mas {
+            get {
+                object obj = ResourceManager.GetObject("Mas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Menos {
+            get {
+                object obj = ResourceManager.GetObject("Menos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
