@@ -42,29 +42,31 @@ namespace Omega
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Bienvenida b = new Bienvenida();
-            b.Show();
+            Bienvenida bienvenida = new Bienvenida();
+            bienvenida.Show();
             this.Hide();
         }
 
         private void btnIngresar_Click_1(object sender, EventArgs e)
         {
             contador++;
-            Usuario u = new Usuario();
+            var usuario = new Usuario();
             List<Usuario> usuarios = new List<Usuario>();
-            u.NombreUsuario = txtUsuario.Text;
-            u.Contraseña = txtContraseña.Text;
-            usuarios = usuarioRN.SeleccionarUsuario(u);
-            foreach (var usuario in usuarios)
+            usuario.NombreUsuario = txtUsuario.Text;
+            usuario.Contraseña = txtContraseña.Text;
+            usuarios = usuarioRN.SeleccionarUsuario(usuario);
+            foreach (var u in usuarios)
             {
-                if (txtUsuario.Text == usuario.NombreUsuario)
+                if (txtUsuario.Text == u.NombreUsuario)
                 {
-                    int id = usuario.IdUsuario;
-                    if (Encriptacion.Encriptar(txtContraseña.Text) == usuario.Contraseña)
+                    int id = u.IdUsuario;
+                    if (Encriptacion.Encriptar(txtContraseña.Text) == u.Contraseña)
                     {
-                        if (usuario.FechaBloqueo < DateTime.Now)
+                        if (u.FechaBloqueo < DateTime.Now)
                         {
-                            MessageBox.Show("Ingresaste bien");
+                            var pantallaProfesores = new Pantalla_principal_profesores();
+                            pantallaProfesores.Show();
+                            this.Hide();
                         }
                         else
                         {
@@ -78,8 +80,8 @@ namespace Omega
                         if (contador == 3)
                         {
                             MessageBox.Show("Limite alcanzado, usuario bloqueado por 10 minutos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            usuario.FechaBloqueo = DateTime.Now.AddMinutes(10);
-                            usuarioRN.InsertarBloqueo(usuario);
+                            u.FechaBloqueo = DateTime.Now.AddMinutes(10);
+                            usuarioRN.InsertarBloqueo(u);
                             Application.Exit();
                         }
                     }

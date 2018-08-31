@@ -253,6 +253,16 @@ namespace Omega.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LetrasNiños {
+            get {
+                object obj = ResourceManager.GetObject("LetrasNiños", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Loros {
             get {
                 object obj = ResourceManager.GetObject("Loros", resourceCulture);
@@ -316,6 +326,56 @@ namespace Omega.Properties {
         internal static System.Drawing.Bitmap Perros {
             get {
                 object obj = ResourceManager.GetObject("Perros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Profesores {
+            get {
+                object obj = ResourceManager.GetObject("Profesores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Profesores1 {
+            get {
+                object obj = ResourceManager.GetObject("Profesores1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Profesores11 {
+            get {
+                object obj = ResourceManager.GetObject("Profesores11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Salir {
+            get {
+                object obj = ResourceManager.GetObject("Salir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Volver {
+            get {
+                object obj = ResourceManager.GetObject("Volver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
