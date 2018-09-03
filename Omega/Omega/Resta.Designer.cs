@@ -36,16 +36,18 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.Rta1 = new System.Windows.Forms.PictureBox();
+            this.Rta2 = new System.Windows.Forms.PictureBox();
+            this.Rta3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rta1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rta2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rta3)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -123,36 +125,38 @@
             this.pictureBox6.TabIndex = 11;
             this.pictureBox6.TabStop = false;
             // 
-            // button2
+            // Rta1
             // 
-            this.button2.Location = new System.Drawing.Point(870, 187);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 109);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Rta1.BackColor = System.Drawing.Color.Transparent;
+            this.Rta1.Location = new System.Drawing.Point(870, 41);
+            this.Rta1.Name = "Rta1";
+            this.Rta1.Size = new System.Drawing.Size(100, 100);
+            this.Rta1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Rta1.TabIndex = 14;
+            this.Rta1.TabStop = false;
+            this.Rta1.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
-            // button3
+            // Rta2
             // 
-            this.button3.Location = new System.Drawing.Point(870, 343);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 109);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Rta2.BackColor = System.Drawing.Color.Transparent;
+            this.Rta2.Location = new System.Drawing.Point(870, 177);
+            this.Rta2.Name = "Rta2";
+            this.Rta2.Size = new System.Drawing.Size(100, 100);
+            this.Rta2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Rta2.TabIndex = 15;
+            this.Rta2.TabStop = false;
+            this.Rta2.Click += new System.EventHandler(this.Rta2_Click);
             // 
-            // pictureBox7
+            // Rta3
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Location = new System.Drawing.Point(870, 41);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(98, 109);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 14;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.Rta3.BackColor = System.Drawing.Color.Transparent;
+            this.Rta3.Location = new System.Drawing.Point(870, 317);
+            this.Rta3.Name = "Rta3";
+            this.Rta3.Size = new System.Drawing.Size(100, 100);
+            this.Rta3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Rta3.TabIndex = 16;
+            this.Rta3.TabStop = false;
+            this.Rta3.Click += new System.EventHandler(this.Rta3_Click);
             // 
             // Resta
             // 
@@ -161,9 +165,9 @@
             this.BackgroundImage = global::Omega.Properties.Resources._141198_OSX8PG_177;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1050, 516);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Rta3);
+            this.Controls.Add(this.Rta2);
+            this.Controls.Add(this.Rta1);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -185,7 +189,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rta1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rta2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Rta3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,8 +204,8 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox Rta1;
+        private System.Windows.Forms.PictureBox Rta2;
+        private System.Windows.Forms.PictureBox Rta3;
     }
 }
