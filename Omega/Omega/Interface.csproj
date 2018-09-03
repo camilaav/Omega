@@ -83,6 +83,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Memotest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Memotest.Designer.cs">
+      <DependentUpon>Memotest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantalla principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Memotest.resx">
+      <DependentUpon>Memotest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla principal.resx">
       <DependentUpon>Pantalla principal.cs</DependentUpon>
@@ -160,6 +169,24 @@
     <Content Include="Resources\-.png" />
     <Content Include="Resources\0.png" />
     <Content Include="Resources\1.png" />
+    <None Include="Resources\logomemotestarriba.png" />
+    <None Include="Resources\Volteo.jpg" />
+    <None Include="Resources\Sandìa.jpg" />
+    <None Include="Resources\Pera.jpg" />
+    <None Include="Resources\Palta.jpg" />
+    <None Include="Resources\Naranja.jpg" />
+    <None Include="Resources\MarayucáMorado.jpg" />
+    <None Include="Resources\Manzana.jpg" />
+    <None Include="Resources\Mangosteen.jpg" />
+    <None Include="Resources\Mango.jpg" />
+    <None Include="Resources\Limón.jpg" />
+    <None Include="Resources\Kiwii.jpg" />
+    <None Include="Resources\Higo.jpg" />
+    <None Include="Resources\Granada.jpg" />
+    <None Include="Resources\Frutilla.jpg" />
+    <None Include="Resources\Durazno.jpg" />
+    <None Include="Resources\Coco.jpg" />
+    <None Include="Resources\Carambolas.jpg" />
     <None Include="Resources\depositphotos_41050245-stock-illustration-5-coral-fish.jpg" />
     <None Include="Resources\2 conejos.jpg" />
     <Content Include="Resources\2.png" />

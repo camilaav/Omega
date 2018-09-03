@@ -13,7 +13,11 @@ namespace Omega
 {
     public partial class Cantidades : Form
     {
-        Image Foto;
+        Image Foto1;
+        Image Foto2;
+        Image Foto3;
+        Image Foto4;
+        Image Foto5;
         int Respuesta;
         string TipoFoto;
 
@@ -26,64 +30,29 @@ namespace Omega
         {
             for (int i = 0; i < 1; i++)
             {
-                Respuesta = int.Parse(txtRespuesta.Text);
-                if (TipoFoto == "Perros")
+            if (pictureBox1.Image == Foto1)
+            {
+                Respuesta = 6;
+                if (int.Parse(txtRespuesta.Text) == 6)
                 {
-
-                    if (Respuesta == 6)
-                    {
-                        MessageBox.Show("Respuesta correcta, 6 perros", "Mensaje");
-                        TipoFoto = "Gatos";
-                        pictureBox1.Image = Resources.Foto2;
-                        txtRespuesta.Clear();
-                    }
-                }
-                if (TipoFoto == "Gatos")
-                {
-
-                    if (Respuesta == 4)
-                    {
-                        MessageBox.Show("Respuesta correcta, 4 gatos", "Mensaje");
-                        TipoFoto = "Conejos";
-                        pictureBox1.Image = Resources.Foto3;
-
-                    }
+                    MessageBox.Show("Respuesta correcta, 6 perros", "Mensaje");
+                    pictureBox1.Image = Resources.Foto2;
 
                 }
-                if (TipoFoto == "Conejos")
+
+                else MessageBox.Show("Respuesta incorrecta, volvé a intentar", "Mensaje");
+            }
+
+            if (pictureBox1.Image == Foto2)
+            {
+                Respuesta = 4;
+                if (int.Parse(txtRespuesta.Text) == 4)
                 {
-                    if (Respuesta == 2)
-                    {
-                        MessageBox.Show("Respuesta correcta, 2 conejos", "Mensaje");
-                        TipoFoto = "Peces";
-                        pictureBox1.Image = Resources.Foto4;
-
-                    }
-
+                    MessageBox.Show("Respuesta correcta, 4 gatos", "Mensaje");
                 }
-                if (TipoFoto == "Peces")
-                {
-                    if (Respuesta == 5)
-                    {
-                        MessageBox.Show("Respuesta correcta, 5 peces", "Mensaje");
-                        TipoFoto = "Loros";
-                        pictureBox1.Image = Resources.Foto5;
+                else MessageBox.Show("Respuesta incorrecta, volvé a intentar", "Mensaje");
+            }
 
-                    }
-
-
-                }
-                if (TipoFoto == "Loros")
-                {
-                    if (Respuesta == 3)
-                    {
-                        MessageBox.Show("Respuesta correcta, 3 loros", "Mensaje");
-                        MessageBox.Show("¡Felicidades, ganaste!", "Mensaje");
-                        Application.Exit();
-
-
-                    }
-                }
 
             }
         }
@@ -91,8 +60,7 @@ namespace Omega
         private void Cantidades_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = Resources.Foto1;
-            Foto = pictureBox1.Image;
-            TipoFoto = "Perros";
+            Foto1 = pictureBox1.Image;
         }
     }
 }
