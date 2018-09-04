@@ -78,20 +78,17 @@
             // 
             // lblNumero
             // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(432, 24);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(35, 13);
-            this.lblNumero.TabIndex = 8;
-            this.lblNumero.Text = "label3";
+            this.textBox1.Location = new System.Drawing.Point(283, 526);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 8;
             // 
             // Cantidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 516);
-            this.Controls.Add(this.lblNumero);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(829, 612);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pbCantidades);

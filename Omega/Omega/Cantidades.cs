@@ -33,7 +33,14 @@ namespace Omega
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            Random MyNo = new Random();
+            int maxNo = 5;
+            int numNo = MyNo.Next(1, maxNo);
 
+            if (numNo == 1)
+            {
+                pictureBox1.Image = Resources.img1;
+            }
 
         }
     }
