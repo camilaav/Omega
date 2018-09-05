@@ -17,6 +17,7 @@ namespace Omega
         {
             InitializeComponent();
         }
+
         int numero1;
         int numero2;
         int resultado;
@@ -25,20 +26,23 @@ namespace Omega
         private void Resta_Load(object sender, EventArgs e)
         {
             Random randommizer = new Random();
-
+            tiempo.Enabled = true;
             pictureBox4.Image = Resources._;
             pictureBox5.Image = Resources._;
             pictureBox6.Image = Resources._;
+            pictureBox3.Visible = false;
 
             numero1 = randommizer.Next(10);
             numero2 = randommizer.Next(10);
             resultado = (numero1 - numero2);
-           
+
             while (resultado < 0) //ELIMINA LA POSIBILIDAD DE RESULTADO NEGATIVO
             {
+
                 numero1 = randommizer.Next(10);
                 numero2 = randommizer.Next(10);
                 resultado = (numero1 - numero2);
+
             }
             if (numero1 == 1)
                 pictureBox1.Image = Resources._1;
@@ -125,8 +129,8 @@ namespace Omega
             //    MessageBox.Show("Muy bien!");
             //}
 
-            
-            orden = randommizer.Next(3);
+
+            orden = randommizer.Next(2);
 
             int fondo; //NUMERO DE FONDO DE UN PICTURE DE RESPUESTAS
             fondo = randommizer.Next(10);
@@ -141,12 +145,11 @@ namespace Omega
                 fondo = randommizer.Next(10);
                 fondo2 = randommizer.Next(10);
             }
-            while (orden == 0)
-                orden = randommizer.Next(3);
+            //while (orden == 0)
+            //  orden = randommizer.Next(3);
 
-            if (orden == 1)
+            if (orden == 0)
             {
-                
                 if (resultado == 1)
                 {
                     Rta1.Image = Resources._1;
@@ -621,9 +624,9 @@ namespace Omega
 
             }
 
-            if (orden == 2)
+            if (orden == 1)
             {
-                
+
                 if (resultado == 1)
                 {
                     Rta2.Image = Resources._1;
@@ -675,28 +678,28 @@ namespace Omega
 
                 if (resultado == 2)
                 {
-                    Rta1.Image = Resources._2;
+                    Rta2.Image = Resources._2;
 
                     if (fondo == 1)
-                        Rta2.Image = Resources._1;
+                        Rta1.Image = Resources._1;
                     if (fondo == 2)
-                        Rta2.Image = Resources._2;
+                        Rta1.Image = Resources._2;
                     if (fondo == 3)
-                        Rta2.Image = Resources._3;
+                        Rta1.Image = Resources._3;
                     if (fondo == 4)
-                        Rta2.Image = Resources._4;
+                        Rta1.Image = Resources._4;
                     if (fondo == 5)
-                        Rta2.Image = Resources._5;
+                        Rta1.Image = Resources._5;
                     if (fondo == 6)
-                        Rta2.Image = Resources._6;
+                        Rta1.Image = Resources._6;
                     if (fondo == 7)
-                        Rta2.Image = Resources._7;
+                        Rta1.Image = Resources._7;
                     if (fondo == 8)
-                        Rta2.Image = Resources._8;
+                        Rta1.Image = Resources._8;
                     if (fondo == 9)
-                        Rta2.Image = Resources._9;
+                        Rta1.Image = Resources._9;
                     if (fondo == 0)
-                        Rta2.Image = Resources._0;
+                        Rta1.Image = Resources._0;
                     //LE DA IMAGEN AL SEGUNDO RESPUESTA NO CORRECTA
                     if (fondo2 == 1)
                         Rta3.Image = Resources._1;
@@ -722,28 +725,28 @@ namespace Omega
 
                 if (resultado == 3)
                 {
-                    Rta1.Image = Resources._3;
+                    Rta2.Image = Resources._3;
 
                     if (fondo == 1)
-                        Rta2.Image = Resources._1;
+                        Rta1.Image = Resources._1;
                     if (fondo == 2)
-                        Rta2.Image = Resources._2;
+                        Rta1.Image = Resources._2;
                     if (fondo == 3)
-                        Rta2.Image = Resources._3;
+                        Rta1.Image = Resources._3;
                     if (fondo == 4)
-                        Rta2.Image = Resources._4;
+                        Rta1.Image = Resources._4;
                     if (fondo == 5)
-                        Rta2.Image = Resources._5;
+                        Rta1.Image = Resources._5;
                     if (fondo == 6)
-                        Rta2.Image = Resources._6;
+                        Rta1.Image = Resources._6;
                     if (fondo == 7)
-                        Rta2.Image = Resources._7;
+                        Rta1.Image = Resources._7;
                     if (fondo == 8)
-                        Rta2.Image = Resources._8;
+                        Rta1.Image = Resources._8;
                     if (fondo == 9)
-                        Rta2.Image = Resources._9;
+                        Rta1.Image = Resources._9;
                     if (fondo == 0)
-                        Rta2.Image = Resources._0;
+                        Rta1.Image = Resources._0;
                     //LE DA IMAGEN AL SEGUNDO RESPUESTA NO CORRECTA
                     if (fondo2 == 1)
                         Rta3.Image = Resources._1;
@@ -769,28 +772,28 @@ namespace Omega
 
                 if (resultado == 4)
                 {
-                    Rta1.Image = Resources._4;
+                    Rta2.Image = Resources._4;
 
                     if (fondo == 1)
-                        Rta2.Image = Resources._1;
+                        Rta1.Image = Resources._1;
                     if (fondo == 2)
-                        Rta2.Image = Resources._2;
+                        Rta1.Image = Resources._2;
                     if (fondo == 3)
-                        Rta2.Image = Resources._3;
+                        Rta1.Image = Resources._3;
                     if (fondo == 4)
-                        Rta2.Image = Resources._4;
+                        Rta1.Image = Resources._4;
                     if (fondo == 5)
-                        Rta2.Image = Resources._5;
+                        Rta1.Image = Resources._5;
                     if (fondo == 6)
-                        Rta2.Image = Resources._6;
+                        Rta1.Image = Resources._6;
                     if (fondo == 7)
-                        Rta2.Image = Resources._7;
+                        Rta1.Image = Resources._7;
                     if (fondo == 8)
-                        Rta2.Image = Resources._8;
+                        Rta1.Image = Resources._8;
                     if (fondo == 9)
-                        Rta2.Image = Resources._9;
+                        Rta1.Image = Resources._9;
                     if (fondo == 0)
-                        Rta2.Image = Resources._0;
+                        Rta1.Image = Resources._0;
                     //LE DA IMAGEN AL SEGUNDO RESPUESTA NO CORRECTA
                     if (fondo2 == 1)
                         Rta3.Image = Resources._1;
@@ -816,28 +819,28 @@ namespace Omega
 
                 if (resultado == 5)
                 {
-                    Rta1.Image = Resources._5;
+                    Rta2.Image = Resources._5;
 
                     if (fondo == 1)
-                        Rta2.Image = Resources._1;
+                        Rta1.Image = Resources._1;
                     if (fondo == 2)
-                        Rta2.Image = Resources._2;
+                        Rta1.Image = Resources._2;
                     if (fondo == 3)
-                        Rta2.Image = Resources._3;
+                        Rta1.Image = Resources._3;
                     if (fondo == 4)
-                        Rta2.Image = Resources._4;
+                        Rta1.Image = Resources._4;
                     if (fondo == 5)
-                        Rta2.Image = Resources._5;
+                        Rta1.Image = Resources._5;
                     if (fondo == 6)
-                        Rta2.Image = Resources._6;
+                        Rta1.Image = Resources._6;
                     if (fondo == 7)
-                        Rta2.Image = Resources._7;
+                        Rta1.Image = Resources._7;
                     if (fondo == 8)
-                        Rta2.Image = Resources._8;
+                        Rta1.Image = Resources._8;
                     if (fondo == 9)
-                        Rta2.Image = Resources._9;
+                        Rta1.Image = Resources._9;
                     if (fondo == 0)
-                        Rta2.Image = Resources._0;
+                        Rta1.Image = Resources._0;
                     //LE DA IMAGEN AL SEGUNDO RESPUESTA NO CORRECTA
                     if (fondo2 == 1)
                         Rta3.Image = Resources._1;
@@ -863,28 +866,28 @@ namespace Omega
 
                 if (resultado == 6)
                 {
-                    Rta1.Image = Resources._6;
+                    Rta2.Image = Resources._6;
 
                     if (fondo == 1)
-                        Rta2.Image = Resources._1;
+                        Rta1.Image = Resources._1;
                     if (fondo == 2)
-                        Rta2.Image = Resources._2;
+                        Rta1.Image = Resources._2;
                     if (fondo == 3)
-                        Rta2.Image = Resources._3;
+                        Rta1.Image = Resources._3;
                     if (fondo == 4)
-                        Rta2.Image = Resources._4;
+                        Rta1.Image = Resources._4;
                     if (fondo == 5)
-                        Rta2.Image = Resources._5;
+                        Rta1.Image = Resources._5;
                     if (fondo == 6)
-                        Rta2.Image = Resources._6;
+                        Rta1.Image = Resources._6;
                     if (fondo == 7)
-                        Rta2.Image = Resources._7;
+                        Rta1.Image = Resources._7;
                     if (fondo == 8)
-                        Rta2.Image = Resources._8;
+                        Rta1.Image = Resources._8;
                     if (fondo == 9)
-                        Rta2.Image = Resources._9;
+                        Rta1.Image = Resources._9;
                     if (fondo == 0)
-                        Rta2.Image = Resources._0;
+                        Rta1.Image = Resources._0;
                     //LE DA IMAGEN AL SEGUNDO RESPUESTA NO CORRECTA
                     if (fondo2 == 1)
                         Rta3.Image = Resources._1;
@@ -910,28 +913,28 @@ namespace Omega
 
                 if (resultado == 7)
                 {
-                    Rta1.Image = Resources._7;
+                    Rta2.Image = Resources._7;
 
                     if (fondo == 1)
-                        Rta2.Image = Resources._1;
+                        Rta1.Image = Resources._1;
                     if (fondo == 2)
-                        Rta2.Image = Resources._2;
+                        Rta1.Image = Resources._2;
                     if (fondo == 3)
-                        Rta2.Image = Resources._3;
+                        Rta1.Image = Resources._3;
                     if (fondo == 4)
-                        Rta2.Image = Resources._4;
+                        Rta1.Image = Resources._4;
                     if (fondo == 5)
-                        Rta2.Image = Resources._5;
+                        Rta1.Image = Resources._5;
                     if (fondo == 6)
-                        Rta2.Image = Resources._6;
+                        Rta1.Image = Resources._6;
                     if (fondo == 7)
-                        Rta2.Image = Resources._7;
+                        Rta1.Image = Resources._7;
                     if (fondo == 8)
-                        Rta2.Image = Resources._8;
+                        Rta1.Image = Resources._8;
                     if (fondo == 9)
-                        Rta2.Image = Resources._9;
+                        Rta1.Image = Resources._9;
                     if (fondo == 0)
-                        Rta2.Image = Resources._0;
+                        Rta1.Image = Resources._0;
                     //LE DA IMAGEN AL SEGUNDO RESPUESTA NO CORRECTA
                     if (fondo2 == 1)
                         Rta3.Image = Resources._1;
@@ -957,28 +960,28 @@ namespace Omega
 
                 if (resultado == 8)
                 {
-                    Rta1.Image = Resources._8;
+                    Rta2.Image = Resources._8;
 
                     if (fondo == 1)
-                        Rta2.Image = Resources._1;
+                        Rta1.Image = Resources._1;
                     if (fondo == 2)
-                        Rta2.Image = Resources._2;
+                        Rta1.Image = Resources._2;
                     if (fondo == 3)
-                        Rta2.Image = Resources._3;
+                        Rta1.Image = Resources._3;
                     if (fondo == 4)
-                        Rta2.Image = Resources._4;
+                        Rta1.Image = Resources._4;
                     if (fondo == 5)
-                        Rta2.Image = Resources._5;
+                        Rta1.Image = Resources._5;
                     if (fondo == 6)
-                        Rta2.Image = Resources._6;
+                        Rta1.Image = Resources._6;
                     if (fondo == 7)
-                        Rta2.Image = Resources._7;
+                        Rta1.Image = Resources._7;
                     if (fondo == 8)
-                        Rta2.Image = Resources._8;
+                        Rta1.Image = Resources._8;
                     if (fondo == 9)
-                        Rta2.Image = Resources._9;
+                        Rta1.Image = Resources._9;
                     if (fondo == 0)
-                        Rta2.Image = Resources._0;
+                        Rta1.Image = Resources._0;
                     //LE DA IMAGEN AL SEGUNDO RESPUESTA NO CORRECTA
                     if (fondo2 == 1)
                         Rta3.Image = Resources._1;
@@ -1004,28 +1007,28 @@ namespace Omega
 
                 if (resultado == 9)
                 {
-                    Rta1.Image = Resources._9;
+                    Rta2.Image = Resources._9;
 
                     if (fondo == 1)
-                        Rta2.Image = Resources._1;
+                        Rta1.Image = Resources._1;
                     if (fondo == 2)
-                        Rta2.Image = Resources._2;
+                        Rta1.Image = Resources._2;
                     if (fondo == 3)
-                        Rta2.Image = Resources._3;
+                        Rta1.Image = Resources._3;
                     if (fondo == 4)
-                        Rta2.Image = Resources._4;
+                        Rta1.Image = Resources._4;
                     if (fondo == 5)
-                        Rta2.Image = Resources._5;
+                        Rta1.Image = Resources._5;
                     if (fondo == 6)
-                        Rta2.Image = Resources._6;
+                        Rta1.Image = Resources._6;
                     if (fondo == 7)
-                        Rta2.Image = Resources._7;
+                        Rta1.Image = Resources._7;
                     if (fondo == 8)
-                        Rta2.Image = Resources._8;
+                        Rta1.Image = Resources._8;
                     if (fondo == 9)
-                        Rta2.Image = Resources._9;
+                        Rta1.Image = Resources._9;
                     if (fondo == 0)
-                        Rta2.Image = Resources._0;
+                        Rta1.Image = Resources._0;
                     //LE DA IMAGEN AL SEGUNDO RESPUESTA NO CORRECTA
                     if (fondo2 == 1)
                         Rta3.Image = Resources._1;
@@ -1051,28 +1054,28 @@ namespace Omega
 
                 if (resultado == 0)
                 {
-                    Rta1.Image = Resources._0;
+                    Rta2.Image = Resources._0;
 
                     if (fondo == 1)
-                        Rta2.Image = Resources._1;
+                        Rta1.Image = Resources._1;
                     if (fondo == 2)
-                        Rta2.Image = Resources._2;
+                        Rta1.Image = Resources._2;
                     if (fondo == 3)
-                        Rta2.Image = Resources._3;
+                        Rta1.Image = Resources._3;
                     if (fondo == 4)
-                        Rta2.Image = Resources._4;
+                        Rta1.Image = Resources._4;
                     if (fondo == 5)
-                        Rta2.Image = Resources._5;
+                        Rta1.Image = Resources._5;
                     if (fondo == 6)
-                        Rta2.Image = Resources._6;
+                        Rta1.Image = Resources._6;
                     if (fondo == 7)
-                        Rta2.Image = Resources._7;
+                        Rta1.Image = Resources._7;
                     if (fondo == 8)
-                        Rta2.Image = Resources._8;
+                        Rta1.Image = Resources._8;
                     if (fondo == 9)
-                        Rta2.Image = Resources._9;
+                        Rta1.Image = Resources._9;
                     if (fondo == 0)
-                        Rta2.Image = Resources._0;
+                        Rta1.Image = Resources._0;
                     //LE DA IMAGEN AL SEGUNDO RESPUESTA NO CORRECTA
                     if (fondo2 == 1)
                         Rta3.Image = Resources._1;
@@ -1096,8 +1099,8 @@ namespace Omega
                         Rta3.Image = Resources._0;
                 }
             }
-            if (orden == 3)
-            {              
+            if (orden == 2)
+            {
                 if (resultado == 1)
                 {
                     Rta3.Image = Resources._1;
@@ -1591,26 +1594,138 @@ namespace Omega
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            if (orden == 1)
+            if (orden == 0)
+            {
                 MessageBox.Show("Muy bien!");
+                pictureBox3.Visible = true;
+
+                if (resultado == 1)
+                    pictureBox3.Image = Resources._1;
+                if (resultado == 2)
+                    pictureBox3.Image = Resources._2;
+                if (resultado == 3)
+                    pictureBox3.Image = Resources._3;
+                if (resultado == 4)
+                    pictureBox3.Image = Resources._4;
+                if (resultado == 5)
+                    pictureBox3.Image = Resources._5;
+                if (resultado == 6)
+                    pictureBox3.Image = Resources._6;
+                if (resultado == 7)
+                    pictureBox3.Image = Resources._7;
+                if (resultado == 8)
+                    pictureBox3.Image = Resources._8;
+                if (resultado == 9)
+                    pictureBox3.Image = Resources._9;
+                if (resultado == 0)
+                    pictureBox3.Image = Resources._0;
+
+            }
+
             else
-                MessageBox.Show("Respuesta incorrecta");
+            {
+                //MessageBox.Show("Respuesta incorrecta");
+                pictureBox3.Image = Resources.cancel;
+                pictureBox3.Visible = true;
+                tiempo.Enabled = true;
+                tiempo.Start();
+                if (tiempo.Interval > 10000)
+                {
+                    pictureBox3.Visible = false;
+                }
+
+
+            }
         }
 
         private void Rta2_Click(object sender, EventArgs e)
         {
-            if (orden == 2)
+            if (orden == 1)
+            {
                 MessageBox.Show("Muy bien!");
+                pictureBox3.Visible = true;
+
+                if (resultado == 1)
+                    pictureBox3.Image = Resources._1;
+                if (resultado == 2)
+                    pictureBox3.Image = Resources._2;
+                if (resultado == 3)
+                    pictureBox3.Image = Resources._3;
+                if (resultado == 4)
+                    pictureBox3.Image = Resources._4;
+                if (resultado == 5)
+                    pictureBox3.Image = Resources._5;
+                if (resultado == 6)
+                    pictureBox3.Image = Resources._6;
+                if (resultado == 7)
+                    pictureBox3.Image = Resources._7;
+                if (resultado == 8)
+                    pictureBox3.Image = Resources._8;
+                if (resultado == 9)
+                    pictureBox3.Image = Resources._9;
+                if (resultado == 0)
+                    pictureBox3.Image = Resources._0;
+
+            }
             else
-                MessageBox.Show("Respuesta incorrecta");
+            {
+                //MessageBox.Show("Respuesta incorrecta");
+                pictureBox3.Image = Resources.cancel;
+                pictureBox3.Visible = true;
+                tiempo.Enabled = true;
+                tiempo.Start();
+                if (tiempo.Interval > 10000)
+                {
+                    pictureBox3.Visible = false;
+                    tiempo.Stop();
+                }
+            }
+
         }
 
         private void Rta3_Click(object sender, EventArgs e)
         {
-            if (orden == 3)
+            if (orden == 2)
+            {
                 MessageBox.Show("Muy bien!");
+                pictureBox3.Visible = true;
+
+                if (resultado == 1)
+                    pictureBox3.Image = Resources._1;
+                if (resultado == 2)
+                    pictureBox3.Image = Resources._2;
+                if (resultado == 3)
+                    pictureBox3.Image = Resources._3;
+                if (resultado == 4)
+                    pictureBox3.Image = Resources._4;
+                if (resultado == 5)
+                    pictureBox3.Image = Resources._5;
+                if (resultado == 6)
+                    pictureBox3.Image = Resources._6;
+                if (resultado == 7)
+                    pictureBox3.Image = Resources._7;
+                if (resultado == 8)
+                    pictureBox3.Image = Resources._8;
+                if (resultado == 9)
+                    pictureBox3.Image = Resources._9;
+                if (resultado == 0)
+                    pictureBox3.Image = Resources._0;
+
+            }
             else
-                MessageBox.Show("Respuesta incorrecta");
+            {
+                //MessageBox.Show("Respuesta incorrecta");
+
+                pictureBox3.Image = Resources.cancel;
+                pictureBox3.Visible = true;
+                tiempo.Start();
+            }
         }
+        int n = 5;
+        private void tiempo_Tick(object sender, EventArgs e)
+        {
+            n--;
+        }
+
     }
 }
