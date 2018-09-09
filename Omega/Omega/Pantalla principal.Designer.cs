@@ -28,46 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.PictureBox pictureBox2;
-            System.Windows.Forms.PictureBox pictureBox1;
+            System.Windows.Forms.PictureBox btnEntretenimiento;
+            System.Windows.Forms.PictureBox btnLetras;
             System.Windows.Forms.PictureBox btnNumeros;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla_principal));
-            pictureBox2 = new System.Windows.Forms.PictureBox();
-            pictureBox1 = new System.Windows.Forms.PictureBox();
+            btnEntretenimiento = new System.Windows.Forms.PictureBox();
+            btnLetras = new System.Windows.Forms.PictureBox();
             btnNumeros = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(btnEntretenimiento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(btnLetras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(btnNumeros)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // btnEntretenimiento
             // 
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.BackgroundImage = global::Omega.Properties.Resources.verified;
-            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            pictureBox2.Location = new System.Drawing.Point(495, 70);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(200, 200);
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
+            btnEntretenimiento.BackColor = System.Drawing.Color.Transparent;
+            btnEntretenimiento.BackgroundImage = global::Omega.Properties.Resources.Aceptar;
+            btnEntretenimiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnEntretenimiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnEntretenimiento.Location = new System.Drawing.Point(495, 70);
+            btnEntretenimiento.Name = "btnEntretenimiento";
+            btnEntretenimiento.Size = new System.Drawing.Size(200, 200);
+            btnEntretenimiento.TabIndex = 6;
+            btnEntretenimiento.TabStop = false;
+            btnEntretenimiento.Click += new System.EventHandler(this.btnEntretenimiento_Click);
             // 
-            // pictureBox1
+            // btnLetras
             // 
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.BackgroundImage = global::Omega.Properties.Resources.verified;
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            pictureBox1.Location = new System.Drawing.Point(278, 70);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(200, 200);
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            btnLetras.BackColor = System.Drawing.Color.Transparent;
+            btnLetras.BackgroundImage = global::Omega.Properties.Resources.LetrasNiños;
+            btnLetras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnLetras.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnLetras.Location = new System.Drawing.Point(278, 70);
+            btnLetras.Name = "btnLetras";
+            btnLetras.Size = new System.Drawing.Size(200, 200);
+            btnLetras.TabIndex = 5;
+            btnLetras.TabStop = false;
+            btnLetras.Click += new System.EventHandler(this.btnLetras_Click);
             // 
             // btnNumeros
             // 
             btnNumeros.BackColor = System.Drawing.Color.Transparent;
-            btnNumeros.BackgroundImage = global::Omega.Properties.Resources.af97c0a93bf8d556333e5e942cf8dec0;
+            btnNumeros.BackgroundImage = global::Omega.Properties.Resources.Numeros;
             btnNumeros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnNumeros.Cursor = System.Windows.Forms.Cursors.Hand;
             btnNumeros.Location = new System.Drawing.Point(62, 70);
@@ -75,23 +77,24 @@
             btnNumeros.Size = new System.Drawing.Size(200, 200);
             btnNumeros.TabIndex = 4;
             btnNumeros.TabStop = false;
+            btnNumeros.Click += new System.EventHandler(this.btnNumeros_Click);
             // 
             // Pantalla_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(761, 327);
-            this.Controls.Add(pictureBox2);
-            this.Controls.Add(pictureBox1);
+            this.Controls.Add(btnEntretenimiento);
+            this.Controls.Add(btnLetras);
             this.Controls.Add(btnNumeros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pantalla_principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pantalla_principal";
             this.Load += new System.EventHandler(this.Pantalla_principal_Load);
-            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(btnEntretenimiento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(btnLetras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(btnNumeros)).EndInit();
             this.ResumeLayout(false);
 

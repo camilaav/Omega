@@ -34,7 +34,7 @@ namespace Omega
                     {
                         MessageBox.Show("Respuesta correcta, 6 perros", "Mensaje");
                         TipoFoto = "Gatos";
-                        pictureBox1.Image = Resources.Foto2;
+                        pictureBox1.Image = Resources.Gato;
                         txtRespuesta.Clear();
                     }
                 }
@@ -45,7 +45,7 @@ namespace Omega
                     {
                         MessageBox.Show("Respuesta correcta, 4 gatos", "Mensaje");
                         TipoFoto = "Conejos";
-                        pictureBox1.Image = Resources.Foto3;
+                        pictureBox1.Image = Resources.Conejos;
 
                     }
 
@@ -56,7 +56,7 @@ namespace Omega
                     {
                         MessageBox.Show("Respuesta correcta, 2 conejos", "Mensaje");
                         TipoFoto = "Peces";
-                        pictureBox1.Image = Resources.Foto4;
+                        pictureBox1.Image = Resources.Peces;
 
                     }
 
@@ -67,7 +67,7 @@ namespace Omega
                     {
                         MessageBox.Show("Respuesta correcta, 5 peces", "Mensaje");
                         TipoFoto = "Loros";
-                        pictureBox1.Image = Resources.Foto5;
+                        pictureBox1.Image = Resources.Loros;
 
                     }
 
@@ -90,7 +90,7 @@ namespace Omega
 
         private void Cantidades_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = Resources.Foto1;
+            pictureBox1.Image = Resources.Perros;
             Foto = pictureBox1.Image;
             TipoFoto = "Perros";
         }

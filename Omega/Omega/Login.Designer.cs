@@ -41,32 +41,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnIngresar
-            // 
-            btnIngresar.BackColor = System.Drawing.Color.Transparent;
-            btnIngresar.BackgroundImage = global::Omega.Properties.Resources.check;
-            btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnIngresar.Location = new System.Drawing.Point(147, 328);
-            btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new System.Drawing.Size(50, 50);
-            btnIngresar.TabIndex = 6;
-            btnIngresar.TabStop = false;
-            btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click_1);
-            // 
-            // btnRegresar
-            // 
-            btnRegresar.BackColor = System.Drawing.Color.Transparent;
-            btnRegresar.BackgroundImage = global::Omega.Properties.Resources.cancel;
-            btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnRegresar.Location = new System.Drawing.Point(203, 328);
-            btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new System.Drawing.Size(50, 50);
-            btnRegresar.TabIndex = 5;
-            btnRegresar.TabStop = false;
-            btnRegresar.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(62, 264);
@@ -82,10 +56,36 @@
             this.txtContraseña.Size = new System.Drawing.Size(191, 26);
             this.txtContraseña.TabIndex = 2;
             // 
+            // btnIngresar
+            // 
+            btnIngresar.BackColor = System.Drawing.Color.Transparent;
+            btnIngresar.BackgroundImage = global::Omega.Properties.Resources.Check;
+            btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnIngresar.Location = new System.Drawing.Point(196, 339);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new System.Drawing.Size(50, 50);
+            btnIngresar.TabIndex = 6;
+            btnIngresar.TabStop = false;
+            btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click_1);
+            // 
+            // btnRegresar
+            // 
+            btnRegresar.BackColor = System.Drawing.Color.Transparent;
+            btnRegresar.BackgroundImage = global::Omega.Properties.Resources.Salir;
+            btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnRegresar.Location = new System.Drawing.Point(252, 339);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new System.Drawing.Size(50, 50);
+            btnRegresar.TabIndex = 5;
+            btnRegresar.TabStop = false;
+            btnRegresar.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Omega.Properties.Resources.kisspng_new_jersey_vietnam_student_teachers_day_vector_color_bulb_creative_5a8dd6d862f898_6493545315192450164054;
+            this.pictureBox1.BackgroundImage = global::Omega.Properties.Resources.Profesores11;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(62, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -97,6 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(314, 401);
             this.Controls.Add(btnIngresar);
             this.Controls.Add(btnRegresar);

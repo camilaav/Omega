@@ -78,11 +78,35 @@
     <Compile Include="Cantidades.Designer.cs">
       <DependentUpon>Cantidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entretenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entretenimiento.Designer.cs">
+      <DependentUpon>Entretenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Letras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Letras.Designer.cs">
+      <DependentUpon>Letras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numeros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numeros.Designer.cs">
+      <DependentUpon>Numeros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla principal profesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla principal profesores.Designer.cs">
+      <DependentUpon>Pantalla principal profesores.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantalla principal.cs">
       <SubType>Form</SubType>
@@ -109,8 +133,20 @@
     <EmbeddedResource Include="Cantidades.resx">
       <DependentUpon>Cantidades.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entretenimiento.resx">
+      <DependentUpon>Entretenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Letras.resx">
+      <DependentUpon>Letras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numeros.resx">
+      <DependentUpon>Numeros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla principal profesores.resx">
+      <DependentUpon>Pantalla principal profesores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla principal.resx">
       <DependentUpon>Pantalla principal.cs</DependentUpon>
@@ -148,26 +184,26 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6d862f898.6493545315192450164054.png" />
+    <None Include="Resources\Lamparita.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1086.jpg" />
+    <None Include="Resources\NiñosNube.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\141198-OSX8PG-177.jpg" />
+    <None Include="Resources\FondoEscuela.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\depositphotos_41050245-stock-illustration-5-coral-fish.jpg" />
-    <None Include="Resources\2 conejos.jpg" />
-    <None Include="Resources\4 gatos.jpg" />
-    <None Include="Resources\6-razas-perro-origen-gales-1280x720x80xX.jpg" />
-    <None Include="Resources\57859-en-el-caribe-tres-loros-sobre-una-valla.jpg" />
-    <None Include="Resources\af97c0a93bf8d556333e5e942cf8dec0.png" />
-    <None Include="Resources\cancel.png" />
-    <None Include="Resources\check.png" />
-    <None Include="Resources\engranaje1.png" />
-    <None Include="Resources\engranaje.png" />
-    <None Include="Resources\verified.png" />
+    <None Include="Resources\Peces.jpg" />
+    <None Include="Resources\Conejos.jpg" />
+    <None Include="Resources\Gatos.jpg" />
+    <None Include="Resources\Perros.jpg" />
+    <None Include="Resources\Loros.jpg" />
+    <None Include="Resources\Numeros.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Check.png" />
+    <None Include="Resources\Engranaje1.png" />
+    <None Include="Resources\Engranaje.png" />
+    <None Include="Resources\Verified.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\0.png" />
@@ -200,10 +236,28 @@
     <None Include="Resources\9.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\-.png" />
+    <None Include="Resources\Mas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\+.png" />
+    <None Include="Resources\Menos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LetrasNiños.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Volver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profesores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profesores1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profesores11.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,32 +32,38 @@ namespace Omega
 
         private void Resta_Load(object sender, EventArgs e)
         {
+
             tiempo.Enabled = true;
-            pictureBox4.Image = Resources._;
-            pictureBox5.Image = Resources._;
-            pictureBox6.Image = Resources._;
+
             pictureBox3.Visible = false;
-            if (Dificultad == 1)
-            {
-                if(contF < 5)
-                {
-                    JuegoFacil();
-                }               
-            }
-            if (Dificultad == 2)
-            {
-                if (contM < 5)
-                { 
-                    JuegoMedio();
-                }
-            }
-            if (Dificultad == 3)
-            {
-                if (contF < 5)
-                {
-                    JuegoDificil();
-                }
-            }
+
+            pictureBox4.Image = Resources.Menos;
+            pictureBox5.Image = Resources.Menos;
+            pictureBox6.Image = Resources.Menos;
+
+
+            //if (Dificultado == 1)
+            //{
+            //    if (contF < 5)
+            //    {
+            //        JuegoFacil();
+            //    }
+            //}
+
+            //if (Dificultad == 2)
+            //{
+            //    if (contM < 5)
+            //    {
+            //        JuegoMedio();
+            //    }
+            //}
+            //if (Dificultad == 3)
+            //{
+            //    if (contF < 5)
+            //    {
+            //        JuegoDificil();
+            //    }
+            //}
 
 
             if (orden == 0)
