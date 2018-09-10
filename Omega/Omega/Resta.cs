@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Omega.Properties;
+using System.IO;
 
 namespace Omega
 {
@@ -17,128 +18,233 @@ namespace Omega
         {
             InitializeComponent();
         }
+
         int numero1;
         int numero2;
         int resultado;
+        int orden; //NUMERO DE ORDEN DE RESPUESTA CORRECTA
+        int fondo;
+        int fondo2;
+        Random randommizer = new Random();
+        int contF;
+        int contM;
+        int contD;
+
         private void Resta_Load(object sender, EventArgs e)
         {
-            Random randommizer = new Random();
+            tiempo.Enabled = true;
+
+            pictureBox3.Visible = false;
 
             pictureBox4.Image = Resources.Menos;
             pictureBox5.Image = Resources.Menos;
             pictureBox6.Image = Resources.Menos;
 
-            numero1 = randommizer.Next(10);
-            numero2 = randommizer.Next(10);
-            resultado = (numero1 - numero2);
-            while (resultado < 0)
+
+            //if (Dificultado == 1)
+            //{
+            //    if (contF < 5)
+            //    {
+            //        JuegoFacil();
+            //    }
+            //}
+
+            //if (Dificultad == 2)
+            //{
+            //    if (contM < 5)
+            //    {
+            //        JuegoMedio();
+            //    }
+            //}
+            //if (Dificultad == 3)
+            //{
+            //    if (contF < 5)
+            //    {
+            //        JuegoDificil();
+            //    }
+            //}
+
+
+            if (orden == 0)
             {
-                numero1 = randommizer.Next(10);
-                numero2 = randommizer.Next(10);
+                Rta1.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + resultado.ToString() + ".png"));
+                Rta2.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + fondo.ToString() + ".png"));
+                Rta3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + fondo2.ToString() + ".png"));
+            }
+            if (orden == 1)
+            {
+                Rta1.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + fondo.ToString() + ".png"));
+                Rta2.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + resultado.ToString() + ".png"));
+                Rta3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + fondo2.ToString() + ".png"));
+            }
+            if (orden == 2)
+            {
+                Rta1.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + fondo2.ToString() + ".png"));
+                Rta2.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + fondo.ToString() + ".png"));
+                Rta3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + resultado.ToString() + ".png"));
+            }
+        }
+
+      
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            if (orden == 0)
+            {
+                pictureBox3.Image = null;
+                MessageBox.Show("Muy bien!");
+                pictureBox3.Visible = true;
+                pictureBox3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + resultado.ToString() + ".png"));
+            }
+            else
+            {
+                pictureBox3.Image = null;
+                //MessageBox.Show("Respuesta incorrecta");                
+                pictureBox3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\cancel.png"));
+                pictureBox3.Visible = true;
+                tiempo.Enabled = true;
+                tiempo.Start();
+                if (tiempo.Interval > 10000)
+                {
+                    pictureBox3.Visible = false;
+                }
+            }
+        }
+
+        private void Rta2_Click(object sender, EventArgs e)
+        {
+            if (orden == 1)
+            {
+                pictureBox3.Image = null;
+                MessageBox.Show("Muy bien!");
+                pictureBox3.Visible = true;
+                pictureBox3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + resultado.ToString() + ".png"));
+            }
+            else
+            {
+                pictureBox3.Image = null;
+                //MessageBox.Show("Respuesta incorrecta");
+                pictureBox3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\cancel.png"));
+                pictureBox3.Visible = true;
+            }
+        }
+
+        private void Rta3_Click(object sender, EventArgs e)
+        {
+            if (orden == 2)
+            {
+                pictureBox3.Image = null;
+                MessageBox.Show("Muy bien!");
+                pictureBox3.Visible = true;
+                pictureBox3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + resultado.ToString() + ".png"));
+            }
+            else
+            {
+                pictureBox3.Image = null;
+                //MessageBox.Show("Respuesta incorrecta");
+                pictureBox3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\cancel.png"));
+                pictureBox3.Visible = true;
+                tiempo.Start();
+            }
+        }
+        private void JuegoFacil()
+        {
+            numero1 = randommizer.Next(1, 10);
+            numero2 = randommizer.Next(1, 10);
+            resultado = (numero1 - numero2);
+
+            while (resultado < 0) //ELIMINA LA POSIBILIDAD DE RESULTADO NEGATIVO
+            {
+                numero1 = randommizer.Next(1, 10);
+                numero2 = randommizer.Next(1, 10);
                 resultado = (numero1 - numero2);
             }
-            if (numero1 == 1)
-                pictureBox1.Image = Resources._1;
-            if (numero1 == 2)
-                pictureBox1.Image = Resources._2;
-            if (numero1 == 3)
-                pictureBox1.Image = Resources._3;
-            if (numero1 == 4)
-                pictureBox1.Image = Resources._4;
-            if (numero1 == 5)
-                pictureBox1.Image = Resources._5;
-            if (numero1 == 6)
-                pictureBox1.Image = Resources._6;
-            if (numero1 == 7)
-                pictureBox1.Image = Resources._7;
-            if (numero1 == 8)
-                pictureBox1.Image = Resources._8;
-            if (numero1 == 9)
-                pictureBox1.Image = Resources._9;
-            if (numero1 == 0)
-                pictureBox1.Image = Resources._0;
+            //LE DA IMAGENES A LOS 3 PRIMEROS PICTUREBOX
+            pictureBox1.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + numero1.ToString() + ".png"));
+            pictureBox2.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + numero2.ToString() + ".png"));
+            pictureBox3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + resultado.ToString() + ".png"));
 
-            //resultado = (numero1 - numero2);
+            orden = randommizer.Next(2);//NUMERO RANDOM PARA LA POSICION DE LA RESPUESTA CORRECTA
 
+            //NUMERO DE FONDO DE UN PICTURE DE RESPUESTAS
+            fondo = randommizer.Next(1, 10);
 
+            //NUMERO DE FONDO DEL OTRO PICTURE DE RESPUESTA
+            fondo2 = randommizer.Next(1, 10);
 
-            //if (numero1 > 5)
-            //{
-            //    txtNumero2.Text = randommizer.Next(5).ToString();
-            //}
-            //else
-            //    txtNumero2.Text = randommizer.Next(10).ToString();
-
-
-            //numero2 = int.Parse(txtNumero2.Text);
-            if (numero2 == 1)
-                pictureBox2.Image = Resources._1;
-            if (numero2 == 2)
-                pictureBox2.Image = Resources._2;
-            if (numero2 == 3)
-                pictureBox2.Image = Resources._3;
-            if (numero2 == 4)
-                pictureBox2.Image = Resources._4;
-            if (numero2 == 5)
-                pictureBox2.Image = Resources._5;
-            if (numero2 == 6)
-                pictureBox2.Image = Resources._6;
-            if (numero2 == 7)
-                pictureBox2.Image = Resources._7;
-            if (numero2 == 8)
-                pictureBox2.Image = Resources._8;
-            if (numero2 == 9)
-                pictureBox2.Image = Resources._9;
-            if (numero2 == 0)
-                pictureBox2.Image = Resources._0;
-
-            resultado = (numero1 - numero2);
-
-            if (resultado == 1)
-                pictureBox3.Image = Resources._1;
-            if (resultado == 2)
-                pictureBox3.Image = Resources._2;
-            if (resultado == 3)
-                pictureBox3.Image = Resources._3;
-            if (resultado == 4)
-                pictureBox3.Image = Resources._4;
-            if (resultado == 5)
-                pictureBox3.Image = Resources._5;
-            if (resultado == 6)
-                pictureBox3.Image = Resources._6;
-            if (resultado == 7)
-                pictureBox3.Image = Resources._7;
-            if (resultado == 8)
-                pictureBox3.Image = Resources._8;
-            if (resultado == 9)
-                pictureBox3.Image = Resources._9;
-            if (resultado == 0)
-                pictureBox3.Image = Resources._0;
-
-            // txtResultado.Text = resultado.ToString();
-
-            //if (txtResultado.Text == resultado.ToString())
-            //{
-            //    MessageBox.Show("Muy bien!");
-            //}
-        }
-
-        private void Resta_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (txtResultado.Text == resultado.ToString())
+            //VUELVE A HACER RANDOM LOS FONDOS HASTA QUE NO SEAN IGUAL AL RESULTADO
+            while (resultado == fondo || resultado == fondo2 || fondo == fondo2)
             {
-                MessageBox.Show("Muy bien!");
+                fondo = randommizer.Next(1, 10);
+                fondo2 = randommizer.Next(1, 10);
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void JuegoMedio()
         {
+            contM++;
+            numero1 = randommizer.Next(0, 50);
+            numero2 = randommizer.Next(0, 50);
+            resultado = (numero1 - numero2);
 
+            while (resultado < 0) //ELIMINA LA POSIBILIDAD DE RESULTADO NEGATIVO
+            {
+                numero1 = randommizer.Next(0, 50);
+                numero2 = randommizer.Next(0, 50);
+                resultado = (numero1 - numero2);
+            }
+            //LE DA IMAGENES A LOS 3 PRIMEROS PICTUREBOX
+            pictureBox1.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + numero1.ToString() + ".png"));
+            pictureBox2.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + numero2.ToString() + ".png"));
+            pictureBox3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + resultado.ToString() + ".png"));
+
+            orden = randommizer.Next(2);//NUMERO RANDOM PARA LA POSICION DE LA RESPUESTA CORRECTA
+
+            //NUMERO DE FONDO DE UN PICTURE DE RESPUESTAS
+            fondo = randommizer.Next(0, 50);
+
+            //NUMERO DE FONDO DEL OTRO PICTURE DE RESPUESTA
+            fondo2 = randommizer.Next(0, 50);
+
+            //VUELVE A HACER RANDOM LOS FONDOS HASTA QUE NO SEAN IGUAL AL RESULTADO
+            while (resultado == fondo || resultado == fondo2 || fondo == fondo2)
+            {
+                fondo = randommizer.Next(0, 50);
+                fondo2 = randommizer.Next(0, 50);
+            }
+
+        }
+        private void JuegoDificil()
+        {
+            contD++;
+            numero1 = randommizer.Next(0, 100);
+            numero2 = randommizer.Next(0, 100);
+            resultado = (numero1 - numero2);
+
+            while (resultado < 0) //ELIMINA LA POSIBILIDAD DE RESULTADO NEGATIVO
+            {
+                numero1 = randommizer.Next(0, 100);
+                numero2 = randommizer.Next(0, 100);
+                resultado = (numero1 - numero2);
+            }
+            //LE DA IMAGENES A LOS 3 PRIMEROS PICTUREBOX
+            pictureBox1.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + numero1.ToString() + ".png"));
+            pictureBox2.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + numero2.ToString() + ".png"));
+            pictureBox3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\" + resultado.ToString() + ".png"));
+
+            orden = randommizer.Next(2);//NUMERO RANDOM PARA LA POSICION DE LA RESPUESTA CORRECTA
+
+            //NUMERO DE FONDO DE UN PICTURE DE RESPUESTAS
+            fondo = randommizer.Next(0, 100);
+
+            //NUMERO DE FONDO DEL OTRO PICTURE DE RESPUESTA
+            fondo2 = randommizer.Next(0, 100);
+
+            //VUELVE A HACER RANDOM LOS FONDOS HASTA QUE NO SEAN IGUAL AL RESULTADO
+            while (resultado == fondo || resultado == fondo2 || fondo == fondo2)
+            {
+                fondo = randommizer.Next(0, 100);
+                fondo2 = randommizer.Next(0, 100);
+            }
         }
     }
 }
