@@ -32,7 +32,6 @@ namespace Omega
 
         private void Resta_Load(object sender, EventArgs e)
         {
-
             tiempo.Enabled = true;
 
             pictureBox3.Visible = false;
@@ -86,16 +85,7 @@ namespace Omega
             }
         }
 
-        private void Resta_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
@@ -136,13 +126,6 @@ namespace Omega
                 //MessageBox.Show("Respuesta incorrecta");
                 pictureBox3.Image = Image.FromFile(Path.Combine(Application.StartupPath, "img\\cancel.png"));
                 pictureBox3.Visible = true;
-                tiempo.Enabled = true;
-                tiempo.Start();
-                if (tiempo.Interval > 10000)
-                {
-                    pictureBox3.Visible = false;
-                    tiempo.Stop();
-                }
             }
         }
 
@@ -163,11 +146,6 @@ namespace Omega
                 pictureBox3.Visible = true;
                 tiempo.Start();
             }
-        }
-        int n = 5;
-        private void tiempo_Tick(object sender, EventArgs e)
-        {
-            n--;
         }
         private void JuegoFacil()
         {
