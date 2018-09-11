@@ -17,9 +17,10 @@ namespace Omega
         static void Main()
         {
             string startupPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName,"Omega","Fuentes");
-            int result = -1;
-            result = Fonts.AddFontResource(startupPath + "\\Doodle Gum.ttf");
-            result = Fonts.AddFontResource(startupPath + "\\K26ToyBlocks123.ttf");
+
+            Fonts.AddFontResource(startupPath + "\\Doodle Gum.ttf");
+            Fonts.AddFontResource(startupPath + "\\K26ToyBlocks123.ttf");
+            Fonts.AddFontResource(startupPath + "\\Patchwork Stitchlings.ttf");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Resta());
