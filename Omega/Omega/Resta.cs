@@ -41,8 +41,17 @@ namespace Omega
 
         private void Resta_Load(object sender, EventArgs e)
         {
-            
-            Limpiar();
+            label1.Font = new Font("K26ToyBlocks123", label1.Font.Size);
+            label2.Font = new Font("K26ToyBlocks123", label2.Font.Size);
+            label3.Font = new Font("K26ToyBlocks123", label3.Font.Size);
+            label4.Font = new Font("K26ToyBlocks123", label4.Font.Size);
+            label5.Font = new Font("K26ToyBlocks123", label5.Font.Size);
+            label6.Font = new Font("K26ToyBlocks123", label6.Font.Size);
+            label7.Font = new Font("K26ToyBlocks123", label7.Font.Size);
+            label8.Font = new Font("K26ToyBlocks123", label8.Font.Size);
+
+            tiempo.Enabled = true;
+
             label5.Visible = false;
 
             //JuegoFacil();
