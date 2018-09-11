@@ -203,6 +203,16 @@ namespace Omega.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dificil {
+            get {
+                object obj = ResourceManager.GetObject("Dificil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Engranaje {
             get {
                 object obj = ResourceManager.GetObject("Engranaje", resourceCulture);
@@ -223,6 +233,16 @@ namespace Omega.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Facil {
+            get {
+                object obj = ResourceManager.GetObject("Facil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FondoEscuela {
             get {
                 object obj = ResourceManager.GetObject("FondoEscuela", resourceCulture);
@@ -236,6 +256,16 @@ namespace Omega.Properties {
         internal static System.Drawing.Bitmap Gato {
             get {
                 object obj = ResourceManager.GetObject("Gato", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Intermedia {
+            get {
+                object obj = ResourceManager.GetObject("Intermedia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

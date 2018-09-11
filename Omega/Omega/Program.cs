@@ -23,7 +23,7 @@ namespace Omega
             Fonts.AddFontResource(startupPath + "\\Patchwork Stitchlings.ttf");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Resta());
+            Application.Run(new Dificultades());
         }
     }
 }

@@ -43,7 +43,6 @@
             // btnEntretenimiento
             // 
             btnEntretenimiento.BackColor = System.Drawing.Color.Transparent;
-            btnEntretenimiento.BackgroundImage = global::Omega.Properties.Resources.Aceptar;
             btnEntretenimiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnEntretenimiento.Cursor = System.Windows.Forms.Cursors.Hand;
             btnEntretenimiento.Location = new System.Drawing.Point(495, 70);

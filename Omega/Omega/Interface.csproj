@@ -78,6 +78,12 @@
     <Compile Include="Cantidades.Designer.cs">
       <DependentUpon>Cantidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dificultades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dificultades.Designer.cs">
+      <DependentUpon>Dificultades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entretenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cantidades.resx">
       <DependentUpon>Cantidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dificultades.resx">
+      <DependentUpon>Dificultades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entretenimiento.resx">
       <DependentUpon>Entretenimiento.cs</DependentUpon>
@@ -259,6 +268,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Profesores11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dificil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Intermedia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
