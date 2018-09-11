@@ -32,6 +32,7 @@ namespace Omega
 
         private void Resta_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("K26ToyBlocks123", label1.Font.Size);
             tiempo.Enabled = true;
 
             pictureBox3.Visible = false;
