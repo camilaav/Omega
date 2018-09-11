@@ -41,21 +41,22 @@ namespace Omega
 
         private void Resta_Load(object sender, EventArgs e)
         {
-            label1.Font = new Font("K26ToyBlocks123", label1.Font.Size);
-            label2.Font = new Font("K26ToyBlocks123", label2.Font.Size);
-            label3.Font = new Font("K26ToyBlocks123", label3.Font.Size);
-            label4.Font = new Font("K26ToyBlocks123", label4.Font.Size);
-            label5.Font = new Font("K26ToyBlocks123", label5.Font.Size);
-            label6.Font = new Font("K26ToyBlocks123", label6.Font.Size);
-            label7.Font = new Font("K26ToyBlocks123", label7.Font.Size);
-            label8.Font = new Font("K26ToyBlocks123", label8.Font.Size);
+            //label1.Font = new Font("K26ToyBlocks123", label1.Font.Size);
+            //label2.Font = new Font("K26ToyBlocks123", label2.Font.Size);
+            //label3.Font = new Font("K26ToyBlocks123", label3.Font.Size);
+            //label4.Font = new Font("K26ToyBlocks123", label4.Font.Size);
+            //label5.Font = new Font("K26ToyBlocks123", label5.Font.Size);
+            //label6.Font = new Font("K26ToyBlocks123", label6.Font.Size);
+            //label7.Font = new Font("K26ToyBlocks123", label7.Font.Size);
+            //label8.Font = new Font("K26ToyBlocks123", label8.Font.Size);
 
             tiempo.Enabled = true;
 
             label5.Visible = false;
 
-            //JuegoFacil();
-            JuegoDificil();
+            JuegoFacil();
+            //JuegoMedio();
+            //JuegoDificil();
             //if (Dificultado == 1)
             //{
             //    if (contF < 5)
@@ -78,8 +79,7 @@ namespace Omega
             //        JuegoDificil();
             //    }
             //}
-            label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            
 
             if (orden == 0)
             {
@@ -262,6 +262,21 @@ namespace Omega
         }
         private void label8_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click_1(object sender, EventArgs e)
+        {
             if (orden == 2)
             {
                 MessageBox.Show("Muy bien!");
@@ -273,16 +288,6 @@ namespace Omega
                 label5.Text = "X";
                 label5.Visible = true;
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
