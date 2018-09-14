@@ -16,5 +16,22 @@ namespace Omega
         {
             InitializeComponent();
         }
+
+        public void dificultad()
+        {
+            var dificultades = new Dificultades();
+            dificultades.Show();
+            this.Hide();
+        }
+
+        private void btnRompecabezas_Click(object sender, EventArgs e)
+        {
+            dificultad();
+        }
+
+        private void btnMemotest_Click(object sender, EventArgs e)
+        {
+            dificultad();
+        }
     }
 }
