@@ -27,9 +27,12 @@ namespace Omega
             label1.Text = listaDificultades[0].NombreDificultad;
             label2.Text = listaDificultades[1].NombreDificultad;
             label3.Text = listaDificultades[2].NombreDificultad;
-            pictureBox1.Image = Image.FromFile(startupPath + @"\" + listaDificultades[0].NombreDificultad+".png");
-            pictureBox2.Image = Image.FromFile(startupPath + @"\" + listaDificultades[1].NombreDificultad + ".png");
-            pictureBox3.Image = Image.FromFile(startupPath + @"\" + listaDificultades[2].NombreDificultad + ".png");
+            pictureBox1.BackgroundImage = Image.FromFile(startupPath + @"\" + listaDificultades[0].NombreDificultad+".png");
+            pictureBox2.BackgroundImage = Image.FromFile(startupPath + @"\" + listaDificultades[1].NombreDificultad + ".png");
+            pictureBox3.BackgroundImage = Image.FromFile(startupPath + @"\" + listaDificultades[2].NombreDificultad + ".png");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 }
