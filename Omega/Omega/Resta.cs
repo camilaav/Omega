@@ -41,18 +41,20 @@ namespace Omega
 
         private void Resta_Load(object sender, EventArgs e)
         {
-            //label1.Font = new Font("K26ToyBlocks123", label1.Font.Size);
-            //label2.Font = new Font("K26ToyBlocks123", label2.Font.Size);
-            //label3.Font = new Font("K26ToyBlocks123", label3.Font.Size);
-            //label4.Font = new Font("K26ToyBlocks123", label4.Font.Size);
-            //label5.Font = new Font("K26ToyBlocks123", label5.Font.Size);
-            //label6.Font = new Font("K26ToyBlocks123", label6.Font.Size);
-            //label7.Font = new Font("K26ToyBlocks123", label7.Font.Size);
-            //label8.Font = new Font("K26ToyBlocks123", label8.Font.Size);
+            label1.Font = new Font("Patchwork Stitchlings", label1.Font.Size);
+            label2.Font = new Font("Patchwork Stitchlings", label2.Font.Size);
+            label3.Font = new Font("Patchwork Stitchlings", label3.Font.Size);
+            label4.Font = new Font("Patchwork Stitchlings", label4.Font.Size);
+            label5.Font = new Font("Patchwork Stitchlings", label5.Font.Size);
+            label6.Font = new Font("Patchwork Stitchlings", label6.Font.Size);
+            label7.Font = new Font("Patchwork Stitchlings", label7.Font.Size);
+            label8.Font = new Font("Patchwork Stitchlings", label8.Font.Size);
 
             tiempo.Enabled = true;
-
-            label5.Visible = false;
+            pictureCorrecto1.Visible = false;
+            pictureCorrecto2.Visible = false;
+            pictureCorrecto3.Visible = false;
+            label5.Visible = true;
 
             JuegoFacil();
             //JuegoMedio();
@@ -111,6 +113,7 @@ namespace Omega
                 MessageBox.Show("Muy bien!");
                 label5.Visible = true;
                 label5.Text = resultado.ToString();
+
             }
             else
             {
@@ -139,7 +142,7 @@ namespace Omega
             //LE DA IMAGENES A LOS 3 PRIMEROS PICTUREBOX
             label1.Text = numero1.ToString();
             label3.Text = numero2.ToString();
-            label5.Text = resultado.ToString();
+           // label5.Text = resultado.ToString();
 
             orden = randommizer.Next(2);//NUMERO RANDOM PARA LA POSICION DE LA RESPUESTA CORRECTA
 
@@ -234,6 +237,7 @@ namespace Omega
                 MessageBox.Show("Muy bien!");
                 label5.Visible = true;
                 label5.Text = resultado.ToString();
+                pictureCorrecto1.Visible = true;
             }
             else
             {
@@ -251,6 +255,7 @@ namespace Omega
                 MessageBox.Show("Muy bien!");
                 label5.Visible = true;
                 label5.Text = resultado.ToString();
+                pictureCorrecto2.Visible = true;
             }
             else
             {
@@ -282,6 +287,7 @@ namespace Omega
                 MessageBox.Show("Muy bien!");
                 label5.Visible = true;
                 label5.Text = resultado.ToString();
+                pictureCorrecto3.Visible = true;
             }
             else
             {
