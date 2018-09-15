@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Omega.Properties;
 using System.IO;
+using System.Linq;
+using Regla_de_Negocios;
 
 namespace Omega
 {
@@ -18,6 +20,7 @@ namespace Omega
         {
             InitializeComponent();
         }
+        JuegoRN juegoRN = new JuegoRN();
 
         int numero1;
         int numero2;
@@ -41,6 +44,19 @@ namespace Omega
 
         private void Resta_Load(object sender, EventArgs e)
         {
+            if(this.AccessibleName == "Facil")
+            {
+                JuegoFacil();
+            }
+            else if(this.AccessibleName == "Intermedia")
+            {
+                JuegoMedio();
+            }
+            else if(this.AccessibleName == "Dificil")
+            {
+                JuegoDificil();
+            }
+
             //label1.Font = new Font("K26ToyBlocks123", label1.Font.Size);
             //label2.Font = new Font("K26ToyBlocks123", label2.Font.Size);
             //label3.Font = new Font("K26ToyBlocks123", label3.Font.Size);
@@ -53,33 +69,6 @@ namespace Omega
             tiempo.Enabled = true;
 
             label5.Visible = false;
-
-            JuegoFacil();
-            //JuegoMedio();
-            //JuegoDificil();
-            //if (Dificultado == 1)
-            //{
-            //    if (contF < 5)
-            //    {
-            //        JuegoFacil();
-            //    }
-            //}
-
-            //if (Dificultad == 2)
-            //{
-            //    if (contM < 5)
-            //    {
-            //        JuegoMedio();
-            //    }
-            //}
-            //if (Dificultad == 3)
-            //{
-            //    if (contF < 5)
-            //    {
-            //        JuegoDificil();
-            //    }
-            //}
-            
 
             if (orden == 0)
             {
