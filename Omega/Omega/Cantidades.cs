@@ -13,16 +13,11 @@ namespace Omega
 {
     public partial class Cantidades : Form
     {
-        Image Foto1;
-        Image Foto2;
-        Image Foto3;
-        Image Foto4;
-        Image Foto5;
-        int Respuesta;
-        string TipoFoto;
+
 
         public Cantidades()
         {
+
             InitializeComponent();
         }
 
@@ -33,8 +28,13 @@ namespace Omega
 
         private void Cantidades_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = Resources.Foto1;
-            Foto1 = pictureBox1.Image;
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

@@ -133,9 +133,9 @@ namespace Omega.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Foto1 {
+        internal static System.Drawing.Bitmap F1 {
             get {
-                object obj = ResourceManager.GetObject("Foto1", resourceCulture);
+                object obj = ResourceManager.GetObject("F1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace Omega.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Foto2 {
+        internal static System.Drawing.Bitmap F2 {
             get {
-                object obj = ResourceManager.GetObject("Foto2", resourceCulture);
+                object obj = ResourceManager.GetObject("F2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace Omega.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Foto3 {
+        internal static System.Drawing.Bitmap F3 {
             get {
-                object obj = ResourceManager.GetObject("Foto3", resourceCulture);
+                object obj = ResourceManager.GetObject("F3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace Omega.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Foto4 {
+        internal static System.Drawing.Bitmap F4 {
             get {
-                object obj = ResourceManager.GetObject("Foto4", resourceCulture);
+                object obj = ResourceManager.GetObject("F4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace Omega.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Foto5 {
+        internal static System.Drawing.Bitmap F5 {
             get {
-                object obj = ResourceManager.GetObject("Foto5", resourceCulture);
+                object obj = ResourceManager.GetObject("F5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

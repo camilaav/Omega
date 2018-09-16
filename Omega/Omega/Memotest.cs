@@ -13,7 +13,7 @@ namespace Omega
 {
     public partial class Memotest : Form
     {
-        int TamañoColumnasFilas = 4;
+        int TamañoColumnasFilas = 2;
         int Movimientos = 0;
         int CantidadFotosVolteadas = 0;
         List<string> FotosEnumeradas;
