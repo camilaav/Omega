@@ -45,41 +45,44 @@ namespace Omega
                 pb2.Image = Resources._3;
                 pb3.Image = Resources._2;
 
-            }
-            if (numNo == 4)
-            {
-                pbAnimales.Image = Resources.P4;
-                pb1.Image = Resources._4;
-                pb2.Image = Resources._7;
-                pb3.Image = Resources._1;
-            }
-            if (numNo == 5)
-            {
-                pbAnimales.Image = Resources.P5;
-                pb1.Image = Resources._7;
-                pb2.Image = Resources._3;
-                pb3.Image = Resources._4;
-            }
-        }
-        public Cantidades()
-        {
+                    if (Respuesta == 6)
+                    {
+                        MessageBox.Show("Respuesta correcta, 6 perros", "Mensaje");
+                        TipoFoto = "Gatos";
+                        pictureBox1.Image = Resources.Gato;
+                        txtRespuesta.Clear();
+                    }
+                }
+                if (TipoFoto == "Gatos")
+                {
 
-            InitializeComponent();
-        }
+                    if (Respuesta == 4)
+                    {
+                        MessageBox.Show("Respuesta correcta, 4 gatos", "Mensaje");
+                        TipoFoto = "Conejos";
+                        pictureBox1.Image = Resources.Conejos;
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            
-        }
+                    }
 
-        private void Cantidades_Load(object sender, EventArgs e)
-        {
-            GenerarJuego();
+                }
+                if (TipoFoto == "Conejos")
+                {
+                    if (Respuesta == 2)
+                    {
+                        MessageBox.Show("Respuesta correcta, 2 conejos", "Mensaje");
+                        TipoFoto = "Peces";
+                        pictureBox1.Image = Resources.Peces;
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
+                }
+                if (TipoFoto == "Peces")
+                {
+                    if (Respuesta == 5)
+                    {
+                        MessageBox.Show("Respuesta correcta, 5 peces", "Mensaje");
+                        TipoFoto = "Loros";
+                        pictureBox1.Image = Resources.Loros;
 
         }
 
@@ -114,7 +117,9 @@ namespace Omega
 
         private void pb3_Click(object sender, EventArgs e)
         {
-
+            pictureBox1.Image = Resources.Perros;
+            Foto = pictureBox1.Image;
+            TipoFoto = "Perros";
         }
     }
 }

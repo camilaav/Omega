@@ -54,6 +54,7 @@
     </Reference>
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,17 +78,42 @@
     <Compile Include="Cantidades.Designer.cs">
       <DependentUpon>Cantidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dificultades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dificultades.Designer.cs">
+      <DependentUpon>Dificultades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entretenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entretenimiento.Designer.cs">
+      <DependentUpon>Entretenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fonts.cs" />
+    <Compile Include="Letras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Letras.Designer.cs">
+      <DependentUpon>Letras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Memotest.cs">
+    <Compile Include="Numeros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Memotest.Designer.cs">
-      <DependentUpon>Memotest.cs</DependentUpon>
+    <Compile Include="Numeros.Designer.cs">
+      <DependentUpon>Numeros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla principal profesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla principal profesores.Designer.cs">
+      <DependentUpon>Pantalla principal profesores.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantalla principal.cs">
       <SubType>Form</SubType>
@@ -108,17 +134,35 @@
     <Compile Include="Resta.Designer.cs">
       <DependentUpon>Resta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sopa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sopa.Designer.cs">
+      <DependentUpon>Sopa.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cantidades.resx">
       <DependentUpon>Cantidades.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dificultades.resx">
+      <DependentUpon>Dificultades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entretenimiento.resx">
+      <DependentUpon>Entretenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Letras.resx">
+      <DependentUpon>Letras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Memotest.resx">
-      <DependentUpon>Memotest.cs</DependentUpon>
+    <EmbeddedResource Include="Numeros.resx">
+      <DependentUpon>Numeros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla principal profesores.resx">
+      <DependentUpon>Pantalla principal profesores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla principal.resx">
       <DependentUpon>Pantalla principal.cs</DependentUpon>
@@ -130,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resta.resx">
       <DependentUpon>Resta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sopa.resx">
+      <DependentUpon>Sopa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -156,56 +203,89 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6d862f898.6493545315192450164054.png" />
+    <None Include="Resources\Lamparita.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1086.jpg" />
+    <None Include="Resources\NiñosNube.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\141198-OSX8PG-177.jpg" />
+    <None Include="Resources\FondoEscuela.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\+.png" />
-    <Content Include="Resources\-.png" />
-    <Content Include="Resources\0.png" />
-    <Content Include="Resources\1.png" />
-    <None Include="Resources\logomemotestarriba.png" />
-    <None Include="Resources\Volteo.jpg" />
-    <None Include="Resources\Sandìa.jpg" />
-    <None Include="Resources\Pera.jpg" />
-    <None Include="Resources\Palta.jpg" />
-    <None Include="Resources\Naranja.jpg" />
-    <None Include="Resources\MarayucáMorado.jpg" />
-    <None Include="Resources\Manzana.jpg" />
-    <None Include="Resources\Mangosteen.jpg" />
-    <None Include="Resources\Mango.jpg" />
-    <None Include="Resources\Limón.jpg" />
-    <None Include="Resources\Kiwii.jpg" />
-    <None Include="Resources\Higo.jpg" />
-    <None Include="Resources\Granada.jpg" />
-    <None Include="Resources\Frutilla.jpg" />
-    <None Include="Resources\Durazno.jpg" />
-    <None Include="Resources\Coco.jpg" />
-    <None Include="Resources\Carambolas.jpg" />
-    <None Include="Resources\depositphotos_41050245-stock-illustration-5-coral-fish.jpg" />
-    <None Include="Resources\2 conejos.jpg" />
-    <Content Include="Resources\2.png" />
-    <Content Include="Resources\3.png" />
-    <None Include="Resources\4 gatos.jpg" />
-    <Content Include="Resources\4.png" />
-    <Content Include="Resources\5.png" />
-    <None Include="Resources\6-razas-perro-origen-gales-1280x720x80xX.jpg" />
-    <None Include="Resources\57859-en-el-caribe-tres-loros-sobre-una-valla.jpg" />
-    <Content Include="Resources\6.png" />
-    <Content Include="Resources\7.png" />
-    <Content Include="Resources\8.png" />
-    <Content Include="Resources\9.png" />
-    <None Include="Resources\af97c0a93bf8d556333e5e942cf8dec0.png" />
-    <None Include="Resources\cancel.png" />
-    <None Include="Resources\check.png" />
-    <None Include="Resources\engranaje1.png" />
-    <None Include="Resources\engranaje.png" />
-    <None Include="Resources\verified.png" />
+    <None Include="Resources\Peces.jpg" />
+    <None Include="Resources\Conejos.jpg" />
+    <None Include="Resources\Gatos.jpg" />
+    <None Include="Resources\Perros.jpg" />
+    <None Include="Resources\Loros.jpg" />
+    <None Include="Resources\Numeros.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Check.png" />
+    <None Include="Resources\Engranaje1.png" />
+    <None Include="Resources\Engranaje.png" />
+    <None Include="Resources\Verified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LetrasNiños.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Volver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profesores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profesores1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profesores11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dificil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Intermedia.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\P1.png" />

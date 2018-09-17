@@ -205,8 +205,14 @@
   <data name="img7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kiwii.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6d862f898.6493545315192450164054" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kisspng-new-jersey-vietnam-student-teachers-day-vector-color-bulb-creative-5a8dd6d862f898.6493545315192450164054.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="141198-OSX8PG-177" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\141198-OSX8PG-177.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cantidades));
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -126,9 +127,11 @@
             this.Controls.Add(this.pb2);
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pbAnimales);
+            this.Controls.Add(this.txtRespuesta);
+            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cantidades";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cantidades";
             this.Load += new System.EventHandler(this.Cantidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();

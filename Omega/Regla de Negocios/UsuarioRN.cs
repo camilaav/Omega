@@ -52,5 +52,7 @@ namespace Regla_de_Negocios
             string stored = "sp_InsertarBloqueo";
             return comandos.EjecutarStore(stored, listaParametros);
         }
+
+
     }
 }

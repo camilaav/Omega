@@ -11,31 +11,33 @@ namespace Acceso_a_base_de_datos
         Conexion cnn = new Conexion();
         public Boolean EjecutarStore(string stored, List<SqlParameter> parametros)
         {
-            bool retornar = true;
-            var conexion = cnn.ObtenerDireccion();
-            conexion.Open();
-            var comando = new SqlCommand();
-            comando.Connection = conexion;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = stored;
-            try
+            using (SqlConnection conexion = cnn.ObtenerDireccion())
             {
-                foreach (var p in parametros)
+                bool retornar = true;
+                conexion.Open();
+                var comando = new SqlCommand();
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = stored;
+                try
                 {
-                    comando.Parameters.Add(p);
+                    foreach (var p in parametros)
+                    {
+                        comando.Parameters.Add(p);
+                    }
+                    comando.ExecuteNonQuery();
+                    retornar = true;
                 }
-                comando.ExecuteNonQuery();
-                retornar = true;
+                catch (Exception)
+                {
+                    retornar = false;
+                }
+                finally
+                {
+                    conexion.Close();
+                }
+                return retornar;
             }
-            catch (Exception)
-            {
-                retornar = false;
-            }
-            finally
-            {
-                conexion.Close();
-            }
-            return retornar;
         }
 
         public SqlDataReader EjecutarReader(string stored, List<SqlParameter> parametros)
@@ -67,6 +69,19 @@ namespace Acceso_a_base_de_datos
             adapter.Fill(dataset, nombreTabla);
 
             return dataset.Tables[nombreTabla];
+        }
+
+        public SqlDataReader EjecutarReaderSinParametros(string stored)
+        {
+            SqlConnection conexion = cnn.ObtenerDireccion();
+            conexion.Open();
+            var comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = stored;
+
+            SqlDataReader Reader = comando.ExecuteReader();
+            return Reader;
         }
     }
 }
