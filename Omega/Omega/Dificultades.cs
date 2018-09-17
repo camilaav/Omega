@@ -25,7 +25,7 @@ namespace Omega
         void AbrirFormulario(string dificultad)
         {
             var formulario = dictionary[nombreJuego];
-            formulario.AccessibleName = dificultad;
+            formulario.Tag = dificultad;
             formulario.Show();
             this.Hide();
         }

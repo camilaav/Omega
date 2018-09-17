@@ -44,15 +44,15 @@ namespace Omega
 
         private void Resta_Load(object sender, EventArgs e)
         {
-            if(this.AccessibleName == "Facil")
+            if(this.Tag == "Facil")
             {
                 JuegoFacil();
             }
-            else if(this.AccessibleName == "Intermedia")
+            else if(this.Tag == "Intermedia")
             {
                 JuegoMedio();
             }
-            else if(this.AccessibleName == "Dificil")
+            else if(this.Tag == "Dificil")
             {
                 JuegoDificil();
             }
