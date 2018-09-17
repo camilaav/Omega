@@ -13,22 +13,37 @@ namespace Omega
 {
     public partial class Cantidades : Form
     {
-        Image Foto;
-        int Respuesta;
-        string TipoFoto;
 
-        public Cantidades()
+        private void GenerarJuego()
         {
-            InitializeComponent();
-        }
+            Random MyNo = new Random();
+            int maxNo = 5;
+            int numNo = MyNo.Next(1, maxNo);
+            label1.Text = numNo.ToString();
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < 1; i++)
+            if (numNo == 1)
             {
-                Respuesta = int.Parse(txtRespuesta.Text);
-                if (TipoFoto == "Perros")
-                {
+                pbAnimales.Image = Resources.P1;
+                pbAnimales.Tag = "A";
+                pb1.Image = Resources._1;
+                pb2.Image = Resources._4;
+                pb3.Image = Resources._5;
+
+            }
+            if (numNo == 2)
+            {
+                pbAnimales.Image = Resources.P2;
+                pbAnimales.Tag = "B";
+                pb1.Image = Resources._3;
+                pb2.Image = Resources._5;
+                pb3.Image = Resources._8;
+            }
+            if (numNo == 3)
+            {
+                pbAnimales.Image = Resources.P3;
+                pb1.Image = Resources._9;
+                pb2.Image = Resources._3;
+                pb3.Image = Resources._2;
 
                     if (Respuesta == 6)
                     {
@@ -58,7 +73,7 @@ namespace Omega
                         TipoFoto = "Peces";
                         pictureBox1.Image = Resources.Peces;
 
-                    }
+        }
 
                 }
                 if (TipoFoto == "Peces")
@@ -69,26 +84,38 @@ namespace Omega
                         TipoFoto = "Loros";
                         pictureBox1.Image = Resources.Loros;
 
-                    }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
-                }
-                if (TipoFoto == "Loros")
-                {
-                    if (Respuesta == 3)
-                    {
-                        MessageBox.Show("Respuesta correcta, 3 loros", "Mensaje");
-                        MessageBox.Show("¡Felicidades, ganaste!", "Mensaje");
-                        Application.Exit();
+        }
 
-
-                    }
-                }
-
+        private void pb1_Click(object sender, EventArgs e)
+        {
+            if(pbAnimales.Tag.ToString() == "A")
+            {
+                MessageBox.Show("Bien!");
+            }
+            else
+            {
+                MessageBox.Show("¡Mal!");
             }
         }
 
-        private void Cantidades_Load(object sender, EventArgs e)
+        private void pb2_Click(object sender, EventArgs e)
+        {
+            if(pbAnimales.Tag.ToString() == "B")
+            {
+                MessageBox.Show("Bien!");
+            }
+            else
+            {
+                MessageBox.Show("¡Mal!");
+            }
+        }
+
+        private void pb3_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = Resources.Perros;
             Foto = pictureBox1.Image;
