@@ -35,7 +35,7 @@ namespace Omega
 
             //        dictionary.Add("suma", new Suma);
             dictionary.Add("resta", new Resta());
-            dictionary.Add("cantidad", new Cantidades());
+            //dictionary.Add("cantidad", new Cantidades());
             //TODO faltan los otros formularios agregar al diccionario..
 
             string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
