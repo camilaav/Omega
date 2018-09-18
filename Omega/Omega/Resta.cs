@@ -21,56 +21,46 @@ namespace Omega
             InitializeComponent();
         }
         JuegoRN juegoRN = new JuegoRN();
-
-        int numero1;
-        int numero2;
         int resultado;
         int orden; //NUMERO DE ORDEN DE RESPUESTA CORRECTA
-        int fondo;
-        int fondo2;
+        int fondo; //NUMERO DE 1 OPCION NO CORRECTA
+        int fondo2; //NUMERO DE LA OTRA OPCION NO CORRECTA
         Random randommizer = new Random();
-        int contF;
-        int contM;
-        int contD;
-        private void Limpiar()
-        {
-            label1.Text = null;
-            label3.Text = null;
-            label5.Text = null;
-            label6.Text = null;
-            label7.Text = null;
-            label8.Text = null;
-        }
 
-        private void Resta_Load(object sender, EventArgs e)
+        public void Recarga()
         {
-            if(this.Tag == "Facil")
+            label5.Text = "?";
+
+            if (this.Tag.ToString() == "Facil")
             {
-                JuegoFacil();
+                 Juego(191, 1, 10);
+
             }
-            else if(this.Tag == "Intermedia")
+            else if (this.Tag.ToString() == "Intermedia")
             {
-                JuegoMedio();
+                Juego(191, 0, 50);
             }
-            else if(this.Tag == "Dificil")
+            else if (this.Tag.ToString() == "Dificil")
             {
-                JuegoDificil();
+                Juego(258, 0, 100);
             }
 
-            //label1.Font = new Font("K26ToyBlocks123", label1.Font.Size);
-            //label2.Font = new Font("K26ToyBlocks123", label2.Font.Size);
-            //label3.Font = new Font("K26ToyBlocks123", label3.Font.Size);
-            //label4.Font = new Font("K26ToyBlocks123", label4.Font.Size);
-            //label5.Font = new Font("K26ToyBlocks123", label5.Font.Size);
-            //label6.Font = new Font("K26ToyBlocks123", label6.Font.Size);
-            //label7.Font = new Font("K26ToyBlocks123", label7.Font.Size);
-            //label8.Font = new Font("K26ToyBlocks123", label8.Font.Size);
+            label1.Font = new Font("Patchwork Stitchlings", label1.Font.Size);
+            label2.Font = new Font("Patchwork Stitchlings", label2.Font.Size);
+            label3.Font = new Font("Patchwork Stitchlings", label3.Font.Size);
+            label4.Font = new Font("Patchwork Stitchlings", label4.Font.Size);
+            label5.Font = new Font("Patchwork Stitchlings", label5.Font.Size);
+            label6.Font = new Font("Patchwork Stitchlings", label6.Font.Size);
+            label7.Font = new Font("Patchwork Stitchlings", label7.Font.Size);
+            label8.Font = new Font("Patchwork Stitchlings", label8.Font.Size);
 
             tiempo.Enabled = true;
+            pictureCorrecto1.Visible = false;
+            pictureCorrecto2.Visible = false;
+            pictureCorrecto3.Visible = false;
+            label5.Visible = true;
 
-            label5.Visible = false;
-
-            if (orden == 0)
+            if (orden == 0)                                 //PONE LA RESPUESTA CORRECTA EN UNA DE LAS 3 OPCINES EN FORMA ALEATOREA
             {
                 label6.Text = resultado.ToString();
                 label7.Text = fondo.ToString();
@@ -90,128 +80,47 @@ namespace Omega
             }
         }
 
-
-
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void Resta_Load(object sender, EventArgs e)
         {
-            if (orden == 0)
-            {
-
-                MessageBox.Show("Muy bien!");
-                label5.Visible = true;
-                label5.Text = resultado.ToString();
-            }
-            else
-            {
-                //MessageBox.Show("Respuesta incorrecta");                
-
-                label5.Text = "X";
-                label5.Visible = true;
-            }
+            Recarga();
         }
-        
-        private void JuegoFacil()
+
+        private void Juego(int width, int limiteMenor, int limiteMayor)
         {
-            label1.Width = 191;
-            label3.Width = 191;
-            contF++;
-            numero1 = randommizer.Next(1, 10);
-            numero2 = randommizer.Next(1, 10);
+            int numero1; //PRIMER NUMERO DE LA RESTA
+            int numero2; //SEGUNDO NUMERO DE LA RESTA
+
+            label1.Width = width;
+            label3.Width = width;
+
+            numero1 = randommizer.Next(limiteMenor, limiteMayor);
+            numero2 = randommizer.Next(limiteMenor, limiteMayor);
             resultado = (numero1 - numero2);
 
             while (resultado < 0) //ELIMINA LA POSIBILIDAD DE RESULTADO NEGATIVO
             {
-                numero1 = randommizer.Next(1, 10);
-                numero2 = randommizer.Next(1, 10);
+                numero1 = randommizer.Next(limiteMenor, limiteMayor);
+                numero2 = randommizer.Next(limiteMenor, limiteMayor);
                 resultado = (numero1 - numero2);
             }
             //LE DA IMAGENES A LOS 3 PRIMEROS PICTUREBOX
             label1.Text = numero1.ToString();
             label3.Text = numero2.ToString();
-            label5.Text = resultado.ToString();
+            // label5.Text = resultado.ToString();
 
             orden = randommizer.Next(2);//NUMERO RANDOM PARA LA POSICION DE LA RESPUESTA CORRECTA
 
             //NUMERO DE FONDO DE UN PICTURE DE RESPUESTAS
-            fondo = randommizer.Next(1, 10);
+            fondo = randommizer.Next(limiteMenor, limiteMayor);
 
             //NUMERO DE FONDO DEL OTRO PICTURE DE RESPUESTA
-            fondo2 = randommizer.Next(1, 10);
+            fondo2 = randommizer.Next(limiteMenor, limiteMayor);
 
             //VUELVE A HACER RANDOM LOS FONDOS HASTA QUE NO SEAN IGUAL AL RESULTADO
             while (resultado == fondo || resultado == fondo2 || fondo == fondo2)
             {
-                fondo = randommizer.Next(1, 10);
-                fondo2 = randommizer.Next(1, 10);
-            }
-        }
-        private void JuegoMedio()
-        {
-            label1.Width = 191;
-            label3.Width = 191;
-            contM++;
-            numero1 = randommizer.Next(0, 50);
-            numero2 = randommizer.Next(0, 50);
-            resultado = (numero1 - numero2);
-
-            while (resultado < 0) //ELIMINA LA POSIBILIDAD DE RESULTADO NEGATIVO
-            {
-                numero1 = randommizer.Next(0, 50);
-                numero2 = randommizer.Next(0, 50);
-                resultado = (numero1 - numero2);
-            }
-            //LE DA IMAGENES A LOS 3 PRIMEROS PICTUREBOX
-            label1.Text = numero1.ToString();
-            label3.Text = numero2.ToString();
-            label5.Text = resultado.ToString();
-            orden = randommizer.Next(2);//NUMERO RANDOM PARA LA POSICION DE LA RESPUESTA CORRECTA
-
-            //NUMERO DE FONDO DE UN PICTURE DE RESPUESTAS
-            fondo = randommizer.Next(0, 50);
-
-            //NUMERO DE FONDO DEL OTRO PICTURE DE RESPUESTA
-            fondo2 = randommizer.Next(0, 50);
-
-            //VUELVE A HACER RANDOM LOS FONDOS HASTA QUE NO SEAN IGUAL AL RESULTADO
-            while (resultado == fondo || resultado == fondo2 || fondo == fondo2)
-            {
-                fondo = randommizer.Next(0, 50);
-                fondo2 = randommizer.Next(0, 50);
-            }
-
-        }
-        private void JuegoDificil()
-        {
-            label1.Width = 258;
-            label3.Width = 258;
-            contD++;
-            numero1 = randommizer.Next(0, 100);
-            numero2 = randommizer.Next(0, 100);
-            resultado = (numero1 - numero2);
-
-            while (resultado < 0) //ELIMINA LA POSIBILIDAD DE RESULTADO NEGATIVO
-            {
-                numero1 = randommizer.Next(0, 100);
-                numero2 = randommizer.Next(0, 100);
-                resultado = (numero1 - numero2);
-            }
-            //LE DA IMAGENES A LOS 3 PRIMEROS PICTUREBOX
-            label1.Text = numero1.ToString();
-            label3.Text = numero2.ToString();
-            label5.Text = resultado.ToString();
-            orden = randommizer.Next(2);//NUMERO RANDOM PARA LA POSICION DE LA RESPUESTA CORRECTA
-
-            //NUMERO DE FONDO DE UN PICTURE DE RESPUESTAS
-            fondo = randommizer.Next(0, 100);
-
-            //NUMERO DE FONDO DEL OTRO PICTURE DE RESPUESTA
-            fondo2 = randommizer.Next(0, 100);
-
-            //VUELVE A HACER RANDOM LOS FONDOS HASTA QUE NO SEAN IGUAL AL RESULTADO
-            while (resultado == fondo || resultado == fondo2 || fondo == fondo2)
-            {
-                fondo = randommizer.Next(0, 100);
-                fondo2 = randommizer.Next(0, 100);
+                fondo = randommizer.Next(limiteMenor, limiteMayor);
+                fondo2 = randommizer.Next(limiteMenor, limiteMayor);
             }
         }
 
@@ -219,10 +128,11 @@ namespace Omega
         {
             if (orden == 0)
             {
-
                 MessageBox.Show("Muy bien!");
                 label5.Visible = true;
                 label5.Text = resultado.ToString();
+                pictureCorrecto1.Visible = true;
+                Recarga();
             }
             else
             {
@@ -236,27 +146,18 @@ namespace Omega
         {
             if (orden == 1)
             {
-
                 MessageBox.Show("Muy bien!");
                 label5.Visible = true;
                 label5.Text = resultado.ToString();
+                pictureCorrecto2.Visible = true;
+                Recarga();
             }
             else
             {
-                //MessageBox.Show("Respuesta incorrecta");                
-
+                //MessageBox.Show("Respuesta incorrecta");           
                 label5.Text = "X";
                 label5.Visible = true;
             }
-        }
-        private void label8_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -271,6 +172,8 @@ namespace Omega
                 MessageBox.Show("Muy bien!");
                 label5.Visible = true;
                 label5.Text = resultado.ToString();
+                pictureCorrecto3.Visible = true;
+                Recarga();
             }
             else
             {
