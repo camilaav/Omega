@@ -13,7 +13,6 @@ namespace Omega
 {
     public partial class Cantidades : Form
     {
-
         private void GenerarJuego()
         {
             Random MyNo = new Random();
@@ -45,81 +44,83 @@ namespace Omega
                 pb2.Image = Resources._3;
                 pb3.Image = Resources._2;
 
-                    if (Respuesta == 6)
+                if (Respuesta == 6)
+                {
+                    MessageBox.Show("Respuesta correcta, 6 perros", "Mensaje");
+                    TipoFoto = "Gatos";
+                    pb1.Image = Resources.Gatos;
+                    txtRespuesta.Clear();
+                }
+            }
+            if (TipoFoto == "Gatos")
+            {
+
+                if (Respuesta == 4)
+                {
+                    MessageBox.Show("Respuesta correcta, 4 gatos", "Mensaje");
+                    TipoFoto = "Conejos";
+                    pb1.Image = Resources.Conejos;
+
+                }
+
+            }
+            if (TipoFoto == "Conejos")
+            {
+                if (Respuesta == 2)
+                {
+                    MessageBox.Show("Respuesta correcta, 2 conejos", "Mensaje");
+                    TipoFoto = "Peces";
+                    pictureBox1.Image = Resources.Peces;
+
+                }
+
+            }
+            if (TipoFoto == "Peces")
+            {
+                if (Respuesta == 5)
+                {
+                    MessageBox.Show("Respuesta correcta, 5 peces", "Mensaje");
+                    TipoFoto = "Loros";
+                    pictureBox1.Image = Resources.Loros;
+
+                }
+
+                private void button1_Click(object sender, EventArgs e)
+                {
+
+                }
+
+                private void pb1_Click(object sender, EventArgs e)
+                {
+                    if (pbAnimales.Tag.ToString() == "A")
                     {
-                        MessageBox.Show("Respuesta correcta, 6 perros", "Mensaje");
-                        TipoFoto = "Gatos";
-                        pictureBox1.Image = Resources.Gato;
-                        txtRespuesta.Clear();
+                        MessageBox.Show("Bien!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("¡Mal!");
                     }
                 }
-                if (TipoFoto == "Gatos")
+
+                private void pb2_Click(object sender, EventArgs e)
                 {
-
-                    if (Respuesta == 4)
+                    if (pbAnimales.Tag.ToString() == "B")
                     {
-                        MessageBox.Show("Respuesta correcta, 4 gatos", "Mensaje");
-                        TipoFoto = "Conejos";
-                        pictureBox1.Image = Resources.Conejos;
-
+                        MessageBox.Show("Bien!");
                     }
-
-                }
-                if (TipoFoto == "Conejos")
-                {
-                    if (Respuesta == 2)
+                    else
                     {
-                        MessageBox.Show("Respuesta correcta, 2 conejos", "Mensaje");
-                        TipoFoto = "Peces";
-                        pictureBox1.Image = Resources.Peces;
-
-        }
-
+                        MessageBox.Show("¡Mal!");
+                    }
                 }
-                if (TipoFoto == "Peces")
+
+                private void pb3_Click(object sender, EventArgs e)
                 {
-                    if (Respuesta == 5)
-                    {
-                        MessageBox.Show("Respuesta correcta, 5 peces", "Mensaje");
-                        TipoFoto = "Loros";
-                        pictureBox1.Image = Resources.Loros;
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pb1_Click(object sender, EventArgs e)
-        {
-            if(pbAnimales.Tag.ToString() == "A")
-            {
-                MessageBox.Show("Bien!");
+                    pictureBox1.Image = Resources.Perros;
+                    Foto = pb1.Image;
+                    TipoFoto = "Perros";
+                }
             }
-            else
-            {
-                MessageBox.Show("¡Mal!");
-            }
-        }
-
-        private void pb2_Click(object sender, EventArgs e)
-        {
-            if(pbAnimales.Tag.ToString() == "B")
-            {
-                MessageBox.Show("Bien!");
-            }
-            else
-            {
-                MessageBox.Show("¡Mal!");
-            }
-        }
-
-        private void pb3_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Image = Resources.Perros;
-            Foto = pictureBox1.Image;
-            TipoFoto = "Perros";
         }
     }
 }

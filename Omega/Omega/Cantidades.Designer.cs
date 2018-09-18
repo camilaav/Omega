@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cantidades));
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,7 +51,6 @@
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 8;
             this.pb1.TabStop = false;
-            this.pb1.Click += new System.EventHandler(this.pb1_Click);
             // 
             // label2
             // 
@@ -71,7 +69,6 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pb3
             // 
@@ -82,7 +79,6 @@
             this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb3.TabIndex = 10;
             this.pb3.TabStop = false;
-            this.pb3.Click += new System.EventHandler(this.pb3_Click);
             // 
             // pb2
             // 
@@ -93,7 +89,6 @@
             this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb2.TabIndex = 9;
             this.pb2.TabStop = false;
-            this.pb2.Click += new System.EventHandler(this.pb2_Click);
             // 
             // pb1
             // 
@@ -104,7 +99,6 @@
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 8;
             this.pb1.TabStop = false;
-            this.pb1.Click += new System.EventHandler(this.pb1_Click);
             // 
             // pbAnimales
             // 
@@ -127,13 +121,10 @@
             this.Controls.Add(this.pb2);
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtRespuesta);
-            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cantidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cantidades";
-            this.Load += new System.EventHandler(this.Cantidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
