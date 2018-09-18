@@ -31,16 +31,16 @@ namespace Omega
         {
             label5.Text = "?";
 
-            if (this.AccessibleName == "Facil")
+            if (this.Tag.ToString() == "Facil")
             {
                  Juego(191, 1, 10);
 
             }
-            else if (this.AccessibleName == "Intermedia")
+            else if (this.Tag.ToString() == "Intermedia")
             {
                 Juego(191, 0, 50);
             }
-            else if (this.AccessibleName == "Dificil")
+            else if (this.Tag.ToString() == "Dificil")
             {
                 Juego(258, 0, 100);
             }
