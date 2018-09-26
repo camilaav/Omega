@@ -42,6 +42,7 @@
             this.pictureCorrecto1 = new System.Windows.Forms.PictureBox();
             this.pictureCorrecto2 = new System.Windows.Forms.PictureBox();
             this.pictureCorrecto3 = new System.Windows.Forms.PictureBox();
+            this.lblScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto3)).BeginInit();
@@ -50,6 +51,7 @@
             // tiempo
             // 
             this.tiempo.Interval = 1000;
+            this.tiempo.Tick += new System.EventHandler(this.tiempo_Tick);
             // 
             // label2
             // 
@@ -195,6 +197,15 @@
             this.pictureCorrecto3.TabIndex = 11;
             this.pictureCorrecto3.TabStop = false;
             // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Location = new System.Drawing.Point(948, 27);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(16, 17);
+            this.lblScore.TabIndex = 12;
+            this.lblScore.Text = "0";
+            // 
             // Resta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -202,6 +213,7 @@
             this.BackgroundImage = global::Omega.Properties.Resources.FondoEscuela;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1053, 642);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.pictureCorrecto3);
             this.Controls.Add(this.pictureCorrecto2);
             this.Controls.Add(this.pictureCorrecto1);
@@ -241,5 +253,6 @@
         private System.Windows.Forms.PictureBox pictureCorrecto1;
         private System.Windows.Forms.PictureBox pictureCorrecto2;
         private System.Windows.Forms.PictureBox pictureCorrecto3;
+        private System.Windows.Forms.Label lblScore;
     }
 }

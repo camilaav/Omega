@@ -25,6 +25,7 @@ namespace Omega
         int orden; //NUMERO DE ORDEN DE RESPUESTA CORRECTA
         int fondo; //NUMERO DE 1 OPCION NO CORRECTA
         int fondo2; //NUMERO DE LA OTRA OPCION NO CORRECTA
+        int seg, intentos;
         Random randommizer = new Random();
 
         public void Recarga()
@@ -33,7 +34,7 @@ namespace Omega
 
             if (this.Tag.ToString() == "Facil")
             {
-                 Juego(191, 1, 10);
+                Juego(191, 1, 10);
 
             }
             else if (this.Tag.ToString() == "Intermedia")
@@ -128,35 +129,23 @@ namespace Omega
         {
             if (orden == 0)
             {
-                MessageBox.Show("Muy bien!");
-                label5.Visible = true;
-                label5.Text = resultado.ToString();
-                pictureCorrecto1.Visible = true;
-                Recarga();
+                RespuestaCorrecta();
             }
             else
             {
-                //MessageBox.Show("Respuesta incorrecta");                
-
-                label5.Text = "X";
-                label5.Visible = true;
+                RespuestaIncorrecta();
             }
         }
         private void label7_Click(object sender, EventArgs e)
         {
             if (orden == 1)
             {
-                MessageBox.Show("Muy bien!");
-                label5.Visible = true;
-                label5.Text = resultado.ToString();
-                pictureCorrecto2.Visible = true;
-                Recarga();
+                RespuestaCorrecta();
             }
             else
             {
                 //MessageBox.Show("Respuesta incorrecta");           
-                label5.Text = "X";
-                label5.Visible = true;
+                RespuestaIncorrecta();
             }
         }
 
@@ -169,16 +158,59 @@ namespace Omega
         {
             if (orden == 2)
             {
-                MessageBox.Show("Muy bien!");
-                label5.Visible = true;
-                label5.Text = resultado.ToString();
-                pictureCorrecto3.Visible = true;
-                Recarga();
+                RespuestaCorrecta();
             }
             else
             {
-                label5.Text = "X";
-                label5.Visible = true;
+                RespuestaIncorrecta();
+            }
+        }
+
+        private void RespuestaCorrecta()
+        {
+            MessageBox.Show("Muy bien!");
+            label5.Visible = true;
+            label5.Text = resultado.ToString();
+            pictureCorrecto3.Visible = true;
+            if (intentos == 0)
+            {
+                lblScore.Text = (int.Parse(lblScore.Text) + 100).ToString();
+                intentos = 0;
+            }
+            else if (intentos == 1)
+            {
+                lblScore.Text = (int.Parse(lblScore.Text) + 50).ToString();
+                intentos = 0;
+            }
+            else if (intentos == 2)
+            {
+                lblScore.Text = (int.Parse(lblScore.Text) + 25).ToString();
+                intentos = 0;
+            }
+            else if (intentos >= 3)
+            {
+                lblScore.Text = (int.Parse(lblScore.Text) + 0).ToString();
+                intentos = 0;
+            }
+            Recarga();
+        }
+
+        private void RespuestaIncorrecta()
+        {
+            label5.Text = "X";
+            label5.Visible = true;
+            seg = 3;
+            tiempo.Start();
+            intentos++;
+        }
+
+        private void tiempo_Tick(object sender, EventArgs e)
+        {
+            seg -= 1;
+            if (seg == 0)
+            {
+                tiempo.Stop();
+                label5.Text = "?";
             }
         }
     }
