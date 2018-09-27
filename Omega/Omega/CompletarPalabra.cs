@@ -39,7 +39,6 @@ namespace Omega
             for(int i=0;i<=letras.Count - 1;i++)
             {
                 var button = new Button();
-                button.
                 button.Left = posicionInicial;
                 button.Top = 20;
                 button.Visible = true;
