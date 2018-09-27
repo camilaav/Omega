@@ -72,6 +72,12 @@
     <Compile Include="Bienvenida.Designer.cs">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
+    <Compile Include="CompletarPalabra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompletarPalabra.Designer.cs">
+      <DependentUpon>CompletarPalabra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dificultades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </Compile>
     <EmbeddedResource Include="Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompletarPalabra.resx">
+      <DependentUpon>CompletarPalabra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dificultades.resx">
       <DependentUpon>Dificultades.cs</DependentUpon>
