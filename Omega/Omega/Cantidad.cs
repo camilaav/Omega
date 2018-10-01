@@ -13,6 +13,47 @@ namespace Omega
 {
     public partial class Cantidad : Form
     {
+        public int posicionInicialArriba, posicionInicialCostado, contador, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2;
+
+        private void opcionDos_Click(object sender, EventArgs e)
+        {
+            if (respuestaCorrecta == 1)
+            {
+                MessageBox.Show("Muy bien!");
+                Recarga();
+            }
+            else
+            {
+                MessageBox.Show("Respuesta incorrecta");
+            }
+        }
+
+        private void opcionTres_Click(object sender, EventArgs e)
+        {
+            if (respuestaCorrecta == 2)
+            {
+                MessageBox.Show("Muy bien!");
+                Recarga();
+            }
+            else
+            {
+                MessageBox.Show("Respuesta incorrecta");
+            }
+        }
+
+        private void opcionUno_Click(object sender, EventArgs e)
+        {
+            if (respuestaCorrecta == 0)
+            {
+                MessageBox.Show("Muy bien!");
+                Recarga();
+            }
+            else
+            {
+                MessageBox.Show("Respuesta incorrecta");                
+            }
+        }
+
         public Cantidad()
         {
             InitializeComponent();
@@ -20,32 +61,98 @@ namespace Omega
 
         private void Cantidad_Load(object sender, EventArgs e)
         {
+            Recarga();
+        }
+
+        public void Recarga()
+        {
+            string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
+
+            posicionInicialArriba = 10;
+            posicionInicialCostado = 10;
             if (this.Tag.ToString() == "Facil")
             {
-                Juego(1,5);
+                Juego(1, 5);
 
             }
             else if (this.Tag.ToString() == "Intermedia")
             {
-                Juego(5,10);
+                Juego(5, 10);
             }
             else if (this.Tag.ToString() == "Dificil")
             {
-                Juego(10,20);
+                Juego(10, 20);
+            }
+            if (respuestaCorrecta == 0)
+            {
+                opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + contador.ToString() + ".png");
+                opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + respuestaIncorrecta1.ToString() + ".png");
+                opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + respuestaIncorrecta2.ToString() + ".png");
+                opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            if (respuestaCorrecta == 1)
+            {
+                opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + respuestaIncorrecta1.ToString() + ".png");
+                opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + contador.ToString() + ".png");
+                opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + respuestaIncorrecta2.ToString() + ".png");
+                opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            if (respuestaCorrecta == 2)
+            {
+                opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + respuestaIncorrecta2.ToString() + ".png");
+                opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + respuestaIncorrecta1.ToString() + ".png");
+                opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + contador.ToString() + ".png");
+                opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
             }
         }
 
         public void Juego(int limiteMenor, int limiteMayor)
         {
+            contador = 0;
             string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
+            var nombrePicture = 1;
+            var random = new Random();
+            var cantidadPictures = random.Next(limiteMenor, limiteMayor);
+            var imagen = random.Next(1, 10);
 
-            var cantidad = new Random();
-
-            var imagen = cantidad.Next(1, 15);
-            for (int i = 1; i <= cantidad.Next(limiteMenor, limiteMayor); i++)
+            for (int i = 1; i <= cantidadPictures; i++)
             {
-                var pictureBox = new PictureBox();
-                pictureBox.BackgroundImage = Image.FromFile(startupPath + @"\" + imagen.ToString() + ".png");
+                if (posicionInicialCostado >= 560)
+                {
+                    posicionInicialCostado = 10;
+                    posicionInicialArriba = posicionInicialArriba + 110;
+                }
+
+                var picture = new PictureBox();
+                Controls.Add(picture);
+                picture.Name = "pictureBox" + nombrePicture;
+                picture.Size = new Size(100, 100);
+                picture.Location = new Point(posicionInicialCostado, posicionInicialArriba);
+                picture.BackgroundImage = Image.FromFile(startupPath + @"\" + imagen.ToString() + ".png");
+                picture.Visible = true;
+                picture.BackgroundImageLayout = ImageLayout.Stretch;
+                picture.Enabled = true;
+                nombrePicture++;
+                posicionInicialCostado = posicionInicialCostado + 110;
+                contador++;
+            }
+
+            respuestaCorrecta = random.Next(2);
+
+            respuestaIncorrecta1 = random.Next(limiteMenor, limiteMayor);
+
+            respuestaIncorrecta2 = random.Next(limiteMenor, limiteMayor);
+
+            while (contador == respuestaIncorrecta1 || contador == respuestaIncorrecta2 || respuestaIncorrecta1 == respuestaIncorrecta2)
+            {
+                respuestaIncorrecta1 = random.Next(limiteMenor, limiteMayor);
+                respuestaIncorrecta2 = random.Next(limiteMenor, limiteMayor);
             }
         }
     }

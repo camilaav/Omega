@@ -38,33 +38,39 @@
             // 
             // opcionUno
             // 
+            this.opcionUno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionUno.Location = new System.Drawing.Point(22, 308);
             this.opcionUno.Name = "opcionUno";
             this.opcionUno.Size = new System.Drawing.Size(147, 127);
             this.opcionUno.TabIndex = 0;
             this.opcionUno.TabStop = false;
+            this.opcionUno.Click += new System.EventHandler(this.opcionUno_Click);
             // 
             // opcionDos
             // 
+            this.opcionDos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionDos.Location = new System.Drawing.Point(192, 308);
             this.opcionDos.Name = "opcionDos";
             this.opcionDos.Size = new System.Drawing.Size(147, 127);
             this.opcionDos.TabIndex = 1;
             this.opcionDos.TabStop = false;
+            this.opcionDos.Click += new System.EventHandler(this.opcionDos_Click);
             // 
             // opcionTres
             // 
+            this.opcionTres.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionTres.Location = new System.Drawing.Point(359, 308);
             this.opcionTres.Name = "opcionTres";
             this.opcionTres.Size = new System.Drawing.Size(147, 127);
             this.opcionTres.TabIndex = 2;
             this.opcionTres.TabStop = false;
+            this.opcionTres.Click += new System.EventHandler(this.opcionTres_Click);
             // 
             // Cantidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 453);
+            this.ClientSize = new System.Drawing.Size(564, 453);
             this.Controls.Add(this.opcionTres);
             this.Controls.Add(this.opcionDos);
             this.Controls.Add(this.opcionUno);
