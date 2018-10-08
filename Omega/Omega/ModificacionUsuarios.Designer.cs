@@ -110,6 +110,7 @@
             this.Controls.Add(btnRegresar);
             this.Controls.Add(btnIngresar);
             this.Name = "ModificacionUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificacionUsuarios";
             ((System.ComponentModel.ISupportInitialize)(btnIngresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(btnRegresar)).EndInit();

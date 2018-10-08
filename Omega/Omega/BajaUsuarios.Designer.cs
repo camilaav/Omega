@@ -42,7 +42,7 @@
             btnRegresar.BackgroundImage = global::Omega.Properties.Resources.Salir;
             btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnRegresar.Location = new System.Drawing.Point(212, 190);
+            btnRegresar.Location = new System.Drawing.Point(222, 189);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new System.Drawing.Size(50, 50);
             btnRegresar.TabIndex = 8;
@@ -60,7 +60,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(259, 150);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
@@ -80,6 +80,7 @@
             this.Controls.Add(btnRegresar);
             this.Controls.Add(this.dataGridView1);
             this.Name = "BajaUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.BajaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(btnRegresar)).EndInit();

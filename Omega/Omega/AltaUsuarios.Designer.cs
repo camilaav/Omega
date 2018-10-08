@@ -110,6 +110,7 @@
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.Name = "AltaUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaUsuarios";
             this.Load += new System.EventHandler(this.AltaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(btnRegresar)).EndInit();
