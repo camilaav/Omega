@@ -78,6 +78,12 @@
     <Compile Include="Cantidades.Designer.cs">
       <DependentUpon>Cantidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colorear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colorear.Designer.cs">
+      <DependentUpon>Colorear.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dificultades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cantidades.resx">
       <DependentUpon>Cantidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colorear.resx">
+      <DependentUpon>Colorear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dificultades.resx">
       <DependentUpon>Dificultades.cs</DependentUpon>
