@@ -116,21 +116,11 @@ namespace Regla_de_Negocios
             return comandos.EjecutarStore(stored, listaParametros);
         }
 
-        public IList<Usuario> ListaPersonas()
+        public DataTable ListaPersonas()
         {
-            var lista = new List<Usuario>();
             var stored = "st_ListarPersonas";
-            var readerUsuarios = comandos.EjecutarReaderSinParametros(stored);
-            while (readerUsuarios.Read())
-            {
-                var palabra = new Usuario
-                {
-                    IdUsuario = int.Parse(readerUsuarios["IdUsuario"].ToString()),
-                    NombreUsuario = readerUsuarios["NombreUsuario"].ToString()
-                };
-                lista.Add(palabra);
-            }
-            return lista;
+            var nombreTabla = "Usuario";
+            return comandos.Dataset(stored,nombreTabla);
         }
     }
 }

@@ -51,13 +51,13 @@ namespace Omega
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(int.Parse(dataGridView1.CurrentRow.Cells["IdUsuario"].Value.ToString()) != UsuarioLogueado.Logueado.IdUsuario)
+            if(int.Parse(dataGridView1.CurrentRow.Cells["Id"].Value.ToString()) != UsuarioLogueado.Logueado.IdUsuario)
             {
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "btnEliminar")
                 {
                     var u = new Usuario();
-                    u.IdUsuario = int.Parse(dataGridView1.CurrentRow.Cells["IdUsuario"].Value.ToString());
-                    var confirmacion = MessageBox.Show("¿Está seguro de eliminar al usuario " + dataGridView1.CurrentRow.Cells["NombreUsuario"].Value.ToString() + "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    u.IdUsuario = int.Parse(dataGridView1.CurrentRow.Cells["Id"].Value.ToString());
+                    var confirmacion = MessageBox.Show("¿Está seguro de eliminar al usuario " + dataGridView1.CurrentRow.Cells["Usuario"].Value.ToString() + "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (confirmacion == DialogResult.Yes)
                     {
