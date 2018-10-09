@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace Omega
 {
@@ -32,6 +33,7 @@ namespace Omega
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Pantalla_principal p = new Pantalla_principal();
+            Movimiento.Jugador = txtNombre.Text;
             p.Show();
             this.Hide();
         }

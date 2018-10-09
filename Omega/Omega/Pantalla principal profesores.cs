@@ -16,5 +16,26 @@ namespace Omega
         {
             InitializeComponent();
         }
+
+        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var altaUsuarios = new AltaUsuarios();
+            altaUsuarios.Show();
+            this.Hide();
+        }
+
+        private void bajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var bajaUsuarios = new BajaUsuarios();
+            bajaUsuarios.Show();
+            this.Hide();
+        }
+
+        private void modificaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var modificacionUsuarios = new ModificacionUsuarios();
+            modificacionUsuarios.Show();
+            this.Hide();
+        }
     }
 }

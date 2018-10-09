@@ -65,6 +65,7 @@ namespace Omega
                         if (u.FechaBloqueo < DateTime.Now)
                         {
                             var pantallaProfesores = new Pantalla_principal_profesores();
+                            UsuarioLogueado.Logueado = u;
                             pantallaProfesores.Show();
                             this.Hide();
                         }

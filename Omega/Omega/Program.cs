@@ -18,7 +18,6 @@ namespace Omega
         {
             string startupPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Fuentes");
 
-
             int result = -1;
             result = Fonts.AddFontResource(startupPath + "\\Doodle Gum.ttf");
             result = Fonts.AddFontResource(startupPath + "\\K26ToyBlocks123.ttf");
