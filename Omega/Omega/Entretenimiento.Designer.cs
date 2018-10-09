@@ -44,6 +44,7 @@
             this.btnColorear.Size = new System.Drawing.Size(177, 175);
             this.btnColorear.TabIndex = 5;
             this.btnColorear.TabStop = false;
+            this.btnColorear.Click += new System.EventHandler(this.btnColorear_Click);
             // 
             // btnMemotest
             // 

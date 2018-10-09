@@ -33,5 +33,12 @@ namespace Omega
         {
             dificultad();
         }
+
+        private void btnColorear_Click(object sender, EventArgs e)
+        {
+            var colorear = new Colorear();
+            colorear.Show();
+            this.Hide();
+        }
     }
 }
