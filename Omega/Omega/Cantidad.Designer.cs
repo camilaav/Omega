@@ -28,43 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.opcionUno = new System.Windows.Forms.PictureBox();
-            this.opcionDos = new System.Windows.Forms.PictureBox();
-            this.opcionTres = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.opcionUno)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opcionDos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opcionTres)).BeginInit();
+            this.opcionUno = new System.Windows.Forms.Panel();
+            this.opcionDos = new System.Windows.Forms.Panel();
+            this.opcionTres = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // opcionUno
             // 
             this.opcionUno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionUno.Location = new System.Drawing.Point(22, 308);
+            this.opcionUno.Location = new System.Drawing.Point(24, 308);
             this.opcionUno.Name = "opcionUno";
             this.opcionUno.Size = new System.Drawing.Size(147, 127);
-            this.opcionUno.TabIndex = 0;
-            this.opcionUno.TabStop = false;
-            this.opcionUno.Click += new System.EventHandler(this.opcionUno_Click);
+            this.opcionUno.TabIndex = 3;
+            this.opcionUno.Click += new System.EventHandler(this.opcionUno_Click_1);
             // 
             // opcionDos
             // 
             this.opcionDos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionDos.Location = new System.Drawing.Point(192, 308);
+            this.opcionDos.Location = new System.Drawing.Point(202, 308);
             this.opcionDos.Name = "opcionDos";
             this.opcionDos.Size = new System.Drawing.Size(147, 127);
-            this.opcionDos.TabIndex = 1;
-            this.opcionDos.TabStop = false;
-            this.opcionDos.Click += new System.EventHandler(this.opcionDos_Click);
+            this.opcionDos.TabIndex = 4;
+            this.opcionDos.Click += new System.EventHandler(this.opcionDos_Click_1);
             // 
             // opcionTres
             // 
             this.opcionTres.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionTres.Location = new System.Drawing.Point(359, 308);
+            this.opcionTres.Location = new System.Drawing.Point(386, 308);
             this.opcionTres.Name = "opcionTres";
             this.opcionTres.Size = new System.Drawing.Size(147, 127);
-            this.opcionTres.TabIndex = 2;
-            this.opcionTres.TabStop = false;
-            this.opcionTres.Click += new System.EventHandler(this.opcionTres_Click);
+            this.opcionTres.TabIndex = 4;
+            this.opcionTres.Click += new System.EventHandler(this.opcionTres_Click_1);
             // 
             // Cantidad
             // 
@@ -78,17 +72,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cantidad";
             this.Load += new System.EventHandler(this.Cantidad_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.opcionUno)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opcionDos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.opcionTres)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox opcionUno;
-        private System.Windows.Forms.PictureBox opcionDos;
-        private System.Windows.Forms.PictureBox opcionTres;
+        private System.Windows.Forms.Panel opcionUno;
+        private System.Windows.Forms.Panel opcionDos;
+        private System.Windows.Forms.Panel opcionTres;
     }
 }

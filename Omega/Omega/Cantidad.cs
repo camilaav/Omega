@@ -15,7 +15,20 @@ namespace Omega
     {
         public int posicionInicialArriba, posicionInicialCostado, contador, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2;
 
-        private void opcionDos_Click(object sender, EventArgs e)
+        private void opcionUno_Click_1(object sender, EventArgs e)
+        {
+            if (respuestaCorrecta == 0)
+            {
+                MessageBox.Show("Muy bien!");
+                Recarga();
+            }
+            else
+            {
+                MessageBox.Show("Respuesta incorrecta");
+            }
+        }
+
+        private void opcionDos_Click_1(object sender, EventArgs e)
         {
             if (respuestaCorrecta == 1)
             {
@@ -28,7 +41,7 @@ namespace Omega
             }
         }
 
-        private void opcionTres_Click(object sender, EventArgs e)
+        private void opcionTres_Click_1(object sender, EventArgs e)
         {
             if (respuestaCorrecta == 2)
             {
@@ -41,18 +54,7 @@ namespace Omega
             }
         }
 
-        private void opcionUno_Click(object sender, EventArgs e)
-        {
-            if (respuestaCorrecta == 0)
-            {
-                MessageBox.Show("Muy bien!");
-                Recarga();
-            }
-            else
-            {
-                MessageBox.Show("Respuesta incorrecta");                
-            }
-        }
+
 
         public Cantidad()
         {
@@ -66,6 +68,14 @@ namespace Omega
 
         public void Recarga()
         {
+            for(int i = this.Controls.Count -1; i >= 0; i--)
+            {
+                PictureBox control = this.Controls[i] as PictureBox;
+                if (control == null) continue;
+
+                control.Dispose();
+            }
+
             string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
 
             posicionInicialArriba = 10;
@@ -115,11 +125,11 @@ namespace Omega
         public void Juego(int limiteMenor, int limiteMayor)
         {
             contador = 0;
-            string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
+            string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes","Objetos");
             var nombrePicture = 1;
             var random = new Random();
             var cantidadPictures = random.Next(limiteMenor, limiteMayor);
-            var imagen = random.Next(1, 10);
+            var imagen = random.Next(1, 51);
 
             for (int i = 1; i <= cantidadPictures; i++)
             {
