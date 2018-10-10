@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,28 +13,19 @@ namespace Omega
 {
     public partial class Suma : Form
     {
+        string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
         public Suma()
         {
             InitializeComponent();
         }
-        void CargarFuentes()
-        {
-            lblNumero1.Font = new Font("Patchwork Stitchlings", lblNumero1.Font.Size);
-            lblNumero2.Font = new Font("Patchwork Stitchlings", lblNumero2.Font.Size);
-            lblRespuesta.Font = new Font("Patchwork Stitchlings", lblRespuesta.Font.Size);
-            lblOp1.Font = new Font("Patchwork Stitchlings", lblOp1.Font.Size);
-            lblOp2.Font = new Font("Patchwork Stitchlings", lblOp2.Font.Size);
-            lblOp3.Font = new Font("Patchwork Stitchlings", lblOp3.Font.Size);
-            lblMas.Font = new Font("Patchwork Stitchlings", lblMas.Font.Size);
-            lblIgual.Font = new Font("Patchwork Stitchlings", lblIgual.Font.Size);
-            lblP.Font = new Font("Patchwork Stitchlings", lblP.Font.Size);
-            lblPuntaje.Font = new Font("Patchwork Stitchlings", lblPuntaje.Font.Size);
-        }
+
         int num1, num2, rpt, op1, op2, orden, intentos, seg = 0;
         Random rdm = new Random();
         void NumerosRandom()
         {
-            lblRespuesta.Visible = false;
+            pictureCorrecto1.Visible = false;
+            pictureCorrecto2.Visible = false;
+            pictureCorrecto3.Visible = false;
             num1 = rdm.Next(1, 11);
             num2 = rdm.Next(1, 11);
             rpt = num1 + num2;
@@ -44,27 +36,58 @@ namespace Omega
             {
                 if (orden == 1)
                 {
-                    lblNumero1.Text = num1.ToString();
-                    lblNumero2.Text = num2.ToString();
-                    lblOp1.Text = rpt.ToString();
-                    lblOp2.Text = op1.ToString();
-                    lblOp3.Text = op2.ToString();
+                    numeroUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + num1.ToString() + ".png");
+                    numeroUno.BackgroundImageLayout = ImageLayout.Stretch;
+                    numeroUno.Name = num1.ToString();
+                    numeroDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + num2.ToString() + ".png");
+                    numeroDos.BackgroundImageLayout = ImageLayout.Stretch;
+                    numeroDos.Name = num2.ToString();
+                    opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + rpt.ToString() + ".png");
+                    opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                    opcionUno.Name = rpt.ToString();
+                    opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + op1.ToString() + ".png");
+                    opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                    opcionDos.Name = op1.ToString();
+                    opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + op2.ToString() + ".png");
+                    opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
+                    opcionTres.Name = op2.ToString();
+
                 }
                 else if (orden == 2)
                 {
-                    lblNumero1.Text = num1.ToString();
-                    lblNumero2.Text = num2.ToString();
-                    lblOp1.Text = op1.ToString();
-                    lblOp2.Text = rpt.ToString();
-                    lblOp3.Text = op2.ToString();
+                    numeroUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + num1.ToString() + ".png");
+                    numeroUno.BackgroundImageLayout = ImageLayout.Stretch;
+                    numeroUno.Name = num1.ToString();
+                    numeroDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + num2.ToString() + ".png");
+                    numeroDos.BackgroundImageLayout = ImageLayout.Stretch;
+                    numeroDos.Name = num2.ToString();
+                    opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + op1.ToString() + ".png");
+                    opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                    opcionUno.Name = op1.ToString();
+                    opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + rpt.ToString() + ".png");
+                    opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                    opcionDos.Name = rpt.ToString();
+                    opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + op2.ToString() + ".png");
+                    opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
+                    opcionTres.Name = op2.ToString();
                 }
                 else if (orden == 3)
                 {
-                    lblNumero1.Text = num1.ToString();
-                    lblNumero2.Text = num2.ToString();
-                    lblOp1.Text = op1.ToString();
-                    lblOp2.Text = op2.ToString();
-                    lblOp3.Text = rpt.ToString();
+                    numeroUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + num1.ToString() + ".png");
+                    numeroUno.BackgroundImageLayout = ImageLayout.Stretch;
+                    numeroUno.Name = num1.ToString();
+                    numeroDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + num2.ToString() + ".png");
+                    numeroDos.BackgroundImageLayout = ImageLayout.Stretch;
+                    numeroDos.Name = num2.ToString();
+                    opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + op1.ToString() + ".png");
+                    opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                    opcionUno.Name = op1.ToString();
+                    opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + op2.ToString() + ".png");
+                    opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                    opcionDos.Name = op2.ToString();
+                    opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + rpt.ToString() + ".png");
+                    opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
+                    opcionTres.Name = rpt.ToString();
                 }
             }
             else
@@ -72,42 +95,49 @@ namespace Omega
                 NumerosRandom();
             }
         }
-        private void LblOp1_Click(object sender, EventArgs e)
+
+        private void opcionUno_Click(object sender, EventArgs e)
         {
-            if (rpt == int.Parse(lblOp1.Text))
+            if (rpt == int.Parse(opcionUno.Name))
             {
                 RespuestaCorrecta();
+                pictureCorrecto1.Visible = true;
             }
             else
             {
                 RespuestaIncorrecta();
             }
         }
-        private void LblOp2_Click(object sender, EventArgs e)
+
+        private void opcionDos_Click(object sender, EventArgs e)
         {
-            if (rpt == int.Parse(lblOp2.Text))
+            if (rpt == int.Parse(opcionDos.Name))
             {
                 RespuestaCorrecta();
+                pictureCorrecto1.Visible = true;
             }
             {
                 RespuestaIncorrecta();
             }
         }
-        private void LblOp3_Click(object sender, EventArgs e)
+
+        private void opcionTres_Click(object sender, EventArgs e)
         {
-            if (rpt == int.Parse(lblOp3.Text))
+            if (rpt == int.Parse(opcionTres.Name))
             {
                 RespuestaCorrecta();
+                pictureCorrecto1.Visible = true;
             }
             else
             {
                 RespuestaIncorrecta();
             }
         }
+
         void RespuestaCorrecta()
         {
-            lblRespuesta.Text = rpt.ToString();
-            lblRespuesta.Visible = true;
+            respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + rpt.ToString() + ".png");
+            respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
             tiempo.Stop();
             MessageBox.Show("bien");
             if (intentos == 0)
@@ -134,8 +164,8 @@ namespace Omega
         }
         void RespuestaIncorrecta()
         {
-            lblRespuesta.Text = "X";
-            lblRespuesta.Visible = true;
+            //lblRespuesta.Text = "X";
+            //lblRespuesta.Visible = true;
             seg = 3;
             tiempo.Start();
             intentos++;
@@ -146,12 +176,11 @@ namespace Omega
             if (seg == 0)
             {
                 tiempo.Stop();
-                lblRespuesta.Visible = false;
+                //lblRespuesta.Visible = false;
             }
         }
         private void Suma_Load(object sender, EventArgs e)
         {
-            CargarFuentes();
             NumerosRandom();
         }
     }

@@ -33,7 +33,7 @@ namespace Omega
         private void Dificultades_Load(object sender, EventArgs e)
         {
 
-            //        dictionary.Add("suma", new Suma);
+            dictionary.Add("suma", new Suma());
             dictionary.Add("resta", new Resta());
             dictionary.Add("cantidad", new Cantidad());
             //TODO faltan los otros formularios agregar al diccionario..

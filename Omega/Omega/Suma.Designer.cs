@@ -29,98 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblNumero1 = new System.Windows.Forms.Label();
-            this.lblMas = new System.Windows.Forms.Label();
-            this.lblNumero2 = new System.Windows.Forms.Label();
-            this.lblIgual = new System.Windows.Forms.Label();
-            this.lblRespuesta = new System.Windows.Forms.Label();
-            this.lblOp1 = new System.Windows.Forms.Label();
-            this.lblOp2 = new System.Windows.Forms.Label();
-            this.lblOp3 = new System.Windows.Forms.Label();
             this.lblPuntaje = new System.Windows.Forms.Label();
             this.lblP = new System.Windows.Forms.Label();
             this.tiempo = new System.Windows.Forms.Timer(this.components);
+            this.numeroDos = new System.Windows.Forms.PictureBox();
+            this.numeroUno = new System.Windows.Forms.PictureBox();
+            this.opcionTres = new System.Windows.Forms.PictureBox();
+            this.opcionDos = new System.Windows.Forms.PictureBox();
+            this.opcionUno = new System.Windows.Forms.PictureBox();
+            this.pictureCorrecto3 = new System.Windows.Forms.PictureBox();
+            this.pictureCorrecto2 = new System.Windows.Forms.PictureBox();
+            this.pictureCorrecto1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.respuestaC = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.numeroDos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeroUno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opcionTres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opcionDos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opcionUno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.respuestaC)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblNumero1
-            // 
-            this.lblNumero1.AutoSize = true;
-            this.lblNumero1.Location = new System.Drawing.Point(39, 85);
-            this.lblNumero1.Name = "lblNumero1";
-            this.lblNumero1.Size = new System.Drawing.Size(35, 13);
-            this.lblNumero1.TabIndex = 0;
-            this.lblNumero1.Text = "label1";
-            // 
-            // lblMas
-            // 
-            this.lblMas.AutoSize = true;
-            this.lblMas.Location = new System.Drawing.Point(128, 85);
-            this.lblMas.Name = "lblMas";
-            this.lblMas.Size = new System.Drawing.Size(13, 13);
-            this.lblMas.TabIndex = 1;
-            this.lblMas.Text = "+";
-            // 
-            // lblNumero2
-            // 
-            this.lblNumero2.AutoSize = true;
-            this.lblNumero2.Location = new System.Drawing.Point(209, 85);
-            this.lblNumero2.Name = "lblNumero2";
-            this.lblNumero2.Size = new System.Drawing.Size(35, 13);
-            this.lblNumero2.TabIndex = 2;
-            this.lblNumero2.Text = "label3";
-            // 
-            // lblIgual
-            // 
-            this.lblIgual.AutoSize = true;
-            this.lblIgual.Location = new System.Drawing.Point(288, 85);
-            this.lblIgual.Name = "lblIgual";
-            this.lblIgual.Size = new System.Drawing.Size(13, 13);
-            this.lblIgual.TabIndex = 3;
-            this.lblIgual.Text = "=";
-            // 
-            // lblRespuesta
-            // 
-            this.lblRespuesta.AutoSize = true;
-            this.lblRespuesta.Location = new System.Drawing.Point(363, 85);
-            this.lblRespuesta.Name = "lblRespuesta";
-            this.lblRespuesta.Size = new System.Drawing.Size(35, 13);
-            this.lblRespuesta.TabIndex = 4;
-            this.lblRespuesta.Text = "label5";
-            // 
-            // lblOp1
-            // 
-            this.lblOp1.AutoSize = true;
-            this.lblOp1.Location = new System.Drawing.Point(578, 40);
-            this.lblOp1.Name = "lblOp1";
-            this.lblOp1.Size = new System.Drawing.Size(35, 13);
-            this.lblOp1.TabIndex = 5;
-            this.lblOp1.Text = "label6";
-            this.lblOp1.Click += new System.EventHandler(this.LblOp1_Click);
-            // 
-            // lblOp2
-            // 
-            this.lblOp2.AutoSize = true;
-            this.lblOp2.Location = new System.Drawing.Point(578, 147);
-            this.lblOp2.Name = "lblOp2";
-            this.lblOp2.Size = new System.Drawing.Size(35, 13);
-            this.lblOp2.TabIndex = 6;
-            this.lblOp2.Text = "label7";
-            this.lblOp2.Click += new System.EventHandler(this.LblOp2_Click);
-            // 
-            // lblOp3
-            // 
-            this.lblOp3.AutoSize = true;
-            this.lblOp3.Location = new System.Drawing.Point(578, 245);
-            this.lblOp3.Name = "lblOp3";
-            this.lblOp3.Size = new System.Drawing.Size(35, 13);
-            this.lblOp3.TabIndex = 7;
-            this.lblOp3.Text = "label8";
-            this.lblOp3.Click += new System.EventHandler(this.LblOp3_Click);
             // 
             // lblPuntaje
             // 
             this.lblPuntaje.AutoSize = true;
-            this.lblPuntaje.Location = new System.Drawing.Point(231, 290);
+            this.lblPuntaje.Location = new System.Drawing.Point(756, 164);
             this.lblPuntaje.Name = "lblPuntaje";
             this.lblPuntaje.Size = new System.Drawing.Size(13, 13);
             this.lblPuntaje.TabIndex = 8;
@@ -129,7 +66,7 @@
             // lblP
             // 
             this.lblP.AutoSize = true;
-            this.lblP.Location = new System.Drawing.Point(39, 290);
+            this.lblP.Location = new System.Drawing.Point(742, 98);
             this.lblP.Name = "lblP";
             this.lblP.Size = new System.Drawing.Size(46, 13);
             this.lblP.TabIndex = 9;
@@ -140,41 +77,188 @@
             this.tiempo.Interval = 1000;
             this.tiempo.Tick += new System.EventHandler(this.tiempo_Tick);
             // 
+            // numeroDos
+            // 
+            this.numeroDos.BackColor = System.Drawing.Color.Transparent;
+            this.numeroDos.Location = new System.Drawing.Point(302, 20);
+            this.numeroDos.Margin = new System.Windows.Forms.Padding(2);
+            this.numeroDos.Name = "numeroDos";
+            this.numeroDos.Size = new System.Drawing.Size(155, 139);
+            this.numeroDos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.numeroDos.TabIndex = 26;
+            this.numeroDos.TabStop = false;
+            // 
+            // numeroUno
+            // 
+            this.numeroUno.BackColor = System.Drawing.Color.Transparent;
+            this.numeroUno.Location = new System.Drawing.Point(80, 20);
+            this.numeroUno.Margin = new System.Windows.Forms.Padding(2);
+            this.numeroUno.Name = "numeroUno";
+            this.numeroUno.Size = new System.Drawing.Size(155, 139);
+            this.numeroUno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.numeroUno.TabIndex = 25;
+            this.numeroUno.TabStop = false;
+            // 
+            // opcionTres
+            // 
+            this.opcionTres.BackColor = System.Drawing.Color.Transparent;
+            this.opcionTres.Location = new System.Drawing.Point(537, 272);
+            this.opcionTres.Margin = new System.Windows.Forms.Padding(2);
+            this.opcionTres.Name = "opcionTres";
+            this.opcionTres.Size = new System.Drawing.Size(155, 139);
+            this.opcionTres.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.opcionTres.TabIndex = 24;
+            this.opcionTres.TabStop = false;
+            this.opcionTres.Click += new System.EventHandler(this.opcionTres_Click);
+            // 
+            // opcionDos
+            // 
+            this.opcionDos.BackColor = System.Drawing.Color.Transparent;
+            this.opcionDos.Location = new System.Drawing.Point(302, 272);
+            this.opcionDos.Margin = new System.Windows.Forms.Padding(2);
+            this.opcionDos.Name = "opcionDos";
+            this.opcionDos.Size = new System.Drawing.Size(155, 139);
+            this.opcionDos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.opcionDos.TabIndex = 23;
+            this.opcionDos.TabStop = false;
+            this.opcionDos.Click += new System.EventHandler(this.opcionDos_Click);
+            // 
+            // opcionUno
+            // 
+            this.opcionUno.BackColor = System.Drawing.Color.Transparent;
+            this.opcionUno.Location = new System.Drawing.Point(80, 272);
+            this.opcionUno.Margin = new System.Windows.Forms.Padding(2);
+            this.opcionUno.Name = "opcionUno";
+            this.opcionUno.Size = new System.Drawing.Size(155, 139);
+            this.opcionUno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.opcionUno.TabIndex = 22;
+            this.opcionUno.TabStop = false;
+            this.opcionUno.Click += new System.EventHandler(this.opcionUno_Click);
+            // 
+            // pictureCorrecto3
+            // 
+            this.pictureCorrecto3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureCorrecto3.Image = global::Omega.Properties.Resources.Check;
+            this.pictureCorrecto3.Location = new System.Drawing.Point(700, 243);
+            this.pictureCorrecto3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureCorrecto3.Name = "pictureCorrecto3";
+            this.pictureCorrecto3.Size = new System.Drawing.Size(36, 24);
+            this.pictureCorrecto3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureCorrecto3.TabIndex = 21;
+            this.pictureCorrecto3.TabStop = false;
+            // 
+            // pictureCorrecto2
+            // 
+            this.pictureCorrecto2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureCorrecto2.Image = global::Omega.Properties.Resources.Check;
+            this.pictureCorrecto2.Location = new System.Drawing.Point(471, 243);
+            this.pictureCorrecto2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureCorrecto2.Name = "pictureCorrecto2";
+            this.pictureCorrecto2.Size = new System.Drawing.Size(36, 24);
+            this.pictureCorrecto2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureCorrecto2.TabIndex = 20;
+            this.pictureCorrecto2.TabStop = false;
+            // 
+            // pictureCorrecto1
+            // 
+            this.pictureCorrecto1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureCorrecto1.Image = global::Omega.Properties.Resources.Check;
+            this.pictureCorrecto1.Location = new System.Drawing.Point(243, 243);
+            this.pictureCorrecto1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureCorrecto1.Name = "pictureCorrecto1";
+            this.pictureCorrecto1.Size = new System.Drawing.Size(36, 24);
+            this.pictureCorrecto1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureCorrecto1.TabIndex = 19;
+            this.pictureCorrecto1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(461, 59);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 63);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "=";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(244, 59);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 63);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "+";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // respuestaC
+            // 
+            this.respuestaC.BackColor = System.Drawing.Color.Transparent;
+            this.respuestaC.Location = new System.Drawing.Point(537, 20);
+            this.respuestaC.Margin = new System.Windows.Forms.Padding(2);
+            this.respuestaC.Name = "respuestaC";
+            this.respuestaC.Size = new System.Drawing.Size(155, 139);
+            this.respuestaC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.respuestaC.TabIndex = 27;
+            this.respuestaC.TabStop = false;
+            // 
             // Suma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.respuestaC);
+            this.Controls.Add(this.numeroDos);
+            this.Controls.Add(this.numeroUno);
+            this.Controls.Add(this.opcionTres);
+            this.Controls.Add(this.opcionDos);
+            this.Controls.Add(this.opcionUno);
+            this.Controls.Add(this.pictureCorrecto3);
+            this.Controls.Add(this.pictureCorrecto2);
+            this.Controls.Add(this.pictureCorrecto1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblP);
             this.Controls.Add(this.lblPuntaje);
-            this.Controls.Add(this.lblOp3);
-            this.Controls.Add(this.lblOp2);
-            this.Controls.Add(this.lblOp1);
-            this.Controls.Add(this.lblRespuesta);
-            this.Controls.Add(this.lblIgual);
-            this.Controls.Add(this.lblNumero2);
-            this.Controls.Add(this.lblMas);
-            this.Controls.Add(this.lblNumero1);
             this.Name = "Suma";
             this.Text = "Suma";
             this.Load += new System.EventHandler(this.Suma_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numeroDos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeroUno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opcionTres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opcionDos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opcionUno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.respuestaC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblNumero1;
-        private System.Windows.Forms.Label lblMas;
-        private System.Windows.Forms.Label lblNumero2;
-        private System.Windows.Forms.Label lblIgual;
-        private System.Windows.Forms.Label lblRespuesta;
-        private System.Windows.Forms.Label lblOp1;
-        private System.Windows.Forms.Label lblOp2;
-        private System.Windows.Forms.Label lblOp3;
         private System.Windows.Forms.Label lblPuntaje;
         private System.Windows.Forms.Label lblP;
         private System.Windows.Forms.Timer tiempo;
+        private System.Windows.Forms.PictureBox numeroDos;
+        private System.Windows.Forms.PictureBox numeroUno;
+        private System.Windows.Forms.PictureBox opcionTres;
+        private System.Windows.Forms.PictureBox opcionDos;
+        private System.Windows.Forms.PictureBox opcionUno;
+        private System.Windows.Forms.PictureBox pictureCorrecto3;
+        private System.Windows.Forms.PictureBox pictureCorrecto2;
+        private System.Windows.Forms.PictureBox pictureCorrecto1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox respuestaC;
     }
 }

@@ -90,7 +90,7 @@
             this.pictureCorrecto1.BackColor = System.Drawing.Color.Transparent;
             this.pictureCorrecto1.Image = global::Omega.Properties.Resources.Check;
             this.pictureCorrecto1.Location = new System.Drawing.Point(202, 330);
-            this.pictureCorrecto1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureCorrecto1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureCorrecto1.Name = "pictureCorrecto1";
             this.pictureCorrecto1.Size = new System.Drawing.Size(36, 24);
             this.pictureCorrecto1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,7 +102,7 @@
             this.pictureCorrecto2.BackColor = System.Drawing.Color.Transparent;
             this.pictureCorrecto2.Image = global::Omega.Properties.Resources.Check;
             this.pictureCorrecto2.Location = new System.Drawing.Point(424, 330);
-            this.pictureCorrecto2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureCorrecto2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureCorrecto2.Name = "pictureCorrecto2";
             this.pictureCorrecto2.Size = new System.Drawing.Size(36, 24);
             this.pictureCorrecto2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,7 +114,7 @@
             this.pictureCorrecto3.BackColor = System.Drawing.Color.Transparent;
             this.pictureCorrecto3.Image = global::Omega.Properties.Resources.Check;
             this.pictureCorrecto3.Location = new System.Drawing.Point(647, 330);
-            this.pictureCorrecto3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureCorrecto3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureCorrecto3.Name = "pictureCorrecto3";
             this.pictureCorrecto3.Size = new System.Drawing.Size(36, 24);
             this.pictureCorrecto3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -210,7 +210,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Resta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resta";
