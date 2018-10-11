@@ -23,7 +23,7 @@ namespace Omega
 
         public void Recarga()
         {
-
+            respuestaCorrecta.Visible = false;
             if (this.Tag.ToString() == "Facil")
             {
                  Juego(191, 1, 10);
@@ -121,9 +121,10 @@ namespace Omega
         {
             if (orden == 0)
             {
-                MessageBox.Show("Muy bien!");
+                respuestaCorrecta.Visible = true;
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
+                MessageBox.Show("Muy bien!");
                 pictureCorrecto1.Visible = true;
                 Recarga();
             }
@@ -133,9 +134,10 @@ namespace Omega
         {
             if (orden == 1)
             {
-                MessageBox.Show("Muy bien!");
+                respuestaCorrecta.Visible = true;
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
+                MessageBox.Show("Muy bien!");
                 pictureCorrecto2.Visible = true;
                 Recarga();
             }
@@ -145,9 +147,10 @@ namespace Omega
         {
             if (orden == 2)
             {
-                MessageBox.Show("Muy bien!");
+                respuestaCorrecta.Visible = true;
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
+                MessageBox.Show("Muy bien!");
                 pictureCorrecto3.Visible = true;
                 Recarga();
             }
