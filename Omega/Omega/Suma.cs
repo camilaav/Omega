@@ -15,12 +15,13 @@ namespace Omega
     public partial class Suma : Form
     {
         string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
-        int seg = 0, orden, fondo, fondo2,resultado;
+        int seg = 0, orden, fondo, fondo2,resultado, intento = 1, puntuacion = 0;
         JuegoRN juegoRN = new JuegoRN();
 
         Random randommizer = new Random();
         public void Recarga()
         {
+            intento = 1;
             respuestaC.Visible = false;
 
             if (this.Tag.ToString() == "Facil")
@@ -84,8 +85,15 @@ namespace Omega
                 respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
                 pictureCorrecto1.Visible = true;
                 Recarga();
+            }
+            else
+            {
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
 
@@ -97,8 +105,15 @@ namespace Omega
                 respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
                 pictureCorrecto2.Visible = true;
                 Recarga();
+            }
+            else
+            {
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
 
@@ -110,8 +125,15 @@ namespace Omega
                 respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
                 pictureCorrecto3.Visible = true;
                 Recarga();
+            }
+            else
+            {
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
 
@@ -128,6 +150,26 @@ namespace Omega
         private void Suma_Load(object sender, EventArgs e)
         {
             Recarga();
+        }
+
+        public int Puntuar()
+        {
+            if(intento == 1)
+            {
+                return puntuacion = puntuacion + 100;
+            }
+            else if(intento == 2)
+            {
+                return puntuacion = puntuacion + 50;
+            }
+            else if(intento >= 3)
+            {
+                return puntuacion = puntuacion + 25;
+            }
+            else
+            {
+                return puntuacion = puntuacion + 0;
+            }
         }
 
         private void Juego(int limiteMenor, int limiteMayor)

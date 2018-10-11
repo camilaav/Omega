@@ -15,14 +15,32 @@ namespace Omega
             InitializeComponent();
         }
         JuegoRN juegoRN = new JuegoRN();
-        int resultado;
-        int orden; //NUMERO DE ORDEN DE RESPUESTA CORRECTA
-        int fondo; //NUMERO DE 1 OPCION NO CORRECTA
-        int fondo2; //NUMERO DE LA OTRA OPCION NO CORRECTA
+        int resultado, orden, fondo, fondo2, intento = 1, puntuacion = 0;
         Random randommizer = new Random();
+
+        public int Puntuar()
+        {
+            if (intento == 1)
+            {
+                return puntuacion = puntuacion + 100;
+            }
+            else if (intento == 2)
+            {
+                return puntuacion = puntuacion + 50;
+            }
+            else if (intento >= 3)
+            {
+                return puntuacion = puntuacion + 25;
+            }
+            else
+            {
+                return puntuacion = puntuacion + 0;
+            }
+        }
 
         public void Recarga()
         {
+            intento = 1;
             respuestaCorrecta.Visible = false;
             if (this.Tag.ToString() == "Facil")
             {
@@ -126,7 +144,14 @@ namespace Omega
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
                 pictureCorrecto1.Visible = true;
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
+            }
+            else
+            {
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
 
@@ -139,7 +164,14 @@ namespace Omega
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
                 pictureCorrecto2.Visible = true;
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
+            }
+            else
+            {
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
 
@@ -152,7 +184,14 @@ namespace Omega
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
                 pictureCorrecto3.Visible = true;
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
+            }
+            else
+            {
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
     }

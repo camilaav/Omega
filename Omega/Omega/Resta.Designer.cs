@@ -42,6 +42,8 @@
             this.numeroUno = new System.Windows.Forms.PictureBox();
             this.numeroDos = new System.Windows.Forms.PictureBox();
             this.respuestaCorrecta = new System.Windows.Forms.PictureBox();
+            this.lblP = new System.Windows.Forms.Label();
+            this.lblPuntaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto3)).BeginInit();
@@ -190,6 +192,24 @@
             this.respuestaCorrecta.TabIndex = 17;
             this.respuestaCorrecta.TabStop = false;
             // 
+            // lblP
+            // 
+            this.lblP.AutoSize = true;
+            this.lblP.Location = new System.Drawing.Point(721, 202);
+            this.lblP.Name = "lblP";
+            this.lblP.Size = new System.Drawing.Size(46, 13);
+            this.lblP.TabIndex = 19;
+            this.lblP.Text = "Puntaje:";
+            // 
+            // lblPuntaje
+            // 
+            this.lblPuntaje.AutoSize = true;
+            this.lblPuntaje.Location = new System.Drawing.Point(735, 268);
+            this.lblPuntaje.Name = "lblPuntaje";
+            this.lblPuntaje.Size = new System.Drawing.Size(13, 13);
+            this.lblPuntaje.TabIndex = 18;
+            this.lblPuntaje.Text = "0";
+            // 
             // Resta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +217,8 @@
             this.BackgroundImage = global::Omega.Properties.Resources.FondoEscuela;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(790, 522);
+            this.Controls.Add(this.lblP);
+            this.Controls.Add(this.lblPuntaje);
             this.Controls.Add(this.respuestaCorrecta);
             this.Controls.Add(this.numeroDos);
             this.Controls.Add(this.numeroUno);
@@ -242,5 +264,7 @@
         private System.Windows.Forms.PictureBox numeroUno;
         private System.Windows.Forms.PictureBox numeroDos;
         private System.Windows.Forms.PictureBox respuestaCorrecta;
+        private System.Windows.Forms.Label lblP;
+        private System.Windows.Forms.Label lblPuntaje;
     }
 }
