@@ -402,14 +402,14 @@ namespace Omega
             dataGridView1[5, 3].Value = 'O';
             dataGridView1[5, 4].Value = 'J';
 
-            dataGridView1[0, 1].Value = 'M';
-            dataGridView1[1, 1].Value = 'I';
-            dataGridView1[2, 1].Value = 'L';
-            dataGridView1[3, 1].Value = 'A';
-            dataGridView1[4, 1].Value = 'N';
-            dataGridView1[5, 1].Value = 'E';
-            dataGridView1[6, 1].Value = 'S';
-            dataGridView1[7, 1].Value = 'A';
+            dataGridView1[0, 0].Value = 'M';
+            dataGridView1[1, 0].Value = 'I';
+            dataGridView1[2, 0].Value = 'L';
+            dataGridView1[3, 0].Value = 'A';
+            dataGridView1[4, 0].Value = 'N';
+            dataGridView1[5, 0].Value = 'E';
+            dataGridView1[6, 0].Value = 'S';
+            dataGridView1[7, 0].Value = 'A';
 
             dataGridView1[0, 6].Value = 'A';
             dataGridView1[1, 6].Value = 'B';
@@ -495,8 +495,9 @@ namespace Omega
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+        {      
+
+                
         }
 
         
