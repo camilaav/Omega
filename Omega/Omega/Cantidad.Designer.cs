@@ -31,6 +31,8 @@
             this.opcionUno = new System.Windows.Forms.Panel();
             this.opcionDos = new System.Windows.Forms.Panel();
             this.opcionTres = new System.Windows.Forms.Panel();
+            this.lblP = new System.Windows.Forms.Label();
+            this.lblPuntaje = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // opcionUno
@@ -60,11 +62,31 @@
             this.opcionTres.TabIndex = 4;
             this.opcionTres.Click += new System.EventHandler(this.opcionTres_Click_1);
             // 
+            // lblP
+            // 
+            this.lblP.AutoSize = true;
+            this.lblP.Location = new System.Drawing.Point(523, 9);
+            this.lblP.Name = "lblP";
+            this.lblP.Size = new System.Drawing.Size(46, 13);
+            this.lblP.TabIndex = 21;
+            this.lblP.Text = "Puntaje:";
+            // 
+            // lblPuntaje
+            // 
+            this.lblPuntaje.AutoSize = true;
+            this.lblPuntaje.Location = new System.Drawing.Point(537, 75);
+            this.lblPuntaje.Name = "lblPuntaje";
+            this.lblPuntaje.Size = new System.Drawing.Size(13, 13);
+            this.lblPuntaje.TabIndex = 20;
+            this.lblPuntaje.Text = "0";
+            // 
             // Cantidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 453);
+            this.Controls.Add(this.lblP);
+            this.Controls.Add(this.lblPuntaje);
             this.Controls.Add(this.opcionTres);
             this.Controls.Add(this.opcionDos);
             this.Controls.Add(this.opcionUno);
@@ -73,6 +95,7 @@
             this.Text = "Cantidad";
             this.Load += new System.EventHandler(this.Cantidad_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -80,5 +103,7 @@
         private System.Windows.Forms.Panel opcionUno;
         private System.Windows.Forms.Panel opcionDos;
         private System.Windows.Forms.Panel opcionTres;
+        private System.Windows.Forms.Label lblP;
+        private System.Windows.Forms.Label lblPuntaje;
     }
 }

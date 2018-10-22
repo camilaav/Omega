@@ -13,8 +13,27 @@ namespace Omega
 {
     public partial class Cantidad : Form
     {
-        public int posicionInicialArriba, posicionInicialCostado, contador, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2;
+        public int posicionInicialArriba, posicionInicialCostado, contador, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, intento = 1, puntuacion = 0;
 
+        public int Puntuar()
+        {
+            if (intento == 1)
+            {
+                return puntuacion = puntuacion + 100;
+            }
+            else if (intento == 2)
+            {
+                return puntuacion = puntuacion + 50;
+            }
+            else if (intento >= 3)
+            {
+                return puntuacion = puntuacion + 25;
+            }
+            else
+            {
+                return puntuacion = puntuacion + 0;
+            }
+        }
         private void opcionUno_Click_1(object sender, EventArgs e)
         {
             if (respuestaCorrecta == 0)
@@ -68,7 +87,8 @@ namespace Omega
 
         public void Recarga()
         {
-            for(int i = this.Controls.Count -1; i >= 0; i--)
+            intento = 1;
+            for (int i = this.Controls.Count -1; i >= 0; i--)
             {
                 PictureBox control = this.Controls[i] as PictureBox;
                 if (control == null) continue;
