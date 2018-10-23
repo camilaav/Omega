@@ -115,6 +115,7 @@
     <Compile Include="BajaUsuarios.Designer.cs">
       <DependentUpon>BajaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\JuegosHelper.cs" />
     <Compile Include="Letras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,7 +134,7 @@
     <Compile Include="ModificacionUsuarios.Designer.cs">
       <DependentUpon>ModificacionUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="MovimientoHelper.cs" />
+    <Compile Include="Helpers\MovimientoHelper.cs" />
     <Compile Include="Numeros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -371,6 +372,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\P4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

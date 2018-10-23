@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,8 @@ namespace Omega
     {
         JuegoRN juegoRN = new JuegoRN();
         string palabra;
-        int posicionInicial = 1;
-        public static readonly string[] abecedario = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+        int posicionInicialArriba = 0, posicionInicialCostado = 0;
+        public static readonly string[] abecedario = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
 
         public CompletarPalabra()
         {
@@ -25,6 +26,18 @@ namespace Omega
 
         public void CargarPalabras()
         {
+            string startupPathPalabras = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Letras");
+
+            for (int i = this.Controls.Count - 1; i >= 0; i--)
+            {
+                PictureBox control = this.Controls[i] as PictureBox;
+                if (control == null) continue;
+
+                control.Dispose();
+            }
+
+            posicionInicialArriba = 10;
+            posicionInicialCostado = 10;
             var listaPalabras = juegoRN.ListaPalabras();
             var random = new Random();
 
@@ -35,33 +48,32 @@ namespace Omega
             {
                 letras.Add(letra);
             }
-
-            for(int i=0;i<=letras.Count - 1;i++)
+            foreach(var letra in letras)
             {
-                var button = new Button();
-                button.Left = posicionInicial;
-                button.Top = 20;
-                button.Visible = true;
-                button.Location = new Point(posicionInicial, 20);
-                posicionInicial += 5;
-                button.Text = letras[i].ToString().ToUpper();
+                //if (posicionInicialCostado >= 560)
+                //{
+                //    posicionInicialCostado = 10;
+                    //posicionInicialArriba = posicionInicialArriba + 110;
+                //}
+
+                var picture = new PictureBox();
+                Controls.Add(picture);
+                picture.Name = "pictureBox" + letra.ToString().ToUpper();
+                picture.Size = new Size(100, 100);
+                picture.Location = new Point(posicionInicialCostado, posicionInicialArriba);
+                picture.BackgroundImage = Image.FromFile(startupPathPalabras + @"\" + letra.ToString().ToUpper() + ".png");
+                picture.Visible = true;
+                picture.BackgroundImageLayout = ImageLayout.Stretch;
+                picture.Enabled = true;
+                posicionInicialCostado = posicionInicialCostado + 100;
+                //contador++;
             }
 
-            //label1.Text = letras[0].ToString();
-            //label2.Text = letras[1].ToString();
-            //label3.Text = "_";
-            //label4.Text = letras[3].ToString();
-
-            //label6.Text = abecedario[random.Next(1,26)];
-            //label7.Text = abecedario[random.Next(1,26)];
-            //label8.Text = letras[2].ToString();
-
-            //textBox1.Text = letras[0] + "_" + letras[2] + letras[3];
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if(textBox1.Text.ToUpper() == palabra.ToUpper())
+            if (textBox1.Text.ToUpper() == palabra.ToUpper())
             {
                 MessageBox.Show("Muy bien");
                 CargarPalabras();

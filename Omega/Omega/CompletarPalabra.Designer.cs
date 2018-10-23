@@ -43,10 +43,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(765, 403);
             this.Controls.Add(this.textBox1);
             this.Name = "CompletarPalabra";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CompletarPalabra";
             this.Load += new System.EventHandler(this.CompletarPalabra_Load);
             this.ResumeLayout(false);
