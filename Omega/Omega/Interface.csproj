@@ -133,6 +133,7 @@
     <Compile Include="ModificacionUsuarios.Designer.cs">
       <DependentUpon>ModificacionUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovimientoHelper.cs" />
     <Compile Include="Numeros.cs">
       <SubType>Form</SubType>
     </Compile>

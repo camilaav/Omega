@@ -33,6 +33,7 @@
             this.opcionTres = new System.Windows.Forms.Panel();
             this.lblP = new System.Windows.Forms.Label();
             this.lblPuntaje = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // opcionUno
@@ -65,7 +66,7 @@
             // lblP
             // 
             this.lblP.AutoSize = true;
-            this.lblP.Location = new System.Drawing.Point(523, 9);
+            this.lblP.Location = new System.Drawing.Point(627, 36);
             this.lblP.Name = "lblP";
             this.lblP.Size = new System.Drawing.Size(46, 13);
             this.lblP.TabIndex = 21;
@@ -74,17 +75,28 @@
             // lblPuntaje
             // 
             this.lblPuntaje.AutoSize = true;
-            this.lblPuntaje.Location = new System.Drawing.Point(537, 75);
+            this.lblPuntaje.Location = new System.Drawing.Point(641, 102);
             this.lblPuntaje.Name = "lblPuntaje";
             this.lblPuntaje.Size = new System.Drawing.Size(13, 13);
             this.lblPuntaje.TabIndex = 20;
             this.lblPuntaje.Text = "0";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.Location = new System.Drawing.Point(617, 379);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(56, 56);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Cantidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 453);
+            this.ClientSize = new System.Drawing.Size(685, 453);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblP);
             this.Controls.Add(this.lblPuntaje);
             this.Controls.Add(this.opcionTres);
@@ -105,5 +117,6 @@
         private System.Windows.Forms.Panel opcionTres;
         private System.Windows.Forms.Label lblP;
         private System.Windows.Forms.Label lblPuntaje;
+        private System.Windows.Forms.Panel btnSalir;
     }
 }

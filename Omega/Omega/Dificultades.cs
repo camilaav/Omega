@@ -22,6 +22,7 @@ namespace Omega
         {
             InitializeComponent();
         }
+
         void AbrirFormulario(string dificultad)
         {
             var formulario = dictionary[nombreJuego];

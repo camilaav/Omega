@@ -37,6 +37,8 @@
             // 
             // btnSopa
             // 
+            this.btnSopa.BackColor = System.Drawing.Color.Gray;
+            this.btnSopa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSopa.Location = new System.Drawing.Point(233, 12);
             this.btnSopa.Name = "btnSopa";
             this.btnSopa.Size = new System.Drawing.Size(177, 175);
@@ -46,6 +48,8 @@
             // 
             // btnCompletas
             // 
+            this.btnCompletas.BackColor = System.Drawing.Color.Gray;
+            this.btnCompletas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompletas.Location = new System.Drawing.Point(50, 12);
             this.btnCompletas.Name = "btnCompletas";
             this.btnCompletas.Size = new System.Drawing.Size(177, 175);

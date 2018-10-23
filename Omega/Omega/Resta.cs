@@ -9,15 +9,15 @@ namespace Omega
     public partial class Resta : Form
     {
         string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
+        int resultado, orden, fondo, fondo2, intento = 1, puntuacion = 0, idJuego = 1, idDificultad = 0;
+
+        JuegoRN juegoRN = new JuegoRN();
+        Random randommizer = new Random();
 
         public Resta()
         {
             InitializeComponent();
         }
-        JuegoRN juegoRN = new JuegoRN();
-        int resultado, orden, fondo, fondo2, intento = 1, puntuacion = 0;
-        Random randommizer = new Random();
-
         public int Puntuar()
         {
             if (intento == 1)
@@ -44,16 +44,19 @@ namespace Omega
             respuestaCorrecta.Visible = false;
             if (this.Tag.ToString() == "Facil")
             {
-                 Juego(191, 1, 10);
+                Juego(191, 1, 10);
+                idDificultad = 1;
 
             }
             else if (this.Tag.ToString() == "Intermedia")
             {
                 Juego(191, 0, 50);
+                idDificultad = 2;
             }
             else if (this.Tag.ToString() == "Dificil")
             {
                 Juego(258, 0, 100);
+                idDificultad = 3;
             }
 
             tiempo.Enabled = true;
@@ -88,6 +91,12 @@ namespace Omega
                 opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            MovimientoHelper movimientoHelper = new MovimientoHelper();
+            movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
         }
 
         private void Resta_Load(object sender, EventArgs e)

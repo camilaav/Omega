@@ -43,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.respuestaC = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numeroDos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeroUno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opcionTres)).BeginInit();
@@ -210,11 +211,22 @@
             this.respuestaC.TabIndex = 27;
             this.respuestaC.TabStop = false;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.Location = new System.Drawing.Point(788, 382);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(56, 56);
+            this.btnSalir.TabIndex = 28;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Suma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(856, 450);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.respuestaC);
             this.Controls.Add(this.numeroDos);
             this.Controls.Add(this.numeroUno);
@@ -260,5 +272,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox respuestaC;
+        private System.Windows.Forms.Panel btnSalir;
     }
 }

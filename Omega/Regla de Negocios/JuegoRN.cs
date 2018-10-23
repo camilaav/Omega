@@ -83,7 +83,7 @@ namespace Regla_de_Negocios
             listaParametros.Add(jugador);
             listaParametros.Add(juego);
             listaParametros.Add(dificultad);
-            string stored = "sp_NuevoMovimiento";
+            string stored = "sp_InsertarMovimiento";
             return comandos.EjecutarStore(stored, listaParametros);
         }
     }

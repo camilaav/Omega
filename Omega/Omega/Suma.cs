@@ -15,7 +15,7 @@ namespace Omega
     public partial class Suma : Form
     {
         string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
-        int seg = 0, orden, fondo, fondo2,resultado, intento = 1, puntuacion = 0;
+        int seg = 0, orden, fondo, fondo2,resultado, intento = 1, puntuacion = 0, idJuego = 2, idDificultad = 0;
         JuegoRN juegoRN = new JuegoRN();
 
         Random randommizer = new Random();
@@ -26,15 +26,18 @@ namespace Omega
 
             if (this.Tag.ToString() == "Facil")
             {
+                idDificultad = 1;
                 Juego(1, 10);
 
             }
             else if (this.Tag.ToString() == "Intermedia")
             {
+                idDificultad = 2;
                 Juego(0, 50);
             }
             else if (this.Tag.ToString() == "Dificil")
             {
+                idDificultad = 3;
                 Juego(0, 100);
             }
 
@@ -95,6 +98,12 @@ namespace Omega
                 MessageBox.Show("contestaste mal");
                 intento++;
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            MovimientoHelper movimientoHelper = new MovimientoHelper();
+            movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
         }
 
         private void opcionDos_Click(object sender, EventArgs e)

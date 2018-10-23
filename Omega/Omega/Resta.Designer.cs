@@ -44,6 +44,7 @@
             this.respuestaCorrecta = new System.Windows.Forms.PictureBox();
             this.lblP = new System.Windows.Forms.Label();
             this.lblPuntaje = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCorrecto3)).BeginInit();
@@ -210,6 +211,16 @@
             this.lblPuntaje.TabIndex = 18;
             this.lblPuntaje.Text = "0";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.Location = new System.Drawing.Point(724, 343);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(56, 56);
+            this.btnSalir.TabIndex = 20;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Resta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +228,7 @@
             this.BackgroundImage = global::Omega.Properties.Resources.FondoEscuela;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(790, 522);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblP);
             this.Controls.Add(this.lblPuntaje);
             this.Controls.Add(this.respuestaCorrecta);
@@ -266,5 +278,6 @@
         private System.Windows.Forms.PictureBox respuestaCorrecta;
         private System.Windows.Forms.Label lblP;
         private System.Windows.Forms.Label lblPuntaje;
+        private System.Windows.Forms.Panel btnSalir;
     }
 }
