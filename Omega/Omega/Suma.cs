@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Omega.Helpers;
 
 namespace Omega
 {
@@ -17,6 +18,7 @@ namespace Omega
         string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
         int seg = 0, orden, fondo, fondo2,resultado, intento = 1, puntuacion = 0, idJuego = 2, idDificultad = 0;
         JuegoRN juegoRN = new JuegoRN();
+        JuegosHelper juegoHelper = new JuegosHelper();
 
         Random randommizer = new Random();
         public void Recarga()
@@ -153,7 +155,6 @@ namespace Omega
             if (seg == 0)
             {
                 tiempo.Stop();
-                //lblRespuesta.Visible = false;
             }
         }
         private void Suma_Load(object sender, EventArgs e)
@@ -188,7 +189,7 @@ namespace Omega
 
             numero1 = randommizer.Next(limiteMenor, limiteMayor);
             numero2 = randommizer.Next(limiteMenor, limiteMayor);
-            resultado = (numero1 + numero2);
+            resultado = juegoHelper.Operacion(numero1, numero2, "+");
 
             while (resultado < 0) 
             {
