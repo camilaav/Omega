@@ -28,34 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.opcionUno = new System.Windows.Forms.Panel();
+            this.opcionDos = new System.Windows.Forms.Panel();
+            this.opcionTres = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // textBox1
+            // panel1
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 175);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.panel1.Location = new System.Drawing.Point(236, 238);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(231, 224);
+            this.panel1.TabIndex = 1;
+            // 
+            // opcionUno
+            // 
+            this.opcionUno.Location = new System.Drawing.Point(12, 472);
+            this.opcionUno.Name = "opcionUno";
+            this.opcionUno.Size = new System.Drawing.Size(221, 215);
+            this.opcionUno.TabIndex = 2;
+            this.opcionUno.Click += new System.EventHandler(this.opcionUno_Click);
+            // 
+            // opcionDos
+            // 
+            this.opcionDos.Location = new System.Drawing.Point(260, 472);
+            this.opcionDos.Name = "opcionDos";
+            this.opcionDos.Size = new System.Drawing.Size(221, 215);
+            this.opcionDos.TabIndex = 3;
+            // 
+            // opcionTres
+            // 
+            this.opcionTres.Location = new System.Drawing.Point(504, 472);
+            this.opcionTres.Name = "opcionTres";
+            this.opcionTres.Size = new System.Drawing.Size(221, 215);
+            this.opcionTres.TabIndex = 3;
             // 
             // CompletarPalabra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 403);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(852, 699);
+            this.Controls.Add(this.opcionTres);
+            this.Controls.Add(this.opcionDos);
+            this.Controls.Add(this.opcionUno);
+            this.Controls.Add(this.panel1);
             this.Name = "CompletarPalabra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CompletarPalabra";
             this.Load += new System.EventHandler(this.CompletarPalabra_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel opcionUno;
+        private System.Windows.Forms.Panel opcionDos;
+        private System.Windows.Forms.Panel opcionTres;
     }
 }

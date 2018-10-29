@@ -45,6 +45,23 @@ namespace Regla_de_Negocios
             }
             return lista;
         }
+        public IList<Imagen> ListaImagenes()
+        {
+            var lista = new List<Imagen>();
+            var stored = "sp_ListarImagen";
+            var readerImagen = comandos.EjecutarReaderSinParametros(stored);
+            while (readerImagen.Read())
+            {
+                var imagen = new Imagen
+                {
+                    NombreImagen = readerImagen["NombreImagen"].ToString(),
+                    DescripcionImagen = readerImagen["DescripcionImagen"].ToString()
+                };
+                lista.Add(imagen);
+            }
+            return lista;
+        }
+
         public Boolean NuevoMovimiento(Movimiento m)
         {
             var listaParametros = new List<SqlParameter>();
