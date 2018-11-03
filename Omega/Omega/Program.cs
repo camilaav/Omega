@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MinThantSin.OpenSourceGames;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Omega
 {
@@ -26,7 +28,7 @@ namespace Omega
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Bienvenida());
+            Application.Run(new MainForm());
         }
     }
 }
