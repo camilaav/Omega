@@ -37,5 +37,10 @@ namespace Omega
             modificacionUsuarios.Show();
             this.Hide();
         }
+
+        private void Pantalla_principal_profesores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
