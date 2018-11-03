@@ -8,7 +8,7 @@ using ImageProcessing;
 using System.IO;
 using Omega.Properties;
 
-namespace MinThantSin.OpenSourceGames
+namespace Omega
 {
     public partial class MainForm : Form
     {
@@ -2283,6 +2283,13 @@ namespace MinThantSin.OpenSourceGames
             Settings.Default.Save();
 
             DisplayJigsawPuzzle(Settings.Default.ShowImageHint);
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            var pantallaPrincipal = new Pantalla_principal();
+            pantallaPrincipal.Show();
+            this.Hide();
         }
 
         private Piece GetPieceByID(int pieceID)
