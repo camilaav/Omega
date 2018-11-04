@@ -89,6 +89,7 @@
             // opcionTres
             // 
             this.opcionTres.BackColor = System.Drawing.Color.Transparent;
+            this.opcionTres.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionTres.Location = new System.Drawing.Point(482, 356);
             this.opcionTres.Margin = new System.Windows.Forms.Padding(2);
             this.opcionTres.Name = "opcionTres";
@@ -101,6 +102,7 @@
             // opcionDos
             // 
             this.opcionDos.BackColor = System.Drawing.Color.Transparent;
+            this.opcionDos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionDos.Location = new System.Drawing.Point(331, 356);
             this.opcionDos.Margin = new System.Windows.Forms.Padding(2);
             this.opcionDos.Name = "opcionDos";
@@ -113,6 +115,7 @@
             // opcionUno
             // 
             this.opcionUno.BackColor = System.Drawing.Color.Transparent;
+            this.opcionUno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionUno.Location = new System.Drawing.Point(179, 356);
             this.opcionUno.Margin = new System.Windows.Forms.Padding(2);
             this.opcionUno.Name = "opcionUno";
@@ -163,6 +166,7 @@
             this.Controls.Add(this.lblPuntaje);
             this.DoubleBuffered = true;
             this.Name = "Suma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Suma";
             this.Load += new System.EventHandler(this.Suma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numeroDos)).EndInit();

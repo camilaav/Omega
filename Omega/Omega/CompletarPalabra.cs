@@ -16,7 +16,7 @@ namespace Omega
     public partial class CompletarPalabra : Form
     {
         JuegoRN juegoRN = new JuegoRN();
-        int posicionInicialArriba = 0, posicionInicialCostado = 0, idDificultad = 0, randomImagen, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2;
+        int posicionInicialArriba = 0, posicionInicialCostado = 0, idDificultad = 0, randomImagen, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, intento = 1, puntuacion = 0;
         IList<Imagen> listaImagenes = new List<Imagen>();
         PictureBox pictureVacio = new PictureBox();
         char[] abecedario = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
@@ -56,10 +56,12 @@ namespace Omega
             {
                 MessageBox.Show("Muy bien!");
                 pictureVacio.Visible = true;
+                Puntuar();
                 Recarga();
             }
             else
             {
+                intento++;
                 MessageBox.Show("Respuesta incorrecta");
             }
         }
@@ -70,10 +72,12 @@ namespace Omega
             {
                 MessageBox.Show("Muy bien!");
                 pictureVacio.Visible = true;
+                Puntuar();
                 Recarga();
             }
             else
             {
+                intento++;
                 MessageBox.Show("Respuesta incorrecta");
             }
         }
@@ -89,17 +93,26 @@ namespace Omega
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            var pantallaPrincipal = new Pantalla_principal();
+            pantallaPrincipal.Show();
+            this.Hide();
+        }
+
         private void opcionUno_Click(object sender, EventArgs e)
         {
             if(respuestaCorrecta == 0)
             {
                 MessageBox.Show("Muy bien!");
                 pictureVacio.Visible = true;
+                Puntuar();
                 Recarga();
 
             }
             else
             {
+                intento++;
                 MessageBox.Show("Respuesta incorrecta");
             }
         }
@@ -123,8 +136,8 @@ namespace Omega
 
                 control.Dispose();
             }
-            posicionInicialArriba = 10;
-            posicionInicialCostado = 10;
+            posicionInicialArriba = 150;
+            posicionInicialCostado = 130;
 
             var letras = new List<char>();
             foreach (var letra in imagen.DescripcionImagen)
@@ -132,7 +145,7 @@ namespace Omega
                 letras.Add(letra);
             }
 
-            var opcionCorrecta = random.Next(1, letras.Count());
+            var opcionCorrecta = random.Next(1, imagen.DescripcionImagen.Length);
 
             for (int i = 0; i <= letras.Count() - 1; i++)
             {
@@ -141,19 +154,21 @@ namespace Omega
                     var picture = new PictureBox();
                     Controls.Add(picture);
                     picture.Name = "pictureBox" + letras[i].ToString().ToUpper();
-                    picture.Size = new Size(90, 90);
+                    picture.Size = new Size(70, 70);
                     picture.Location = new Point(posicionInicialCostado, posicionInicialArriba);
                     picture.BackgroundImage = Image.FromFile(startupPathPalabras + @"\" + letras[i].ToString().ToUpper() + ".png");
                     picture.Visible = true;
+                    picture.BackColor = Color.Transparent;
                     picture.BackgroundImageLayout = ImageLayout.Stretch;
                     picture.Enabled = true;
-                    posicionInicialCostado = posicionInicialCostado + 90;
+                    posicionInicialCostado = posicionInicialCostado + 70;
                 }
                 else
                 {
                     Controls.Add(pictureVacio);
                     pictureVacio.Size = new Size(100, 100);
                     pictureVacio.Location = new Point(posicionInicialCostado, posicionInicialArriba);
+                    pictureVacio.BackColor = Color.Transparent;
                     pictureVacio.BackgroundImage = Image.FromFile(startupPathPalabras + @"\" + letras[i].ToString().ToUpper() + ".png");
                     pictureVacio.Visible = false;
                     pictureVacio.BackgroundImageLayout = ImageLayout.Stretch;
@@ -219,6 +234,9 @@ namespace Omega
 
         private void Recarga()
         {
+            intento = 1;
+            lblPuntaje.Text = puntuacion.ToString();
+            pictureVacio = new PictureBox();
             CargarJuego();
             CargarPalabras();
             CargarImagenes();
@@ -226,6 +244,26 @@ namespace Omega
         private void CompletarPalabra_Load(object sender, EventArgs e)
         {
             Recarga();
+        }
+
+        public int Puntuar()
+        {
+            if (intento == 1)
+            {
+                return puntuacion = puntuacion + 100;
+            }
+            else if (intento == 2)
+            {
+                return puntuacion = puntuacion + 50;
+            }
+            else if (intento >= 3)
+            {
+                return puntuacion = puntuacion + 25;
+            }
+            else
+            {
+                return puntuacion = puntuacion + 0;
+            }
         }
     }
 }
