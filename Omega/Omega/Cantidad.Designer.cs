@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cantidad));
             this.opcionUno = new System.Windows.Forms.Panel();
             this.opcionDos = new System.Windows.Forms.Panel();
             this.opcionTres = new System.Windows.Forms.Panel();
-            this.lblP = new System.Windows.Forms.Label();
             this.lblPuntaje = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // opcionUno
             // 
             this.opcionUno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionUno.Location = new System.Drawing.Point(24, 308);
+            this.opcionUno.Location = new System.Drawing.Point(38, 276);
             this.opcionUno.Name = "opcionUno";
             this.opcionUno.Size = new System.Drawing.Size(147, 127);
             this.opcionUno.TabIndex = 3;
@@ -48,7 +47,7 @@
             // opcionDos
             // 
             this.opcionDos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionDos.Location = new System.Drawing.Point(202, 308);
+            this.opcionDos.Location = new System.Drawing.Point(230, 276);
             this.opcionDos.Name = "opcionDos";
             this.opcionDos.Size = new System.Drawing.Size(147, 127);
             this.opcionDos.TabIndex = 4;
@@ -57,51 +56,38 @@
             // opcionTres
             // 
             this.opcionTres.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionTres.Location = new System.Drawing.Point(386, 308);
+            this.opcionTres.Location = new System.Drawing.Point(442, 276);
             this.opcionTres.Name = "opcionTres";
             this.opcionTres.Size = new System.Drawing.Size(147, 127);
             this.opcionTres.TabIndex = 4;
             this.opcionTres.Click += new System.EventHandler(this.opcionTres_Click_1);
             // 
-            // lblP
-            // 
-            this.lblP.AutoSize = true;
-            this.lblP.Location = new System.Drawing.Point(627, 36);
-            this.lblP.Name = "lblP";
-            this.lblP.Size = new System.Drawing.Size(46, 13);
-            this.lblP.TabIndex = 21;
-            this.lblP.Text = "Puntaje:";
-            // 
             // lblPuntaje
             // 
             this.lblPuntaje.AutoSize = true;
-            this.lblPuntaje.Location = new System.Drawing.Point(641, 102);
+            this.lblPuntaje.BackColor = System.Drawing.Color.Transparent;
+            this.lblPuntaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuntaje.ForeColor = System.Drawing.Color.Cornsilk;
+            this.lblPuntaje.Location = new System.Drawing.Point(643, 21);
             this.lblPuntaje.Name = "lblPuntaje";
-            this.lblPuntaje.Size = new System.Drawing.Size(13, 13);
+            this.lblPuntaje.Size = new System.Drawing.Size(20, 24);
             this.lblPuntaje.TabIndex = 20;
             this.lblPuntaje.Text = "0";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Location = new System.Drawing.Point(617, 379);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(56, 56);
-            this.btnSalir.TabIndex = 5;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Cantidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 453);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.lblP);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(686, 433);
+            this.ControlBox = false;
             this.Controls.Add(this.lblPuntaje);
             this.Controls.Add(this.opcionTres);
             this.Controls.Add(this.opcionDos);
             this.Controls.Add(this.opcionUno);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cantidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cantidad";
@@ -115,8 +101,6 @@
         private System.Windows.Forms.Panel opcionUno;
         private System.Windows.Forms.Panel opcionDos;
         private System.Windows.Forms.Panel opcionTres;
-        private System.Windows.Forms.Label lblP;
         private System.Windows.Forms.Label lblPuntaje;
-        private System.Windows.Forms.Panel btnSalir;
     }
 }
