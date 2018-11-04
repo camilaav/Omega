@@ -38,16 +38,21 @@ namespace Omega
             this.Hide();
         }
 
-        private void btnProfesor_Click(object sender, EventArgs e)
+        private void Bienvenida_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            txtNombre.BackColor = Color.Honeydew;
+        }
+
+        private void picprofesor_Click(object sender, EventArgs e)
         {
             Login l = new Login();
             l.Show();
             this.Hide();
-        }
-
-        private void Bienvenida_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

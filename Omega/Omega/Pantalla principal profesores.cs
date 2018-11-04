@@ -17,24 +17,55 @@ namespace Omega
             InitializeComponent();
         }
 
-        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AbrirForm(Form fh)
         {
-            var altaUsuarios = new AltaUsuarios();
-            altaUsuarios.Show();
-            this.Hide();
+                if (this.panel1.Controls.Count > 0)
+                    this.panel1.Controls.RemoveAt(0);
+                fh.TopLevel = false;
+                fh.FormBorderStyle = FormBorderStyle.None;
+                fh.Dock = DockStyle.Fill;
+                this.panel1.Controls.Add(fh);
+                this.panel1.Tag = fh;
+                fh.Show();
+
+        }
+        private void picAlta_Click(object sender, EventArgs e)
+        {
+
+            var form = Application.OpenForms.OfType<AltaUsuarios>().FirstOrDefault();
+            AltaUsuarios altaUsuarios = form ?? new AltaUsuarios();
+            AbrirForm(altaUsuarios);
+
         }
 
-        private void bajaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void picBorrar_Click(object sender, EventArgs e)
         {
-            var bajaUsuarios = new BajaUsuarios();
-            bajaUsuarios.Show();
-            this.Hide();
+            var form = Application.OpenForms.OfType<BajaUsuarios>().FirstOrDefault();
+            BajaUsuarios bajaUsuarios = form ?? new BajaUsuarios();
+            AbrirForm(bajaUsuarios);
         }
 
-        private void modificaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void picModificar_Click(object sender, EventArgs e)
         {
-            var modificacionUsuarios = new ModificacionUsuarios();
-            modificacionUsuarios.Show();
+            var form = Application.OpenForms.OfType<ModificacionUsuarios>().FirstOrDefault();
+            ModificacionUsuarios modificacionUsuarios = form ?? new ModificacionUsuarios();
+            AbrirForm(modificacionUsuarios);
+        }
+
+        private void picTabla_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pantalla_principal_profesores_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Bienvenida bienvenida = new Bienvenida();
+            bienvenida.Show();
             this.Hide();
         }
     }

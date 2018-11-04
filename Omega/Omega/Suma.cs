@@ -1,158 +1,219 @@
-﻿using System;
+﻿using Regla_de_Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Omega.Helpers;
 
 namespace Omega
 {
     public partial class Suma : Form
     {
+        string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
+        int seg = 0, orden, fondo, fondo2,resultado, intento = 1, puntuacion = 0, idJuego = 2, idDificultad = 0;
+        JuegoRN juegoRN = new JuegoRN();
+        JuegosHelper juegoHelper = new JuegosHelper();
+
+        Random randommizer = new Random();
+        public void Recarga()
+        {
+            intento = 1;
+            respuestaC.Visible = false;
+
+            if (this.Tag.ToString() == "Facil")
+            {
+                idDificultad = 1;
+                Juego(1, 10);
+
+            }
+            else if (this.Tag.ToString() == "Intermedia")
+            {
+                idDificultad = 2;
+                Juego(0, 50);
+            }
+            else if (this.Tag.ToString() == "Dificil")
+            {
+                idDificultad = 3;
+                Juego(0, 100);
+            }
+
+            tiempo.Enabled = true;
+            pictureCorrecto1.Visible = false;
+            pictureCorrecto2.Visible = false;
+            pictureCorrecto3.Visible = false;
+
+            if (orden == 0)                                 //PONE LA RESPUESTA CORRECTA EN UNA DE LAS 3 OPCINES EN FORMA ALEATOREA
+            {
+                opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo.ToString() + ".png");
+                opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo2.ToString() + ".png");
+                opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            if (orden == 1)
+            {
+                opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo.ToString() + ".png");
+                opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo2.ToString() + ".png");
+                opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            if (orden == 2)
+            {
+                opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo2.ToString() + ".png");
+                opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo.ToString() + ".png");
+                opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+        }
+
         public Suma()
         {
             InitializeComponent();
         }
-        void CargarFuentes()
+
+        private void opcionUno_Click(object sender, EventArgs e)
         {
-            lblNumero1.Font = new Font("Patchwork Stitchlings", lblNumero1.Font.Size);
-            lblNumero2.Font = new Font("Patchwork Stitchlings", lblNumero2.Font.Size);
-            lblRespuesta.Font = new Font("Patchwork Stitchlings", lblRespuesta.Font.Size);
-            lblOp1.Font = new Font("Patchwork Stitchlings", lblOp1.Font.Size);
-            lblOp2.Font = new Font("Patchwork Stitchlings", lblOp2.Font.Size);
-            lblOp3.Font = new Font("Patchwork Stitchlings", lblOp3.Font.Size);
-            lblMas.Font = new Font("Patchwork Stitchlings", lblMas.Font.Size);
-            lblIgual.Font = new Font("Patchwork Stitchlings", lblIgual.Font.Size);
-            lblP.Font = new Font("Patchwork Stitchlings", lblP.Font.Size);
-            lblPuntaje.Font = new Font("Patchwork Stitchlings", lblPuntaje.Font.Size);
-        }
-        int num1, num2, rpt, op1, op2, orden, intentos, seg = 0;
-        Random rdm = new Random();
-        void NumerosRandom()
-        {
-            lblRespuesta.Visible = false;
-            num1 = rdm.Next(1, 11);
-            num2 = rdm.Next(1, 11);
-            rpt = num1 + num2;
-            op1 = rdm.Next(1, 11);
-            op2 = rdm.Next(1, 11);
-            orden = rdm.Next(1, 4);
-            if (rpt < 11 && rpt != op1 && rpt != op2 && op1 != op2)
+            if (orden == 0)
             {
-                if (orden == 1)
-                {
-                    lblNumero1.Text = num1.ToString();
-                    lblNumero2.Text = num2.ToString();
-                    lblOp1.Text = rpt.ToString();
-                    lblOp2.Text = op1.ToString();
-                    lblOp3.Text = op2.ToString();
-                }
-                else if (orden == 2)
-                {
-                    lblNumero1.Text = num1.ToString();
-                    lblNumero2.Text = num2.ToString();
-                    lblOp1.Text = op1.ToString();
-                    lblOp2.Text = rpt.ToString();
-                    lblOp3.Text = op2.ToString();
-                }
-                else if (orden == 3)
-                {
-                    lblNumero1.Text = num1.ToString();
-                    lblNumero2.Text = num2.ToString();
-                    lblOp1.Text = op1.ToString();
-                    lblOp2.Text = op2.ToString();
-                    lblOp3.Text = rpt.ToString();
-                }
+                respuestaC.Visible = true;
+                respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
+                MessageBox.Show("Muy bien!");
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
+                pictureCorrecto1.Visible = true;
+                Recarga();
             }
             else
             {
-                NumerosRandom();
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
-        private void LblOp1_Click(object sender, EventArgs e)
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
-            if (rpt == int.Parse(lblOp1.Text))
+            MovimientoHelper movimientoHelper = new MovimientoHelper();
+            movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
+        }
+
+        private void opcionDos_Click(object sender, EventArgs e)
+        {
+            if (orden == 1)
             {
-                RespuestaCorrecta();
+                respuestaC.Visible = true;
+                respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
+                MessageBox.Show("Muy bien!");
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
+                pictureCorrecto2.Visible = true;
+                Recarga();
             }
             else
             {
-                RespuestaIncorrecta();
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
-        private void LblOp2_Click(object sender, EventArgs e)
+
+        private void opcionTres_Click(object sender, EventArgs e)
         {
-            if (rpt == int.Parse(lblOp2.Text))
+            if (orden == 2)
             {
-                RespuestaCorrecta();
-            }
-            {
-                RespuestaIncorrecta();
-            }
-        }
-        private void LblOp3_Click(object sender, EventArgs e)
-        {
-            if (rpt == int.Parse(lblOp3.Text))
-            {
-                RespuestaCorrecta();
+                respuestaC.Visible = true;
+                respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
+                MessageBox.Show("Muy bien!");
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
+                pictureCorrecto3.Visible = true;
+                Recarga();
             }
             else
             {
-                RespuestaIncorrecta();
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
-        void RespuestaCorrecta()
-        {
-            lblRespuesta.Text = rpt.ToString();
-            lblRespuesta.Visible = true;
-            tiempo.Stop();
-            MessageBox.Show("bien");
-            if (intentos == 0)
-            {
-                lblPuntaje.Text = (int.Parse(lblPuntaje.Text) + 100).ToString();
-                intentos = 0;
-            }
-            else if (intentos == 1)
-            {
-                lblPuntaje.Text = (int.Parse(lblPuntaje.Text) + 50).ToString();
-                intentos = 0;
-            }
-            else if (intentos == 2)
-            {
-                lblPuntaje.Text = (int.Parse(lblPuntaje.Text) + 25).ToString();
-                intentos = 0;
-            }
-            else if (intentos >= 3)
-            {
-                lblPuntaje.Text = (int.Parse(lblPuntaje.Text) + 0).ToString();
-                intentos = 0;
-            }
-            NumerosRandom();
-        }
-        void RespuestaIncorrecta()
-        {
-            lblRespuesta.Text = "X";
-            lblRespuesta.Visible = true;
-            seg = 3;
-            tiempo.Start();
-            intentos++;
-        }
+
+
         private void tiempo_Tick(object sender, EventArgs e)
         {
             seg -= 1;
             if (seg == 0)
             {
                 tiempo.Stop();
-                lblRespuesta.Visible = false;
             }
         }
         private void Suma_Load(object sender, EventArgs e)
         {
-            CargarFuentes();
-            NumerosRandom();
+            Recarga();
+        }
+
+        public int Puntuar()
+        {
+            if(intento == 1)
+            {
+                return puntuacion = puntuacion + 100;
+            }
+            else if(intento == 2)
+            {
+                return puntuacion = puntuacion + 50;
+            }
+            else if(intento >= 3)
+            {
+                return puntuacion = puntuacion + 25;
+            }
+            else
+            {
+                return puntuacion = puntuacion + 0;
+            }
+        }
+
+        private void Juego(int limiteMenor, int limiteMayor)
+        {
+            int numero1;
+            int numero2;
+
+            numero1 = randommizer.Next(limiteMenor, limiteMayor);
+            numero2 = randommizer.Next(limiteMenor, limiteMayor);
+            resultado = juegoHelper.Operacion(numero1, numero2, "+");
+
+            while (resultado < 0) 
+            {
+                numero1 = randommizer.Next(limiteMenor, limiteMayor);
+                numero2 = randommizer.Next(limiteMenor, limiteMayor);
+                resultado = (numero1 - numero2);
+            }
+
+            numeroUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + numero1.ToString() + ".png");
+            numeroUno.BackgroundImageLayout = ImageLayout.Stretch;
+            numeroDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + numero2.ToString() + ".png");
+            numeroDos.BackgroundImageLayout = ImageLayout.Stretch;
+
+            orden = randommizer.Next(2);
+
+            fondo = randommizer.Next(limiteMenor, limiteMayor);
+
+            fondo2 = randommizer.Next(limiteMenor, limiteMayor);
+
+            while (resultado == fondo || resultado == fondo2 || fondo == fondo2)
+            {
+                fondo = randommizer.Next(limiteMenor, limiteMayor);
+                fondo2 = randommizer.Next(limiteMenor, limiteMayor);
+            }
         }
     }
 }

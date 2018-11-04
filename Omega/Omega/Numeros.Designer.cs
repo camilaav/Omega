@@ -39,6 +39,8 @@
             // 
             // btnSuma
             // 
+            this.btnSuma.BackColor = System.Drawing.Color.DarkGray;
+            this.btnSuma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSuma.Location = new System.Drawing.Point(13, 25);
             this.btnSuma.Name = "btnSuma";
             this.btnSuma.Size = new System.Drawing.Size(177, 175);
@@ -48,6 +50,8 @@
             // 
             // btnResta
             // 
+            this.btnResta.BackColor = System.Drawing.Color.DarkGray;
+            this.btnResta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResta.Location = new System.Drawing.Point(196, 25);
             this.btnResta.Name = "btnResta";
             this.btnResta.Size = new System.Drawing.Size(177, 175);
@@ -57,6 +61,8 @@
             // 
             // btnCantidad
             // 
+            this.btnCantidad.BackColor = System.Drawing.Color.DarkGray;
+            this.btnCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCantidad.Location = new System.Drawing.Point(379, 25);
             this.btnCantidad.Name = "btnCantidad";
             this.btnCantidad.Size = new System.Drawing.Size(177, 175);

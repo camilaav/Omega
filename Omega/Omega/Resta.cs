@@ -1,83 +1,105 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Omega.Properties;
 using System.IO;
-using System.Linq;
 using Regla_de_Negocios;
+using Omega.Helpers;
 
 namespace Omega
 {
     public partial class Resta : Form
     {
+        string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
+        int resultado, orden, fondo, fondo2, intento = 1, puntuacion = 0, idJuego = 1, idDificultad = 0;
+
+        JuegosHelper juegoHelper = new JuegosHelper();
+
+        JuegoRN juegoRN = new JuegoRN();
+        Random randommizer = new Random();
+
         public Resta()
         {
             InitializeComponent();
         }
-        JuegoRN juegoRN = new JuegoRN();
-        int resultado;
-        int orden; //NUMERO DE ORDEN DE RESPUESTA CORRECTA
-        int fondo; //NUMERO DE 1 OPCION NO CORRECTA
-        int fondo2; //NUMERO DE LA OTRA OPCION NO CORRECTA
-        Random randommizer = new Random();
+        public int Puntuar()
+        {
+            if (intento == 1)
+            {
+                return puntuacion = puntuacion + 100;
+            }
+            else if (intento == 2)
+            {
+                return puntuacion = puntuacion + 50;
+            }
+            else if (intento >= 3)
+            {
+                return puntuacion = puntuacion + 25;
+            }
+            else
+            {
+                return puntuacion = puntuacion + 0;
+            }
+        }
 
         public void Recarga()
         {
-            label5.Text = "?";
-
+            intento = 1;
+            respuestaCorrecta.Visible = false;
             if (this.Tag.ToString() == "Facil")
             {
-                 Juego(191, 1, 10);
+                Juego(191, 1, 10);
+                idDificultad = 1;
 
             }
             else if (this.Tag.ToString() == "Intermedia")
             {
                 Juego(191, 0, 50);
+                idDificultad = 2;
             }
             else if (this.Tag.ToString() == "Dificil")
             {
                 Juego(258, 0, 100);
+                idDificultad = 3;
             }
-
-            label1.Font = new Font("Patchwork Stitchlings", label1.Font.Size);
-            label2.Font = new Font("Patchwork Stitchlings", label2.Font.Size);
-            label3.Font = new Font("Patchwork Stitchlings", label3.Font.Size);
-            label4.Font = new Font("Patchwork Stitchlings", label4.Font.Size);
-            label5.Font = new Font("Patchwork Stitchlings", label5.Font.Size);
-            label6.Font = new Font("Patchwork Stitchlings", label6.Font.Size);
-            label7.Font = new Font("Patchwork Stitchlings", label7.Font.Size);
-            label8.Font = new Font("Patchwork Stitchlings", label8.Font.Size);
 
             tiempo.Enabled = true;
             pictureCorrecto1.Visible = false;
             pictureCorrecto2.Visible = false;
             pictureCorrecto3.Visible = false;
-            label5.Visible = true;
 
             if (orden == 0)                                 //PONE LA RESPUESTA CORRECTA EN UNA DE LAS 3 OPCINES EN FORMA ALEATOREA
             {
-                label6.Text = resultado.ToString();
-                label7.Text = fondo.ToString();
-                label8.Text = fondo2.ToString();
+                opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo.ToString() + ".png");
+                opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo2.ToString() + ".png");
+                opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
             }
             if (orden == 1)
             {
-                label6.Text = fondo.ToString();
-                label7.Text = resultado.ToString();
-                label8.Text = fondo2.ToString();
+                opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo.ToString() + ".png");
+                opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo2.ToString() + ".png");
+                opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
             }
             if (orden == 2)
             {
-                label6.Text = fondo2.ToString();
-                label7.Text = fondo.ToString();
-                label8.Text = resultado.ToString();
+                opcionUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo2.ToString() + ".png");
+                opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + fondo.ToString() + ".png");
+                opcionDos.BackgroundImageLayout = ImageLayout.Stretch;
+                opcionTres.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            MovimientoHelper movimientoHelper = new MovimientoHelper();
+            movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
         }
 
         private void Resta_Load(object sender, EventArgs e)
@@ -87,36 +109,33 @@ namespace Omega
 
         private void Juego(int width, int limiteMenor, int limiteMayor)
         {
-            int numero1; //PRIMER NUMERO DE LA RESTA
-            int numero2; //SEGUNDO NUMERO DE LA RESTA
+            int numero1;
+            int numero2;
 
-            label1.Width = width;
-            label3.Width = width;
+            numeroUno.Width = width;
+            numeroDos.Width = width;
 
-            numero1 = randommizer.Next(limiteMenor, limiteMayor + 1);
-            numero2 = randommizer.Next(limiteMenor, limiteMayor + 1);
-            resultado = (numero1 - numero2);
+            numero1 = randommizer.Next(limiteMenor, limiteMayor);
+            numero2 = randommizer.Next(limiteMenor, limiteMayor);
+            resultado = juegoHelper.Operacion(numero1, numero2, "-");
 
-            while (resultado < 0) //ELIMINA LA POSIBILIDAD DE RESULTADO NEGATIVO
+            while (resultado < 0)
             {
                 numero1 = randommizer.Next(limiteMenor, limiteMayor + 1);
                 numero2 = randommizer.Next(limiteMenor, limiteMayor + 1);
                 resultado = (numero1 - numero2);
             }
-            //LE DA IMAGENES A LOS 3 PRIMEROS PICTUREBOX
-            label1.Text = numero1.ToString();
-            label3.Text = numero2.ToString();
-            // label5.Text = resultado.ToString();
+            numeroUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + numero1.ToString() + ".png");
+            numeroUno.BackgroundImageLayout = ImageLayout.Stretch;
+            numeroDos.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + numero2.ToString() + ".png");
+            numeroDos.BackgroundImageLayout = ImageLayout.Stretch;
 
-            orden = randommizer.Next(1,4);//NUMERO RANDOM PARA LA POSICION DE LA RESPUESTA CORRECTA
+            orden = randommizer.Next(2);
 
-            //NUMERO DE FONDO DE UN PICTURE DE RESPUESTAS
-            fondo = randommizer.Next(limiteMenor, limiteMayor + 1);
+            fondo = randommizer.Next(limiteMenor, limiteMayor);
 
-            //NUMERO DE FONDO DEL OTRO PICTURE DE RESPUESTA
-            fondo2 = randommizer.Next(limiteMenor, limiteMayor + 1);
+            fondo2 = randommizer.Next(limiteMenor, limiteMayor);
 
-            //VUELVE A HACER RANDOM LOS FONDOS HASTA QUE NO SEAN IGUAL AL RESULTADO
             while (resultado == fondo || resultado == fondo2 || fondo == fondo2)
             {
                 fondo = randommizer.Next(limiteMenor, limiteMayor + 1);
@@ -124,61 +143,63 @@ namespace Omega
             }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void opcionUno_Click(object sender, EventArgs e)
         {
             if (orden == 0)
             {
+                respuestaCorrecta.Visible = true;
+                respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
-                label5.Visible = true;
-                label5.Text = resultado.ToString();
                 pictureCorrecto1.Visible = true;
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
             }
             else
             {
-                //MessageBox.Show("Respuesta incorrecta");                
-
-                label5.Text = "X";
-                label5.Visible = true;
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
-        private void label7_Click(object sender, EventArgs e)
+
+        private void opcionDos_Click(object sender, EventArgs e)
         {
             if (orden == 1)
             {
+                respuestaCorrecta.Visible = true;
+                respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
-                label5.Visible = true;
-                label5.Text = resultado.ToString();
                 pictureCorrecto2.Visible = true;
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
             }
             else
             {
-                //MessageBox.Show("Respuesta incorrecta");           
-                label5.Text = "X";
-                label5.Visible = true;
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click_1(object sender, EventArgs e)
+        private void opcionTres_Click(object sender, EventArgs e)
         {
             if (orden == 2)
             {
+                respuestaCorrecta.Visible = true;
+                respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
+                respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
-                label5.Visible = true;
-                label5.Text = resultado.ToString();
                 pictureCorrecto3.Visible = true;
+                lblPuntaje.Text = null;
+                lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
             }
             else
             {
-                label5.Text = "X";
-                label5.Visible = true;
+                MessageBox.Show("contestaste mal");
+                intento++;
             }
         }
     }

@@ -29,70 +29,66 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.PictureBox btnIngresar;
-            System.Windows.Forms.PictureBox btnProfesor;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bienvenida));
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.picprofesor = new System.Windows.Forms.PictureBox();
             btnIngresar = new System.Windows.Forms.PictureBox();
-            btnProfesor = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(btnIngresar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(btnProfesor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picprofesor)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIngresar
             // 
             btnIngresar.BackColor = System.Drawing.Color.Transparent;
-            btnIngresar.BackgroundImage = global::Omega.Properties.Resources.Aceptar;
+            btnIngresar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIngresar.BackgroundImage")));
             btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            btnIngresar.Location = new System.Drawing.Point(326, 276);
+            btnIngresar.Location = new System.Drawing.Point(293, 322);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new System.Drawing.Size(80, 80);
+            btnIngresar.Size = new System.Drawing.Size(277, 79);
+            btnIngresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             btnIngresar.TabIndex = 3;
             btnIngresar.TabStop = false;
             btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // btnProfesor
-            // 
-            btnProfesor.BackColor = System.Drawing.Color.Transparent;
-            btnProfesor.BackgroundImage = global::Omega.Properties.Resources.Engranaje1;
-            btnProfesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            btnProfesor.Location = new System.Drawing.Point(12, 12);
-            btnProfesor.Name = "btnProfesor";
-            btnProfesor.Size = new System.Drawing.Size(40, 40);
-            btnProfesor.TabIndex = 4;
-            btnProfesor.TabStop = false;
-            btnProfesor.Click += new System.EventHandler(this.btnProfesor_Click);
-            // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(215, 217);
+            this.txtNombre.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.txtNombre.Location = new System.Drawing.Point(304, 257);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(133, 26);
+            this.txtNombre.Size = new System.Drawing.Size(277, 25);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
-            // label1
+            // picprofesor
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(210, 195);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 19);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Ingresa tu nombre";
+            this.picprofesor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picprofesor.BackColor = System.Drawing.Color.Transparent;
+            this.picprofesor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picprofesor.BackgroundImage")));
+            this.picprofesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picprofesor.Location = new System.Drawing.Point(805, -3);
+            this.picprofesor.Name = "picprofesor";
+            this.picprofesor.Size = new System.Drawing.Size(72, 79);
+            this.picprofesor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picprofesor.TabIndex = 5;
+            this.picprofesor.TabStop = false;
+            this.picprofesor.Click += new System.EventHandler(this.picprofesor_Click);
             // 
             // Bienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Omega.Properties.Resources.NiñosNube;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(426, 361);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(btnProfesor);
+            this.ClientSize = new System.Drawing.Size(876, 630);
+            this.Controls.Add(this.picprofesor);
             this.Controls.Add(btnIngresar);
             this.Controls.Add(this.txtNombre);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -102,7 +98,7 @@
             this.Text = "Bienvenida";
             this.Load += new System.EventHandler(this.Bienvenida_Load);
             ((System.ComponentModel.ISupportInitialize)(btnIngresar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(btnProfesor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picprofesor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,6 +107,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox picprofesor;
     }
 }

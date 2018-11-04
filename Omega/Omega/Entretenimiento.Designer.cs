@@ -39,14 +39,19 @@
             // 
             // btnColorear
             // 
+            this.btnColorear.BackColor = System.Drawing.Color.DarkGray;
+            this.btnColorear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnColorear.Location = new System.Drawing.Point(378, 12);
             this.btnColorear.Name = "btnColorear";
             this.btnColorear.Size = new System.Drawing.Size(177, 175);
             this.btnColorear.TabIndex = 5;
             this.btnColorear.TabStop = false;
+            this.btnColorear.Click += new System.EventHandler(this.btnColorear_Click);
             // 
             // btnMemotest
             // 
+            this.btnMemotest.BackColor = System.Drawing.Color.DarkGray;
+            this.btnMemotest.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMemotest.Location = new System.Drawing.Point(195, 12);
             this.btnMemotest.Name = "btnMemotest";
             this.btnMemotest.Size = new System.Drawing.Size(177, 175);
@@ -56,6 +61,8 @@
             // 
             // btnRompecabezas
             // 
+            this.btnRompecabezas.BackColor = System.Drawing.Color.DarkGray;
+            this.btnRompecabezas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRompecabezas.Location = new System.Drawing.Point(12, 12);
             this.btnRompecabezas.Name = "btnRompecabezas";
             this.btnRompecabezas.Size = new System.Drawing.Size(177, 175);

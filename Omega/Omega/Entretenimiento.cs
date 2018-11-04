@@ -17,21 +17,29 @@ namespace Omega
             InitializeComponent();
         }
 
-        public void dificultad()
+        public void dificultad(string nombreJuego)
         {
             var dificultades = new Dificultades();
+            dificultades.nombreJuego = nombreJuego;
             dificultades.Show();
             this.Hide();
         }
 
         private void btnRompecabezas_Click(object sender, EventArgs e)
         {
-            dificultad();
+            dificultad("rompe");
         }
 
         private void btnMemotest_Click(object sender, EventArgs e)
         {
-            dificultad();
+           // dificultad();
+        }
+
+        private void btnColorear_Click(object sender, EventArgs e)
+        {
+            var colorear = new Colorear();
+            colorear.Show();
+            this.Hide();
         }
     }
 }
