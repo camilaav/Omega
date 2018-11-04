@@ -93,14 +93,14 @@ namespace Omega
             label1.Width = width;
             label3.Width = width;
 
-            numero1 = randommizer.Next(limiteMenor, limiteMayor);
-            numero2 = randommizer.Next(limiteMenor, limiteMayor);
+            numero1 = randommizer.Next(limiteMenor, limiteMayor + 1);
+            numero2 = randommizer.Next(limiteMenor, limiteMayor + 1);
             resultado = (numero1 - numero2);
 
             while (resultado < 0) //ELIMINA LA POSIBILIDAD DE RESULTADO NEGATIVO
             {
-                numero1 = randommizer.Next(limiteMenor, limiteMayor);
-                numero2 = randommizer.Next(limiteMenor, limiteMayor);
+                numero1 = randommizer.Next(limiteMenor, limiteMayor + 1);
+                numero2 = randommizer.Next(limiteMenor, limiteMayor + 1);
                 resultado = (numero1 - numero2);
             }
             //LE DA IMAGENES A LOS 3 PRIMEROS PICTUREBOX
@@ -108,19 +108,19 @@ namespace Omega
             label3.Text = numero2.ToString();
             // label5.Text = resultado.ToString();
 
-            orden = randommizer.Next(2);//NUMERO RANDOM PARA LA POSICION DE LA RESPUESTA CORRECTA
+            orden = randommizer.Next(1,4);//NUMERO RANDOM PARA LA POSICION DE LA RESPUESTA CORRECTA
 
             //NUMERO DE FONDO DE UN PICTURE DE RESPUESTAS
-            fondo = randommizer.Next(limiteMenor, limiteMayor);
+            fondo = randommizer.Next(limiteMenor, limiteMayor + 1);
 
             //NUMERO DE FONDO DEL OTRO PICTURE DE RESPUESTA
-            fondo2 = randommizer.Next(limiteMenor, limiteMayor);
+            fondo2 = randommizer.Next(limiteMenor, limiteMayor + 1);
 
             //VUELVE A HACER RANDOM LOS FONDOS HASTA QUE NO SEAN IGUAL AL RESULTADO
             while (resultado == fondo || resultado == fondo2 || fondo == fondo2)
             {
-                fondo = randommizer.Next(limiteMenor, limiteMayor);
-                fondo2 = randommizer.Next(limiteMenor, limiteMayor);
+                fondo = randommizer.Next(limiteMenor, limiteMayor + 1);
+                fondo2 = randommizer.Next(limiteMenor, limiteMayor + 1);
             }
         }
 
