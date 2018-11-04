@@ -299,6 +299,13 @@ namespace Omega
             color = Color.White;
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var pantallaPrincipal = new Pantalla_principal();
+            pantallaPrincipal.Show();
+            this.Hide();
+        }
+
         private void Pantalla_MouseMove(object sender, MouseEventArgs e)
         {
             if (k == 1)

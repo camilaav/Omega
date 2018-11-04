@@ -126,6 +126,7 @@
             // 
             // button11
             // 
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.Location = new System.Drawing.Point(171, 19);
             this.button11.Margin = new System.Windows.Forms.Padding(1);
@@ -137,6 +138,7 @@
             // 
             // button6
             // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.Location = new System.Drawing.Point(9, 25);
             this.button6.Margin = new System.Windows.Forms.Padding(1);
@@ -148,6 +150,7 @@
             // 
             // button10
             // 
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.Location = new System.Drawing.Point(117, 22);
             this.button10.Margin = new System.Windows.Forms.Padding(1);
@@ -159,6 +162,7 @@
             // 
             // button9
             // 
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.Location = new System.Drawing.Point(63, 22);
             this.button9.Margin = new System.Windows.Forms.Padding(1);
@@ -186,6 +190,7 @@
             this.Circulo.BackColor = System.Drawing.Color.Transparent;
             this.Circulo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Circulo.BackgroundImage")));
             this.Circulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Circulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Circulo.Location = new System.Drawing.Point(11, 11);
             this.Circulo.Margin = new System.Windows.Forms.Padding(1);
             this.Circulo.Name = "Circulo";
@@ -199,6 +204,7 @@
             this.Cuadrado.BackColor = System.Drawing.Color.Transparent;
             this.Cuadrado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Cuadrado.BackgroundImage")));
             this.Cuadrado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Cuadrado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Cuadrado.Location = new System.Drawing.Point(59, 11);
             this.Cuadrado.Margin = new System.Windows.Forms.Padding(1);
             this.Cuadrado.Name = "Cuadrado";
@@ -212,6 +218,7 @@
             this.Linea.BackColor = System.Drawing.Color.Transparent;
             this.Linea.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Linea.BackgroundImage")));
             this.Linea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Linea.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Linea.Location = new System.Drawing.Point(107, 11);
             this.Linea.Margin = new System.Windows.Forms.Padding(1);
             this.Linea.Name = "Linea";
@@ -255,6 +262,7 @@
             // Yellow
             // 
             this.Yellow.BackColor = System.Drawing.Color.Yellow;
+            this.Yellow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Yellow.Location = new System.Drawing.Point(48, 201);
             this.Yellow.Margin = new System.Windows.Forms.Padding(1);
             this.Yellow.Name = "Yellow";
@@ -266,6 +274,7 @@
             // Bisque
             // 
             this.Bisque.BackColor = System.Drawing.Color.Bisque;
+            this.Bisque.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bisque.Location = new System.Drawing.Point(48, 381);
             this.Bisque.Margin = new System.Windows.Forms.Padding(1);
             this.Bisque.Name = "Bisque";
@@ -277,6 +286,7 @@
             // RoyalBlue
             // 
             this.RoyalBlue.BackColor = System.Drawing.Color.RoyalBlue;
+            this.RoyalBlue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RoyalBlue.Location = new System.Drawing.Point(48, 345);
             this.RoyalBlue.Margin = new System.Windows.Forms.Padding(1);
             this.RoyalBlue.Name = "RoyalBlue";
@@ -288,6 +298,7 @@
             // Aqua
             // 
             this.Aqua.BackColor = System.Drawing.Color.Cyan;
+            this.Aqua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Aqua.Location = new System.Drawing.Point(48, 309);
             this.Aqua.Margin = new System.Windows.Forms.Padding(1);
             this.Aqua.Name = "Aqua";
@@ -299,6 +310,7 @@
             // YellowGreen
             // 
             this.YellowGreen.BackColor = System.Drawing.Color.YellowGreen;
+            this.YellowGreen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.YellowGreen.Location = new System.Drawing.Point(48, 273);
             this.YellowGreen.Margin = new System.Windows.Forms.Padding(1);
             this.YellowGreen.Name = "YellowGreen";
@@ -310,6 +322,7 @@
             // Blanco
             // 
             this.Blanco.BackColor = System.Drawing.Color.White;
+            this.Blanco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Blanco.Location = new System.Drawing.Point(9, 93);
             this.Blanco.Margin = new System.Windows.Forms.Padding(1);
             this.Blanco.Name = "Blanco";
@@ -321,6 +334,7 @@
             // LightSalmon
             // 
             this.LightSalmon.BackColor = System.Drawing.Color.LightSalmon;
+            this.LightSalmon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LightSalmon.Location = new System.Drawing.Point(48, 237);
             this.LightSalmon.Margin = new System.Windows.Forms.Padding(1);
             this.LightSalmon.Name = "LightSalmon";
@@ -332,6 +346,7 @@
             // Gray
             // 
             this.Gray.BackColor = System.Drawing.Color.Gray;
+            this.Gray.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Gray.Location = new System.Drawing.Point(48, 93);
             this.Gray.Margin = new System.Windows.Forms.Padding(1);
             this.Gray.Name = "Gray";
@@ -343,6 +358,7 @@
             // Maroon
             // 
             this.Maroon.BackColor = System.Drawing.Color.Maroon;
+            this.Maroon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Maroon.Location = new System.Drawing.Point(48, 129);
             this.Maroon.Margin = new System.Windows.Forms.Padding(1);
             this.Maroon.Name = "Maroon";
@@ -354,6 +370,7 @@
             // Pink
             // 
             this.Pink.BackColor = System.Drawing.Color.Pink;
+            this.Pink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Pink.Location = new System.Drawing.Point(9, 237);
             this.Pink.Margin = new System.Windows.Forms.Padding(1);
             this.Pink.Name = "Pink";
@@ -365,6 +382,7 @@
             // Purple
             // 
             this.Purple.BackColor = System.Drawing.Color.Purple;
+            this.Purple.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Purple.Location = new System.Drawing.Point(9, 381);
             this.Purple.Margin = new System.Windows.Forms.Padding(1);
             this.Purple.Name = "Purple";
@@ -376,6 +394,7 @@
             // MediumSlateBlue
             // 
             this.MediumSlateBlue.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.MediumSlateBlue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MediumSlateBlue.Location = new System.Drawing.Point(9, 345);
             this.MediumSlateBlue.Margin = new System.Windows.Forms.Padding(1);
             this.MediumSlateBlue.Name = "MediumSlateBlue";
@@ -396,6 +415,7 @@
             // SteelBlue
             // 
             this.SteelBlue.BackColor = System.Drawing.Color.SteelBlue;
+            this.SteelBlue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SteelBlue.Location = new System.Drawing.Point(9, 309);
             this.SteelBlue.Margin = new System.Windows.Forms.Padding(1);
             this.SteelBlue.Name = "SteelBlue";
@@ -407,6 +427,7 @@
             // OrangeRed
             // 
             this.OrangeRed.BackColor = System.Drawing.Color.OrangeRed;
+            this.OrangeRed.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OrangeRed.Location = new System.Drawing.Point(48, 165);
             this.OrangeRed.Margin = new System.Windows.Forms.Padding(1);
             this.OrangeRed.Name = "OrangeRed";
@@ -418,6 +439,7 @@
             // Green
             // 
             this.Green.BackColor = System.Drawing.Color.Green;
+            this.Green.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Green.Location = new System.Drawing.Point(9, 273);
             this.Green.Margin = new System.Windows.Forms.Padding(1);
             this.Green.Name = "Green";
@@ -429,6 +451,7 @@
             // Negro
             // 
             this.Negro.BackColor = System.Drawing.Color.Black;
+            this.Negro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Negro.Location = new System.Drawing.Point(9, 58);
             this.Negro.Margin = new System.Windows.Forms.Padding(1);
             this.Negro.Name = "Negro";
@@ -440,6 +463,7 @@
             // Gold
             // 
             this.Gold.BackColor = System.Drawing.Color.Gold;
+            this.Gold.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Gold.Location = new System.Drawing.Point(9, 201);
             this.Gold.Margin = new System.Windows.Forms.Padding(1);
             this.Gold.Name = "Gold";
@@ -451,6 +475,7 @@
             // DarkGray
             // 
             this.DarkGray.BackColor = System.Drawing.Color.DarkGray;
+            this.DarkGray.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DarkGray.Location = new System.Drawing.Point(48, 57);
             this.DarkGray.Margin = new System.Windows.Forms.Padding(1);
             this.DarkGray.Name = "DarkGray";
@@ -462,6 +487,7 @@
             // Brown
             // 
             this.Brown.BackColor = System.Drawing.Color.Brown;
+            this.Brown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Brown.Location = new System.Drawing.Point(9, 129);
             this.Brown.Margin = new System.Windows.Forms.Padding(1);
             this.Brown.Name = "Brown";
@@ -473,6 +499,7 @@
             // Red
             // 
             this.Red.BackColor = System.Drawing.Color.Red;
+            this.Red.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Red.Location = new System.Drawing.Point(9, 165);
             this.Red.Margin = new System.Windows.Forms.Padding(1);
             this.Red.Name = "Red";
@@ -486,6 +513,7 @@
             this.picguardar.BackColor = System.Drawing.Color.Transparent;
             this.picguardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picguardar.BackgroundImage")));
             this.picguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picguardar.Location = new System.Drawing.Point(0, 290);
             this.picguardar.Name = "picguardar";
             this.picguardar.Size = new System.Drawing.Size(50, 50);
@@ -498,6 +526,7 @@
             this.PICNUEVO.BackColor = System.Drawing.Color.Transparent;
             this.PICNUEVO.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PICNUEVO.BackgroundImage")));
             this.PICNUEVO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PICNUEVO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PICNUEVO.Location = new System.Drawing.Point(0, 178);
             this.PICNUEVO.Name = "PICNUEVO";
             this.PICNUEVO.Size = new System.Drawing.Size(50, 50);
@@ -510,6 +539,7 @@
             this.picabrir.BackColor = System.Drawing.Color.Transparent;
             this.picabrir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picabrir.BackgroundImage")));
             this.picabrir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picabrir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picabrir.Location = new System.Drawing.Point(0, 234);
             this.picabrir.Name = "picabrir";
             this.picabrir.Size = new System.Drawing.Size(50, 50);
@@ -522,17 +552,20 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Location = new System.Drawing.Point(0, -1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(67, 69);
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // picborrar
             // 
             this.picborrar.BackColor = System.Drawing.Color.Transparent;
             this.picborrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picborrar.BackgroundImage")));
             this.picborrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picborrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picborrar.Location = new System.Drawing.Point(6, 13);
             this.picborrar.Name = "picborrar";
             this.picborrar.Size = new System.Drawing.Size(35, 36);
@@ -545,6 +578,7 @@
             this.Pincel.BackColor = System.Drawing.Color.Transparent;
             this.Pincel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pincel.BackgroundImage")));
             this.Pincel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pincel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Pincel.Location = new System.Drawing.Point(55, 13);
             this.Pincel.Margin = new System.Windows.Forms.Padding(1);
             this.Pincel.Name = "Pincel";
@@ -558,6 +592,7 @@
             this.Lapiz.BackColor = System.Drawing.Color.Transparent;
             this.Lapiz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Lapiz.BackgroundImage")));
             this.Lapiz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Lapiz.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Lapiz.Location = new System.Drawing.Point(94, 13);
             this.Lapiz.Margin = new System.Windows.Forms.Padding(1);
             this.Lapiz.Name = "Lapiz";
@@ -598,6 +633,7 @@
             this.Controls.Add(this.Figuras);
             this.Controls.Add(this.Colores);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Colorear";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colorear";

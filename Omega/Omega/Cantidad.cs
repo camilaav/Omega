@@ -18,6 +18,25 @@ namespace Omega
         public int posicionInicialArriba, posicionInicialCostado, contador, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, intento = 1, puntuacion = 0, idJuego=3, idDificultad=0;
         public JuegoRN juegoRN = new JuegoRN();
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var pantallaPrincipal = new Pantalla_principal();
+            pantallaPrincipal.Show();
+            this.Hide();
+        }
+
+        private void opcionDos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            var pantallaPrincipal = new Pantalla_principal();
+            pantallaPrincipal.Show();
+            this.Hide();
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             MovimientoHelper movimientoHelper = new MovimientoHelper();
@@ -116,8 +135,8 @@ namespace Omega
 
             string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
 
-            posicionInicialArriba = 10;
-            posicionInicialCostado = 10;
+            posicionInicialArriba = 90;
+            posicionInicialCostado = 40;
             if (this.Tag.ToString() == "Facil")
             {
                 Juego(1, 5);
@@ -173,9 +192,9 @@ namespace Omega
 
             for (int i = 1; i <= cantidadPictures; i++)
             {
-                if (posicionInicialCostado >= 560)
+                if (posicionInicialCostado >= 600)
                 {
-                    posicionInicialCostado = 10;
+                    posicionInicialCostado = 40;
                     posicionInicialArriba = posicionInicialArriba + 110;
                 }
 
@@ -183,6 +202,7 @@ namespace Omega
                 Controls.Add(picture);
                 picture.Name = "pictureBox" + nombrePicture;
                 picture.Size = new Size(100, 100);
+                picture.BackColor = Color.Transparent;
                 picture.Location = new Point(posicionInicialCostado, posicionInicialArriba);
                 picture.BackgroundImage = Image.FromFile(startupPath + @"\" + imagen.ToString() + ".png");
                 picture.Visible = true;
