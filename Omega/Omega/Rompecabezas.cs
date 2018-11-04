@@ -21,7 +21,7 @@ namespace Omega
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+      /*  private void MainForm_Load(object sender, EventArgs e)
         {
             _previousClientWidth = this.ClientSize.Width;
             _previousClientHeight = this.ClientSize.Height;
@@ -38,7 +38,7 @@ namespace Omega
                     gfx.DrawImageUnscaled(_board, 0, 0);
                 }
             }
-        }
+        }*/
 
         private void MainForm_ClientSizeChanged(object sender, EventArgs e)
         {
@@ -505,12 +505,12 @@ namespace Omega
 
         private void showImageHintToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showImageHintToolStripMenuItem.Checked = !showImageHintToolStripMenuItem.Checked;
+           /* showImageHintToolStripMenuItem.Checked = !showImageHintToolStripMenuItem.Checked;
 
             Settings.Default.ShowImageHint = showImageHintToolStripMenuItem.Checked;
             Settings.Default.Save();
 
-            DisplayJigsawPuzzle(Settings.Default.ShowImageHint);
+            DisplayJigsawPuzzle(Settings.Default.ShowImageHint);*/
         }
 
         private void CreateJigsawPuzzle()
@@ -753,7 +753,7 @@ namespace Omega
 
             foreach (PieceCluster cluster in _clusters)
             {
-                int locationX = random.Next(1, boardWidth);
+               /* int locationX = random.Next(1, boardWidth);
                 int locationY = random.Next((menuStrip1.Height + 1), boardHeight);
 
                 if ((locationX + cluster.Width) > boardWidth)
@@ -775,13 +775,13 @@ namespace Omega
                     matrix.Translate(locationX, locationY);
                     piece.MovableFigure.Transform(matrix);
                 }
-
+                
                 // Move the figure for cluster piece
                 cluster.BoardLocation = new Rectangle(locationX, locationY, cluster.Width, cluster.Height);
 
                 matrix.Reset();
                 matrix.Translate(locationX, locationY);
-                cluster.MovableFigure.Transform(matrix);
+                cluster.MovableFigure.Transform(matrix);*/
             }
         }
 
@@ -916,12 +916,12 @@ namespace Omega
 
         private void showImageHintToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            showImageHintToolStripMenuItem.Checked = !showImageHintToolStripMenuItem.Checked;
+         /*   showImageHintToolStripMenuItem.Checked = !showImageHintToolStripMenuItem.Checked;
 
             Settings.Default.ShowImageHint = showImageHintToolStripMenuItem.Checked;
             Settings.Default.Save();
 
-            DisplayJigsawPuzzle(Settings.Default.ShowImageHint);
+            DisplayJigsawPuzzle(Settings.Default.ShowImageHint);*/
         }
 
         private void MainForm_MouseDown_1(object sender, MouseEventArgs e)
@@ -1512,6 +1512,63 @@ namespace Omega
             }
         }
 
+        private void picvolver_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picAbrir_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog(this);
+
+            if (result == DialogResult.OK)
+            {
+                if (!String.IsNullOrEmpty(openFileDialog1.FileName))
+                {
+                    if (_sourcePicture != null)
+                    {
+                        _sourcePicture.Dispose();
+                    }
+
+                    _sourcePicture = new Bitmap(openFileDialog1.FileName);
+
+                    // Resize the picture to fit the desired dimensions if it is too large.
+                    if (_sourcePicture.Width > _puzzlePictureWidth || _sourcePicture.Height > _puzzlePictureHeight)
+                    {
+                        _sourcePicture = ImageUtilities.ResizeImage(_sourcePicture, _puzzlePictureWidth, _puzzlePictureHeight, false);
+                    }
+
+                    // Create and display jigsaw puzzle
+                    try
+                    {
+                        CreateJigsawPuzzle();
+                        DisplayJigsawPuzzle(Settings.Default.ShowImageHint);
+                        _victoryAnnounced = false;
+                    }
+                    catch (Exception ex)
+                    {
+                        _sourcePicture.Dispose();
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void picpista_Click(object sender, EventArgs e)
+        {
+          /*  showImageHintToolStripMenuItem.Checked = !showImageHintToolStripMenuItem.Checked;
+
+            Settings.Default.ShowImageHint = showImageHintToolStripMenuItem.Checked;
+            Settings.Default.Save();
+
+            DisplayJigsawPuzzle(Settings.Default.ShowImageHint);*/
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void MainForm_MouseUp_2(object sender, MouseEventArgs e)
         {
             if (_canMovePiece)
@@ -1769,39 +1826,7 @@ namespace Omega
 
         private void OpenFileMenuItem_Click_2(object sender, EventArgs e)
         {
-            DialogResult result = openFileDialog1.ShowDialog(this);
-
-            if (result == DialogResult.OK)
-            {
-                if (!String.IsNullOrEmpty(openFileDialog1.FileName))
-                {
-                    if (_sourcePicture != null)
-                    {
-                        _sourcePicture.Dispose();
-                    }
-
-                    _sourcePicture = new Bitmap(openFileDialog1.FileName);
-
-                    // Resize the picture to fit the desired dimensions if it is too large.
-                    if (_sourcePicture.Width > _puzzlePictureWidth || _sourcePicture.Height > _puzzlePictureHeight)
-                    {
-                        _sourcePicture = ImageUtilities.ResizeImage(_sourcePicture, _puzzlePictureWidth, _puzzlePictureHeight, false);
-                    }
-
-                    // Create and display jigsaw puzzle
-                    try
-                    {
-                        CreateJigsawPuzzle();
-                        DisplayJigsawPuzzle(Settings.Default.ShowImageHint);
-                        _victoryAnnounced = false;
-                    }
-                    catch (Exception ex)
-                    {
-                        _sourcePicture.Dispose();
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
+            
         }
 
         private void ExitMenuItem_Click_2(object sender, EventArgs e)
@@ -1811,12 +1836,7 @@ namespace Omega
 
         private void showImageHintToolStripMenuItem_Click_2(object sender, EventArgs e)
         {
-            showImageHintToolStripMenuItem.Checked = !showImageHintToolStripMenuItem.Checked;
 
-            Settings.Default.ShowImageHint = showImageHintToolStripMenuItem.Checked;
-            Settings.Default.Save();
-
-            DisplayJigsawPuzzle(Settings.Default.ShowImageHint);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

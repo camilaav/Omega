@@ -63,9 +63,7 @@ namespace Omega
             }
 
             tiempo.Enabled = true;
-            pictureCorrecto1.Visible = false;
-            pictureCorrecto2.Visible = false;
-            pictureCorrecto3.Visible = false;
+
 
             if (orden == 0)                                 //PONE LA RESPUESTA CORRECTA EN UNA DE LAS 3 OPCINES EN FORMA ALEATOREA
             {
@@ -151,7 +149,7 @@ namespace Omega
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
-                pictureCorrecto1.Visible = true;
+
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
@@ -171,7 +169,7 @@ namespace Omega
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
-                pictureCorrecto2.Visible = true;
+
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
@@ -191,7 +189,7 @@ namespace Omega
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
-                pictureCorrecto3.Visible = true;
+
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
                 Recarga();

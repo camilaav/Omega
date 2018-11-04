@@ -28,65 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.FileMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.OpenFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showImageHintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnSalir = new System.Windows.Forms.Panel();
-            this.menuStrip1.SuspendLayout();
+            this.picvolver = new System.Windows.Forms.PictureBox();
+            this.picAbrir = new System.Windows.Forms.PictureBox();
+            this.picpista = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picvolver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAbrir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picpista)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FileMenu,
-            this.optionsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1143, 24);
-            this.menuStrip1.TabIndex = 2;
-            // 
-            // FileMenu
-            // 
-            this.FileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OpenFileMenuItem,
-            this.toolStripSeparator1});
-            this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(60, 20);
-            this.FileMenu.Text = "&Archivo";
-            this.FileMenu.Click += new System.EventHandler(this.FileMenu_Click);
-            // 
-            // OpenFileMenuItem
-            // 
-            this.OpenFileMenuItem.Name = "OpenFileMenuItem";
-            this.OpenFileMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.OpenFileMenuItem.Text = "&Abrir...";
-            this.OpenFileMenuItem.Click += new System.EventHandler(this.OpenFileMenuItem_Click_2);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showImageHintToolStripMenuItem});
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.optionsToolStripMenuItem.Text = "&Opciones";
-            // 
-            // showImageHintToolStripMenuItem
-            // 
-            this.showImageHintToolStripMenuItem.Checked = true;
-            this.showImageHintToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.showImageHintToolStripMenuItem.Name = "showImageHintToolStripMenuItem";
-            this.showImageHintToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.showImageHintToolStripMenuItem.Text = "&Mostrar pista de fondo";
-            this.showImageHintToolStripMenuItem.Click += new System.EventHandler(this.showImageHintToolStripMenuItem_Click_2);
             // 
             // openFileDialog1
             // 
@@ -103,13 +54,48 @@
             this.btnSalir.TabIndex = 29;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // picvolver
+            // 
+            this.picvolver.BackColor = System.Drawing.Color.Transparent;
+            this.picvolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picvolver.BackgroundImage")));
+            this.picvolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picvolver.Location = new System.Drawing.Point(0, 0);
+            this.picvolver.Name = "picvolver";
+            this.picvolver.Size = new System.Drawing.Size(72, 79);
+            this.picvolver.TabIndex = 30;
+            this.picvolver.TabStop = false;
+            this.picvolver.Click += new System.EventHandler(this.picvolver_Click);
+            // 
+            // picAbrir
+            // 
+            this.picAbrir.Location = new System.Drawing.Point(2, 157);
+            this.picAbrir.Name = "picAbrir";
+            this.picAbrir.Size = new System.Drawing.Size(100, 50);
+            this.picAbrir.TabIndex = 31;
+            this.picAbrir.TabStop = false;
+            this.picAbrir.Click += new System.EventHandler(this.picAbrir_Click);
+            // 
+            // picpista
+            // 
+            this.picpista.Location = new System.Drawing.Point(2, 213);
+            this.picpista.Name = "picpista";
+            this.picpista.Size = new System.Drawing.Size(100, 50);
+            this.picpista.TabIndex = 32;
+            this.picpista.TabStop = false;
+            this.picpista.Click += new System.EventHandler(this.picpista_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 737);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.picpista);
+            this.Controls.Add(this.picAbrir);
+            this.Controls.Add(this.picvolver);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rompecabezas";
@@ -118,22 +104,18 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown_2);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove_2);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp_2);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picvolver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAbrir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picpista)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem FileMenu;
-        private System.Windows.Forms.ToolStripMenuItem OpenFileMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem showImageHintToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel btnSalir;
+        private System.Windows.Forms.PictureBox picvolver;
+        private System.Windows.Forms.PictureBox picAbrir;
+        private System.Windows.Forms.PictureBox picpista;
     }
 }
