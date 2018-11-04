@@ -32,6 +32,7 @@ namespace Omega
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = usuarioRN.ListaPersonas();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
