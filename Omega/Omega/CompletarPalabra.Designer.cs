@@ -40,18 +40,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(272, 312);
+            this.panel1.Location = new System.Drawing.Point(295, 268);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 173);
+            this.panel1.Size = new System.Drawing.Size(381, 208);
             this.panel1.TabIndex = 1;
             // 
             // opcionUno
             // 
             this.opcionUno.BackColor = System.Drawing.Color.Transparent;
             this.opcionUno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionUno.Location = new System.Drawing.Point(165, 509);
+            this.opcionUno.Location = new System.Drawing.Point(283, 525);
             this.opcionUno.Name = "opcionUno";
-            this.opcionUno.Size = new System.Drawing.Size(147, 127);
+            this.opcionUno.Size = new System.Drawing.Size(114, 101);
             this.opcionUno.TabIndex = 2;
             this.opcionUno.Click += new System.EventHandler(this.opcionUno_Click);
             // 
@@ -59,9 +59,9 @@
             // 
             this.opcionDos.BackColor = System.Drawing.Color.Transparent;
             this.opcionDos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionDos.Location = new System.Drawing.Point(385, 509);
+            this.opcionDos.Location = new System.Drawing.Point(423, 525);
             this.opcionDos.Name = "opcionDos";
-            this.opcionDos.Size = new System.Drawing.Size(147, 127);
+            this.opcionDos.Size = new System.Drawing.Size(114, 101);
             this.opcionDos.TabIndex = 3;
             this.opcionDos.Click += new System.EventHandler(this.opcionDos_Click);
             // 
@@ -69,9 +69,9 @@
             // 
             this.opcionTres.BackColor = System.Drawing.Color.Transparent;
             this.opcionTres.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionTres.Location = new System.Drawing.Point(598, 509);
+            this.opcionTres.Location = new System.Drawing.Point(564, 525);
             this.opcionTres.Name = "opcionTres";
-            this.opcionTres.Size = new System.Drawing.Size(147, 127);
+            this.opcionTres.Size = new System.Drawing.Size(114, 101);
             this.opcionTres.TabIndex = 3;
             this.opcionTres.Click += new System.EventHandler(this.opcionTres_Click);
             // 

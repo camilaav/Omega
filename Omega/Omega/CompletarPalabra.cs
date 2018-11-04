@@ -137,7 +137,7 @@ namespace Omega
                 control.Dispose();
             }
             posicionInicialArriba = 150;
-            posicionInicialCostado = 30;
+            posicionInicialCostado = 130;
 
             var letras = new List<char>();
             foreach (var letra in imagen.DescripcionImagen)
@@ -154,14 +154,14 @@ namespace Omega
                     var picture = new PictureBox();
                     Controls.Add(picture);
                     picture.Name = "pictureBox" + letras[i].ToString().ToUpper();
-                    picture.Size = new Size(90, 90);
+                    picture.Size = new Size(70, 70);
                     picture.Location = new Point(posicionInicialCostado, posicionInicialArriba);
                     picture.BackgroundImage = Image.FromFile(startupPathPalabras + @"\" + letras[i].ToString().ToUpper() + ".png");
                     picture.Visible = true;
                     picture.BackColor = Color.Transparent;
                     picture.BackgroundImageLayout = ImageLayout.Stretch;
                     picture.Enabled = true;
-                    posicionInicialCostado = posicionInicialCostado + 90;
+                    posicionInicialCostado = posicionInicialCostado + 70;
                 }
                 else
                 {

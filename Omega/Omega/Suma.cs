@@ -44,9 +44,7 @@ namespace Omega
             }
 
             tiempo.Enabled = true;
-            pictureCorrecto1.Visible = false;
-            pictureCorrecto2.Visible = false;
-            pictureCorrecto3.Visible = false;
+
 
             if (orden == 0)                                 //PONE LA RESPUESTA CORRECTA EN UNA DE LAS 3 OPCINES EN FORMA ALEATOREA
             {
@@ -82,6 +80,11 @@ namespace Omega
             InitializeComponent();
         }
 
+        private void btnSalir_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void opcionUno_Click(object sender, EventArgs e)
         {
             if (orden == 0)
@@ -92,7 +95,6 @@ namespace Omega
                 MessageBox.Show("Muy bien!");
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
-                pictureCorrecto1.Visible = true;
                 Recarga();
             }
             else
@@ -118,7 +120,6 @@ namespace Omega
                 MessageBox.Show("Muy bien!");
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
-                pictureCorrecto2.Visible = true;
                 Recarga();
             }
             else
@@ -138,7 +139,6 @@ namespace Omega
                 MessageBox.Show("Muy bien!");
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
-                pictureCorrecto3.Visible = true;
                 Recarga();
             }
             else

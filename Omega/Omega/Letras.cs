@@ -34,5 +34,12 @@ namespace Omega
         {
             dificultad("sopa");
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Pantalla_principal PP = new Pantalla_principal();
+            PP.Show();
+            this.Hide();
+        }
     }
 }

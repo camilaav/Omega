@@ -47,25 +47,23 @@ namespace Omega
             respuestaCorrecta.Visible = false;
             if (this.Tag.ToString() == "Facil")
             {
-                Juego(191, 1, 10);
+                Juego(1, 10);
                 idDificultad = 1;
 
             }
             else if (this.Tag.ToString() == "Intermedia")
             {
-                Juego(191, 0, 50);
+                Juego(0, 50);
                 idDificultad = 2;
             }
             else if (this.Tag.ToString() == "Dificil")
             {
-                Juego(258, 0, 100);
+                Juego(0, 100);
                 idDificultad = 3;
             }
 
             tiempo.Enabled = true;
-            pictureCorrecto1.Visible = false;
-            pictureCorrecto2.Visible = false;
-            pictureCorrecto3.Visible = false;
+
 
             if (orden == 0)                                 //PONE LA RESPUESTA CORRECTA EN UNA DE LAS 3 OPCINES EN FORMA ALEATOREA
             {
@@ -107,13 +105,10 @@ namespace Omega
             Recarga();
         }
 
-        private void Juego(int width, int limiteMenor, int limiteMayor)
+        private void Juego(int limiteMenor, int limiteMayor)
         {
             int numero1;
             int numero2;
-
-            numeroUno.Width = width;
-            numeroDos.Width = width;
 
             numero1 = randommizer.Next(limiteMenor, limiteMayor);
             numero2 = randommizer.Next(limiteMenor, limiteMayor);
@@ -151,7 +146,7 @@ namespace Omega
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
-                pictureCorrecto1.Visible = true;
+
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
@@ -171,7 +166,7 @@ namespace Omega
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
-                pictureCorrecto2.Visible = true;
+
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
@@ -191,7 +186,7 @@ namespace Omega
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
                 MessageBox.Show("Muy bien!");
-                pictureCorrecto3.Visible = true;
+
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
                 Recarga();
