@@ -121,8 +121,8 @@ namespace Omega
 
             while (resultado < 0)
             {
-                numero1 = randommizer.Next(limiteMenor, limiteMayor);
-                numero2 = randommizer.Next(limiteMenor, limiteMayor);
+                numero1 = randommizer.Next(limiteMenor, limiteMayor + 1);
+                numero2 = randommizer.Next(limiteMenor, limiteMayor + 1);
                 resultado = (numero1 - numero2);
             }
             numeroUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + numero1.ToString() + ".png");
@@ -138,8 +138,8 @@ namespace Omega
 
             while (resultado == fondo || resultado == fondo2 || fondo == fondo2)
             {
-                fondo = randommizer.Next(limiteMenor, limiteMayor);
-                fondo2 = randommizer.Next(limiteMenor, limiteMayor);
+                fondo = randommizer.Next(limiteMenor, limiteMayor + 1);
+                fondo2 = randommizer.Next(limiteMenor, limiteMayor + 1);
             }
         }
 
