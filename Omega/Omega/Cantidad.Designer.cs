@@ -37,6 +37,7 @@
             // 
             // opcionUno
             // 
+            this.opcionUno.BackColor = System.Drawing.Color.Transparent;
             this.opcionUno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionUno.Location = new System.Drawing.Point(38, 276);
             this.opcionUno.Name = "opcionUno";
@@ -46,6 +47,7 @@
             // 
             // opcionDos
             // 
+            this.opcionDos.BackColor = System.Drawing.Color.Transparent;
             this.opcionDos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionDos.Location = new System.Drawing.Point(230, 276);
             this.opcionDos.Name = "opcionDos";
@@ -55,6 +57,7 @@
             // 
             // opcionTres
             // 
+            this.opcionTres.BackColor = System.Drawing.Color.Transparent;
             this.opcionTres.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionTres.Location = new System.Drawing.Point(442, 276);
             this.opcionTres.Name = "opcionTres";
