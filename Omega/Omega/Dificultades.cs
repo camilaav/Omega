@@ -33,12 +33,12 @@ namespace Omega
 
         private void Dificultades_Load(object sender, EventArgs e)
         {
-
             dictionary.Add("suma", new Suma());
             dictionary.Add("resta", new Resta());
             dictionary.Add("cantidad", new Cantidad());
             dictionary.Add("sopa", new Sopa());
             dictionary.Add("completar", new CompletarPalabra());
+            dictionary.Add("rompe", new MainForm());
             //TODO faltan los otros formularios agregar al diccionario..
 
             string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");

@@ -47,7 +47,6 @@ namespace Omega
 
         private void picModificar_Click(object sender, EventArgs e)
         {
-
             var form = Application.OpenForms.OfType<ModificacionUsuarios>().FirstOrDefault();
             ModificacionUsuarios modificacionUsuarios = form ?? new ModificacionUsuarios();
             AbrirForm(modificacionUsuarios);
