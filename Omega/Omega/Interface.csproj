@@ -118,6 +118,12 @@
     <Compile Include="BajaUsuarios.Designer.cs">
       <DependentUpon>BajaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Memotest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Memotest.Designer.cs">
+      <DependentUpon>Memotest.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameSettings.cs" />
     <Compile Include="Helpers\JuegosHelper.cs" />
     <Compile Include="ImagenUtilities.cs" />
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Entretenimiento.resx">
       <DependentUpon>Entretenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Memotest.resx">
+      <DependentUpon>Memotest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Letras.resx">
       <DependentUpon>Letras.cs</DependentUpon>

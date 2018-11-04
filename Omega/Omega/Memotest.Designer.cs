@@ -1,6 +1,6 @@
-﻿namespace Omega
+﻿namespace Memorama
 {
-    partial class Memotest
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -38,50 +38,44 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(145, 60);
+            this.label1.Location = new System.Drawing.Point(497, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 31);
+            this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Cantidad de intentos";
             // 
             // lblRecord
             // 
             this.lblRecord.AutoSize = true;
-            this.lblRecord.BackColor = System.Drawing.Color.Transparent;
-            this.lblRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecord.Location = new System.Drawing.Point(414, 66);
+            this.lblRecord.Location = new System.Drawing.Point(607, 30);
             this.lblRecord.Name = "lblRecord";
-            this.lblRecord.Size = new System.Drawing.Size(140, 25);
+            this.lblRecord.Size = new System.Drawing.Size(71, 13);
             this.lblRecord.TabIndex = 5;
             this.lblRecord.Text = "Record juego";
             // 
             // panelJuego
             // 
-            this.panelJuego.Location = new System.Drawing.Point(151, 94);
+            this.panelJuego.Location = new System.Drawing.Point(12, 12);
             this.panelJuego.Name = "panelJuego";
             this.panelJuego.Size = new System.Drawing.Size(450, 426);
             this.panelJuego.TabIndex = 4;
+            this.panelJuego.Paint += new System.Windows.Forms.PaintEventHandler(this.panelJuego_Paint_1);
             // 
             // timer1
             // 
             this.timer1.Interval = 600;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Memotest
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Omega.Properties.Resources.logomemotestarriba;
-            this.ClientSize = new System.Drawing.Size(779, 559);
+            this.ClientSize = new System.Drawing.Size(927, 580);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblRecord);
             this.Controls.Add(this.panelJuego);
-            this.DoubleBuffered = true;
-            this.Name = "Memotest";
-            this.Text = "Memotest";
-            this.Load += new System.EventHandler(this.Memotest_Load);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

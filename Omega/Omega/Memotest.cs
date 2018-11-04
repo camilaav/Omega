@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Omega.Properties;
 
-namespace Omega
+namespace Memorama
 {
-    public partial class Memotest : Form
+    public partial class Form1 : Form
     {
-        int TamañoColumnasFilas = 2;
+
+        int TamañoColumnasFilas = 4;
         int Movimientos = 0;
         int CantidadFotosVolteadas = 0;
         List<string> FotosEnumeradas;
@@ -23,12 +25,12 @@ namespace Omega
         PictureBox FotoTemp2;
         int FotoActual = 0;
 
-        public Memotest()
+
+        public Form1()
         {
             InitializeComponent();
             IniciarJuego(); //Invocar al método Iniciar Juego
         }
-
         public void IniciarJuego()
         {
             /* ESTRUCTURA DE DISEÑO */
@@ -72,7 +74,7 @@ namespace Omega
                     FotosJuego.Name = string.Format("{0}", Contador);
                     FotosJuego.Dock = DockStyle.Fill;
                     FotosJuego.SizeMode = PictureBoxSizeMode.StretchImage;
-                    FotosJuego.Image = Properties.Resources.Volteo;
+                    FotosJuego.Image = Omega.Properties.Resources.Volteo;
                     FotosJuego.Cursor = Cursors.Hand;
                     FotosJuego.Click += btnFoto_Click;
                     tablaPanel.Controls.Add(FotosJuego, j, i);
@@ -85,6 +87,10 @@ namespace Omega
 
             /* FIN ESTRUCTURA DE DISEÑO */
 
+
+        }
+        private void btnJuego_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -136,32 +142,39 @@ namespace Omega
             switch (NumeroImagenAsignado)
             {
                 case 0:
-                    TempImagen = Properties.Resources.img16;
+                    TempImagen = Omega.Properties.Resources.img16;
                     break;
                 default:
-                    TempImagen = (Bitmap)Properties.Resources.ResourceManager.GetObject("img" + NumeroImagenAsignado);
+                    TempImagen = (Bitmap)Omega.Properties.Resources.ResourceManager.GetObject("img" + NumeroImagenAsignado);
                     break;
 
             }
             return TempImagen;
         }
 
-        private void Memotest_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int TiempoImagen = 1;
-            if (TiempoImagen == 1)
-            {
-                FotoTemp1.Image = Properties.Resources.Volteo;
-                FotoTemp2.Image = Properties.Resources.Volteo;
-                FotosSeleccionadas.Clear();
-                TiempoImagen = 0;
-                timer1.Stop();
-            }
+
+        }
+
+        private void panelJuego_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void fácilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelJuego_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
