@@ -28,39 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.PictureBox btnRegresar;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BajaUsuarios));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            btnRegresar = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnRegresar
-            // 
-            btnRegresar.BackColor = System.Drawing.Color.Transparent;
-            btnRegresar.BackgroundImage = global::Omega.Properties.Resources.Salir;
-            btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnRegresar.Location = new System.Drawing.Point(222, 189);
-            btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new System.Drawing.Size(50, 50);
-            btnRegresar.TabIndex = 8;
-            btnRegresar.TabStop = false;
-            btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnEliminar});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(259, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(662, 409);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
@@ -76,14 +62,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(btnRegresar);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(686, 433);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BajaUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.BajaUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(btnRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

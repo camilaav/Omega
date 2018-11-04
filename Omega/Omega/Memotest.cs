@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Omega.Properties;
 
-namespace Memorama
+namespace Omega
 {
-    public partial class Form1 : Form
+    public partial class Memotest : Form
     {
 
         int TamañoColumnasFilas = 4;
@@ -26,7 +22,7 @@ namespace Memorama
         int FotoActual = 0;
 
 
-        public Form1()
+        public Memotest()
         {
             InitializeComponent();
             IniciarJuego(); //Invocar al método Iniciar Juego

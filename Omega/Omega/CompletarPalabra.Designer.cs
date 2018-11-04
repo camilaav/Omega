@@ -36,13 +36,14 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(236, 238);
+            this.panel1.Location = new System.Drawing.Point(312, 210);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(231, 224);
             this.panel1.TabIndex = 1;
             // 
             // opcionUno
             // 
+            this.opcionUno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionUno.Location = new System.Drawing.Point(12, 472);
             this.opcionUno.Name = "opcionUno";
             this.opcionUno.Size = new System.Drawing.Size(221, 215);
@@ -51,17 +52,21 @@
             // 
             // opcionDos
             // 
-            this.opcionDos.Location = new System.Drawing.Point(260, 472);
+            this.opcionDos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.opcionDos.Location = new System.Drawing.Point(317, 472);
             this.opcionDos.Name = "opcionDos";
             this.opcionDos.Size = new System.Drawing.Size(221, 215);
             this.opcionDos.TabIndex = 3;
+            this.opcionDos.Click += new System.EventHandler(this.opcionDos_Click);
             // 
             // opcionTres
             // 
-            this.opcionTres.Location = new System.Drawing.Point(504, 472);
+            this.opcionTres.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.opcionTres.Location = new System.Drawing.Point(619, 472);
             this.opcionTres.Name = "opcionTres";
             this.opcionTres.Size = new System.Drawing.Size(221, 215);
             this.opcionTres.TabIndex = 3;
+            this.opcionTres.Click += new System.EventHandler(this.opcionTres_Click);
             // 
             // CompletarPalabra
             // 

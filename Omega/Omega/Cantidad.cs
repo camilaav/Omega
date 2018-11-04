@@ -89,8 +89,6 @@ namespace Omega
             }
         }
 
-
-
         public Cantidad()
         {
             InitializeComponent();
@@ -116,7 +114,7 @@ namespace Omega
 
             string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
 
-            posicionInicialArriba = 10;
+            posicionInicialArriba = 55;
             posicionInicialCostado = 10;
             if (this.Tag.ToString() == "Facil")
             {
@@ -186,6 +184,7 @@ namespace Omega
                 picture.Location = new Point(posicionInicialCostado, posicionInicialArriba);
                 picture.BackgroundImage = Image.FromFile(startupPath + @"\" + imagen.ToString() + ".png");
                 picture.Visible = true;
+                picture.BackColor = Color.Transparent;
                 picture.BackgroundImageLayout = ImageLayout.Stretch;
                 picture.Enabled = true;
                 nombrePicture++;

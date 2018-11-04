@@ -1,6 +1,6 @@
-﻿namespace Memorama
+﻿namespace Omega
 {
-    partial class Form1
+    partial class Memotest
     {
         /// <summary>
         /// Required designer variable.

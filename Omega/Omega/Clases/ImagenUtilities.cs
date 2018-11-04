@@ -3,12 +3,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 
-namespace ImageProcessing
+namespace Omega
 {
-    // ====================================================================
-    // http://www.codeproject.com/Articles/1989/Image-Processing-for-Dummies-with-C-and-GDI-Part-1
-    // http://ithoughthecamewithyou.com/post/Fastest-image-merge-%28alpha-blend%29-in-GDI2b.aspx
-    // ====================================================================
     public class ImageUtilities
     {
         public static bool EdgeDetectHorizontal(Bitmap b)
@@ -173,18 +169,6 @@ namespace ImageProcessing
             {
                 g.CompositingMode = CompositingMode.SourceOver;
                 g.CompositingQuality = CompositingQuality.HighQuality;
-
-                // Scaled image (stretched)
-                //g.DrawImage(srcImage,
-                //    new Rectangle(0, 0, destImage.Width, destImage.Height),
-                //    0,
-                //    0,
-                //    srcImage.Width,
-                //    srcImage.Height,
-                //    GraphicsUnit.Pixel,
-                //    imageAttributes);
-
-                // No scaling
                 g.DrawImage(srcImage,
                     new Rectangle(offsetX, offsetY, srcImage.Width, srcImage.Height),
                     0,

@@ -32,7 +32,7 @@ namespace Omega
 
         private void btnMemotest_Click(object sender, EventArgs e)
         {
-           // dificultad();
+            dificultad("memotest");
         }
 
         private void btnColorear_Click(object sender, EventArgs e)

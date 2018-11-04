@@ -20,7 +20,7 @@ namespace Omega
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Memotest());
+            Application.Run(new Bienvenida());
         }
     }
 }
