@@ -1416,5 +1416,10 @@ namespace Omega
                 label6.ForeColor = Color.YellowGreen; //azul
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
