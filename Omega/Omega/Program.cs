@@ -26,7 +26,7 @@ namespace Omega
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Cantidad());
+            Application.Run(new Colorear());
         }
     }
 }
