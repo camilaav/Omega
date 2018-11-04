@@ -61,6 +61,7 @@
             this.opcionDos.Name = "opcionDos";
             this.opcionDos.Size = new System.Drawing.Size(162, 151);
             this.opcionDos.TabIndex = 3;
+            this.opcionDos.Click += new System.EventHandler(this.opcionDos_Click);
             // 
             // opcionTres
             // 
@@ -69,6 +70,7 @@
             this.opcionTres.Name = "opcionTres";
             this.opcionTres.Size = new System.Drawing.Size(162, 151);
             this.opcionTres.TabIndex = 3;
+            this.opcionTres.Click += new System.EventHandler(this.opcionTres_Click);
             // 
             // pictureBox1
             // 
