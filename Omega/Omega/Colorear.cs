@@ -133,54 +133,22 @@ namespace Omega
 
         private void Nuevo_Click(object sender, EventArgs e)
         {
-            Pantalla.Refresh();
-            Pantalla.Image = null;
+
         }
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            var bmp = new Bitmap(Pantalla.Width, Pantalla.Height);
-            var g = Graphics.FromImage(bmp);
-            var rect = Pantalla.RectangleToScreen(Pantalla.ClientRectangle);
-            g.CopyFromScreen(rect.Location, Point.Empty, Pantalla.Size);
-            g.Dispose();
-            var s = new SaveFileDialog();
-            s.Filter = "Png files|*.png|jpeg files|*jpg|bitmaps|*.bmp";
-            if (s.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                if (File.Exists(s.FileName))
-                {
-                    File.Delete(s.FileName);
-                }
-                if (s.FileName.Contains(".jpg"))
-                {
-                    bmp.Save(s.FileName, ImageFormat.Jpeg);
-                }
-                else if (s.FileName.Contains(".png"))
-                {
-                    bmp.Save(s.FileName, ImageFormat.Png);
-                }
-                else if (s.FileName.Contains(".bmp"))
-                {
-                    bmp.Save(s.FileName, ImageFormat.Bmp);
-                }
-            }
+          
         }
 
         private void Abrir_Click(object sender, EventArgs e)
         {
-            OpenFileDialog o = new OpenFileDialog();
-            o.Filter = "Png files|*.png|jpeg files|*jpg|bitmaps|*.bmp";
-            if (o.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                Pantalla.Image = (Image)Image.FromFile(o.FileName).Clone();
-            }
+
         }
 
         private void Borrador_Click(object sender, EventArgs e)
         {
-            Foto = 2;
-            color = Color.White;
+
         }
 
         private void Lapiz_Click(object sender, EventArgs e)
@@ -271,6 +239,70 @@ namespace Omega
         {
             var entretenimiento = new Entretenimiento();
             entretenimiento.Show();
+            this.Hide();
+        }
+
+        private void Colores_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picguardar_Click(object sender, EventArgs e)
+        {
+            var bmp = new Bitmap(Pantalla.Width, Pantalla.Height);
+            var g = Graphics.FromImage(bmp);
+            var rect = Pantalla.RectangleToScreen(Pantalla.ClientRectangle);
+            g.CopyFromScreen(rect.Location, Point.Empty, Pantalla.Size);
+            g.Dispose();
+            var s = new SaveFileDialog();
+            s.Filter = "Png files|*.png|jpeg files|*jpg|bitmaps|*.bmp";
+            if (s.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (File.Exists(s.FileName))
+                {
+                    File.Delete(s.FileName);
+                }
+                if (s.FileName.Contains(".jpg"))
+                {
+                    bmp.Save(s.FileName, ImageFormat.Jpeg);
+                }
+                else if (s.FileName.Contains(".png"))
+                {
+                    bmp.Save(s.FileName, ImageFormat.Png);
+                }
+                else if (s.FileName.Contains(".bmp"))
+                {
+                    bmp.Save(s.FileName, ImageFormat.Bmp);
+                }
+            }
+        }
+
+        private void PICNUEVO_Click(object sender, EventArgs e)
+        {
+            Pantalla.Refresh();
+            Pantalla.Image = null;
+        }
+
+        private void picabrir_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog o = new OpenFileDialog();
+            o.Filter = "Png files|*.png|jpeg files|*jpg|bitmaps|*.bmp";
+            if (o.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Pantalla.Image = (Image)Image.FromFile(o.FileName).Clone();
+            }
+        }
+
+        private void picborrar_Click(object sender, EventArgs e)
+        {
+            Foto = 2;
+            color = Color.White;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var pantallaPrincipal = new Pantalla_principal();
+            pantallaPrincipal.Show();
             this.Hide();
         }
 
