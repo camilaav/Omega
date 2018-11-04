@@ -104,6 +104,13 @@ namespace Omega
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Letras letra = new Letras();
+            this.Close();
+            letra.Show();
+        }
+
         public void CargarPalabras()
         {
             CargarRandom();

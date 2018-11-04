@@ -47,6 +47,7 @@
             this.picAlta.BackColor = System.Drawing.Color.Transparent;
             this.picAlta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picAlta.BackgroundImage")));
             this.picAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picAlta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picAlta.Location = new System.Drawing.Point(0, 140);
             this.picAlta.Name = "picAlta";
             this.picAlta.Size = new System.Drawing.Size(60, 64);
@@ -59,6 +60,7 @@
             this.picBorrar.BackColor = System.Drawing.Color.Transparent;
             this.picBorrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBorrar.BackgroundImage")));
             this.picBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBorrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBorrar.Location = new System.Drawing.Point(0, 205);
             this.picBorrar.Name = "picBorrar";
             this.picBorrar.Size = new System.Drawing.Size(60, 64);
@@ -71,6 +73,7 @@
             this.picModificar.BackColor = System.Drawing.Color.Transparent;
             this.picModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picModificar.BackgroundImage")));
             this.picModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picModificar.Location = new System.Drawing.Point(0, 270);
             this.picModificar.Name = "picModificar";
             this.picModificar.Size = new System.Drawing.Size(60, 64);
@@ -83,6 +86,7 @@
             this.picTabla.BackColor = System.Drawing.Color.Transparent;
             this.picTabla.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picTabla.BackgroundImage")));
             this.picTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picTabla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTabla.Location = new System.Drawing.Point(0, 340);
             this.picTabla.Name = "picTabla";
             this.picTabla.Size = new System.Drawing.Size(60, 64);
@@ -105,6 +109,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Location = new System.Drawing.Point(0, -2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(72, 79);

@@ -42,6 +42,7 @@
             btnIngresar.BackColor = System.Drawing.Color.Transparent;
             btnIngresar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIngresar.BackgroundImage")));
             btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             btnIngresar.Location = new System.Drawing.Point(293, 322);
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new System.Drawing.Size(277, 79);
@@ -69,6 +70,7 @@
             this.picprofesor.BackColor = System.Drawing.Color.Transparent;
             this.picprofesor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picprofesor.BackgroundImage")));
             this.picprofesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picprofesor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picprofesor.Location = new System.Drawing.Point(805, -3);
             this.picprofesor.Name = "picprofesor";
             this.picprofesor.Size = new System.Drawing.Size(72, 79);
@@ -87,7 +89,7 @@
             this.Controls.Add(this.picprofesor);
             this.Controls.Add(btnIngresar);
             this.Controls.Add(this.txtNombre);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

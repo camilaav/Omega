@@ -42,5 +42,12 @@ namespace Omega
             entretenimiento.Show();
             this.Hide();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Bienvenida bienvenida = new Bienvenida();
+            bienvenida.Show();
+            this.Hide();
+        }
     }
 }

@@ -43,9 +43,9 @@ namespace Omega
 
             string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
             var listaDificultades = juegoRN.ListaDificultades();
-            label1.Text = listaDificultades[0].NombreDificultad;
-            label2.Text = listaDificultades[1].NombreDificultad;
-            label3.Text = listaDificultades[2].NombreDificultad;
+            //label1.Text = listaDificultades[0].NombreDificultad;
+          //  label2.Text = listaDificultades[1].NombreDificultad;
+         //   label3.Text = listaDificultades[2].NombreDificultad;
             pictureBox1.BackgroundImage = Image.FromFile(startupPath + @"\" + listaDificultades[0].NombreDificultad+".png");
             pictureBox2.BackgroundImage = Image.FromFile(startupPath + @"\" + listaDificultades[1].NombreDificultad + ".png");
             pictureBox3.BackgroundImage = Image.FromFile(startupPath + @"\" + listaDificultades[2].NombreDificultad + ".png");
@@ -67,6 +67,13 @@ namespace Omega
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             AbrirFormulario("Dificil");
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Pantalla_principal PP = new Pantalla_principal();
+            PP.Show();
+            this.Hide();
         }
     }
 }
