@@ -12,71 +12,16 @@ namespace Omega
 {
     public partial class MainForm : Form
     {
-        #region Variable
-
-        /// <summary>
-        /// Indicates whether the message was shown when the puzzle was solved.
-        /// </summary>
-        private bool _victoryAnnounced;
-
-        /// <summary>
-        /// Indicates whether a jigsaw piece (or cluster) can be moved by the user.        
-        /// </summary>
-        private bool _canMovePiece;
-
-        /// <summary>
-        /// Keeps track of the previous mouse position when moving a jigsaw piece.
-        /// </summary>
-        private int _previousMouseX, _previousMouseY;
-
-        /// <summary>
-        /// Keeps track of the previous dimensions of the form's client area. Used to redraw background picture.
-        /// </summary>
-        private int _previousClientWidth, _previousClientHeight;
-
-        /// <summary>
-        /// The picture opened will be resized to this dimension if larger.
-        /// </summary>
-        private int _puzzlePictureWidth, _puzzlePictureHeight;
-
-        /// <summary>
-        /// Represents the game board.
-        /// </summary>
-        private Bitmap _board;
-
-        /// <summary>
-        /// A backbuffer to assist in drawing the game board.
-        /// </summary>
-        private Bitmap _backBuffer;
-
-        /// <summary>
-        /// Stores the background picture for the game board.
-        /// </summary>
-        private Bitmap _background;
-
-        /// <summary>
-        /// Stores the picture for the jigsaw puzzle.
-        /// </summary>
-        private Bitmap _sourcePicture;
-
-        /// <summary>
-        /// The currently moving jigsaw piece/cluster.
-        /// </summary>
+        private bool _victoryAnnounced, _canMovePiece;
+        private int _previousMouseX, _previousMouseY, _previousClientWidth, _previousClientHeight, _puzzlePictureWidth, _puzzlePictureHeight;
+        private Bitmap _board, _backBuffer, _background, _sourcePicture;
         private PieceCluster _currentCluster;
-
-        /// <summary>
-        /// Stores all the jigsaw pieces/clusters.
-        /// </summary>
         List<PieceCluster> _clusters = new List<PieceCluster>();
-
-        #endregion
 
         public MainForm()
         {
             InitializeComponent();
         }
-
-        #region Event
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -110,8 +55,6 @@ namespace Omega
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
-            #region Determine which cluster is selected (mouse down)
-
             int selectedIndex = -1;
 
             for (int index = (_clusters.Count - 1); index >= 0; index--)
@@ -123,32 +66,18 @@ namespace Omega
                 }
             }
 
-            #endregion
-
-            #region Bring up the selected cluster
-
             if (selectedIndex >= 0)
             {
                 _currentCluster = _clusters[selectedIndex];
-
-                // Make the current cluster top-most and modify the list to reflect it
                 _clusters.RemoveAt(selectedIndex);
                 _clusters.Add(_currentCluster);
 
-                #region Back buffer
-
-                // ========================================================
-                // Clear the current moving piece's area with the background image and redraw the
-                // pieces whose region intersect with the area.
-                // ========================================================
                 using (Graphics gfx = Graphics.FromImage(_backBuffer))
                 {
                     Rectangle currentClusterBoardLocation = _currentCluster.BoardLocation;
 
                     // Clear the area with the background picture first
                     gfx.DrawImage(_background, currentClusterBoardLocation, currentClusterBoardLocation, GraphicsUnit.Pixel);
-
-                    #region Redraw the pieces
 
                     Region currentClusterBoardLocationRegion = new Region(_currentCluster.BoardLocation);
 
@@ -166,22 +95,13 @@ namespace Omega
                             }
                         }
                     }
-
-                    #endregion
                 }
-
-                #endregion
-
-                #region Board
 
                 Matrix matrix = new Matrix();
                 SolidBrush shadowBrush = new SolidBrush(GameSettings.DROP_SHADOW_COLOR);
 
                 using (Graphics gfx = Graphics.FromImage(_board))
                 {
-                    #region Drop shadow
-
-                    // Simple drop shadow only for now. Alpha-blended drop shadow is too slow and jerky.
                     matrix.Reset();
                     matrix.Translate(GameSettings.DROP_SHADOW_DEPTH, GameSettings.DROP_SHADOW_DEPTH);
 
@@ -192,35 +112,21 @@ namespace Omega
                     gfx.SetClip(shadowFigure);
                     gfx.FillPath(shadowBrush, shadowFigure);
 
-                    #endregion
-
-                    #region Cluster picture
-
                     gfx.ResetClip();
                     gfx.SetClip(_currentCluster.MovableFigure);
                     gfx.DrawImageUnscaled(_currentCluster.Picture, _currentCluster.BoardLocation);
-
-                    #endregion
                 }
-
-                #endregion
-
-                #region Form
 
                 using (Graphics gfx = this.CreateGraphics())
                 {
                     gfx.DrawImageUnscaled(_board, 0, 0);
                 }
 
-                #endregion
-
                 _previousMouseX = e.X;
                 _previousMouseY = e.Y;
 
                 _canMovePiece = true;
             }
-
-            #endregion
         }
 
         private void MainForm_MouseMove(object sender, MouseEventArgs e)
@@ -260,8 +166,6 @@ namespace Omega
                 {
                     gfx.DrawImage(_backBuffer, combinedClusterRect, combinedClusterRect, GraphicsUnit.Pixel);
 
-                    #region Drop shadow
-
                     // Simple drop shadow only for now. Alpha-blended drop shadow is too slow and jerky.
                     matrix.Reset();
                     matrix.Translate(offsetX + GameSettings.DROP_SHADOW_DEPTH, offsetY + GameSettings.DROP_SHADOW_DEPTH);
@@ -269,10 +173,6 @@ namespace Omega
                     GraphicsPath shadowFigure = (GraphicsPath)_currentCluster.MovableFigure.Clone();
                     shadowFigure.Transform(matrix);
                     gfx.FillPath(shadowBrush, shadowFigure);
-
-                    #endregion
-
-                    #region Cluster
 
                     // Update the cluster's board location
                     _currentCluster.BoardLocation = new Rectangle(clusterNewX, clusterNewY, _currentCluster.Width, _currentCluster.Height);
@@ -287,10 +187,6 @@ namespace Omega
                     gfx.SetClip(_currentCluster.MovableFigure);
                     gfx.DrawImageUnscaled(_currentCluster.Picture, _currentCluster.BoardLocation);
 
-                    #endregion
-
-                    #region Update individual jigsaw piece location
-
                     foreach (Piece piece in _currentCluster.Pieces)
                     {
                         int pieceNewX = piece.BoardLocation.X + offsetX;
@@ -301,8 +197,6 @@ namespace Omega
                         matrix.Translate(offsetX, offsetY);
                         piece.MovableFigure.Transform(matrix);
                     }
-
-                    #endregion
                 }
 
                 using (Graphics gfx = this.CreateGraphics())
@@ -322,18 +216,12 @@ namespace Omega
                 _previousMouseX = e.X;
                 _previousMouseY = e.Y;
 
-                #region Draw the "dropped" moving cluster at its final position into back buffer
-
                 using (Graphics gfx = Graphics.FromImage(_backBuffer))
                 {
                     gfx.ResetClip();
                     gfx.SetClip(_currentCluster.MovableFigure);
                     gfx.DrawImageUnscaled(_currentCluster.Picture, _currentCluster.BoardLocation);
                 }
-
-                #endregion
-
-                #region Sync the board, the back buffer, and the display
 
                 using (Graphics gfx = Graphics.FromImage(_board))
                 {
@@ -344,10 +232,6 @@ namespace Omega
                 {
                     gfx.DrawImageUnscaled(_backBuffer, 0, 0);
                 }
-
-                #endregion
-
-                #region Snapping and combining adjacent pieces
 
                 Matrix matrix = new Matrix();
 
@@ -365,8 +249,6 @@ namespace Omega
 
                         if (adjacentPiece != null && (adjacentPiece.ClusterID != currentPiece.ClusterID))
                         {
-                            #region Make sure the adjacent piece is located at the correct "side" of the current piece
-
                             Rectangle adjacentPieceMovableFigureBoardLocation = Rectangle.Truncate(adjacentPiece.MovableFigure.GetBounds());
                             Rectangle currentPieceMovableFigureBoardLocation = Rectangle.Truncate(currentPiece.MovableFigure.GetBounds());
 
@@ -381,10 +263,7 @@ namespace Omega
                                 // Adjacent piece is on the wrong side of the current piece. Do not snap to the current piece.
                                 // For example, adjacent piece should be located below the current piece instead of being 
                                 // located above it.
-                                if (figureYDifferenceSign != sourcePictureYDifferenceSign)
-                                {
-                                    continue;
-                                }
+                                if (figureYDifferenceSign != sourcePictureYDifferenceSign) continue;
                             }
                             else if (Math.Abs(currentPiece.SourcePictureLocation.Y - adjacentPiece.SourcePictureLocation.Y) <= 2)
                             {
@@ -394,15 +273,8 @@ namespace Omega
                                 // Adjacent piece is on the wrong side of the current piece. Do not snap to the current piece.
                                 // For example, adjacent piece should be located at the right side of the current piece instead 
                                 // of being located at the left side.
-                                if (figureXDifferenceSign != sourceImageXDifferenceSign)
-                                {
-                                    continue;
-                                }
+                                if (figureXDifferenceSign != sourceImageXDifferenceSign) continue;
                             }
-
-                            #endregion
-
-                            #region Determine if the adjacent piece should be snapped to the current cluster
 
                             // =================================================
                             // If the dimensions of the rectangle bounds of the merged path 
@@ -431,16 +303,12 @@ namespace Omega
                                     piece.ClusterID = currentPiece.ClusterID;
                                 }
                             }
-
-                            #endregion                            
                         }
                     }
                 }
 
                 if (adjacentClusterIDs.Count > 0)
                 {
-                    #region Remove the adjacent cluster from the list after combining with the current cluster
-
                     foreach (int clusterID in adjacentClusterIDs)
                     {
                         PieceCluster adjacentCluster = GetPieceClusterByID(clusterID);
@@ -452,8 +320,6 @@ namespace Omega
 
                         RemovePieceGroupByID(clusterID);
                     }
-
-                    #endregion
 
                     GraphicsPath combinedStaticFigure = new GraphicsPath();
                     Rectangle combinedBoardLocation = _currentCluster.BoardLocation;
@@ -487,9 +353,7 @@ namespace Omega
                     matrix.Reset();
                     matrix.Translate(combinedBoardLocation.X, combinedBoardLocation.Y);
                     _currentCluster.MovableFigure.Transform(matrix);
-
-                    #region Construct cluster picture
-
+                    
                     // Translate the figure to the origin to draw the picture
                     matrix.Reset();
                     matrix.Translate(0 - combinedStaticFigureLocation.X, 0 - combinedStaticFigureLocation.Y);
@@ -525,8 +389,6 @@ namespace Omega
                     ImageUtilities.EdgeDetectVertical(modifiedClusterPicture);
                     clusterPicture = ImageUtilities.AlphaBlendMatrix(modifiedClusterPicture, clusterPicture, 200);
 
-                    #endregion
-
                     _currentCluster.Picture = (Bitmap)clusterPicture.Clone();
 
                     // Update the piece's movable figure and board location
@@ -552,11 +414,7 @@ namespace Omega
                         matrix.Translate(newLocationX, newLocationY);
                         piece.MovableFigure.Transform(matrix);
                     }
-
-                    #region Redraw
-
-                    #region Back buffer
-
+                    
                     Rectangle areaToClear = new Rectangle(combinedBoardLocation.X, combinedBoardLocation.Y,
                                                             combinedBoardLocation.Width + GameSettings.DROP_SHADOW_DEPTH,
                                                             combinedBoardLocation.Height + GameSettings.DROP_SHADOW_DEPTH);
@@ -565,8 +423,6 @@ namespace Omega
                     {
                         // Clear the area with the background picture first
                         gfx.DrawImage(_background, areaToClear, areaToClear, GraphicsUnit.Pixel);
-
-                        #region Redraw the pieces
 
                         Region regionToRedraw = new Region(areaToClear);
 
@@ -581,39 +437,20 @@ namespace Omega
                                 gfx.DrawImageUnscaled(cluster.Picture, cluster.BoardLocation);
                             }
                         }
-
-                        #endregion
                     }
-
-                    #endregion
-
-                    #region Board
 
                     using (Graphics gfx = Graphics.FromImage(_board))
                     {
                         gfx.DrawImageUnscaled(_backBuffer, 0, 0);
                     }
-
-                    #endregion
-
-                    #region Form
-
                     using (Graphics gfx = this.CreateGraphics())
                     {
                         gfx.DrawImageUnscaled(_backBuffer, 0, 0);
                     }
-
-                    #endregion
-
-                    #endregion
                 }
-
-                #endregion
 
                 _canMovePiece = false;
                 _currentCluster = null;
-
-                #region Victory announcement
 
                 if (_clusters.Count == 1)
                 {
@@ -623,8 +460,6 @@ namespace Omega
                         MessageBox.Show("The puzzle has been solved!", "Congratulations!", MessageBoxButtons.OK);
                     }
                 }
-
-                #endregion
             }
         }
 
@@ -680,14 +515,8 @@ namespace Omega
             DisplayJigsawPuzzle(Settings.Default.ShowImageHint);
         }
 
-        #endregion
-
-        #region Helper
-
         private void CreateJigsawPuzzle()
         {
-            #region Some validation
-
             if (_sourcePicture == null)
             {
                 throw new Exception("Please provide source picture.");
@@ -702,11 +531,6 @@ namespace Omega
             {
                 throw new Exception("GameSettings.NUM_COLUMNS and GameSettings.NUM_ROWS must be the same.");
             }
-
-            #endregion
-
-            #region Make sure the piece size is not too small
-
             int pieceWidth = _sourcePicture.Width / GameSettings.NUM_COLUMNS;
             int pieceHeight = _sourcePicture.Height / GameSettings.NUM_ROWS;
 
@@ -717,11 +541,6 @@ namespace Omega
 
             int lastColPieceWidth = pieceWidth + (_sourcePicture.Width % GameSettings.NUM_COLUMNS);
             int lastRowPieceHeight = pieceHeight + (_sourcePicture.Height % GameSettings.NUM_ROWS);
-
-            #endregion
-
-            #region Construct jigsaw pieces
-
             int lastRow = (GameSettings.NUM_ROWS - 1);
             int lastCol = (GameSettings.NUM_COLUMNS - 1);
 
@@ -768,8 +587,6 @@ namespace Omega
                     int horizontalCurveLength = (col == lastCol ? lastColPieceWidth : pieceWidth);
                     int verticalCurveLength = (row == lastRow ? lastRowPieceHeight : pieceHeight);
 
-                    #region Top
-
                     if (row == 0)
                     {
                         int startX = offsetX;
@@ -791,11 +608,6 @@ namespace Omega
                         topCurve.Translate(offsetX, offsetY);
                         figure.AddBeziers(topCurve.Points);
                     }
-
-                    #endregion
-
-                    #region Right
-
                     if (col == lastCol)
                     {
                         int startX = offsetX + lastColPieceWidth;
@@ -817,11 +629,6 @@ namespace Omega
                         verticalCurve.Translate(offsetX + pieceWidth, offsetY);
                         figure.AddBeziers(verticalCurve.Points);
                     }
-
-                    #endregion
-
-                    #region Bottom
-
                     if (row == lastRow)
                     {
                         int startX = offsetX;
@@ -844,11 +651,6 @@ namespace Omega
                         bottomCurve.Translate(offsetX + horizontalCurveLength, offsetY + pieceHeight);
                         figure.AddBeziers(bottomCurve.Points);
                     }
-
-                    #endregion
-
-                    #region Left
-
                     if (col == 0)
                     {
                         int startX = offsetX;
@@ -871,13 +673,6 @@ namespace Omega
                         verticalCurve.Translate(offsetX, offsetY + verticalCurveLength);
                         figure.AddBeziers(verticalCurve.Points);
                     }
-
-                    #endregion
-
-                    #region Jigsaw information
-
-                    #region Determine adjacent piece IDs for the current piece
-
                     List<Coordinate> adjacentCoords = new List<Coordinate>
                     {
                         new Coordinate(col, row - 1),
@@ -887,10 +682,6 @@ namespace Omega
                     };
 
                     List<int> adjacentPieceIDs = DetermineAdjacentPieceIDs(adjacentCoords, GameSettings.NUM_COLUMNS);
-
-                    #endregion
-
-                    #region Construct piece picture
 
                     Rectangle figureLocation = Rectangle.Truncate(figure.GetBounds());
 
@@ -925,10 +716,6 @@ namespace Omega
                     ImageUtilities.EdgeDetectVertical(modifiedPiecePicture);
                     piecePicture = ImageUtilities.AlphaBlendMatrix(modifiedPiecePicture, piecePicture, 200);
 
-                    #endregion
-
-                    #region Piece and cluster information
-
                     Piece piece = new Piece
                     {
                         ID = pieceID,
@@ -956,20 +743,11 @@ namespace Omega
                         Pieces = new List<Piece> { piece }
                     };
 
-                    #endregion
-
                     _clusters.Add(cluster);
-
-                    #endregion
 
                     pieceID++;
                 }
             }
-
-            #endregion
-
-            #region Scramble jigsaw pieces
-
             Random random = new Random();
 
             int boardWidth = this.ClientSize.Width;
@@ -980,8 +758,6 @@ namespace Omega
                 int locationX = random.Next(1, boardWidth);
                 int locationY = random.Next((menuStrip1.Height + 1), boardHeight);
 
-                #region Make sure the piece is within client rectangle bounds
-
                 if ((locationX + cluster.Width) > boardWidth)
                 {
                     locationX = locationX - ((locationX + cluster.Width) - boardWidth);
@@ -991,8 +767,6 @@ namespace Omega
                 {
                     locationY = locationY - ((locationY + cluster.Height) - boardHeight);
                 }
-
-                #endregion
 
                 for (int index = 0; index < cluster.Pieces.Count; index++)
                 {
@@ -1011,8 +785,6 @@ namespace Omega
                 matrix.Translate(locationX, locationY);
                 cluster.MovableFigure.Transform(matrix);
             }
-
-            #endregion            
         }
 
         private ResponseMessage DisplayJigsawPuzzle(bool showGhostPicture)
@@ -1031,8 +803,6 @@ namespace Omega
             _board = new Bitmap(boardWidth, boardHeight);
             _backBuffer = new Bitmap(boardWidth, boardHeight);
             _background = new Bitmap(boardWidth, boardHeight);
-
-            #region Background tile image
 
             using (Graphics gfx = Graphics.FromImage(_background))
             {
@@ -1057,10 +827,6 @@ namespace Omega
                 _background = ImageUtilities.AlphaBlendMatrix(_background, _sourcePicture, GameSettings.GHOST_PICTURE_ALPHA);
             }
 
-            #endregion
-
-            #region Board, backbuffer, and the form
-
             using (Graphics gfx = Graphics.FromImage(_board))
             {
                 gfx.DrawImageUnscaled(_background, 0, 0);
@@ -1083,18 +849,12 @@ namespace Omega
                 gfx.DrawImageUnscaled(_board, 0, 0);
             }
 
-            #endregion
-
             return new ResponseMessage
             {
                 Okay = true
             };
         }
-
-        /// <summary>
-        /// Returns a Piece ID based on the current row and column (X, Y), 
-        /// and the number of columns.
-        /// </summary>        
+      
         private List<int> DetermineAdjacentPieceIDs(List<Coordinate> coords, int numColumns)
         {
             List<int> pieceIDs = new List<int>();
@@ -1168,8 +928,6 @@ namespace Omega
 
         private void MainForm_MouseDown_1(object sender, MouseEventArgs e)
         {
-            #region Determine which cluster is selected (mouse down)
-
             int selectedIndex = -1;
 
             for (int index = (_clusters.Count - 1); index >= 0; index--)
@@ -1180,11 +938,6 @@ namespace Omega
                     break;
                 }
             }
-
-            #endregion
-
-            #region Bring up the selected cluster
-
             if (selectedIndex >= 0)
             {
                 _currentCluster = _clusters[selectedIndex];
@@ -1193,20 +946,12 @@ namespace Omega
                 _clusters.RemoveAt(selectedIndex);
                 _clusters.Add(_currentCluster);
 
-                #region Back buffer
-
-                // ========================================================
-                // Clear the current moving piece's area with the background image and redraw the
-                // pieces whose region intersect with the area.
-                // ========================================================
                 using (Graphics gfx = Graphics.FromImage(_backBuffer))
                 {
                     Rectangle currentClusterBoardLocation = _currentCluster.BoardLocation;
 
                     // Clear the area with the background picture first
                     gfx.DrawImage(_background, currentClusterBoardLocation, currentClusterBoardLocation, GraphicsUnit.Pixel);
-
-                    #region Redraw the pieces
 
                     Region currentClusterBoardLocationRegion = new Region(_currentCluster.BoardLocation);
 
@@ -1224,22 +969,13 @@ namespace Omega
                             }
                         }
                     }
-
-                    #endregion
                 }
-
-                #endregion
-
-                #region Board
 
                 Matrix matrix = new Matrix();
                 SolidBrush shadowBrush = new SolidBrush(GameSettings.DROP_SHADOW_COLOR);
 
                 using (Graphics gfx = Graphics.FromImage(_board))
                 {
-                    #region Drop shadow
-
-                    // Simple drop shadow only for now. Alpha-blended drop shadow is too slow and jerky.
                     matrix.Reset();
                     matrix.Translate(GameSettings.DROP_SHADOW_DEPTH, GameSettings.DROP_SHADOW_DEPTH);
 
@@ -1250,35 +986,21 @@ namespace Omega
                     gfx.SetClip(shadowFigure);
                     gfx.FillPath(shadowBrush, shadowFigure);
 
-                    #endregion
-
-                    #region Cluster picture
-
                     gfx.ResetClip();
                     gfx.SetClip(_currentCluster.MovableFigure);
                     gfx.DrawImageUnscaled(_currentCluster.Picture, _currentCluster.BoardLocation);
-
-                    #endregion
                 }
-
-                #endregion
-
-                #region Form
 
                 using (Graphics gfx = this.CreateGraphics())
                 {
                     gfx.DrawImageUnscaled(_board, 0, 0);
                 }
 
-                #endregion
-
                 _previousMouseX = e.X;
                 _previousMouseY = e.Y;
 
                 _canMovePiece = true;
             }
-
-            #endregion
         }
 
         private void MainForm_ClientSizeChanged_1(object sender, EventArgs e)
@@ -1329,8 +1051,6 @@ namespace Omega
                 {
                     gfx.DrawImage(_backBuffer, combinedClusterRect, combinedClusterRect, GraphicsUnit.Pixel);
 
-                    #region Drop shadow
-
                     // Simple drop shadow only for now. Alpha-blended drop shadow is too slow and jerky.
                     matrix.Reset();
                     matrix.Translate(offsetX + GameSettings.DROP_SHADOW_DEPTH, offsetY + GameSettings.DROP_SHADOW_DEPTH);
@@ -1338,10 +1058,6 @@ namespace Omega
                     GraphicsPath shadowFigure = (GraphicsPath)_currentCluster.MovableFigure.Clone();
                     shadowFigure.Transform(matrix);
                     gfx.FillPath(shadowBrush, shadowFigure);
-
-                    #endregion
-
-                    #region Cluster
 
                     // Update the cluster's board location
                     _currentCluster.BoardLocation = new Rectangle(clusterNewX, clusterNewY, _currentCluster.Width, _currentCluster.Height);
@@ -1356,10 +1072,6 @@ namespace Omega
                     gfx.SetClip(_currentCluster.MovableFigure);
                     gfx.DrawImageUnscaled(_currentCluster.Picture, _currentCluster.BoardLocation);
 
-                    #endregion
-
-                    #region Update individual jigsaw piece location
-
                     foreach (Piece piece in _currentCluster.Pieces)
                     {
                         int pieceNewX = piece.BoardLocation.X + offsetX;
@@ -1370,8 +1082,6 @@ namespace Omega
                         matrix.Translate(offsetX, offsetY);
                         piece.MovableFigure.Transform(matrix);
                     }
-
-                    #endregion
                 }
 
                 using (Graphics gfx = this.CreateGraphics())
@@ -1391,18 +1101,12 @@ namespace Omega
                 _previousMouseX = e.X;
                 _previousMouseY = e.Y;
 
-                #region Draw the "dropped" moving cluster at its final position into back buffer
-
                 using (Graphics gfx = Graphics.FromImage(_backBuffer))
                 {
                     gfx.ResetClip();
                     gfx.SetClip(_currentCluster.MovableFigure);
                     gfx.DrawImageUnscaled(_currentCluster.Picture, _currentCluster.BoardLocation);
                 }
-
-                #endregion
-
-                #region Sync the board, the back buffer, and the display
 
                 using (Graphics gfx = Graphics.FromImage(_board))
                 {
@@ -1413,10 +1117,6 @@ namespace Omega
                 {
                     gfx.DrawImageUnscaled(_backBuffer, 0, 0);
                 }
-
-                #endregion
-
-                #region Snapping and combining adjacent pieces
 
                 Matrix matrix = new Matrix();
 
@@ -1434,8 +1134,6 @@ namespace Omega
 
                         if (adjacentPiece != null && (adjacentPiece.ClusterID != currentPiece.ClusterID))
                         {
-                            #region Make sure the adjacent piece is located at the correct "side" of the current piece
-
                             Rectangle adjacentPieceMovableFigureBoardLocation = Rectangle.Truncate(adjacentPiece.MovableFigure.GetBounds());
                             Rectangle currentPieceMovableFigureBoardLocation = Rectangle.Truncate(currentPiece.MovableFigure.GetBounds());
 
@@ -1469,15 +1167,6 @@ namespace Omega
                                 }
                             }
 
-                            #endregion
-
-                            #region Determine if the adjacent piece should be snapped to the current cluster
-
-                            // =================================================
-                            // If the dimensions of the rectangle bounds of the merged path 
-                            // almost equals the "unioned" rectangles of the two pieces' source image
-                            // dimensions, they can be snapped together.
-                            // =================================================
                             GraphicsPath combinedMovableFigure = new GraphicsPath();
                             combinedMovableFigure.AddPath(adjacentPiece.MovableFigure, false);
                             combinedMovableFigure.AddPath(currentPiece.MovableFigure, false);
@@ -1500,16 +1189,12 @@ namespace Omega
                                     piece.ClusterID = currentPiece.ClusterID;
                                 }
                             }
-
-                            #endregion                            
                         }
                     }
                 }
 
                 if (adjacentClusterIDs.Count > 0)
                 {
-                    #region Remove the adjacent cluster from the list after combining with the current cluster
-
                     foreach (int clusterID in adjacentClusterIDs)
                     {
                         PieceCluster adjacentCluster = GetPieceClusterByID(clusterID);
@@ -1521,9 +1206,6 @@ namespace Omega
 
                         RemovePieceGroupByID(clusterID);
                     }
-
-                    #endregion
-
                     GraphicsPath combinedStaticFigure = new GraphicsPath();
                     Rectangle combinedBoardLocation = _currentCluster.BoardLocation;
                     Rectangle combinedSourcePictureLocation = _currentCluster.SourcePictureLocation;
@@ -1556,8 +1238,6 @@ namespace Omega
                     matrix.Reset();
                     matrix.Translate(combinedBoardLocation.X, combinedBoardLocation.Y);
                     _currentCluster.MovableFigure.Transform(matrix);
-
-                    #region Construct cluster picture
 
                     // Translate the figure to the origin to draw the picture
                     matrix.Reset();
@@ -1594,8 +1274,6 @@ namespace Omega
                     ImageUtilities.EdgeDetectVertical(modifiedClusterPicture);
                     clusterPicture = ImageUtilities.AlphaBlendMatrix(modifiedClusterPicture, clusterPicture, 200);
 
-                    #endregion
-
                     _currentCluster.Picture = (Bitmap)clusterPicture.Clone();
 
                     // Update the piece's movable figure and board location
@@ -1622,10 +1300,6 @@ namespace Omega
                         piece.MovableFigure.Transform(matrix);
                     }
 
-                    #region Redraw
-
-                    #region Back buffer
-
                     Rectangle areaToClear = new Rectangle(combinedBoardLocation.X, combinedBoardLocation.Y,
                                                             combinedBoardLocation.Width + GameSettings.DROP_SHADOW_DEPTH,
                                                             combinedBoardLocation.Height + GameSettings.DROP_SHADOW_DEPTH);
@@ -1634,8 +1308,6 @@ namespace Omega
                     {
                         // Clear the area with the background picture first
                         gfx.DrawImage(_background, areaToClear, areaToClear, GraphicsUnit.Pixel);
-
-                        #region Redraw the pieces
 
                         Region regionToRedraw = new Region(areaToClear);
 
@@ -1650,39 +1322,18 @@ namespace Omega
                                 gfx.DrawImageUnscaled(cluster.Picture, cluster.BoardLocation);
                             }
                         }
-
-                        #endregion
                     }
-
-                    #endregion
-
-                    #region Board
-
                     using (Graphics gfx = Graphics.FromImage(_board))
                     {
                         gfx.DrawImageUnscaled(_backBuffer, 0, 0);
                     }
-
-                    #endregion
-
-                    #region Form
-
                     using (Graphics gfx = this.CreateGraphics())
                     {
                         gfx.DrawImageUnscaled(_backBuffer, 0, 0);
                     }
-
-                    #endregion
-
-                    #endregion
                 }
-
-                #endregion
-
                 _canMovePiece = false;
                 _currentCluster = null;
-
-                #region Victory announcement
 
                 if (_clusters.Count == 1)
                 {
@@ -1692,8 +1343,6 @@ namespace Omega
                         MessageBox.Show("The puzzle has been solved!", "Congratulations!", MessageBoxButtons.OK);
                     }
                 }
-
-                #endregion
             }
         }
 
@@ -1710,8 +1359,6 @@ namespace Omega
 
         private void MainForm_MouseDown_2(object sender, MouseEventArgs e)
         {
-            #region Determine which cluster is selected (mouse down)
-
             int selectedIndex = -1;
 
             for (int index = (_clusters.Count - 1); index >= 0; index--)
@@ -1722,11 +1369,6 @@ namespace Omega
                     break;
                 }
             }
-
-            #endregion
-
-            #region Bring up the selected cluster
-
             if (selectedIndex >= 0)
             {
                 _currentCluster = _clusters[selectedIndex];
@@ -1735,20 +1377,12 @@ namespace Omega
                 _clusters.RemoveAt(selectedIndex);
                 _clusters.Add(_currentCluster);
 
-                #region Back buffer
-
-                // ========================================================
-                // Clear the current moving piece's area with the background image and redraw the
-                // pieces whose region intersect with the area.
-                // ========================================================
                 using (Graphics gfx = Graphics.FromImage(_backBuffer))
                 {
                     Rectangle currentClusterBoardLocation = _currentCluster.BoardLocation;
 
                     // Clear the area with the background picture first
                     gfx.DrawImage(_background, currentClusterBoardLocation, currentClusterBoardLocation, GraphicsUnit.Pixel);
-
-                    #region Redraw the pieces
 
                     Region currentClusterBoardLocationRegion = new Region(_currentCluster.BoardLocation);
 
@@ -1766,21 +1400,13 @@ namespace Omega
                             }
                         }
                     }
-
-                    #endregion
                 }
-
-                #endregion
-
-                #region Board
 
                 Matrix matrix = new Matrix();
                 SolidBrush shadowBrush = new SolidBrush(GameSettings.DROP_SHADOW_COLOR);
 
                 using (Graphics gfx = Graphics.FromImage(_board))
                 {
-                    #region Drop shadow
-
                     // Simple drop shadow only for now. Alpha-blended drop shadow is too slow and jerky.
                     matrix.Reset();
                     matrix.Translate(GameSettings.DROP_SHADOW_DEPTH, GameSettings.DROP_SHADOW_DEPTH);
@@ -1792,35 +1418,20 @@ namespace Omega
                     gfx.SetClip(shadowFigure);
                     gfx.FillPath(shadowBrush, shadowFigure);
 
-                    #endregion
-
-                    #region Cluster picture
-
                     gfx.ResetClip();
                     gfx.SetClip(_currentCluster.MovableFigure);
                     gfx.DrawImageUnscaled(_currentCluster.Picture, _currentCluster.BoardLocation);
-
-                    #endregion
                 }
-
-                #endregion
-
-                #region Form
-
                 using (Graphics gfx = this.CreateGraphics())
                 {
                     gfx.DrawImageUnscaled(_board, 0, 0);
                 }
-
-                #endregion
 
                 _previousMouseX = e.X;
                 _previousMouseY = e.Y;
 
                 _canMovePiece = true;
             }
-
-            #endregion
         }
 
         private void MainForm_MouseMove_2(object sender, MouseEventArgs e)
@@ -1860,8 +1471,6 @@ namespace Omega
                 {
                     gfx.DrawImage(_backBuffer, combinedClusterRect, combinedClusterRect, GraphicsUnit.Pixel);
 
-                    #region Drop shadow
-
                     // Simple drop shadow only for now. Alpha-blended drop shadow is too slow and jerky.
                     matrix.Reset();
                     matrix.Translate(offsetX + GameSettings.DROP_SHADOW_DEPTH, offsetY + GameSettings.DROP_SHADOW_DEPTH);
@@ -1869,10 +1478,6 @@ namespace Omega
                     GraphicsPath shadowFigure = (GraphicsPath)_currentCluster.MovableFigure.Clone();
                     shadowFigure.Transform(matrix);
                     gfx.FillPath(shadowBrush, shadowFigure);
-
-                    #endregion
-
-                    #region Cluster
 
                     // Update the cluster's board location
                     _currentCluster.BoardLocation = new Rectangle(clusterNewX, clusterNewY, _currentCluster.Width, _currentCluster.Height);
@@ -1887,10 +1492,6 @@ namespace Omega
                     gfx.SetClip(_currentCluster.MovableFigure);
                     gfx.DrawImageUnscaled(_currentCluster.Picture, _currentCluster.BoardLocation);
 
-                    #endregion
-
-                    #region Update individual jigsaw piece location
-
                     foreach (Piece piece in _currentCluster.Pieces)
                     {
                         int pieceNewX = piece.BoardLocation.X + offsetX;
@@ -1901,8 +1502,6 @@ namespace Omega
                         matrix.Translate(offsetX, offsetY);
                         piece.MovableFigure.Transform(matrix);
                     }
-
-                    #endregion
                 }
 
                 using (Graphics gfx = this.CreateGraphics())
@@ -1922,19 +1521,12 @@ namespace Omega
                 _previousMouseX = e.X;
                 _previousMouseY = e.Y;
 
-                #region Draw the "dropped" moving cluster at its final position into back buffer
-
                 using (Graphics gfx = Graphics.FromImage(_backBuffer))
                 {
                     gfx.ResetClip();
                     gfx.SetClip(_currentCluster.MovableFigure);
                     gfx.DrawImageUnscaled(_currentCluster.Picture, _currentCluster.BoardLocation);
                 }
-
-                #endregion
-
-                #region Sync the board, the back buffer, and the display
-
                 using (Graphics gfx = Graphics.FromImage(_board))
                 {
                     gfx.DrawImageUnscaled(_backBuffer, 0, 0);
@@ -1944,10 +1536,6 @@ namespace Omega
                 {
                     gfx.DrawImageUnscaled(_backBuffer, 0, 0);
                 }
-
-                #endregion
-
-                #region Snapping and combining adjacent pieces
 
                 Matrix matrix = new Matrix();
 
@@ -1965,8 +1553,6 @@ namespace Omega
 
                         if (adjacentPiece != null && (adjacentPiece.ClusterID != currentPiece.ClusterID))
                         {
-                            #region Make sure the adjacent piece is located at the correct "side" of the current piece
-
                             Rectangle adjacentPieceMovableFigureBoardLocation = Rectangle.Truncate(adjacentPiece.MovableFigure.GetBounds());
                             Rectangle currentPieceMovableFigureBoardLocation = Rectangle.Truncate(currentPiece.MovableFigure.GetBounds());
 
@@ -2000,15 +1586,6 @@ namespace Omega
                                 }
                             }
 
-                            #endregion
-
-                            #region Determine if the adjacent piece should be snapped to the current cluster
-
-                            // =================================================
-                            // If the dimensions of the rectangle bounds of the merged path 
-                            // almost equals the "unioned" rectangles of the two pieces' source image
-                            // dimensions, they can be snapped together.
-                            // =================================================
                             GraphicsPath combinedMovableFigure = new GraphicsPath();
                             combinedMovableFigure.AddPath(adjacentPiece.MovableFigure, false);
                             combinedMovableFigure.AddPath(currentPiece.MovableFigure, false);
@@ -2031,16 +1608,12 @@ namespace Omega
                                     piece.ClusterID = currentPiece.ClusterID;
                                 }
                             }
-
-                            #endregion                            
                         }
                     }
                 }
 
                 if (adjacentClusterIDs.Count > 0)
                 {
-                    #region Remove the adjacent cluster from the list after combining with the current cluster
-
                     foreach (int clusterID in adjacentClusterIDs)
                     {
                         PieceCluster adjacentCluster = GetPieceClusterByID(clusterID);
@@ -2052,9 +1625,6 @@ namespace Omega
 
                         RemovePieceGroupByID(clusterID);
                     }
-
-                    #endregion
-
                     GraphicsPath combinedStaticFigure = new GraphicsPath();
                     Rectangle combinedBoardLocation = _currentCluster.BoardLocation;
                     Rectangle combinedSourcePictureLocation = _currentCluster.SourcePictureLocation;
@@ -2087,8 +1657,6 @@ namespace Omega
                     matrix.Reset();
                     matrix.Translate(combinedBoardLocation.X, combinedBoardLocation.Y);
                     _currentCluster.MovableFigure.Transform(matrix);
-
-                    #region Construct cluster picture
 
                     // Translate the figure to the origin to draw the picture
                     matrix.Reset();
@@ -2125,8 +1693,6 @@ namespace Omega
                     ImageUtilities.EdgeDetectVertical(modifiedClusterPicture);
                     clusterPicture = ImageUtilities.AlphaBlendMatrix(modifiedClusterPicture, clusterPicture, 200);
 
-                    #endregion
-
                     _currentCluster.Picture = (Bitmap)clusterPicture.Clone();
 
                     // Update the piece's movable figure and board location
@@ -2152,11 +1718,6 @@ namespace Omega
                         matrix.Translate(newLocationX, newLocationY);
                         piece.MovableFigure.Transform(matrix);
                     }
-
-                    #region Redraw
-
-                    #region Back buffer
-
                     Rectangle areaToClear = new Rectangle(combinedBoardLocation.X, combinedBoardLocation.Y,
                                                             combinedBoardLocation.Width + GameSettings.DROP_SHADOW_DEPTH,
                                                             combinedBoardLocation.Height + GameSettings.DROP_SHADOW_DEPTH);
@@ -2165,8 +1726,6 @@ namespace Omega
                     {
                         // Clear the area with the background picture first
                         gfx.DrawImage(_background, areaToClear, areaToClear, GraphicsUnit.Pixel);
-
-                        #region Redraw the pieces
 
                         Region regionToRedraw = new Region(areaToClear);
 
@@ -2181,39 +1740,18 @@ namespace Omega
                                 gfx.DrawImageUnscaled(cluster.Picture, cluster.BoardLocation);
                             }
                         }
-
-                        #endregion
                     }
-
-                    #endregion
-
-                    #region Board
-
                     using (Graphics gfx = Graphics.FromImage(_board))
                     {
                         gfx.DrawImageUnscaled(_backBuffer, 0, 0);
                     }
-
-                    #endregion
-
-                    #region Form
-
                     using (Graphics gfx = this.CreateGraphics())
                     {
                         gfx.DrawImageUnscaled(_backBuffer, 0, 0);
                     }
-
-                    #endregion
-
-                    #endregion
                 }
-
-                #endregion
-
                 _canMovePiece = false;
                 _currentCluster = null;
-
-                #region Victory announcement
 
                 if (_clusters.Count == 1)
                 {
@@ -2223,8 +1761,6 @@ namespace Omega
                         MessageBox.Show("Resolviste el rompecabezas, ¡Muy bien!", "¡Felicidades!", MessageBoxButtons.OK);
                     }
                 }
-
-                #endregion
             }
         }
 
@@ -2317,7 +1853,6 @@ namespace Omega
                     return group;
                 }
             }
-
             return null;
         }
 
@@ -2334,7 +1869,5 @@ namespace Omega
 
             return false;
         }
-
-        #endregion                                        
     }
 }
