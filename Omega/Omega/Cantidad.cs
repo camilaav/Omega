@@ -37,6 +37,11 @@ namespace Omega
             this.Hide();
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             MovimientoHelper movimientoHelper = new MovimientoHelper();

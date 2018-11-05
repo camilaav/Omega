@@ -143,6 +143,7 @@
             this.btnSalir.Size = new System.Drawing.Size(72, 79);
             this.btnSalir.TabIndex = 20;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Paint += new System.Windows.Forms.PaintEventHandler(this.btnSalir_Paint);
             // 
             // Resta
             // 

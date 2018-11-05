@@ -41,6 +41,11 @@ namespace Omega
             }
         }
 
+        private void btnSalir_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         public void Recarga()
         {
             intento = 1;

@@ -40,9 +40,9 @@
             // 
             this.opcionUno.BackColor = System.Drawing.Color.Transparent;
             this.opcionUno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionUno.Location = new System.Drawing.Point(12, 523);
+            this.opcionUno.Location = new System.Drawing.Point(172, 487);
             this.opcionUno.Name = "opcionUno";
-            this.opcionUno.Size = new System.Drawing.Size(147, 127);
+            this.opcionUno.Size = new System.Drawing.Size(117, 146);
             this.opcionUno.TabIndex = 3;
             this.opcionUno.Click += new System.EventHandler(this.opcionUno_Click_1);
             // 
@@ -50,9 +50,9 @@
             // 
             this.opcionDos.BackColor = System.Drawing.Color.Transparent;
             this.opcionDos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionDos.Location = new System.Drawing.Point(313, 521);
+            this.opcionDos.Location = new System.Drawing.Point(316, 487);
             this.opcionDos.Name = "opcionDos";
-            this.opcionDos.Size = new System.Drawing.Size(147, 127);
+            this.opcionDos.Size = new System.Drawing.Size(117, 146);
             this.opcionDos.TabIndex = 4;
             this.opcionDos.Click += new System.EventHandler(this.opcionDos_Click_1);
             this.opcionDos.Paint += new System.Windows.Forms.PaintEventHandler(this.opcionDos_Paint);
@@ -61,9 +61,9 @@
             // 
             this.opcionTres.BackColor = System.Drawing.Color.Transparent;
             this.opcionTres.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.opcionTres.Location = new System.Drawing.Point(591, 523);
+            this.opcionTres.Location = new System.Drawing.Point(463, 487);
             this.opcionTres.Name = "opcionTres";
-            this.opcionTres.Size = new System.Drawing.Size(147, 127);
+            this.opcionTres.Size = new System.Drawing.Size(117, 146);
             this.opcionTres.TabIndex = 4;
             this.opcionTres.Click += new System.EventHandler(this.opcionTres_Click_1);
             // 
@@ -82,14 +82,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::Omega.Properties.Resources.btvolver;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Location = new System.Drawing.Point(2, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(67, 69);
+            this.panel1.Size = new System.Drawing.Size(72, 79);
             this.panel1.TabIndex = 4;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Cantidad
             // 
