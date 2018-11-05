@@ -65,7 +65,7 @@
             // 
             this.timer1.Interval = 600;
             // 
-            // Form1
+            // Memotest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,7 +73,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblRecord);
             this.Controls.Add(this.panelJuego);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Memotest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
