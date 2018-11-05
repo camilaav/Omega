@@ -172,5 +172,18 @@ namespace Omega
         {
 
         }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            int TiempoImagen = 1;
+            if (TiempoImagen == 1)
+            {
+                FotoTemp1.Image = Properties.Resources.Volteo;
+                FotoTemp2.Image = Properties.Resources.Volteo;
+                FotosSeleccionadas.Clear();
+                TiempoImagen = 0;
+                timer1.Stop();
+            }
+        }
     }
 }
