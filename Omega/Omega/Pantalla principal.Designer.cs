@@ -106,7 +106,7 @@
             this.Controls.Add(btnLetras);
             this.Controls.Add(btnNumeros);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pantalla_principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

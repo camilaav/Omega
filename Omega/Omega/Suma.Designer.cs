@@ -165,6 +165,7 @@
             this.Controls.Add(this.opcionUno);
             this.Controls.Add(this.lblPuntaje);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Suma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Suma";

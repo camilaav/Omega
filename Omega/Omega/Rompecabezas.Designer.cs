@@ -96,6 +96,7 @@
             this.Controls.Add(this.picvolver);
             this.Controls.Add(this.btnSalir);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rompecabezas";

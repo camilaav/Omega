@@ -87,6 +87,7 @@
             this.Controls.Add(this.btnSopa);
             this.Controls.Add(this.btnCompletas);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Letras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
