@@ -191,11 +191,11 @@ namespace Omega
             numero2 = randommizer.Next(limiteMenor, limiteMayor);
             resultado = juegoHelper.Operacion(numero1, numero2, "+");
 
-            while (resultado < 0) 
+            while (resultado > 100) 
             {
                 numero1 = randommizer.Next(limiteMenor, limiteMayor);
                 numero2 = randommizer.Next(limiteMenor, limiteMayor);
-                resultado = (numero1 - numero2);
+                resultado = juegoHelper.Operacion(numero1, numero2, "+");
             }
 
             numeroUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + numero1.ToString() + ".png");
