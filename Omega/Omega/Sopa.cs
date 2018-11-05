@@ -1421,5 +1421,12 @@ namespace Omega
         {
 
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            var pantallaPrincipal = new Pantalla_principal();
+            pantallaPrincipal.Show();
+            this.Hide();
+        }
     }
 }

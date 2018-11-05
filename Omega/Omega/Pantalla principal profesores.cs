@@ -54,7 +54,9 @@ namespace Omega
 
         private void picTabla_Click(object sender, EventArgs e)
         {
-
+            var form = Application.OpenForms.OfType<ListaPuntajes>().FirstOrDefault();
+            ListaPuntajes listaPuntajes = form ?? new ListaPuntajes();
+            AbrirForm(listaPuntajes);
         }
 
         private void Pantalla_principal_profesores_Load(object sender, EventArgs e)

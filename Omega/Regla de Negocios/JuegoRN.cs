@@ -62,6 +62,11 @@ namespace Regla_de_Negocios
             return lista;
         }
 
+        public DataTable TablaMovimientos()
+        {
+            return comandos.Dataset("sp_ListarMovimientos", "Movimiento");
+        }
+
         public Boolean NuevoMovimiento(Movimiento m)
         {
             var listaParametros = new List<SqlParameter>();
