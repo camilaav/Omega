@@ -86,6 +86,7 @@
     <Compile Include="Cantidad.Designer.cs">
       <DependentUpon>Cantidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\GameSettings.cs" />
     <Compile Include="Colorear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,7 +119,12 @@
     <Compile Include="BajaUsuarios.Designer.cs">
       <DependentUpon>BajaUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clases\GameSettings.cs" />
+    <Compile Include="Memotest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Memotest.Designer.cs">
+      <DependentUpon>Memotest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\JuegosHelper.cs" />
     <Compile Include="Clases\ImagenUtilities.cs" />
     <Compile Include="Letras.cs">
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Entretenimiento.resx">
       <DependentUpon>Entretenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Memotest.resx">
+      <DependentUpon>Memotest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Letras.resx">
       <DependentUpon>Letras.cs</DependentUpon>
