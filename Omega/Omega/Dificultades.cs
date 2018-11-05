@@ -39,7 +39,7 @@ namespace Omega
             dictionary.Add("sopa", new Sopa());
             dictionary.Add("completar", new CompletarPalabra());
             dictionary.Add("rompe", new MainForm());
-            //TODO faltan los otros formularios agregar al diccionario..
+            dictionary.Add("memotest", new Memotest());
 
             string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
             var listaDificultades = juegoRN.ListaDificultades();

@@ -8,7 +8,6 @@ namespace Omega
 
         public static readonly int MIN_PIECE_WIDTH = 50;    // Minimum width of jigsaw piece in pixels.
         public static readonly int MIN_PIECE_HEIGHT = 50;   // Minimum height of jigsaw piece in pixels.
-
         public static readonly int NUM_ROWS = 4;
         public static readonly int NUM_COLUMNS = 4;
 
