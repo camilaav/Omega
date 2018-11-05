@@ -34,6 +34,7 @@
             this.picvolver = new System.Windows.Forms.PictureBox();
             this.picAbrir = new System.Windows.Forms.PictureBox();
             this.picpista = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.picvolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAbrir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picpista)).BeginInit();
@@ -59,6 +60,7 @@
             this.picvolver.BackColor = System.Drawing.Color.Transparent;
             this.picvolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picvolver.BackgroundImage")));
             this.picvolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picvolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picvolver.Location = new System.Drawing.Point(0, 0);
             this.picvolver.Name = "picvolver";
             this.picvolver.Size = new System.Drawing.Size(72, 79);
@@ -84,19 +86,29 @@
             this.picpista.TabStop = false;
             this.picpista.Click += new System.EventHandler(this.picpista_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(966, 24);
+            this.menuStrip1.TabIndex = 33;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(966, 650);
             this.Controls.Add(this.picpista);
             this.Controls.Add(this.picAbrir);
             this.Controls.Add(this.picvolver);
             this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rompecabezas";
@@ -109,6 +121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAbrir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picpista)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -118,5 +131,6 @@
         private System.Windows.Forms.PictureBox picvolver;
         private System.Windows.Forms.PictureBox picAbrir;
         private System.Windows.Forms.PictureBox picpista;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

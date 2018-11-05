@@ -21,12 +21,13 @@ namespace Omega
             InitializeComponent();
         }
 
-      /*  private void MainForm_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             _previousClientWidth = this.ClientSize.Width;
             _previousClientHeight = this.ClientSize.Height;
             _puzzlePictureWidth = this.ClientSize.Width;
             _puzzlePictureHeight = this.ClientSize.Height - menuStrip1.Height;
+            menuStrip1.Visible = false;
         }
 
         private void MainForm_Paint(object sender, PaintEventArgs e)
@@ -38,7 +39,7 @@ namespace Omega
                     gfx.DrawImageUnscaled(_board, 0, 0);
                 }
             }
-        }*/
+        }
 
         private void MainForm_ClientSizeChanged(object sender, EventArgs e)
         {
@@ -1514,7 +1515,9 @@ namespace Omega
 
         private void picvolver_Click(object sender, EventArgs e)
         {
-
+            var pantallaPrincipal = new Pantalla_principal();
+            pantallaPrincipal.Show();
+            this.Hide();
         }
 
         private void picAbrir_Click(object sender, EventArgs e)
@@ -1564,10 +1567,6 @@ namespace Omega
             DisplayJigsawPuzzle(Settings.Default.ShowImageHint);*/
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void MainForm_MouseUp_2(object sender, MouseEventArgs e)
         {
