@@ -54,6 +54,7 @@
             // opcionUno
             // 
             this.opcionUno.BackColor = System.Drawing.Color.Transparent;
+            this.opcionUno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionUno.Location = new System.Drawing.Point(179, 358);
             this.opcionUno.Margin = new System.Windows.Forms.Padding(2);
             this.opcionUno.Name = "opcionUno";
@@ -66,6 +67,7 @@
             // opcionDos
             // 
             this.opcionDos.BackColor = System.Drawing.Color.Transparent;
+            this.opcionDos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionDos.Location = new System.Drawing.Point(329, 358);
             this.opcionDos.Margin = new System.Windows.Forms.Padding(2);
             this.opcionDos.Name = "opcionDos";
@@ -78,6 +80,7 @@
             // opcionTres
             // 
             this.opcionTres.BackColor = System.Drawing.Color.Transparent;
+            this.opcionTres.Cursor = System.Windows.Forms.Cursors.Hand;
             this.opcionTres.Location = new System.Drawing.Point(482, 358);
             this.opcionTres.Margin = new System.Windows.Forms.Padding(2);
             this.opcionTres.Name = "opcionTres";
