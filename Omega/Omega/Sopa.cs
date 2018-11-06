@@ -70,9 +70,18 @@ namespace Omega
 
         private void Sopa_Load(object sender, EventArgs e)
         {
-            dataGridView1.Font = label1.Font;
-          //  dataGridView1.scro
             Juego();
+            dataGridView1.Font = label1.Font;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+
+            var dataGridHeight = dataGridView1.Size.Height;
+            var rowHeight = dataGridHeight / dataGridView1.RowCount;
+            for(int i = 0; i < dataGridView1.Rows.Count;i++)
+            {
+                dataGridView1.Rows[i].Height = rowHeight;
+            }
+            dataGridView1.ScrollBars = ScrollBars.None;
         }
 
         private void IniciarPalabras()
@@ -473,8 +482,6 @@ namespace Omega
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (dataGridView1[0,0].Selected)
-            //        dataGridView1[0, 0].Style.BackColor = Color.Red;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
