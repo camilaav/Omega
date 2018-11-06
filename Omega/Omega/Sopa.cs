@@ -22,10 +22,10 @@ namespace Omega
         }
         private void JuegoCompleto()
         {
-            if (label1.ForeColor == Color.YellowGreen && label2.ForeColor == Color.YellowGreen &&
-                label3.ForeColor == Color.YellowGreen && label4.ForeColor == Color.YellowGreen &&
-                label5.ForeColor == Color.YellowGreen && label6.ForeColor == Color.YellowGreen &&
-                label7.ForeColor == Color.YellowGreen )
+            if (label1.ForeColor == Color.DarkSlateGray && label2.ForeColor == Color.DarkSlateGray &&
+                label3.ForeColor == Color.DarkSlateGray && label4.ForeColor == Color.DarkSlateGray &&
+                label5.ForeColor == Color.DarkSlateGray && label6.ForeColor == Color.DarkSlateGray &&
+                label7.ForeColor == Color.DarkSlateGray)
             {
                 Juego();
             }
@@ -71,6 +71,7 @@ namespace Omega
         private void Sopa_Load(object sender, EventArgs e)
         {
             dataGridView1.Font = label1.Font;
+          //  dataGridView1.scro
             Juego();
         }
 
@@ -534,54 +535,54 @@ namespace Omega
         {
             //CASA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //GATO
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //RATON
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
 
-            if (dataGridView1[1, 0].Style.BackColor == Color.YellowGreen && dataGridView1[1, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[1, 2].Style.BackColor == Color.YellowGreen && dataGridView1[1, 3].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[1, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[1, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray)
             {
-                label1.ForeColor = Color.YellowGreen; //CASA
+                label1.ForeColor = Color.DarkSlateGray; //CASA
             }
 
-            if (dataGridView1[0, 3].Style.BackColor == Color.YellowGreen && dataGridView1[1, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 3].Style.BackColor == Color.YellowGreen && dataGridView1[3, 3].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray)
             {
-                label2.ForeColor = Color.YellowGreen; //GATO
+                label2.ForeColor = Color.DarkSlateGray; //GATO
             }
 
-            if (dataGridView1[3, 0].Style.BackColor == Color.YellowGreen && dataGridView1[3, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 2].Style.BackColor == Color.YellowGreen && dataGridView1[3, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 4].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[3, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray)
             {
-                label3.ForeColor = Color.YellowGreen; //RATON
+                label3.ForeColor = Color.DarkSlateGray; //RATON
             }
 
         }
@@ -591,54 +592,54 @@ namespace Omega
 
             //CASA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //GATO
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //RATON
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
-            if (dataGridView1[1, 2].Style.BackColor == Color.YellowGreen && dataGridView1[2, 2].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 2].Style.BackColor == Color.YellowGreen && dataGridView1[4, 2].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[1, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 2].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray)
             {
-                label2.ForeColor = Color.YellowGreen; //GATO
+                label2.ForeColor = Color.DarkSlateGray; //GATO
             }
 
 
-            if (dataGridView1[0, 1].Style.BackColor == Color.YellowGreen && dataGridView1[1, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 1].Style.BackColor == Color.YellowGreen && dataGridView1[3, 1].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray)
             {
-                label1.ForeColor = Color.YellowGreen; //CASA
+                label1.ForeColor = Color.DarkSlateGray; //CASA
             }
 
-            if (dataGridView1[3, 0].Style.BackColor == Color.YellowGreen && dataGridView1[3, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 2].Style.BackColor == Color.YellowGreen && dataGridView1[3, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 4].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[3, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray)
             {
-                label3.ForeColor = Color.YellowGreen; //RATON
+                label3.ForeColor = Color.DarkSlateGray; //RATON
             }
 
         }
@@ -647,53 +648,53 @@ namespace Omega
         {
             //CASA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //GATO
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //RATON
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
-            if (dataGridView1[4, 0].Style.BackColor == Color.YellowGreen && dataGridView1[4, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 2].Style.BackColor == Color.YellowGreen && dataGridView1[4, 3].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray)
             {
-                label1.ForeColor = Color.YellowGreen; //CASA
+                label1.ForeColor = Color.DarkSlateGray; //CASA
             }
 
-            if (dataGridView1[0, 1].Style.BackColor == Color.YellowGreen && dataGridView1[1, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 1].Style.BackColor == Color.YellowGreen && dataGridView1[3, 1].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray)
             {
-                label2.ForeColor = Color.YellowGreen; //GATO
+                label2.ForeColor = Color.DarkSlateGray; //GATO
             }
 
-            if (dataGridView1[1, 0].Style.BackColor == Color.YellowGreen && dataGridView1[1, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[1, 2].Style.BackColor == Color.YellowGreen && dataGridView1[1, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[1, 4].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[1, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[1, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[1, 4].Style.BackColor == Color.DarkSlateGray)
             {
-                label3.ForeColor = Color.YellowGreen; //RATON
+                label3.ForeColor = Color.DarkSlateGray; //RATON
             }
 
         }
@@ -701,103 +702,103 @@ namespace Omega
         {
             //ESCUELA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //BANANA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //PLATO
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //PIZZA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //LAPIZ
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
 
-            if (dataGridView1[0, 0].Style.BackColor == Color.YellowGreen && dataGridView1[0, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[0, 2].Style.BackColor == Color.YellowGreen && dataGridView1[0, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[0, 4].Style.BackColor == Color.YellowGreen && dataGridView1[0, 5].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[0, 6].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[0, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[0, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 5].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray)
             {
-                label1.ForeColor = Color.YellowGreen; //ESCUELA
+                label1.ForeColor = Color.DarkSlateGray; //ESCUELA
             }
 
-            if (dataGridView1[1, 3].Style.BackColor == Color.YellowGreen && dataGridView1[2, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 3].Style.BackColor == Color.YellowGreen && dataGridView1[4, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[5, 3].Style.BackColor == Color.YellowGreen && dataGridView1[6, 3].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[5, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray)
             {
-                label2.ForeColor = Color.YellowGreen; //BANANA
+                label2.ForeColor = Color.DarkSlateGray; //BANANA
             }
 
-            if (dataGridView1[2, 1].Style.BackColor == Color.YellowGreen && dataGridView1[2, 2].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 3].Style.BackColor == Color.YellowGreen && dataGridView1[2, 4].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 5].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 2].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 4].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 5].Style.BackColor == Color.DarkSlateGray)
             {
-                label3.ForeColor = Color.YellowGreen; //PLATO
+                label3.ForeColor = Color.DarkSlateGray; //PLATO
             }
-            if (dataGridView1[2, 1].Style.BackColor == Color.YellowGreen && dataGridView1[3, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 1].Style.BackColor == Color.YellowGreen && dataGridView1[5, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 1].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray)
             {
-                label4.ForeColor = Color.YellowGreen; //PIZZA
+                label4.ForeColor = Color.DarkSlateGray; //PIZZA
             }
-            if (dataGridView1[6, 2].Style.BackColor == Color.YellowGreen && dataGridView1[6, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 4].Style.BackColor == Color.YellowGreen && dataGridView1[6, 5].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 6].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray)
             {
-                label5.ForeColor = Color.YellowGreen; //LAPIZ
+                label5.ForeColor = Color.DarkSlateGray; //LAPIZ
             }
         }
         private void VerificacionLVL2CFG2()
@@ -805,206 +806,206 @@ namespace Omega
 
             //ESCUELA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //BANANA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //PLATO
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //PIZZA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //LAPIZ
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
 
-            if (dataGridView1[0, 6].Style.BackColor == Color.YellowGreen && dataGridView1[1, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 6].Style.BackColor == Color.YellowGreen && dataGridView1[3, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 6].Style.BackColor == Color.YellowGreen && dataGridView1[5, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 6].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray)
             {
-                label1.ForeColor = Color.YellowGreen; //ESCUELA
+                label1.ForeColor = Color.DarkSlateGray; //ESCUELA
             }
 
-            if (dataGridView1[2, 0].Style.BackColor == Color.YellowGreen && dataGridView1[2, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 2].Style.BackColor == Color.YellowGreen && dataGridView1[2, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 4].Style.BackColor == Color.YellowGreen && dataGridView1[2, 5].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[2, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 5].Style.BackColor == Color.DarkSlateGray)
             {
-                label2.ForeColor = Color.YellowGreen; //BANANA
+                label2.ForeColor = Color.DarkSlateGray; //BANANA
             }
 
-            if (dataGridView1[0, 3].Style.BackColor == Color.YellowGreen && dataGridView1[1, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 3].Style.BackColor == Color.YellowGreen && dataGridView1[3, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 3].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray)
             {
-                label3.ForeColor = Color.YellowGreen; //PLATO
+                label3.ForeColor = Color.DarkSlateGray; //PLATO
             }
-            if (dataGridView1[6, 2].Style.BackColor == Color.YellowGreen && dataGridView1[6, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 4].Style.BackColor == Color.YellowGreen && dataGridView1[6, 5].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 6].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray)
             {
-                label4.ForeColor = Color.YellowGreen; //PIZZA
+                label4.ForeColor = Color.DarkSlateGray; //PIZZA
             }
-            if (dataGridView1[1, 1].Style.BackColor == Color.YellowGreen && dataGridView1[2, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 1].Style.BackColor == Color.YellowGreen && dataGridView1[4, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[5, 1].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray)
             {
-                label5.ForeColor = Color.YellowGreen; //LAPIZ
+                label5.ForeColor = Color.DarkSlateGray; //LAPIZ
             }
         }
         private void VerificacionLVL2CFG3()
         {
             //ESCUELA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //BANANA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //PLATO
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //PIZZA
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //LAPIZ
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
 
-            if (dataGridView1[0, 3].Style.BackColor == Color.YellowGreen && dataGridView1[1, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 3].Style.BackColor == Color.YellowGreen && dataGridView1[3, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 3].Style.BackColor == Color.YellowGreen && dataGridView1[5, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 3].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray)
             {
-                label1.ForeColor = Color.YellowGreen; //ESCUELA
+                label1.ForeColor = Color.DarkSlateGray; //ESCUELA
             }
 
-            if (dataGridView1[6, 0].Style.BackColor == Color.YellowGreen && dataGridView1[6, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 2].Style.BackColor == Color.YellowGreen && dataGridView1[6, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 4].Style.BackColor == Color.YellowGreen && dataGridView1[6, 5].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[6, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray)
             {
-                label2.ForeColor = Color.YellowGreen; //BANANA
+                label2.ForeColor = Color.DarkSlateGray; //BANANA
             }
 
-            if (dataGridView1[0, 6].Style.BackColor == Color.YellowGreen && dataGridView1[1, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 6].Style.BackColor == Color.YellowGreen && dataGridView1[3, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 6].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray)
             {
-                label3.ForeColor = Color.YellowGreen; //PLATO
+                label3.ForeColor = Color.DarkSlateGray; //PLATO
             }
-            if (dataGridView1[2, 5].Style.BackColor == Color.YellowGreen && dataGridView1[3, 5].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 5].Style.BackColor == Color.YellowGreen && dataGridView1[5, 5].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 5].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[2, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 5].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 5].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray)
             {
-                label4.ForeColor = Color.YellowGreen; //PIZZA
+                label4.ForeColor = Color.DarkSlateGray; //PIZZA
             }
-            if (dataGridView1[0, 0].Style.BackColor == Color.YellowGreen && dataGridView1[3, 0].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 0].Style.BackColor == Color.YellowGreen && dataGridView1[5, 0].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 0].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 0].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 0].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray)
             {
-                label5.ForeColor = Color.YellowGreen; //LAPIZ
+                label5.ForeColor = Color.DarkSlateGray; //LAPIZ
             }
         }
         private void VerificacionLVL3CFG1()
@@ -1012,134 +1013,134 @@ namespace Omega
 
             //muñeca
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //papa
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //regla
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //reloj
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //milanesa
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //abuelo
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //azul
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
-            if (dataGridView1[1, 1].Style.BackColor == Color.YellowGreen && dataGridView1[2, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 1].Style.BackColor == Color.YellowGreen && dataGridView1[4, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[5, 1].Style.BackColor == Color.YellowGreen && dataGridView1[6, 1].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray)
             {
-                label2.ForeColor = Color.YellowGreen; //munheca
+                label2.ForeColor = Color.DarkSlateGray; //munheca
             }
-            if (dataGridView1[0, 8].Style.BackColor == Color.YellowGreen && dataGridView1[1, 8].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 8].Style.BackColor == Color.YellowGreen && dataGridView1[3, 8].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 8].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 8].Style.BackColor == Color.DarkSlateGray)
             {
-                label4.ForeColor = Color.YellowGreen; //papa
+                label4.ForeColor = Color.DarkSlateGray; //papa
             }
-            if (dataGridView1[3, 4].Style.BackColor == Color.YellowGreen && dataGridView1[3, 5].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 6].Style.BackColor == Color.YellowGreen && dataGridView1[3, 7].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 8].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 5].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 7].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 8].Style.BackColor == Color.DarkSlateGray)
             {
-                label5.ForeColor = Color.YellowGreen; //regla
+                label5.ForeColor = Color.DarkSlateGray; //regla
             }
-            if (dataGridView1[4, 0].Style.BackColor == Color.YellowGreen && dataGridView1[5, 0].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 0].Style.BackColor == Color.YellowGreen && dataGridView1[7, 0].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[8, 0].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 0].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[7, 0].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[8, 0].Style.BackColor == Color.DarkSlateGray)
             {
-                label1.ForeColor = Color.YellowGreen; //reloj
+                label1.ForeColor = Color.DarkSlateGray; //reloj
             }
-            if (dataGridView1[1, 7].Style.BackColor == Color.YellowGreen && dataGridView1[2, 7].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 7].Style.BackColor == Color.YellowGreen && dataGridView1[4, 7].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[5, 7].Style.BackColor == Color.YellowGreen && dataGridView1[6, 7].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[7, 7].Style.BackColor == Color.YellowGreen && dataGridView1[8, 7].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[1, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 7].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 7].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[5, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 7].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[7, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 7].Style.BackColor == Color.DarkSlateGray)
             {
-                label7.ForeColor = Color.YellowGreen; //milanesa
+                label7.ForeColor = Color.DarkSlateGray; //milanesa
             }
-            if (dataGridView1[6, 1].Style.BackColor == Color.YellowGreen && dataGridView1[6, 2].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 3].Style.BackColor == Color.YellowGreen && dataGridView1[6, 4].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 5].Style.BackColor == Color.YellowGreen && dataGridView1[6, 6].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 4].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray)
             {
-                label3.ForeColor = Color.YellowGreen; //abuelo
+                label3.ForeColor = Color.DarkSlateGray; //abuelo
             }
-            if (dataGridView1[0, 3].Style.BackColor == Color.YellowGreen && dataGridView1[1, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 3].Style.BackColor == Color.YellowGreen && dataGridView1[3, 3].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray)
             {
-                label6.ForeColor = Color.YellowGreen; //azul
+                label6.ForeColor = Color.DarkSlateGray; //azul
             }
         }
         private void VerificacionLVL3CFG2()
@@ -1147,134 +1148,134 @@ namespace Omega
 
             //muñeca
             if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //papa
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //regla
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //reloj
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //milanesa
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //abuelo
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //azul
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
-            if (dataGridView1[8, 0].Style.BackColor == Color.YellowGreen && dataGridView1[8, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[8, 2].Style.BackColor == Color.YellowGreen && dataGridView1[8, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[8, 4].Style.BackColor == Color.YellowGreen && dataGridView1[8, 5].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[8, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[8, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[8, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 5].Style.BackColor == Color.DarkSlateGray)
             {
-                label2.ForeColor = Color.YellowGreen; //munheca
+                label2.ForeColor = Color.DarkSlateGray; //munheca
             }
-            if (dataGridView1[0, 5].Style.BackColor == Color.YellowGreen && dataGridView1[0, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[0, 7].Style.BackColor == Color.YellowGreen && dataGridView1[0, 8].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[0, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 8].Style.BackColor == Color.DarkSlateGray)
             {
-                label4.ForeColor = Color.YellowGreen; //papa
+                label4.ForeColor = Color.DarkSlateGray; //papa
             }
-            if (dataGridView1[4, 3].Style.BackColor == Color.YellowGreen && dataGridView1[4, 4].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 5].Style.BackColor == Color.YellowGreen && dataGridView1[4, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 7].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 4].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 7].Style.BackColor == Color.DarkSlateGray)
             {
-                label5.ForeColor = Color.YellowGreen; //regla
+                label5.ForeColor = Color.DarkSlateGray; //regla
             }
-            if (dataGridView1[5, 0].Style.BackColor == Color.YellowGreen && dataGridView1[5, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[5, 2].Style.BackColor == Color.YellowGreen && dataGridView1[5, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[5, 4].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[5, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[5, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[5, 4].Style.BackColor == Color.DarkSlateGray)
             {
-                label1.ForeColor = Color.YellowGreen; //reloj
+                label1.ForeColor = Color.DarkSlateGray; //reloj
             }
-            if (dataGridView1[0, 1].Style.BackColor == Color.YellowGreen && dataGridView1[1, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 1].Style.BackColor == Color.YellowGreen && dataGridView1[3, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 1].Style.BackColor == Color.YellowGreen && dataGridView1[5, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 1].Style.BackColor == Color.YellowGreen && dataGridView1[7, 1].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[7, 1].Style.BackColor == Color.DarkSlateGray)
             {
-                label7.ForeColor = Color.YellowGreen; //milanesa
+                label7.ForeColor = Color.DarkSlateGray; //milanesa
             }
-            if (dataGridView1[0, 6].Style.BackColor == Color.YellowGreen && dataGridView1[1, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 6].Style.BackColor == Color.YellowGreen && dataGridView1[3, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 6].Style.BackColor == Color.YellowGreen && dataGridView1[5, 6].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 6].Style.BackColor == Color.DarkSlateGray)
             {
-                label3.ForeColor = Color.YellowGreen; //abuelo
+                label3.ForeColor = Color.DarkSlateGray; //abuelo
             }
-            if (dataGridView1[3, 1].Style.BackColor == Color.YellowGreen && dataGridView1[3, 2].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[3, 3].Style.BackColor == Color.YellowGreen && dataGridView1[3, 4].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray)
             {
-                label6.ForeColor = Color.YellowGreen; //azul
+                label6.ForeColor = Color.DarkSlateGray; //azul
             }
         }
         private void VerificacionLVL3CFG3()
@@ -1286,134 +1287,134 @@ namespace Omega
 
             //muñeca
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //papa
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //regla
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //reloj
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //milanesa
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //abuelo
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             //azul
             if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
             if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.YellowGreen;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
-            if (dataGridView1[0, 3].Style.BackColor == Color.YellowGreen && dataGridView1[0, 4].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[0, 5].Style.BackColor == Color.YellowGreen && dataGridView1[0, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[0, 7].Style.BackColor == Color.YellowGreen && dataGridView1[0, 8].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 4].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[0, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[0, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 8].Style.BackColor == Color.DarkSlateGray)
             {
-                label2.ForeColor = Color.YellowGreen; //munheca
+                label2.ForeColor = Color.DarkSlateGray; //munheca
             }
-            if (dataGridView1[3, 3].Style.BackColor == Color.YellowGreen && dataGridView1[4, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[5, 3].Style.BackColor == Color.YellowGreen && dataGridView1[6, 3].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[5, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray)
             {
-                label4.ForeColor = Color.YellowGreen; //papa
+                label4.ForeColor = Color.DarkSlateGray; //papa
             }
-            if (dataGridView1[3, 5].Style.BackColor == Color.YellowGreen && dataGridView1[4, 5].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[5, 5].Style.BackColor == Color.YellowGreen && dataGridView1[6, 5].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[7, 5].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[3, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 5].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[5, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[7, 5].Style.BackColor == Color.DarkSlateGray)
             {
-                label5.ForeColor = Color.YellowGreen; //regla
+                label5.ForeColor = Color.DarkSlateGray; //regla
             }
-            if (dataGridView1[2, 2].Style.BackColor == Color.YellowGreen && dataGridView1[3, 2].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 2].Style.BackColor == Color.YellowGreen && dataGridView1[5, 2].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[6, 2].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[2, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 2].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray)
             {
-                label1.ForeColor = Color.YellowGreen; //reloj
+                label1.ForeColor = Color.DarkSlateGray; //reloj
             }
-            if (dataGridView1[4, 0].Style.BackColor == Color.YellowGreen && dataGridView1[4, 1].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 2].Style.BackColor == Color.YellowGreen && dataGridView1[4, 3].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 4].Style.BackColor == Color.YellowGreen && dataGridView1[4, 5].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 6].Style.BackColor == Color.YellowGreen && dataGridView1[4, 7].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 5].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 7].Style.BackColor == Color.DarkSlateGray)
             {
-                label7.ForeColor = Color.YellowGreen; //milanesa
+                label7.ForeColor = Color.DarkSlateGray; //milanesa
             }
-            if (dataGridView1[0, 8].Style.BackColor == Color.YellowGreen && dataGridView1[1, 8].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[2, 8].Style.BackColor == Color.YellowGreen && dataGridView1[3, 8].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[4, 8].Style.BackColor == Color.YellowGreen && dataGridView1[5, 8].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[0, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 8].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 8].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[4, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 8].Style.BackColor == Color.DarkSlateGray)
             {
-                label3.ForeColor = Color.YellowGreen; //abuelo
+                label3.ForeColor = Color.DarkSlateGray; //abuelo
             }
-            if (dataGridView1[7, 5].Style.BackColor == Color.YellowGreen && dataGridView1[7, 6].Style.BackColor == Color.YellowGreen &&
-                dataGridView1[7, 7].Style.BackColor == Color.YellowGreen && dataGridView1[7, 8].Style.BackColor == Color.YellowGreen)
+            if (dataGridView1[7, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[7, 6].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[7, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[7, 8].Style.BackColor == Color.DarkSlateGray)
             {
-                label6.ForeColor = Color.YellowGreen; //azul
+                label6.ForeColor = Color.DarkSlateGray; //azul
             }
         }
 

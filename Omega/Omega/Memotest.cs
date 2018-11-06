@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,17 +11,12 @@ namespace Omega
 {
     public partial class Memotest : Form
     {
-
-        int TamañoColumnasFilas = 4;
-        int Movimientos = 0;
-        int CantidadFotosVolteadas = 0;
-        List<string> FotosEnumeradas;
-        List<string> FotosRevueltas;
+        int Movimientos = 0, CantidadFotosVolteadas = 0, TamañoColumnasFilas = 4, FotoActual = 0;
+        List<string> FotosEnumeradas, FotosRevueltas;
+        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Cartas");
+        int seg = 0, orden, fondo, fondo2, resultado, intento = 1, puntuacion = 0, idJuego = 2, idDificultad = 0;
         ArrayList FotosSeleccionadas;
-        PictureBox FotoTemp1;
-        PictureBox FotoTemp2;
-        int FotoActual = 0;
-
+        PictureBox FotoTemp1, FotoTemp2;
 
         public Memotest()
         {
@@ -70,7 +66,7 @@ namespace Omega
                     FotosJuego.Name = string.Format("{0}", Contador);
                     FotosJuego.Dock = DockStyle.Fill;
                     FotosJuego.SizeMode = PictureBoxSizeMode.StretchImage;
-                    FotosJuego.Image = Omega.Properties.Resources.Volteo;
+                    FotosJuego.Image = Image.FromFile(startupPath + "//" + "CartaDorso.png");
                     FotosJuego.Cursor = Cursors.Hand;
                     FotosJuego.Click += btnFoto_Click;
                     tablaPanel.Controls.Add(FotosJuego, j, i);
@@ -80,22 +76,13 @@ namespace Omega
             }
             tablaPanel.Dock = DockStyle.Fill;
             panelJuego.Controls.Add(tablaPanel);
-
             /* FIN ESTRUCTURA DE DISEÑO */
-
-
-        }
-        private void btnJuego_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnFoto_Click(object sender, EventArgs e)
         {
             if (FotosSeleccionadas.Count < 2) // Cuenta los clicks sobre las imágenes
             {
-
-
                 Movimientos++;
                 lblRecord.Text = Convert.ToString(Movimientos); //Registra número de movimientos
                 var FotoSeleccionadaJugador = (PictureBox)sender;
@@ -128,7 +115,6 @@ namespace Omega
                         FotosSeleccionadas.Clear();
                     }
                 }
-
             }
         }
 
@@ -138,10 +124,10 @@ namespace Omega
             switch (NumeroImagenAsignado)
             {
                 case 0:
-                    TempImagen = Omega.Properties.Resources.img16;
+                    TempImagen = (Bitmap)Image.FromFile(startupPath + "//" + NumeroImagenAsignado + ".png");
                     break;
                 default:
-                    TempImagen = (Bitmap)Omega.Properties.Resources.ResourceManager.GetObject("img" + NumeroImagenAsignado);
+                    TempImagen = (Bitmap)Image.FromFile(startupPath + "//" + NumeroImagenAsignado + ".png");
                     break;
 
             }
@@ -153,33 +139,13 @@ namespace Omega
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelJuego_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void fácilToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelJuego_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             int TiempoImagen = 1;
             if (TiempoImagen == 1)
             {
-                FotoTemp1.Image = Properties.Resources.Volteo;
-                FotoTemp2.Image = Properties.Resources.Volteo;
+                FotoTemp1.Image = Image.FromFile(startupPath + "//" + "CartaDorso.png");
+                FotoTemp2.Image = Image.FromFile(startupPath + "//" + "CartaDorso.png");
                 FotosSeleccionadas.Clear();
                 TiempoImagen = 0;
                 timer1.Stop();

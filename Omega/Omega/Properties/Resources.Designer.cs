@@ -389,5 +389,15 @@ namespace Omega.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2018_11_05_at_18_51_43 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2018-11-05 at 18.51.43", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

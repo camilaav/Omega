@@ -62,7 +62,6 @@
             this.panelJuego.Name = "panelJuego";
             this.panelJuego.Size = new System.Drawing.Size(450, 426);
             this.panelJuego.TabIndex = 4;
-            this.panelJuego.Paint += new System.Windows.Forms.PaintEventHandler(this.panelJuego_Paint_1);
             // 
             // timer1
             // 

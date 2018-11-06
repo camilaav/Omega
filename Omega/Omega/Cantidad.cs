@@ -138,8 +138,8 @@ namespace Omega
 
             string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
 
-            posicionInicialArriba = 90;
-            posicionInicialCostado = 40;
+            posicionInicialArriba = 130;
+            posicionInicialCostado = 165;
             if (this.Tag.ToString() == "Facil")
             {
                 Juego(1, 5);
@@ -195,16 +195,16 @@ namespace Omega
 
             for (int i = 1; i <= cantidadPictures; i++)
             {
-                if (posicionInicialCostado >= 600)
+                if (posicionInicialCostado >= 550)
                 {
-                    posicionInicialCostado = 40;
-                    posicionInicialArriba = posicionInicialArriba + 110;
+                    posicionInicialCostado = 165;
+                    posicionInicialArriba = posicionInicialArriba + 85;
                 }
 
                 var picture = new PictureBox();
                 Controls.Add(picture);
                 picture.Name = "pictureBox" + nombrePicture;
-                picture.Size = new Size(100, 100);
+                picture.Size = new Size(75, 75);
                 picture.BackColor = Color.Transparent;
                 picture.Location = new Point(posicionInicialCostado, posicionInicialArriba);
                 picture.BackgroundImage = Image.FromFile(startupPath + @"\" + imagen.ToString() + ".png");
@@ -212,7 +212,7 @@ namespace Omega
                 picture.BackgroundImageLayout = ImageLayout.Stretch;
                 picture.Enabled = true;
                 nombrePicture++;
-                posicionInicialCostado = posicionInicialCostado + 110;
+                posicionInicialCostado = posicionInicialCostado + 85;
                 contador++;
             }
 
