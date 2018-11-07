@@ -14,24 +14,60 @@ namespace Omega
     {
         Random letras = new Random();
         Random cfg = new Random();
-        int cfgelegido;
+        int cfgelegido, puntuacion = 0;
         public int contador;
+        bool esCasa = false, esGato = false, esEscuela = false, esRaton = false, esBanana = false, esPlato = false, esPizza = false, esLapiz = false, esMuñeca = false, esPapa = false, esRegla = false, esReloj = false, esMilanesa = false, esAbuelo = false, esAzul = false;
         public Sopa()
         {
             InitializeComponent();
         }
         private void JuegoCompleto()
         {
-            if (label1.ForeColor == Color.DarkSlateGray && label2.ForeColor == Color.DarkSlateGray &&
-                label3.ForeColor == Color.DarkSlateGray && label4.ForeColor == Color.DarkSlateGray &&
-                label5.ForeColor == Color.DarkSlateGray && label6.ForeColor == Color.DarkSlateGray &&
-                label7.ForeColor == Color.DarkSlateGray)
+            if (this.Tag.ToString() == "Facil")
             {
-                Juego();
+                if (label1.ForeColor == Color.DarkSlateGray && label2.ForeColor == Color.DarkSlateGray && label3.ForeColor == Color.DarkSlateGray)
+                {
+                    MessageBox.Show("Muy bien, terminaste!");
+                }
+            }
+            else if (this.Tag.ToString() == "Intermedia")
+            {
+                if (label1.ForeColor == Color.DarkSlateGray && label2.ForeColor == Color.DarkSlateGray &&
+                    label3.ForeColor == Color.DarkSlateGray && label4.ForeColor == Color.DarkSlateGray &&
+                    label5.ForeColor == Color.DarkSlateGray)
+                {
+                    MessageBox.Show("Muy bien, terminaste!");
+                }
+            }
+            else if (this.Tag.ToString() == "Dificil")
+            {
+                if (label1.ForeColor == Color.DarkSlateGray && label2.ForeColor == Color.DarkSlateGray &&
+                    label3.ForeColor == Color.DarkSlateGray && label4.ForeColor == Color.DarkSlateGray &&
+                    label5.ForeColor == Color.DarkSlateGray && label6.ForeColor == Color.DarkSlateGray &&
+                    label7.ForeColor == Color.DarkSlateGray)
+                {
+                    MessageBox.Show("Muy bien, terminaste!");
+                }
             }
         }
         private void Juego()
         {
+            esCasa = false;
+            esGato = false;
+            esEscuela = false;
+            esRaton = false;
+            esBanana = false;
+            esPlato = false;
+            esPizza = false;
+            esLapiz = false;
+            esMuñeca = false; 
+            esPapa = false;
+            esRegla = false;
+            esReloj = false; 
+            esMilanesa = false; 
+            esAbuelo = false;
+            esAzul = false;
+
             if (this.Tag.ToString() == "Facil")
             {
                 TablaFacil();
@@ -66,22 +102,22 @@ namespace Omega
                 label7.Text = "MILANESA";
             }
             IniciarPalabras();
-        }
-
-        private void Sopa_Load(object sender, EventArgs e)
-        {
-            Juego();
             dataGridView1.Font = label1.Font;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
 
             var dataGridHeight = dataGridView1.Size.Height;
             var rowHeight = dataGridHeight / dataGridView1.RowCount;
-            for(int i = 0; i < dataGridView1.Rows.Count;i++)
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 dataGridView1.Rows[i].Height = rowHeight;
             }
             dataGridView1.ScrollBars = ScrollBars.None;
+        }
+
+        private void Sopa_Load(object sender, EventArgs e)
+        {
+            Juego();
         }
 
         private void IniciarPalabras()
@@ -484,7 +520,7 @@ namespace Omega
         {
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void Validar()
         {
             if (this.Tag.ToString() == "Facil")
             {
@@ -532,12 +568,23 @@ namespace Omega
                 }
             }
         }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            JuegoCompleto();
+            Validar();
+        }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            dataGridView1.CurrentCell.Style.BackColor = Color.White;
+            JuegoCompleto();
+            Validar();
         }
 
+        private void Puntuar()
+        {
+            puntuacion = puntuacion + 25;
+            lblPuntaje.Text = puntuacion.ToString();
+        }
         private void VerificacionLVL1CFG1()
         {
             //CASA
@@ -574,22 +621,28 @@ namespace Omega
 
 
             if (dataGridView1[1, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[1, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[1, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray && !esCasa)
             {
                 label1.ForeColor = Color.DarkSlateGray; //CASA
+                esCasa = true;
+                Puntuar();
             }
 
             if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray && !esGato)
             {
                 label2.ForeColor = Color.DarkSlateGray; //GATO
+                esGato = true;
+                Puntuar();
             }
 
             if (dataGridView1[3, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray && !esGato)
             {
                 label3.ForeColor = Color.DarkSlateGray; //RATON
+                esGato = true;
+                Puntuar();
             }
 
         }
@@ -630,23 +683,29 @@ namespace Omega
                 dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             if (dataGridView1[1, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 2].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray && !esGato)
             {
                 label2.ForeColor = Color.DarkSlateGray; //GATO
+                esGato = true;
+                Puntuar();
             }
 
 
             if (dataGridView1[0, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray && !esCasa)
             {
                 label1.ForeColor = Color.DarkSlateGray; //CASA
+                esCasa = true;
+                Puntuar();
             }
 
             if (dataGridView1[3, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray && !esRaton)
             {
                 label3.ForeColor = Color.DarkSlateGray; //RATON
+                esRaton = true;
+                Puntuar();
             }
 
         }
@@ -686,22 +745,28 @@ namespace Omega
                 dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
 
             if (dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray && !esCasa)
             {
                 label1.ForeColor = Color.DarkSlateGray; //CASA
+                esCasa = true;
+                Puntuar();
             }
 
             if (dataGridView1[0, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray && !esGato)
             {
                 label2.ForeColor = Color.DarkSlateGray; //GATO
+                esGato = true;
+                Puntuar();
             }
 
             if (dataGridView1[1, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[1, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[1, 4].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[1, 4].Style.BackColor == Color.DarkSlateGray && !esRaton)
             {
                 label3.ForeColor = Color.DarkSlateGray; //RATON
+                esRaton = true;
+                Puntuar();
             }
 
         }
@@ -777,35 +842,45 @@ namespace Omega
             if (dataGridView1[0, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[0, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[0, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 5].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray && !esEscuela)
             {
                 label1.ForeColor = Color.DarkSlateGray; //ESCUELA
+                esEscuela = true;
+                Puntuar();
             }
 
             if (dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[5, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[5, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray && !esBanana)
             {
                 label2.ForeColor = Color.DarkSlateGray; //BANANA
+                esBanana = true;
+                Puntuar();
             }
 
             if (dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 2].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 4].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[2, 5].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[2, 5].Style.BackColor == Color.DarkSlateGray && !esPlato)
             {
                 label3.ForeColor = Color.DarkSlateGray; //PLATO
+                esPlato = true;
+                Puntuar();
             }
             if (dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray && !esPizza)
             {
                 label4.ForeColor = Color.DarkSlateGray; //PIZZA
+                esPizza = true;
+                Puntuar();
             }
             if (dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[6, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray && !esLapiz)
             {
                 label5.ForeColor = Color.DarkSlateGray; //LAPIZ
+                esLapiz = true;
+                Puntuar();
             }
         }
         private void VerificacionLVL2CFG2()
@@ -881,35 +956,45 @@ namespace Omega
             if (dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 6].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 6].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 6].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray && !esEscuela)
             {
                 label1.ForeColor = Color.DarkSlateGray; //ESCUELA
+                esEscuela = true;
+                Puntuar();
             }
 
             if (dataGridView1[2, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[2, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 5].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[2, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 5].Style.BackColor == Color.DarkSlateGray && !esBanana)
             {
                 label2.ForeColor = Color.DarkSlateGray; //BANANA
+                esBanana = true;
+                Puntuar();
             }
 
             if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray && !esPlato)
             {
                 label3.ForeColor = Color.DarkSlateGray; //PLATO
+                esPlato = true;
+                Puntuar();
             }
             if (dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[6, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray && !esPizza)
             {
                 label4.ForeColor = Color.DarkSlateGray; //PIZZA
+                esPizza = true;
+                Puntuar();
             }
             if (dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray && !esLapiz)
             {
                 label5.ForeColor = Color.DarkSlateGray; //LAPIZ
+                esLapiz = true;
+                Puntuar();
             }
         }
         private void VerificacionLVL2CFG3()
@@ -984,35 +1069,45 @@ namespace Omega
             if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray && !esEscuela)
             {
                 label1.ForeColor = Color.DarkSlateGray; //ESCUELA
+                esEscuela = true;
+                Puntuar();
             }
 
             if (dataGridView1[6, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[6, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[6, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray && !esBanana)
             {
                 label2.ForeColor = Color.DarkSlateGray; //BANANA
+                esBanana = true;
+                Puntuar();
             }
 
             if (dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 6].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 6].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray && !esPlato)
             {
                 label3.ForeColor = Color.DarkSlateGray; //PLATO
+                esPlato = true;
+                Puntuar();
             }
             if (dataGridView1[2, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 5].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 5].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray && !esPizza)
             {
                 label4.ForeColor = Color.DarkSlateGray; //PIZZA
+                esPizza = true;
+                Puntuar();
             }
             if (dataGridView1[0, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 0].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 0].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray && !esLapiz)
             {
                 label5.ForeColor = Color.DarkSlateGray; //LAPIZ
+                esLapiz = true;
+                Puntuar();
             }
         }
         private void VerificacionLVL3CFG1()
@@ -1110,44 +1205,58 @@ namespace Omega
 
             if (dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray && !esMuñeca)
             {
                 label2.ForeColor = Color.DarkSlateGray; //munheca
+                esMuñeca = true;
+                Puntuar();
             }
             if (dataGridView1[0, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 8].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[2, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 8].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[2, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 8].Style.BackColor == Color.DarkSlateGray && !esPapa)
             {
                 label4.ForeColor = Color.DarkSlateGray; //papa
+                esPapa = true;
+                Puntuar();
             }
             if (dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 5].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[3, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 7].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[3, 8].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[3, 8].Style.BackColor == Color.DarkSlateGray && !esRegla)
             {
                 label5.ForeColor = Color.DarkSlateGray; //regla
+                esRegla = true;
+                Puntuar();
             }
             if (dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 0].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[6, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[7, 0].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[8, 0].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[8, 0].Style.BackColor == Color.DarkSlateGray && !esReloj)
             {
                 label1.ForeColor = Color.DarkSlateGray; //reloj
+                esReloj = true;
+                Puntuar();
             }
             if (dataGridView1[1, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 7].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[3, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 7].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[5, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 7].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[7, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 7].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[7, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 7].Style.BackColor == Color.DarkSlateGray && !esMilanesa)
             {
                 label7.ForeColor = Color.DarkSlateGray; //milanesa
+                esMilanesa = true;
+                Puntuar();
             }
             if (dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 4].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 6].Style.BackColor == Color.DarkSlateGray && !esAbuelo)
             {
                 label3.ForeColor = Color.DarkSlateGray; //abuelo
+                esAbuelo = true;
+                Puntuar();
             }
             if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray && !esAzul)
             {
                 label6.ForeColor = Color.DarkSlateGray; //azul
+                esAzul = true;
+                Puntuar();
             }
         }
         private void VerificacionLVL3CFG2()
@@ -1245,52 +1354,62 @@ namespace Omega
 
             if (dataGridView1[8, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[8, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[8, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 5].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[8, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 5].Style.BackColor == Color.DarkSlateGray && !esMuñeca)
             {
                 label2.ForeColor = Color.DarkSlateGray; //munheca
+                esMuñeca = true;
+                Puntuar();
             }
             if (dataGridView1[0, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[0, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 8].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[0, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 8].Style.BackColor == Color.DarkSlateGray && !esPapa)
             {
                 label4.ForeColor = Color.DarkSlateGray; //papa
+                esPapa = true;
+                Puntuar();
             }
             if (dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 4].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[4, 7].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[4, 7].Style.BackColor == Color.DarkSlateGray && !esRegla)
             {
                 label5.ForeColor = Color.DarkSlateGray; //regla
+                esRegla = true;
+                Puntuar();
             }
             if (dataGridView1[5, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[5, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[5, 4].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[5, 4].Style.BackColor == Color.DarkSlateGray && !esReloj)
             {
                 label1.ForeColor = Color.DarkSlateGray; //reloj
+                esReloj = true;
+                Puntuar();
             }
             if (dataGridView1[0, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 1].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[7, 1].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[6, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[7, 1].Style.BackColor == Color.DarkSlateGray && !esMilanesa)
             {
                 label7.ForeColor = Color.DarkSlateGray; //milanesa
+                esMilanesa = true;
+                Puntuar();
             }
             if (dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 6].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 6].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 6].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 6].Style.BackColor == Color.DarkSlateGray && !esAbuelo)
             {
                 label3.ForeColor = Color.DarkSlateGray; //abuelo
+                esAbuelo = true;
+                Puntuar();
             }
             if (dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray && !esAzul)
             {
                 label6.ForeColor = Color.DarkSlateGray; //azul
+                esAzul = true;
+                Puntuar();
             }
         }
         private void VerificacionLVL3CFG3()
         {
-            //dataGridView1[7, 5].Value = 'A';
-            //dataGridView1[7, 6].Value = 'Z';
-            //dataGridView1[7, 7].Value = 'U';
-            //dataGridView1[7, 8].Value = 'L';
 
             //muñeca
             if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
@@ -1384,44 +1503,58 @@ namespace Omega
 
             if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 4].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[0, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[0, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 8].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[0, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 8].Style.BackColor == Color.DarkSlateGray && !esMuñeca)
             {
                 label2.ForeColor = Color.DarkSlateGray; //munheca
+                esMuñeca = true;
+                Puntuar();
             }
             if (dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[5, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[5, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 3].Style.BackColor == Color.DarkSlateGray && !esPapa)
             {
                 label4.ForeColor = Color.DarkSlateGray; //papa
+                esPapa = true;
+                Puntuar();
             }
             if (dataGridView1[3, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 5].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[5, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[6, 5].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[7, 5].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[7, 5].Style.BackColor == Color.DarkSlateGray && !esRegla)
             {
                 label5.ForeColor = Color.DarkSlateGray; //regla
+                esRegla = true;
+                Puntuar();
             }
             if (dataGridView1[2, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 2].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[6, 2].Style.BackColor == Color.DarkSlateGray && !esReloj)
             {
                 label1.ForeColor = Color.DarkSlateGray; //reloj
+                esReloj = true;
+                Puntuar();
             }
             if (dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 4].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 5].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 7].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[4, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 7].Style.BackColor == Color.DarkSlateGray && !esMilanesa)
             {
                 label7.ForeColor = Color.DarkSlateGray; //milanesa
+                esMilanesa = true;
+                Puntuar();
             }
             if (dataGridView1[0, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 8].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 8].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[4, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 8].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[4, 8].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 8].Style.BackColor == Color.DarkSlateGray && !esAbuelo)
             {
                 label3.ForeColor = Color.DarkSlateGray; //abuelo
+                esAbuelo = true;
+                Puntuar();
             }
             if (dataGridView1[7, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[7, 6].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[7, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[7, 8].Style.BackColor == Color.DarkSlateGray)
+                dataGridView1[7, 7].Style.BackColor == Color.DarkSlateGray && dataGridView1[7, 8].Style.BackColor == Color.DarkSlateGray && !esAzul)
             {
                 label6.ForeColor = Color.DarkSlateGray; //azul
+                esAzul = true;
+                Puntuar();
             }
         }
 

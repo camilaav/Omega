@@ -40,6 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblPuntaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
@@ -179,6 +180,18 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
+            // lblPuntaje
+            // 
+            this.lblPuntaje.AutoSize = true;
+            this.lblPuntaje.BackColor = System.Drawing.Color.Transparent;
+            this.lblPuntaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuntaje.ForeColor = System.Drawing.Color.Cornsilk;
+            this.lblPuntaje.Location = new System.Drawing.Point(843, 32);
+            this.lblPuntaje.Name = "lblPuntaje";
+            this.lblPuntaje.Size = new System.Drawing.Size(20, 24);
+            this.lblPuntaje.TabIndex = 63;
+            this.lblPuntaje.Text = "0";
+            // 
             // Sopa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +199,7 @@
             this.BackgroundImage = global::Omega.Properties.Resources.WhatsApp_Image_2018_11_05_at_18_51_43;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(907, 577);
+            this.Controls.Add(this.lblPuntaje);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -203,6 +217,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -217,5 +232,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lblPuntaje;
     }
 }
