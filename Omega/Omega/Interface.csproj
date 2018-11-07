@@ -119,11 +119,11 @@
     <Compile Include="BajaUsuarios.Designer.cs">
       <DependentUpon>BajaUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Memotest.cs">
+    <Compile Include="Memotests.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Memotest.Designer.cs">
-      <DependentUpon>Memotest.cs</DependentUpon>
+    <Compile Include="Memotests.Designer.cs">
+      <DependentUpon>Memotests.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\JuegosHelper.cs" />
     <Compile Include="Clases\ImagenUtilities.cs" />
@@ -228,8 +228,8 @@
     <EmbeddedResource Include="Entretenimiento.resx">
       <DependentUpon>Entretenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Memotest.resx">
-      <DependentUpon>Memotest.cs</DependentUpon>
+    <EmbeddedResource Include="Memotests.resx">
+      <DependentUpon>Memotests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Letras.resx">
       <DependentUpon>Letras.cs</DependentUpon>

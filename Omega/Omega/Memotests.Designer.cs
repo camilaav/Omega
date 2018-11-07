@@ -1,6 +1,6 @@
 ﻿namespace Omega
 {
-    partial class Memotest
+    partial class Memotests
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Memotest));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Memotests));
             this.label1 = new System.Windows.Forms.Label();
             this.lblRecord = new System.Windows.Forms.Label();
             this.panelJuego = new System.Windows.Forms.Panel();

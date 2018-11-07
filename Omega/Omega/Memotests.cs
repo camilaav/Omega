@@ -9,24 +9,41 @@ using System.Windows.Forms;
 
 namespace Omega
 {
-    public partial class Memotest : Form
+    public partial class Memotests : Form
     {
-        int Movimientos = 0, CantidadFotosVolteadas = 0, TamañoColumnasFilas = 4, FotoActual = 0;
+        int Movimientos = 0, CantidadFotosVolteadas = 0, TamañoColumnasFilas = 0, FotoActual = 0;
         List<string> FotosEnumeradas, FotosRevueltas;
         string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Cartas");
         int seg = 0, orden, fondo, fondo2, resultado, intento = 1, puntuacion = 0, idJuego = 2, idDificultad = 0;
+
         ArrayList FotosSeleccionadas;
         PictureBox FotoTemp1, FotoTemp2;
 
-        public Memotest()
+        public Memotests()
         {
             InitializeComponent();
-            IniciarJuego(); //Invocar al método Iniciar Juego
         }
-        public void IniciarJuego()
+
+        public void Recarga()
+        {
+            if (this.Tag.ToString() == "Facil")
+            {
+                IniciarJuego(3);
+
+            }
+            else if (this.Tag.ToString() == "Intermedia")
+            {
+                IniciarJuego(4);
+            }
+            else if (this.Tag.ToString() == "Dificil")
+            {
+                IniciarJuego(6);
+            }
+        }
+        public void IniciarJuego(int tamañoColumnasFilas)
         {
             /* ESTRUCTURA DE DISEÑO */
-
+            TamañoColumnasFilas = tamañoColumnasFilas;
             timer1.Enabled = false;
             timer1.Stop();
             lblRecord.Text = "0";
@@ -36,7 +53,7 @@ namespace Omega
             FotosEnumeradas = new List<string>(); //Instancia que inicia las fotos enumeradas
             FotosRevueltas = new List<string>(); //Instancia que inicia las fotos revueltas
             FotosSeleccionadas = new ArrayList(); //Instancia que inicia las fotos seleccionadas
-            for (int i = 0; i < 8; i++) //Ciclo for para ordenar las fotos y asignarles números de ordenamiento
+            for (int i = 0; i < (tamañoColumnasFilas * tamañoColumnasFilas)/2 ; i++) //Ciclo for para ordenar las fotos y asignarles números de ordenamiento
             {
                 FotosEnumeradas.Add(i.ToString());
                 FotosEnumeradas.Add(i.ToString());
@@ -106,10 +123,10 @@ namespace Omega
                     else
                     {
                         CantidadFotosVolteadas++;
-                        if (CantidadFotosVolteadas > 7)
+                        if (CantidadFotosVolteadas > (TamañoColumnasFilas  * TamañoColumnasFilas)-1)
                         {
                             MessageBox.Show("Juego terminado", "Aviso");
-                            IniciarJuego();
+                            Recarga();
                         }
                         FotoTemp1.Enabled = false; FotoTemp2.Enabled = false;
                         FotosSeleccionadas.Clear();
@@ -136,7 +153,7 @@ namespace Omega
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Recarga();
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
