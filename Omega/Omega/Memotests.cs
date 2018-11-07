@@ -11,7 +11,7 @@ namespace Omega
 {
     public partial class Memotests : Form
     {
-        int Movimientos = 0, CantidadFotosVolteadas = 0, TamañoColumnasFilas = 0, FotoActual = 0;
+        int Movimientos = 0, CantidadFotosVolteadas = 0, TamañoColumnas = 0, TamañoFilas = 0,FotoActual = 0;
         List<string> FotosEnumeradas, FotosRevueltas;
         string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Cartas");
         int seg = 0, orden, fondo, fondo2, resultado, intento = 1, puntuacion = 0, idJuego = 2, idDificultad = 0;
@@ -28,22 +28,22 @@ namespace Omega
         {
             if (this.Tag.ToString() == "Facil")
             {
-                IniciarJuego(3);
+                IniciarJuego(4,4);
 
             }
             else if (this.Tag.ToString() == "Intermedia")
             {
-                IniciarJuego(4);
+                IniciarJuego(5,4);
             }
             else if (this.Tag.ToString() == "Dificil")
             {
-                IniciarJuego(6);
+                IniciarJuego(6,6);
             }
         }
-        public void IniciarJuego(int tamañoColumnasFilas)
+        public void IniciarJuego(int tamañoColumnas, int tamañoFilas)
         {
-            /* ESTRUCTURA DE DISEÑO */
-            TamañoColumnasFilas = tamañoColumnasFilas;
+            TamañoColumnas = tamañoColumnas;
+            TamañoFilas = tamañoFilas;
             timer1.Enabled = false;
             timer1.Stop();
             lblRecord.Text = "0";
@@ -53,7 +53,7 @@ namespace Omega
             FotosEnumeradas = new List<string>(); //Instancia que inicia las fotos enumeradas
             FotosRevueltas = new List<string>(); //Instancia que inicia las fotos revueltas
             FotosSeleccionadas = new ArrayList(); //Instancia que inicia las fotos seleccionadas
-            for (int i = 0; i < (tamañoColumnasFilas * tamañoColumnasFilas)/2 ; i++) //Ciclo for para ordenar las fotos y asignarles números de ordenamiento
+            for (int i = 0; i < (TamañoColumnas * TamañoFilas)/2 ; i++) //Ciclo for para ordenar las fotos y asignarles números de ordenamiento
             {
                 FotosEnumeradas.Add(i.ToString());
                 FotosEnumeradas.Add(i.ToString());
@@ -66,18 +66,22 @@ namespace Omega
                 FotosRevueltas.Add(ValorFoto);
             }
             var tablaPanel = new TableLayoutPanel(); // Se plasman los valores en el panel a través de ésta instancia
-            tablaPanel.RowCount = TamañoColumnasFilas;
-            tablaPanel.ColumnCount = TamañoColumnasFilas;
-            for (int i = 0; i < TamañoColumnasFilas; i++)
+            tablaPanel.RowCount = TamañoFilas;
+            tablaPanel.ColumnCount = TamañoColumnas;
+            for (int i = 0; i < TamañoColumnas; i++)
             {
-                var Probabilidad = 150f / (float)TamañoColumnasFilas - 10;
+                var Probabilidad = 150f / (float)TamañoColumnas - 10;
                 tablaPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, Probabilidad));//Adapta el tamaño de las columnas al de las imágenes
+            }
+            for (int i = 0; i < TamañoFilas; i++)
+            {
+                var Probabilidad = 150f / (float)TamañoFilas - 10;
                 tablaPanel.RowStyles.Add(new RowStyle(SizeType.Percent, Probabilidad));// Adapta el tamaño de las filas al de las imágenes
             }
             int Contador = 1;
-            for (var i = 0; i < TamañoColumnasFilas; i++)
+            for (var i = 0; i < TamañoFilas; i++)
             {
-                for (var j = 0; j < TamañoColumnasFilas; j++)
+                for (var j = 0; j < TamañoColumnas; j++)
                 {
                     var FotosJuego = new PictureBox();
                     FotosJuego.Name = string.Format("{0}", Contador);
@@ -93,18 +97,17 @@ namespace Omega
             }
             tablaPanel.Dock = DockStyle.Fill;
             panelJuego.Controls.Add(tablaPanel);
-            /* FIN ESTRUCTURA DE DISEÑO */
         }
 
         private void btnFoto_Click(object sender, EventArgs e)
         {
-            if (FotosSeleccionadas.Count < 2) // Cuenta los clicks sobre las imágenes
+            if (FotosSeleccionadas.Count <= 2) // Cuenta los clicks sobre las imágenes
             {
-                Movimientos++;
-                lblRecord.Text = Convert.ToString(Movimientos); //Registra número de movimientos
                 var FotoSeleccionadaJugador = (PictureBox)sender;
 
-                FotoActual = Convert.ToInt32(FotosRevueltas[Convert.ToInt32(FotoSeleccionadaJugador.Name) - 1]);
+                var posicionJugador = int.Parse(FotoSeleccionadaJugador.Name) - 1; 
+
+                FotoActual = int.Parse(FotosRevueltas[posicionJugador]);
                 FotoSeleccionadaJugador.Image = RecuperarImagen(FotoActual);
                 FotosSeleccionadas.Add(FotoSeleccionadaJugador);
                 // Entra si el evento Click se realizó dos veces
@@ -119,11 +122,13 @@ namespace Omega
                     {
                         timer1.Enabled = true;
                         timer1.Start();
+                        Movimientos++;
+                        lblRecord.Text = Convert.ToString(Movimientos);
                     }
                     else
                     {
                         CantidadFotosVolteadas++;
-                        if (CantidadFotosVolteadas > (TamañoColumnasFilas  * TamañoColumnasFilas)-1)
+                        if (CantidadFotosVolteadas > (TamañoColumnas  * TamañoFilas)-1)
                         {
                             MessageBox.Show("Juego terminado", "Aviso");
                             Recarga();
