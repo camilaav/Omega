@@ -32,9 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bienvenida));
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.picprofesor = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new System.Windows.Forms.PictureBox();
             btnIngresar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(btnIngresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picprofesor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIngresar
@@ -43,9 +45,9 @@
             btnIngresar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIngresar.BackgroundImage")));
             btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnIngresar.Location = new System.Drawing.Point(293, 322);
+            btnIngresar.Location = new System.Drawing.Point(386, 330);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new System.Drawing.Size(277, 79);
+            btnIngresar.Size = new System.Drawing.Size(99, 79);
             btnIngresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             btnIngresar.TabIndex = 3;
             btnIngresar.TabStop = false;
@@ -57,7 +59,7 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.txtNombre.Location = new System.Drawing.Point(304, 257);
+            this.txtNombre.Location = new System.Drawing.Point(293, 276);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(277, 25);
             this.txtNombre.TabIndex = 0;
@@ -79,6 +81,21 @@
             this.picprofesor.TabStop = false;
             this.picprofesor.Click += new System.EventHandler(this.picprofesor_Click);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.Location = new System.Drawing.Point(805, 539);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(72, 79);
+            this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Bienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -86,13 +103,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(876, 630);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.picprofesor);
             this.Controls.Add(btnIngresar);
             this.Controls.Add(this.txtNombre);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Bienvenida";
@@ -101,6 +119,7 @@
             this.Load += new System.EventHandler(this.Bienvenida_Load);
             ((System.ComponentModel.ISupportInitialize)(btnIngresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picprofesor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +129,6 @@
 
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.PictureBox picprofesor;
+        private System.Windows.Forms.PictureBox btnSalir;
     }
 }

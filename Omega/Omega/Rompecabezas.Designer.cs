@@ -61,27 +61,33 @@
             this.picvolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picvolver.BackgroundImage")));
             this.picvolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picvolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picvolver.Location = new System.Drawing.Point(0, 0);
+            this.picvolver.Location = new System.Drawing.Point(0, 12);
             this.picvolver.Name = "picvolver";
-            this.picvolver.Size = new System.Drawing.Size(72, 79);
+            this.picvolver.Size = new System.Drawing.Size(55, 64);
             this.picvolver.TabIndex = 30;
             this.picvolver.TabStop = false;
             this.picvolver.Click += new System.EventHandler(this.picvolver_Click);
             // 
             // picAbrir
             // 
+            this.picAbrir.BackColor = System.Drawing.Color.Transparent;
+            this.picAbrir.BackgroundImage = global::Omega.Properties.Resources.ROMPE_02;
+            this.picAbrir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picAbrir.Location = new System.Drawing.Point(2, 157);
             this.picAbrir.Name = "picAbrir";
-            this.picAbrir.Size = new System.Drawing.Size(100, 50);
+            this.picAbrir.Size = new System.Drawing.Size(53, 50);
             this.picAbrir.TabIndex = 31;
             this.picAbrir.TabStop = false;
             this.picAbrir.Click += new System.EventHandler(this.picAbrir_Click);
             // 
             // picpista
             // 
+            this.picpista.BackColor = System.Drawing.Color.Transparent;
+            this.picpista.BackgroundImage = global::Omega.Properties.Resources.ROMPE_01;
+            this.picpista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picpista.Location = new System.Drawing.Point(2, 213);
             this.picpista.Name = "picpista";
-            this.picpista.Size = new System.Drawing.Size(100, 50);
+            this.picpista.Size = new System.Drawing.Size(53, 50);
             this.picpista.TabIndex = 32;
             this.picpista.TabStop = false;
             this.picpista.Click += new System.EventHandler(this.picpista_Click);
@@ -90,7 +96,7 @@
             // 
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(966, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(801, 24);
             this.menuStrip1.TabIndex = 33;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -100,7 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(966, 650);
+            this.ClientSize = new System.Drawing.Size(801, 601);
             this.Controls.Add(this.picpista);
             this.Controls.Add(this.picAbrir);
             this.Controls.Add(this.picvolver);

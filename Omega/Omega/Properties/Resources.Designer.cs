@@ -343,6 +343,16 @@ namespace Omega.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Memotest_01 {
+            get {
+                object obj = ResourceManager.GetObject("Memotest-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NiñosNube {
             get {
                 object obj = ResourceManager.GetObject("NiñosNube", resourceCulture);
@@ -366,6 +376,26 @@ namespace Omega.Properties {
         internal static System.Drawing.Bitmap Profesores11 {
             get {
                 object obj = ResourceManager.GetObject("Profesores11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ROMPE_01 {
+            get {
+                object obj = ResourceManager.GetObject("ROMPE-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ROMPE_02 {
+            get {
+                object obj = ResourceManager.GetObject("ROMPE-02", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -14,6 +14,7 @@ namespace Omega
         private int _previousMouseX, _previousMouseY, _previousClientWidth, _previousClientHeight, _puzzlePictureWidth, _puzzlePictureHeight;
         private Bitmap _board, _backBuffer, _background, _sourcePicture;
         private PieceCluster _currentCluster;
+        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
         List<PieceCluster> _clusters = new List<PieceCluster>();
 
         public MainForm()
@@ -805,20 +806,9 @@ namespace Omega
 
             using (Graphics gfx = Graphics.FromImage(_background))
             {
-                if (File.Exists(GameSettings.BACKGROUND_PICTURE_NAME))
-                {
-                    // This background image is ripped from "Jigsaw Puzzle Golden Edition"
-                    Bitmap tileImage = new Bitmap("background_tile.bmp");
+                    Bitmap tileImage = new Bitmap(Image.FromFile(startupPath + "\\" + "Fondo-Rompecabezas.png"));
                     TextureBrush tileBrush = new TextureBrush(tileImage);
-
                     gfx.FillRectangle(tileBrush, 0, 0, _background.Width, _background.Height);
-                }
-                else
-                {
-                    SolidBrush colorBrush = new SolidBrush(Color.FromArgb(0, 138, 184));
-
-                    gfx.FillRectangle(colorBrush, 0, 0, _background.Width, _background.Height);
-                }
             }
 
             if (showGhostPicture)
