@@ -14,7 +14,14 @@ namespace Omega
         int Movimientos = 0, CantidadFotosVolteadas = 0, TamañoColumnas = 0, TamañoFilas = 0,FotoActual = 0;
         List<string> FotosEnumeradas, FotosRevueltas;
         string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Cartas");
-        int seg = 0, orden, fondo, fondo2, resultado, intento = 1, puntuacion = 0, idJuego = 2, idDificultad = 0;
+        int puntuacion = 0, idDificultad = 0, idJuego = 6;
+        MovimientoHelper movimientoHelper = new MovimientoHelper();
+
+        private void Puntuar()
+        {
+            puntuacion = puntuacion + 25;
+            lblPuntuaje.Text = puntuacion.ToString();
+        }
 
         ArrayList FotosSeleccionadas;
         PictureBox FotoTemp1, FotoTemp2;
@@ -29,15 +36,18 @@ namespace Omega
             if (this.Tag.ToString() == "Facil")
             {
                 IniciarJuego(4,4);
+                idDificultad = 1;
 
             }
             else if (this.Tag.ToString() == "Intermedia")
             {
                 IniciarJuego(5,4);
+                idJuego = 2;
             }
             else if (this.Tag.ToString() == "Dificil")
             {
                 IniciarJuego(6,6);
+                idJuego = 3;
             }
         }
         public void IniciarJuego(int tamañoColumnas, int tamañoFilas)
@@ -128,9 +138,11 @@ namespace Omega
                     else
                     {
                         CantidadFotosVolteadas++;
-                        if (CantidadFotosVolteadas > (TamañoColumnas  * TamañoFilas)-1)
+
+                        Puntuar();
+                        if (CantidadFotosVolteadas > (TamañoColumnas  * TamañoFilas) / 2-1)
                         {
-                            MessageBox.Show("Juego terminado", "Aviso");
+                            movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
                             Recarga();
                         }
                         FotoTemp1.Enabled = false; FotoTemp2.Enabled = false;

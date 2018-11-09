@@ -29,38 +29,47 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Memotests));
-            this.label1 = new System.Windows.Forms.Label();
             this.lblRecord = new System.Windows.Forms.Label();
             this.panelJuego = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblPuntuaje = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(693, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Cantidad de intentos";
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(727, 9);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(83, 18);
+            label1.TabIndex = 6;
+            label1.Text = "Intentos";
             // 
             // lblRecord
             // 
             this.lblRecord.AutoSize = true;
-            this.lblRecord.Location = new System.Drawing.Point(795, 52);
+            this.lblRecord.BackColor = System.Drawing.Color.Transparent;
+            this.lblRecord.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecord.ForeColor = System.Drawing.Color.White;
+            this.lblRecord.Location = new System.Drawing.Point(758, 27);
             this.lblRecord.Name = "lblRecord";
-            this.lblRecord.Size = new System.Drawing.Size(71, 13);
+            this.lblRecord.Size = new System.Drawing.Size(19, 18);
             this.lblRecord.TabIndex = 5;
-            this.lblRecord.Text = "Record juego";
+            this.lblRecord.Text = "0";
             // 
             // panelJuego
             // 
-            this.panelJuego.Location = new System.Drawing.Point(11, 102);
+            this.panelJuego.BackColor = System.Drawing.Color.Transparent;
+            this.panelJuego.Location = new System.Drawing.Point(117, 95);
             this.panelJuego.Name = "panelJuego";
-            this.panelJuego.Size = new System.Drawing.Size(450, 426);
+            this.panelJuego.Size = new System.Drawing.Size(680, 473);
             this.panelJuego.TabIndex = 4;
             // 
             // timer1
@@ -81,6 +90,18 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
+            // lblPuntuaje
+            // 
+            this.lblPuntuaje.AutoSize = true;
+            this.lblPuntuaje.BackColor = System.Drawing.Color.Transparent;
+            this.lblPuntuaje.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuntuaje.ForeColor = System.Drawing.Color.White;
+            this.lblPuntuaje.Location = new System.Drawing.Point(865, 27);
+            this.lblPuntuaje.Name = "lblPuntuaje";
+            this.lblPuntuaje.Size = new System.Drawing.Size(19, 18);
+            this.lblPuntuaje.TabIndex = 64;
+            this.lblPuntuaje.Text = "0";
+            // 
             // Memotests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -88,8 +109,9 @@
             this.BackgroundImage = global::Omega.Properties.Resources.Memotest_01;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(927, 580);
+            this.Controls.Add(this.lblPuntuaje);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(label1);
             this.Controls.Add(this.lblRecord);
             this.Controls.Add(this.panelJuego);
             this.DoubleBuffered = true;
@@ -105,11 +127,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblRecord;
         private System.Windows.Forms.Panel panelJuego;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lblRecord;
+        private System.Windows.Forms.Label lblPuntuaje;
     }
 }

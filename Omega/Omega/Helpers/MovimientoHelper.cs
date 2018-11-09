@@ -24,6 +24,8 @@ namespace Omega
 
             };
             juegoRN.NuevoMovimiento(movimiento);
+
+            MessageBox.Show("Terminaste perfectamente las consignas", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             var pantallaPrincipal = new Pantalla_principal();
             pantallaPrincipal.Show();
             formulario.Hide();
