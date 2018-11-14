@@ -12,6 +12,8 @@ namespace Omega
 {
     public partial class Sopa : Form
     {
+        //FALTA AGREGAR ANIMACIÓN
+
         Random letras = new Random();
         Random cfg = new Random();
         int cfgelegido, puntuacion = 0;

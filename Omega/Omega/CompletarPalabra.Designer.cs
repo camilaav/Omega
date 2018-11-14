@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompletarPalabra));
             this.panel1 = new System.Windows.Forms.Panel();
             this.opcionUno = new System.Windows.Forms.Panel();
@@ -35,6 +36,8 @@
             this.opcionTres = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPuntaje = new System.Windows.Forms.Label();
+            this.tiempo = new System.Windows.Forms.Timer(this.components);
+            this.tiempo2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // panel1
@@ -99,6 +102,16 @@
             this.lblPuntaje.TabIndex = 21;
             this.lblPuntaje.Text = "0";
             // 
+            // tiempo
+            // 
+            this.tiempo.Interval = 1000;
+            this.tiempo.Tick += new System.EventHandler(this.tiempo_Tick);
+            // 
+            // tiempo2
+            // 
+            this.tiempo2.Interval = 1000;
+            this.tiempo2.Tick += new System.EventHandler(this.tiempo2_Tick);
+            // 
             // CompletarPalabra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,6 +127,7 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CompletarPalabra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CompletarPalabra";
@@ -130,5 +144,7 @@
         private System.Windows.Forms.Panel opcionTres;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblPuntaje;
+        private System.Windows.Forms.Timer tiempo;
+        private System.Windows.Forms.Timer tiempo2;
     }
 }

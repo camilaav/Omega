@@ -33,11 +33,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Memotests));
             this.lblRecord = new System.Windows.Forms.Label();
             this.panelJuego = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tiempo = new System.Windows.Forms.Timer(this.components);
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblPuntuaje = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tiempo2 = new System.Windows.Forms.Timer(this.components);
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,10 +75,10 @@
             this.panelJuego.Size = new System.Drawing.Size(680, 473);
             this.panelJuego.TabIndex = 4;
             // 
-            // timer1
+            // tiempo
             // 
-            this.timer1.Interval = 600;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            this.tiempo.Interval = 1000;
+            this.tiempo.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // pictureBox4
             // 
@@ -102,6 +105,23 @@
             this.lblPuntuaje.TabIndex = 64;
             this.lblPuntuaje.Text = "0";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(575, 239);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(340, 340);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tiempo2
+            // 
+            this.tiempo2.Interval = 1000;
+            this.tiempo2.Tick += new System.EventHandler(this.tiempo2_Tick);
+            // 
             // Memotests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +129,7 @@
             this.BackgroundImage = global::Omega.Properties.Resources.Memotest_01;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(927, 580);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblPuntuaje);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(label1);
@@ -116,11 +137,13 @@
             this.Controls.Add(this.panelJuego);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Memotests";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,9 +151,11 @@
 
         #endregion
         private System.Windows.Forms.Panel panelJuego;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer tiempo;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblRecord;
         private System.Windows.Forms.Label lblPuntuaje;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer tiempo2;
     }
 }

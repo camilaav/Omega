@@ -10,12 +10,32 @@ namespace Omega
     public partial class Resta : Form
     {
         string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
-        int resultado, orden, fondo, fondo2, intento = 1, puntuacion = 0, idJuego = 1, idDificultad = 0;
+        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
+
+        int resultado, orden, fondo, fondo2, intento = 1, puntuacion = 0, idJuego = 1, idDificultad = 0, contadorGif = 0;
 
         JuegosHelper juegoHelper = new JuegosHelper();
 
         JuegoRN juegoRN = new JuegoRN();
         Random randommizer = new Random();
+
+        public void Gif()
+        {
+            pictureBox1.Load(startupPath + "//bien.gif");
+            pictureBox1.Enabled = true;
+            pictureBox1.Visible = true;
+            tiempo.Enabled = true;
+            tiempo.Start();
+        }
+
+        public void GifMal()
+        {
+            pictureBox1.Load(startupPath + "//mal.gif");
+            pictureBox1.Enabled = true;
+            pictureBox1.Visible = true;
+            tiempo2.Enabled = true;
+            tiempo2.Start();
+        }
 
         public Resta()
         {
@@ -46,13 +66,39 @@ namespace Omega
 
         }
 
+        private void tiempo_Tick(object sender, EventArgs e)
+        {
+            contadorGif++;
+            if (contadorGif == 3)
+            {
+                Recarga();
+                contadorGif = 0;
+            }
+        }
+
+        private void tiempo2_Tick(object sender, EventArgs e)
+        {
+            contadorGif++;
+            if (contadorGif == 3)
+            {
+                pictureBox1.Visible = false;
+                pictureBox1.Enabled = false;
+                tiempo2.Stop();
+                contadorGif = 0;
+            }
+        }
+
         public void Recarga()
         {
+            tiempo.Stop();
+            contadorGif = 0;
+            pictureBox1.Visible = false;
+            pictureBox1.Enabled = false;
             intento = 1;
             respuestaCorrecta.Visible = false;
             if (this.Tag.ToString() == "Facil")
             {
-                Juego(1, 10);
+                Juego(0, 10);
                 idDificultad = 1;
 
             }
@@ -66,9 +112,6 @@ namespace Omega
                 Juego(0, 100);
                 idDificultad = 3;
             }
-
-            tiempo.Enabled = true;
-
 
             if (orden == 0)                                 //PONE LA RESPUESTA CORRECTA EN UNA DE LAS 3 OPCINES EN FORMA ALEATOREA
             {
@@ -149,16 +192,14 @@ namespace Omega
             {
                 respuestaCorrecta.Visible = true;
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
-                respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
-                MessageBox.Show("Muy bien!");
-
+                respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;               
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
-                Recarga();
+                Gif();
             }
             else
             {
-                MessageBox.Show("contestaste mal");
+                GifMal();
                 intento++;
             }
         }
@@ -170,15 +211,13 @@ namespace Omega
                 respuestaCorrecta.Visible = true;
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
-                MessageBox.Show("Muy bien!");
-
+                Gif();
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
-                Recarga();
             }
             else
             {
-                MessageBox.Show("contestaste mal");
+                GifMal();
                 intento++;
             }
         }
@@ -190,15 +229,13 @@ namespace Omega
                 respuestaCorrecta.Visible = true;
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
-                MessageBox.Show("Muy bien!");
-
+                Gif();
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
-                Recarga();
             }
             else
             {
-                MessageBox.Show("contestaste mal");
+                GifMal();
                 intento++;
             }
         }

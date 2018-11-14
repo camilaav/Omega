@@ -15,8 +15,41 @@ namespace Omega
 {
     public partial class Cantidad : Form
     {
-        public int posicionInicialArriba, posicionInicialCostado, contador, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, intento = 1, puntuacion = 0, idJuego=3, idDificultad=0;
+        public int posicionInicialArriba, posicionInicialCostado, contador, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, intento = 1, puntuacion = 0, idJuego = 3, idDificultad = 0, contadorGif;
         public JuegoRN juegoRN = new JuegoRN();
+        PictureBox pictureGif = new PictureBox();
+        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
+
+        public void Gif()
+        {
+            pictureGif = new PictureBox();
+            pictureGif.BackColor = Color.Transparent;
+            pictureGif.Size = new Size(654, 430);
+            pictureGif.Location = new Point(47, 229);
+            pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.Controls.Add(pictureGif);
+            pictureGif.BringToFront();
+            pictureGif.Load(startupPath + "//bien.gif");
+            pictureGif.Enabled = true;
+            pictureGif.Visible = true;
+            tiempo.Enabled = true;
+            tiempo.Start();
+        }
+        public void GifMal()
+        {
+            pictureGif = new PictureBox();
+            pictureGif.BackColor = Color.Transparent;
+            pictureGif.Size = new Size(654, 430);
+            pictureGif.Location = new Point(47, 229);
+            pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.Controls.Add(pictureGif);
+            pictureGif.BringToFront();
+            pictureGif.Load(startupPath + "//mal.gif");
+            pictureGif.Enabled = true;
+            pictureGif.Visible = true;
+            tiempo2.Enabled = true;
+            tiempo2.Start();
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -42,10 +75,36 @@ namespace Omega
 
         }
 
+        private void opcionUno_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tiempo2_Tick(object sender, EventArgs e)
+        {
+            contadorGif++;
+            if (contadorGif == 3)
+            {
+                pictureGif.Visible = false;
+                pictureGif.Enabled = false;
+                tiempo2.Stop();
+                contadorGif = 0;
+            }
+        }
+
+        private void tiempo_Tick(object sender, EventArgs e)
+        {
+            contadorGif++;
+            if (contadorGif == 3)
+            {
+                Recarga();
+            }
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             MovimientoHelper movimientoHelper = new MovimientoHelper();
-            movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion,idJuego);
+            movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
         }
 
         public int Puntuar()
@@ -72,13 +131,12 @@ namespace Omega
         {
             if (respuestaCorrecta == 0)
             {
-                MessageBox.Show("Muy bien!");
+                Gif();
                 Puntuar();
-                Recarga();
             }
             else
             {
-                MessageBox.Show("Respuesta incorrecta");
+                GifMal();
                 intento++;
             }
         }
@@ -87,14 +145,13 @@ namespace Omega
         {
             if (respuestaCorrecta == 1)
             {
-                MessageBox.Show("Muy bien!");
+                Gif();
                 Puntuar();
-                Recarga();
             }
             else
             {
+                GifMal();
                 intento++;
-                MessageBox.Show("Respuesta incorrecta");
             }
         }
 
@@ -102,14 +159,13 @@ namespace Omega
         {
             if (respuestaCorrecta == 2)
             {
-                MessageBox.Show("Muy bien!");
+                Gif();
                 Puntuar();
-                Recarga();
             }
             else
             {
+                GifMal();
                 intento++;
-                MessageBox.Show("Respuesta incorrecta");
             }
         }
 
@@ -125,10 +181,14 @@ namespace Omega
 
         public void Recarga()
         {
+            tiempo.Stop();
+            contadorGif = 0;
+            pictureGif.Visible = false;
+            pictureGif.Enabled = false;
             intento = 1;
             lblPuntaje.Text = puntuacion.ToString();
 
-            for (int i = this.Controls.Count -1; i >= 0; i--)
+            for (int i = this.Controls.Count - 1; i >= 0; i--)
             {
                 PictureBox control = this.Controls[i] as PictureBox;
                 if (control == null) continue;
@@ -187,7 +247,7 @@ namespace Omega
         public void Juego(int limiteMenor, int limiteMayor)
         {
             contador = 0;
-            string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes","Objetos");
+            string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Objetos");
             var nombrePicture = 1;
             var random = new Random();
             var cantidadPictures = random.Next(limiteMenor, limiteMayor);

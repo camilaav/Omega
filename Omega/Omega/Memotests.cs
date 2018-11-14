@@ -12,10 +12,20 @@ namespace Omega
     public partial class Memotests : Form
     {
         int Movimientos = 0, CantidadFotosVolteadas = 0, TamañoColumnas = 0, TamañoFilas = 0,FotoActual = 0;
+        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
         List<string> FotosEnumeradas, FotosRevueltas;
-        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Cartas");
-        int puntuacion = 0, idDificultad = 0, idJuego = 6;
+        string startupPathCartas = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Cartas");
+        int puntuacion = 0, idDificultad = 0, idJuego = 6, contadorGif;
         MovimientoHelper movimientoHelper = new MovimientoHelper();
+
+        public void Gif()
+        {
+            pictureBox1.Load(startupPath + "//bien.gif");
+            pictureBox1.Enabled = true;
+            pictureBox1.Visible = true;
+            tiempo2.Enabled = true;
+            tiempo2.Start();
+        }
 
         private void Puntuar()
         {
@@ -26,6 +36,15 @@ namespace Omega
         ArrayList FotosSeleccionadas;
         PictureBox FotoTemp1, FotoTemp2;
 
+        private void tiempo2_Tick(object sender, EventArgs e)
+        {
+            contadorGif++;
+            if (contadorGif == 3)
+            {
+                Recarga();
+            }
+        }
+
         public Memotests()
         {
             InitializeComponent();
@@ -33,6 +52,10 @@ namespace Omega
 
         public void Recarga()
         {
+            tiempo2.Stop();
+            contadorGif = 0;
+            pictureBox1.Visible = false;
+            pictureBox1.Enabled = false;
             if (this.Tag.ToString() == "Facil")
             {
                 IniciarJuego(4,4);
@@ -54,8 +77,8 @@ namespace Omega
         {
             TamañoColumnas = tamañoColumnas;
             TamañoFilas = tamañoFilas;
-            timer1.Enabled = false;
-            timer1.Stop();
+            tiempo.Enabled = false;
+            tiempo.Stop();
             lblRecord.Text = "0";
             CantidadFotosVolteadas = 0;
             Movimientos = 0;
@@ -97,7 +120,7 @@ namespace Omega
                     FotosJuego.Name = string.Format("{0}", Contador);
                     FotosJuego.Dock = DockStyle.Fill;
                     FotosJuego.SizeMode = PictureBoxSizeMode.StretchImage;
-                    FotosJuego.Image = Image.FromFile(startupPath + "//" + "CartaDorso.png");
+                    FotosJuego.Image = Image.FromFile(startupPathCartas + "//" + "CartaDorso.png");
                     FotosJuego.Cursor = Cursors.Hand;
                     FotosJuego.Click += btnFoto_Click;
                     tablaPanel.Controls.Add(FotosJuego, j, i);
@@ -130,8 +153,8 @@ namespace Omega
 
                     if (foto1 != foto2)
                     {
-                        timer1.Enabled = true;
-                        timer1.Start();
+                        tiempo.Enabled = true;
+                        tiempo.Start();
                         Movimientos++;
                         lblRecord.Text = Convert.ToString(Movimientos);
                     }
@@ -143,9 +166,11 @@ namespace Omega
                         if (CantidadFotosVolteadas > (TamañoColumnas  * TamañoFilas) / 2-1)
                         {
                             movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
+                            Gif();
                             Recarga();
                         }
-                        FotoTemp1.Enabled = false; FotoTemp2.Enabled = false;
+                        FotoTemp1.Enabled = false;
+                        FotoTemp2.Enabled = false;
                         FotosSeleccionadas.Clear();
                     }
                 }
@@ -158,10 +183,10 @@ namespace Omega
             switch (NumeroImagenAsignado)
             {
                 case 0:
-                    TempImagen = (Bitmap)Image.FromFile(startupPath + "//" + NumeroImagenAsignado + ".png");
+                    TempImagen = (Bitmap)Image.FromFile(startupPathCartas + "//" + NumeroImagenAsignado + ".png");
                     break;
                 default:
-                    TempImagen = (Bitmap)Image.FromFile(startupPath + "//" + NumeroImagenAsignado + ".png");
+                    TempImagen = (Bitmap)Image.FromFile(startupPathCartas + "//" + NumeroImagenAsignado + ".png");
                     break;
 
             }
@@ -178,11 +203,11 @@ namespace Omega
             int TiempoImagen = 1;
             if (TiempoImagen == 1)
             {
-                FotoTemp1.Image = Image.FromFile(startupPath + "//" + "CartaDorso.png");
-                FotoTemp2.Image = Image.FromFile(startupPath + "//" + "CartaDorso.png");
+                FotoTemp1.Image = Image.FromFile(startupPathCartas + "//" + "CartaDorso.png");
+                FotoTemp2.Image = Image.FromFile(startupPathCartas + "//" + "CartaDorso.png");
                 FotosSeleccionadas.Clear();
                 TiempoImagen = 0;
-                timer1.Stop();
+                tiempo.Stop();
             }
         }
 

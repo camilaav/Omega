@@ -29,22 +29,6 @@ namespace Regla_de_Negocios
             }
             return lista;
         }
-        public IList<Palabras> ListaPalabras()
-        {
-            var lista = new List<Palabras>();
-            var stored = "st_ListarPalabras";
-            var readerPalabras = comandos.EjecutarReaderSinParametros(stored);
-            while(readerPalabras.Read())
-            {
-                var palabra = new Palabras
-                {
-                    IdPalabra = int.Parse(readerPalabras["IdPalabra"].ToString()),
-                    Palabra = readerPalabras["Palabra"].ToString()
-                };
-                lista.Add(palabra);
-            }
-            return lista;
-        }
         public IList<Imagen> ListaImagenes()
         {
             var lista = new List<Imagen>();

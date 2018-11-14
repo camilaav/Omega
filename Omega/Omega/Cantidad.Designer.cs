@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cantidad));
             this.opcionUno = new System.Windows.Forms.Panel();
             this.opcionDos = new System.Windows.Forms.Panel();
             this.opcionTres = new System.Windows.Forms.Panel();
             this.lblPuntaje = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tiempo = new System.Windows.Forms.Timer(this.components);
+            this.tiempo2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // opcionUno
@@ -45,6 +48,7 @@
             this.opcionUno.Size = new System.Drawing.Size(117, 146);
             this.opcionUno.TabIndex = 3;
             this.opcionUno.Click += new System.EventHandler(this.opcionUno_Click_1);
+            this.opcionUno.Paint += new System.Windows.Forms.PaintEventHandler(this.opcionUno_Paint);
             // 
             // opcionDos
             // 
@@ -92,6 +96,16 @@
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // tiempo
+            // 
+            this.tiempo.Interval = 1000;
+            this.tiempo.Tick += new System.EventHandler(this.tiempo_Tick);
+            // 
+            // tiempo2
+            // 
+            this.tiempo2.Interval = 1000;
+            this.tiempo2.Tick += new System.EventHandler(this.tiempo2_Tick);
+            // 
             // Cantidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +121,7 @@
             this.Controls.Add(this.opcionUno);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cantidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cantidad";
@@ -122,5 +137,7 @@
         private System.Windows.Forms.Panel opcionTres;
         private System.Windows.Forms.Label lblPuntaje;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer tiempo;
+        private System.Windows.Forms.Timer tiempo2;
     }
 }

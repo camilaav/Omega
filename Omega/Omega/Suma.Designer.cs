@@ -39,12 +39,15 @@
             this.opcionUno = new System.Windows.Forms.PictureBox();
             this.respuestaC = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tiempo2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numeroDos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeroUno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opcionTres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opcionDos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opcionUno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.respuestaC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPuntaje
@@ -149,6 +152,23 @@
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             this.btnSalir.Paint += new System.Windows.Forms.PaintEventHandler(this.btnSalir_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(65, 84);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(654, 430);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tiempo2
+            // 
+            this.tiempo2.Interval = 1000;
+            this.tiempo2.Tick += new System.EventHandler(this.tiempo2_Tick);
+            // 
             // Suma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +176,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.respuestaC);
             this.Controls.Add(this.numeroDos);
@@ -166,6 +187,7 @@
             this.Controls.Add(this.lblPuntaje);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Suma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Suma";
@@ -176,6 +198,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.opcionDos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opcionUno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.respuestaC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +214,7 @@
         private System.Windows.Forms.PictureBox opcionUno;
         private System.Windows.Forms.PictureBox respuestaC;
         private System.Windows.Forms.Panel btnSalir;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer tiempo2;
     }
 }

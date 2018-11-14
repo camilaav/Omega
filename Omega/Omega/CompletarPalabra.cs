@@ -16,12 +16,45 @@ namespace Omega
     public partial class CompletarPalabra : Form
     {
         JuegoRN juegoRN = new JuegoRN();
-        int posicionInicialArriba = 0, posicionInicialCostado = 0, idDificultad = 0, randomImagen, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, intento = 1, puntuacion = 0;
+        int posicionInicialArriba = 0, posicionInicialCostado = 0, idDificultad = 0, randomImagen, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, intento = 1, puntuacion = 0, contadorGif = 0;
         IList<Imagen> listaImagenes = new List<Imagen>();
+        PictureBox pictureGif = new PictureBox();
         PictureBox pictureVacio = new PictureBox();
+        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
         char[] abecedario = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
         public Imagen imagen = new Imagen();
         Random random = new Random();
+
+        public void Gif()
+        {
+            pictureGif = new PictureBox();
+            pictureGif.Size = new Size(654, 430);
+            pictureGif.Location = new Point(155, 219);
+            pictureGif.BackColor = Color.Transparent;
+            pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.Controls.Add(pictureGif);
+            pictureGif.BringToFront();
+            pictureGif.Load(startupPath + "/bien.gif");
+            pictureGif.Enabled = true;
+            pictureGif.Visible = true;
+            tiempo.Enabled = true;
+            tiempo.Start();
+        }
+        public void GifMal()
+        {
+            pictureGif = new PictureBox();
+            pictureGif.Size = new Size(654, 430);
+            pictureGif.Location = new Point(155, 219);
+            pictureGif.BackColor = Color.Transparent;
+            pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.Controls.Add(pictureGif);
+            pictureGif.BringToFront();
+            pictureGif.Load(startupPath + "/mal.gif");
+            pictureGif.Enabled = true;
+            pictureGif.Visible = true;
+            tiempo2.Enabled = true;
+            tiempo2.Start();
+        }
 
         public CompletarPalabra()
         {
@@ -54,15 +87,14 @@ namespace Omega
         {
             if (respuestaCorrecta == 1)
             {
-                MessageBox.Show("Muy bien!");
+                Gif();
                 pictureVacio.Visible = true;
                 Puntuar();
-                Recarga();
             }
             else
             {
+                GifMal();
                 intento++;
-                MessageBox.Show("Respuesta incorrecta");
             }
         }
 
@@ -70,15 +102,14 @@ namespace Omega
         {
             if (respuestaCorrecta == 2)
             {
-                MessageBox.Show("Muy bien!");
+                Gif();
                 pictureVacio.Visible = true;
                 Puntuar();
-                Recarga();
             }
             else
             {
+                GifMal();
                 intento++;
-                MessageBox.Show("Respuesta incorrecta");
             }
         }
 
@@ -93,6 +124,27 @@ namespace Omega
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
+        private void tiempo2_Tick(object sender, EventArgs e)
+        {
+            contadorGif++;
+            if (contadorGif == 3)
+            {
+                pictureGif.Visible = false;
+                pictureGif.Enabled = false;
+                tiempo2.Stop();
+                contadorGif = 0;
+            }
+        }
+
+        private void tiempo_Tick(object sender, EventArgs e)
+        {
+            contadorGif++;
+            if (contadorGif == 3)
+            {
+                Recarga();
+            }
+        }
+
         private void panel2_Click(object sender, EventArgs e)
         {
             var pantallaPrincipal = new Pantalla_principal();
@@ -104,16 +156,14 @@ namespace Omega
         {
             if(respuestaCorrecta == 0)
             {
-                MessageBox.Show("Muy bien!");
+                Gif();
                 pictureVacio.Visible = true;
                 Puntuar();
-                Recarga();
-
             }
             else
             {
+                GifMal();
                 intento++;
-                MessageBox.Show("Respuesta incorrecta");
             }
         }
 
@@ -166,14 +216,14 @@ namespace Omega
                 else
                 {
                     Controls.Add(pictureVacio);
-                    pictureVacio.Size = new Size(100, 100);
+                    pictureVacio.Size = new Size(70, 70);
                     pictureVacio.Location = new Point(posicionInicialCostado, posicionInicialArriba);
                     pictureVacio.BackColor = Color.Transparent;
                     pictureVacio.BackgroundImage = Image.FromFile(startupPathPalabras + @"\" + letras[i].ToString().ToUpper() + ".png");
                     pictureVacio.Visible = false;
                     pictureVacio.BackgroundImageLayout = ImageLayout.Stretch;
                     pictureVacio.Enabled = true;
-                    posicionInicialCostado = posicionInicialCostado + 100;
+                    posicionInicialCostado = posicionInicialCostado + 70;
                 }
             }
             respuestaCorrecta = random.Next(2);
@@ -234,6 +284,10 @@ namespace Omega
 
         private void Recarga()
         {
+            tiempo.Stop();
+            contadorGif = 0;
+            pictureGif.Visible = false;
+            pictureGif.Enabled = false;
             intento = 1;
             lblPuntaje.Text = puntuacion.ToString();
             pictureVacio = new PictureBox();

@@ -10,19 +10,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Omega.Helpers;
+using System.Threading;
 
 namespace Omega
 {
     public partial class Suma : Form
     {
         string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
-        int seg = 0, orden, fondo, fondo2,resultado, intento = 1, puntuacion = 0, idJuego = 2, idDificultad = 0;
+        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
+        int orden, fondo, fondo2, resultado, intento = 1, puntuacion = 0, idJuego = 2, idDificultad = 0, contadorGif;
         JuegoRN juegoRN = new JuegoRN();
         JuegosHelper juegoHelper = new JuegosHelper();
-
         Random randommizer = new Random();
+
+        public void Gif()
+        {
+            pictureBox1.Load(startupPath + "//bien.gif");
+            pictureBox1.Enabled = true;
+            pictureBox1.Visible = true;
+            tiempo.Enabled = true;
+            tiempo.Start();
+        }
+
+        public void GifMal()
+        {
+            pictureBox1.Load(startupPath + "//mal.gif");
+            pictureBox1.Enabled = true;
+            pictureBox1.Visible = true;
+            tiempo2.Enabled = true;
+            tiempo2.Start();
+        }
+
         public void Recarga()
         {
+            tiempo.Stop();
+            contadorGif = 0;
+            pictureBox1.Visible = false;
+            pictureBox1.Enabled = false;
             intento = 1;
             respuestaC.Visible = false;
 
@@ -42,9 +66,6 @@ namespace Omega
                 idDificultad = 3;
                 Juego(0, 100);
             }
-
-            tiempo.Enabled = true;
-
 
             if (orden == 0)                                 //PONE LA RESPUESTA CORRECTA EN UNA DE LAS 3 OPCINES EN FORMA ALEATOREA
             {
@@ -85,21 +106,37 @@ namespace Omega
 
         }
 
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void tiempo2_Tick(object sender, EventArgs e)
+        {
+            contadorGif++;
+            if (contadorGif == 3)
+            {
+                pictureBox1.Visible = false;
+                pictureBox1.Enabled = false;
+                tiempo2.Stop();
+                contadorGif = 0;
+            }
+        }
+
         private void opcionUno_Click(object sender, EventArgs e)
         {
             if (orden == 0)
             {
+                Gif();
                 respuestaC.Visible = true;
                 respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
-                MessageBox.Show("Muy bien!");
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
-                Recarga();
             }
             else
             {
-                MessageBox.Show("contestaste mal");
+                GifMal();
                 intento++;
             }
         }
@@ -114,17 +151,16 @@ namespace Omega
         {
             if (orden == 1)
             {
+                Gif();
                 respuestaC.Visible = true;
                 respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
-                MessageBox.Show("Muy bien!");
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
-                Recarga();
             }
             else
             {
-                MessageBox.Show("contestaste mal");
+                GifMal();
                 intento++;
             }
         }
@@ -133,17 +169,16 @@ namespace Omega
         {
             if (orden == 2)
             {
+                Gif();
                 respuestaC.Visible = true;
                 respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
-                MessageBox.Show("Muy bien!");
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
-                Recarga();
             }
             else
             {
-                MessageBox.Show("contestaste mal");
+                GifMal();
                 intento++;
             }
         }
@@ -151,10 +186,10 @@ namespace Omega
 
         private void tiempo_Tick(object sender, EventArgs e)
         {
-            seg -= 1;
-            if (seg == 0)
+            contadorGif++;
+            if (contadorGif == 3)
             {
-                tiempo.Stop();
+                Recarga();
             }
         }
         private void Suma_Load(object sender, EventArgs e)
@@ -164,15 +199,15 @@ namespace Omega
 
         public int Puntuar()
         {
-            if(intento == 1)
+            if (intento == 1)
             {
                 return puntuacion = puntuacion + 100;
             }
-            else if(intento == 2)
+            else if (intento == 2)
             {
                 return puntuacion = puntuacion + 50;
             }
-            else if(intento >= 3)
+            else if (intento >= 3)
             {
                 return puntuacion = puntuacion + 25;
             }
@@ -191,11 +226,32 @@ namespace Omega
             numero2 = randommizer.Next(limiteMenor, limiteMayor);
             resultado = juegoHelper.Operacion(numero1, numero2, "+");
 
-            while (resultado > 100) 
+            if(idDificultad == 1)
             {
-                numero1 = randommizer.Next(limiteMenor, limiteMayor);
-                numero2 = randommizer.Next(limiteMenor, limiteMayor);
-                resultado = juegoHelper.Operacion(numero1, numero2, "+");
+                while (resultado > 10)
+                {
+                    numero1 = randommizer.Next(limiteMenor, limiteMayor);
+                    numero2 = randommizer.Next(limiteMenor, limiteMayor);
+                    resultado = juegoHelper.Operacion(numero1, numero2, "+");
+                }
+            }
+            if(idDificultad == 2)
+            {
+                while (resultado > 50)
+                {
+                    numero1 = randommizer.Next(limiteMenor, limiteMayor);
+                    numero2 = randommizer.Next(limiteMenor, limiteMayor);
+                    resultado = juegoHelper.Operacion(numero1, numero2, "+");
+                }
+            }
+            if(idDificultad == 3)
+            {
+                while (resultado > 100)
+                {
+                    numero1 = randommizer.Next(limiteMenor, limiteMayor);
+                    numero2 = randommizer.Next(limiteMenor, limiteMayor);
+                    resultado = juegoHelper.Operacion(numero1, numero2, "+");
+                }
             }
 
             numeroUno.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + numero1.ToString() + ".png");

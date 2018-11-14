@@ -73,7 +73,7 @@
             this.picprofesor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picprofesor.BackgroundImage")));
             this.picprofesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picprofesor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picprofesor.Location = new System.Drawing.Point(805, -3);
+            this.picprofesor.Location = new System.Drawing.Point(805, 2);
             this.picprofesor.Name = "picprofesor";
             this.picprofesor.Size = new System.Drawing.Size(72, 79);
             this.picprofesor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -88,7 +88,7 @@
             this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Location = new System.Drawing.Point(805, 539);
+            this.btnSalir.Location = new System.Drawing.Point(0, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(72, 79);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
