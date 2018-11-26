@@ -33,6 +33,8 @@ namespace Omega
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = usuarioRN.ListaPersonas();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black;
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

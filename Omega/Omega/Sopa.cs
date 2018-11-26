@@ -14,8 +14,6 @@ namespace Omega
 {
     public partial class Sopa : Form
     {
-        //FALTA AGREGAR ANIMACIÓN
-
         Random letras = new Random();
         Random cfg = new Random();
         MovimientoHelper movimientoHelper = new MovimientoHelper();

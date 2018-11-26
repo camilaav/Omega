@@ -21,7 +21,11 @@ namespace Omega
 
         private void ListaPuntajes_Load(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
             dataGridView1.DataSource = juegoRN.TablaMovimientos();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black;
 
         }
     }
