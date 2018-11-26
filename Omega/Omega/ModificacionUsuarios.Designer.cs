@@ -56,7 +56,7 @@
             this.txtContraseñaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseñaNueva.Location = new System.Drawing.Point(187, 247);
             this.txtContraseñaNueva.Name = "txtContraseñaNueva";
-            this.txtContraseñaNueva.PasswordChar = '*';
+            this.txtContraseñaNueva.PasswordChar = '●';
             this.txtContraseñaNueva.Size = new System.Drawing.Size(306, 22);
             this.txtContraseñaNueva.TabIndex = 10;
             this.txtContraseñaNueva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -68,7 +68,7 @@
             this.txtContraseñaVieja.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseñaVieja.Location = new System.Drawing.Point(187, 138);
             this.txtContraseñaVieja.Name = "txtContraseñaVieja";
-            this.txtContraseñaVieja.PasswordChar = '*';
+            this.txtContraseñaVieja.PasswordChar = '●';
             this.txtContraseñaVieja.Size = new System.Drawing.Size(306, 22);
             this.txtContraseñaVieja.TabIndex = 9;
             this.txtContraseñaVieja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

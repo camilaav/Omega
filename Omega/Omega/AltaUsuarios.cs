@@ -30,6 +30,8 @@ namespace Omega
             if(usuarioRN.AltaUsuario(usuario))
             {
                 MessageBox.Show("Usuario dado de alta con éxito");
+                txtContraseña.Text = null;
+                txtUsuario.Text = null;
             }
             else
             {

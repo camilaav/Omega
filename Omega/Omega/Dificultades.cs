@@ -38,7 +38,6 @@ namespace Omega
             dictionary.Add("cantidad", new Cantidad());
             dictionary.Add("sopa", new Sopa());
             dictionary.Add("completar", new CompletarPalabra());
-            dictionary.Add("rompe", new MainForm());
             dictionary.Add("memotest", new Memotests());
 
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;

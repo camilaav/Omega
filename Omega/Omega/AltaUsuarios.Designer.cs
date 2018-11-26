@@ -66,6 +66,7 @@
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(178, 239);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '●';
             this.txtContraseña.Size = new System.Drawing.Size(337, 22);
             this.txtContraseña.TabIndex = 1;
             // 

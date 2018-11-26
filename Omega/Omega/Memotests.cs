@@ -41,7 +41,7 @@ namespace Omega
             contadorGif++;
             if (contadorGif == 3)
             {
-                Recarga();
+                movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
             }
         }
 
@@ -165,9 +165,7 @@ namespace Omega
                         Puntuar();
                         if (CantidadFotosVolteadas > (TamañoColumnas  * TamañoFilas) / 2-1)
                         {
-                            movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
                             Gif();
-                            Recarga();
                         }
                         FotoTemp1.Enabled = false;
                         FotoTemp2.Enabled = false;

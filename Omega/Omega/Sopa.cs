@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Omega.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +18,21 @@ namespace Omega
 
         Random letras = new Random();
         Random cfg = new Random();
+        MovimientoHelper movimientoHelper = new MovimientoHelper();
         int cfgelegido, puntuacion = 0;
-        public int contador;
+        public int contador,contadorGif, idDificultad = 0;
         bool esCasa = false, esGato = false, esEscuela = false, esRaton = false, esBanana = false, esPlato = false, esPizza = false, esLapiz = false, esMuñeca = false, esPapa = false, esRegla = false, esReloj = false, esMilanesa = false, esAbuelo = false, esAzul = false;
+        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
+        
+        public void Gif()
+        {
+            pictureBox1.Load(startupPath + "//bien.gif");
+            pictureBox1.Enabled = true;
+            pictureBox1.Visible = true;
+            tiempo.Enabled = true;
+            tiempo.Start();
+        }
+
         public Sopa()
         {
             InitializeComponent();
@@ -29,7 +43,7 @@ namespace Omega
             {
                 if (label1.ForeColor == Color.DarkSlateGray && label2.ForeColor == Color.DarkSlateGray && label3.ForeColor == Color.DarkSlateGray)
                 {
-                    MessageBox.Show("Muy bien, terminaste!");
+                    Gif();
                 }
             }
             else if (this.Tag.ToString() == "Intermedia")
@@ -38,7 +52,7 @@ namespace Omega
                     label3.ForeColor == Color.DarkSlateGray && label4.ForeColor == Color.DarkSlateGray &&
                     label5.ForeColor == Color.DarkSlateGray)
                 {
-                    MessageBox.Show("Muy bien, terminaste!");
+                    Gif();
                 }
             }
             else if (this.Tag.ToString() == "Dificil")
@@ -48,12 +62,14 @@ namespace Omega
                     label5.ForeColor == Color.DarkSlateGray && label6.ForeColor == Color.DarkSlateGray &&
                     label7.ForeColor == Color.DarkSlateGray)
                 {
-                    MessageBox.Show("Muy bien, terminaste!");
+                    Gif();
                 }
             }
         }
         private void Juego()
         {
+            pictureBox1.Visible = false;
+            pictureBox1.Enabled = false;
             esCasa = false;
             esGato = false;
             esEscuela = false;
@@ -72,6 +88,7 @@ namespace Omega
 
             if (this.Tag.ToString() == "Facil")
             {
+                idDificultad = 1;
                 TablaFacil();
                 label1.Text = "CASA";
                 label2.Text = "GATO";
@@ -83,6 +100,7 @@ namespace Omega
             }
             else if (this.Tag.ToString() == "Intermedia")
             {
+                idDificultad = 2;
                 TablaIntermedia();
                 label1.Text = "ESCUELA";
                 label2.Text = "BANANA";
@@ -94,6 +112,7 @@ namespace Omega
             }
             else if (this.Tag.ToString() == "Dificil")
             {
+                idDificultad = 3;
                 TablaDificil();
                 label1.Text = "RELOJ";
                 label2.Text = "MUÑECA";
@@ -522,6 +541,15 @@ namespace Omega
         {
         }
 
+        private void tiempo_Tick(object sender, EventArgs e)
+        {
+            contadorGif++;
+            if (contadorGif == 3)
+            {
+                movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, 4);
+            }
+        }
+
         private void Validar()
         {
             if (this.Tag.ToString() == "Facil")
@@ -572,14 +600,14 @@ namespace Omega
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            JuegoCompleto();
             Validar();
+            JuegoCompleto();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            JuegoCompleto();
             Validar();
+            JuegoCompleto();
         }
 
         private void Puntuar()

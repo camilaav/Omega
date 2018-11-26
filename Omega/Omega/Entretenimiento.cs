@@ -27,7 +27,9 @@ namespace Omega
 
         private void btnRompecabezas_Click(object sender, EventArgs e)
         {
-            dificultad("rompe");
+            var rompecabezas = new Rompecabezas();
+            rompecabezas.Show();
+            this.Hide();
         }
 
         private void btnMemotest_Click(object sender, EventArgs e)

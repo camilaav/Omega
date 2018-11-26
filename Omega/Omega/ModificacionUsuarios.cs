@@ -35,15 +35,21 @@ namespace Omega
                 {
                     UsuarioLogueado.Logueado.Contraseña = Encriptacion.Encriptar(usuario.Contraseña);
                     MessageBox.Show("Su contraseña se actualizó con éxito");
+                    txtContraseñaNueva.Text = null;
+                    txtContraseñaVieja.Text = null;
                 }
                 else
                 {
                     MessageBox.Show("No se pudo actualizar la contraseña");
+                    txtContraseñaNueva.Text = null;
+                    txtContraseñaVieja.Text = null;
                 }
             }
             else
             {
                 MessageBox.Show("La contraseña no se puede cambiar, ya que el valor ingresado en contraseña vieja no corresponde con su contraseña actual");
+                txtContraseñaNueva.Text = null;
+                txtContraseñaVieja.Text = null;
             }
         }
 
