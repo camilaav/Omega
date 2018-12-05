@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -12,15 +13,15 @@ namespace Omega
     public partial class Memotests : Form
     {
         int Movimientos = 0, CantidadFotosVolteadas = 0, TamañoColumnas = 0, TamañoFilas = 0,FotoActual = 0;
-        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
+        public static string rutaImagenes = ConfigurationManager.AppSettings["Imagenes"].ToString();
         List<string> FotosEnumeradas, FotosRevueltas;
-        string startupPathCartas = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Cartas");
+        string startupPathCartas = rutaImagenes + "//Cartas";
         int puntuacion = 0, idDificultad = 0, idJuego = 6, contadorGif;
         MovimientoHelper movimientoHelper = new MovimientoHelper();
 
         public void Gif()
         {
-            pictureBox1.Load(startupPath + "//bien.gif");
+            pictureBox1.Load(rutaImagenes + "//bien.gif");
             pictureBox1.Enabled = true;
             pictureBox1.Visible = true;
             tiempo2.Enabled = true;

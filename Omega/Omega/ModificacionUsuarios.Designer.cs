@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificacionUsuarios));
             this.txtContraseñaNueva = new System.Windows.Forms.TextBox();
             this.txtContraseñaVieja = new System.Windows.Forms.TextBox();
+            this.txtConfirmacion = new System.Windows.Forms.TextBox();
             btnIngresar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(btnIngresar)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             this.txtContraseñaNueva.BackColor = System.Drawing.Color.Cornsilk;
             this.txtContraseñaNueva.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseñaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseñaNueva.Location = new System.Drawing.Point(187, 247);
+            this.txtContraseñaNueva.Location = new System.Drawing.Point(187, 191);
             this.txtContraseñaNueva.Name = "txtContraseñaNueva";
             this.txtContraseñaNueva.PasswordChar = '●';
             this.txtContraseñaNueva.Size = new System.Drawing.Size(306, 22);
@@ -66,12 +67,24 @@
             this.txtContraseñaVieja.BackColor = System.Drawing.Color.Cornsilk;
             this.txtContraseñaVieja.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseñaVieja.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseñaVieja.Location = new System.Drawing.Point(187, 138);
+            this.txtContraseñaVieja.Location = new System.Drawing.Point(187, 101);
             this.txtContraseñaVieja.Name = "txtContraseñaVieja";
             this.txtContraseñaVieja.PasswordChar = '●';
             this.txtContraseñaVieja.Size = new System.Drawing.Size(306, 22);
             this.txtContraseñaVieja.TabIndex = 9;
             this.txtContraseñaVieja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtConfirmacion
+            // 
+            this.txtConfirmacion.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtConfirmacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConfirmacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmacion.Location = new System.Drawing.Point(187, 276);
+            this.txtConfirmacion.Name = "txtConfirmacion";
+            this.txtConfirmacion.PasswordChar = '●';
+            this.txtConfirmacion.Size = new System.Drawing.Size(306, 22);
+            this.txtConfirmacion.TabIndex = 11;
+            this.txtConfirmacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ModificacionUsuarios
             // 
@@ -81,6 +94,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(686, 433);
             this.ControlBox = false;
+            this.Controls.Add(this.txtConfirmacion);
             this.Controls.Add(this.txtContraseñaNueva);
             this.Controls.Add(this.txtContraseñaVieja);
             this.Controls.Add(btnIngresar);
@@ -105,5 +119,6 @@
         #endregion
         private System.Windows.Forms.TextBox txtContraseñaNueva;
         private System.Windows.Forms.TextBox txtContraseñaVieja;
+        private System.Windows.Forms.TextBox txtConfirmacion;
     }
 }

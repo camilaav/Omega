@@ -28,28 +28,40 @@ namespace Omega
                 IdUsuario = UsuarioLogueado.Logueado.IdUsuario,
                 Contraseña = txtContraseñaNueva.Text
             };
-
-            if(Encriptacion.Encriptar(txtContraseñaVieja.Text) == UsuarioLogueado.Logueado.Contraseña)
+            if(txtContraseñaNueva.Text == txtConfirmacion.Text)
             {
-                if(usuarioRN.ModificacionUsuario(usuario))
+                if (Encriptacion.Encriptar(txtContraseñaVieja.Text) == UsuarioLogueado.Logueado.Contraseña)
                 {
-                    UsuarioLogueado.Logueado.Contraseña = Encriptacion.Encriptar(usuario.Contraseña);
-                    MessageBox.Show("Su contraseña se actualizó con éxito");
-                    txtContraseñaNueva.Text = null;
-                    txtContraseñaVieja.Text = null;
+                    if (usuarioRN.ModificacionUsuario(usuario))
+                    {
+                        UsuarioLogueado.Logueado.Contraseña = Encriptacion.Encriptar(usuario.Contraseña);
+                        MessageBox.Show("Su contraseña se actualizó con éxito");
+                        txtContraseñaNueva.Text = null;
+                        txtContraseñaVieja.Text = null;
+                        txtConfirmacion.Text = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar la contraseña");
+                        txtContraseñaNueva.Text = null;
+                        txtContraseñaVieja.Text = null;
+                        txtConfirmacion.Text = null;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo actualizar la contraseña");
+                    MessageBox.Show("La contraseña no se puede cambiar, ya que el valor ingresado en contraseña vieja no corresponde con su contraseña actual");
                     txtContraseñaNueva.Text = null;
                     txtContraseñaVieja.Text = null;
+                    txtConfirmacion.Text = null;
                 }
             }
             else
             {
-                MessageBox.Show("La contraseña no se puede cambiar, ya que el valor ingresado en contraseña vieja no corresponde con su contraseña actual");
+                MessageBox.Show("La contraseña nueva no corresponde con la confirmación, vuelva a ingresarlas");
                 txtContraseñaNueva.Text = null;
                 txtContraseñaVieja.Text = null;
+                txtConfirmacion.Text = null;
             }
         }
 

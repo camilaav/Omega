@@ -35,6 +35,7 @@ namespace Omega
         {
             InitializeComponent();
         }
+
         private void JuegoCompleto()
         {
             if (this.Tag.ToString() == "Facil")
@@ -530,15 +531,6 @@ namespace Omega
             dataGridView1.ColumnCount = 9;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void tiempo_Tick(object sender, EventArgs e)
         {
             contadorGif++;
@@ -548,7 +540,7 @@ namespace Omega
             }
         }
 
-        private void Validar()
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (this.Tag.ToString() == "Facil")
             {
@@ -595,16 +587,6 @@ namespace Omega
                         break;
                 }
             }
-        }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Validar();
-            JuegoCompleto();
-        }
-
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            Validar();
             JuegoCompleto();
         }
 

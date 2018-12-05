@@ -4,14 +4,14 @@ using System.Windows.Forms;
 using System.IO;
 using Regla_de_Negocios;
 using Omega.Helpers;
+using System.Configuration;
 
 namespace Omega
 {
     public partial class Resta : Form
     {
-        string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
-        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
-
+        public static string rutaImagenes = ConfigurationManager.AppSettings["Imagenes"].ToString();
+        string startupPathNumeros = rutaImagenes + "//Numeros";
         int resultado, orden, fondo, fondo2, intento = 1, puntuacion = 0, idJuego = 1, idDificultad = 0, contadorGif = 0;
 
         JuegosHelper juegoHelper = new JuegosHelper();
@@ -21,7 +21,7 @@ namespace Omega
 
         public void Gif()
         {
-            pictureBox1.Load(startupPath + "//bien.gif");
+            pictureBox1.Load(rutaImagenes + "//bien.gif");
             pictureBox1.Enabled = true;
             pictureBox1.Visible = true;
             tiempo.Enabled = true;
@@ -30,7 +30,7 @@ namespace Omega
 
         public void GifMal()
         {
-            pictureBox1.Load(startupPath + "//mal.gif");
+            pictureBox1.Load(rutaImagenes + "//mal.gif");
             pictureBox1.Enabled = true;
             pictureBox1.Visible = true;
             tiempo2.Enabled = true;

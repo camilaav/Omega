@@ -10,15 +10,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Regla_de_Negocios;
 using Entidades;
+using System.Configuration;
 
 namespace Omega
 {
     public partial class Cantidad : Form
     {
+        public string rutaImagenes = ConfigurationManager.AppSettings["Imagenes"].ToString();
         public int posicionInicialArriba, posicionInicialCostado, contador, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, intento = 1, puntuacion = 0, idJuego = 3, idDificultad = 0, contadorGif;
         public JuegoRN juegoRN = new JuegoRN();
         PictureBox pictureGif = new PictureBox();
-        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
 
         public void Gif()
         {
@@ -29,7 +30,7 @@ namespace Omega
             pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
             this.Controls.Add(pictureGif);
             pictureGif.BringToFront();
-            pictureGif.Load(startupPath + "//bien.gif");
+            pictureGif.Load(rutaImagenes + "//bien.gif");
             pictureGif.Enabled = true;
             pictureGif.Visible = true;
             tiempo.Enabled = true;
@@ -44,7 +45,7 @@ namespace Omega
             pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
             this.Controls.Add(pictureGif);
             pictureGif.BringToFront();
-            pictureGif.Load(startupPath + "//mal.gif");
+            pictureGif.Load(rutaImagenes + "//mal.gif");
             pictureGif.Enabled = true;
             pictureGif.Visible = true;
             tiempo2.Enabled = true;
@@ -196,7 +197,7 @@ namespace Omega
                 control.Dispose();
             }
 
-            string startupPathNumeros = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Numeros");
+            string startupPathNumeros = rutaImagenes + "//Numeros";
 
             posicionInicialArriba = 130;
             posicionInicialCostado = 165;
@@ -247,7 +248,7 @@ namespace Omega
         public void Juego(int limiteMenor, int limiteMayor)
         {
             contador = 0;
-            string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Objetos");
+            string startupPathObjetos = rutaImagenes + "//Objetos";
             var nombrePicture = 1;
             var random = new Random();
             var cantidadPictures = random.Next(limiteMenor, limiteMayor);
@@ -267,7 +268,7 @@ namespace Omega
                 picture.Size = new Size(75, 75);
                 picture.BackColor = Color.Transparent;
                 picture.Location = new Point(posicionInicialCostado, posicionInicialArriba);
-                picture.BackgroundImage = Image.FromFile(startupPath + @"\" + imagen.ToString() + ".png");
+                picture.BackgroundImage = Image.FromFile(startupPathObjetos + @"\" + imagen.ToString() + ".png");
                 picture.Visible = true;
                 picture.BackgroundImageLayout = ImageLayout.Stretch;
                 picture.Enabled = true;

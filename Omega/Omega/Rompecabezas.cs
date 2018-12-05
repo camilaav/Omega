@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -18,7 +19,7 @@ namespace Omega
         PictureBox[] pictures = new PictureBox[9];
         int np;
         Random random = new Random();
-        string startupPathObjetos = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Cartas");
+        public static string startupPathObjetos = ConfigurationManager.AppSettings["Imagenes"].ToString() + "//Cartas";
 
         public Rompecabezas()
         {

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Regla_de_Negocios;
 using Entidades;
+using System.Configuration;
 
 namespace Omega
 {
@@ -20,7 +21,7 @@ namespace Omega
         IList<Imagen> listaImagenes = new List<Imagen>();
         PictureBox pictureGif = new PictureBox();
         PictureBox pictureVacio = new PictureBox();
-        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
+        public string rutaImagenes = ConfigurationManager.AppSettings["Imagenes"].ToString();
         char[] abecedario = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
         public Imagen imagen = new Imagen();
         Random random = new Random();
@@ -34,7 +35,7 @@ namespace Omega
             pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
             this.Controls.Add(pictureGif);
             pictureGif.BringToFront();
-            pictureGif.Load(startupPath + "/bien.gif");
+            pictureGif.Load(rutaImagenes + "/bien.gif");
             pictureGif.Enabled = true;
             pictureGif.Visible = true;
             tiempo.Enabled = true;
@@ -49,7 +50,7 @@ namespace Omega
             pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
             this.Controls.Add(pictureGif);
             pictureGif.BringToFront();
-            pictureGif.Load(startupPath + "/mal.gif");
+            pictureGif.Load(rutaImagenes + "/mal.gif");
             pictureGif.Enabled = true;
             pictureGif.Visible = true;
             tiempo2.Enabled = true;
@@ -115,7 +116,7 @@ namespace Omega
 
         public void CargarImagenes()
         {
-            string startupObjetos = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Objetos");
+            string startupObjetos = rutaImagenes + "//Objetos";
             if (imagen == null || imagen.DescripcionImagen == string.Empty)
             {
                 CargarImagenes();
@@ -177,7 +178,7 @@ namespace Omega
         public void CargarPalabras()
         {
             CargarRandom();
-            string startupPathPalabras = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes", "Letras");
+            string startupPathPalabras = rutaImagenes + "//Letras";
 
             for (int i = this.Controls.Count - 1; i >= 0; i--)
             {
