@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Regla_de_Negocios;
 using Entidades;
+using System.Configuration;
 
 namespace Omega
 {
@@ -39,7 +40,7 @@ namespace Omega
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            string path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
+            string path = ConfigurationManager.AppSettings["Imagenes"].ToString();
             if (e.ColumnIndex >= 0 && this.dataGridView1.Columns[e.ColumnIndex].Name == "btnEliminar" && e.RowIndex >= 0)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);

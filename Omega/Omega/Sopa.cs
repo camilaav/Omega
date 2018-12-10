@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -15,12 +16,10 @@ namespace Omega
     public partial class Sopa : Form
     {
         Random letras = new Random();
-        Random cfg = new Random();
         MovimientoHelper movimientoHelper = new MovimientoHelper();
-        int cfgelegido, puntuacion = 0;
-        public int contador,contadorGif, idDificultad = 0;
+        public int contador,contadorGif, idDificultad = 0, cfgelegido, puntuacion = 0;
         bool esCasa = false, esGato = false, esEscuela = false, esRaton = false, esBanana = false, esPlato = false, esPizza = false, esLapiz = false, esMuñeca = false, esPapa = false, esRegla = false, esReloj = false, esMilanesa = false, esAbuelo = false, esAzul = false;
-        string startupPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Omega", "Imágenes");
+        public static string startupPath = ConfigurationManager.AppSettings["Imagenes"].ToString();
         
         public void Gif()
         {
@@ -38,28 +37,23 @@ namespace Omega
 
         private void JuegoCompleto()
         {
-            if (this.Tag.ToString() == "Facil")
-            {
-                if (label1.ForeColor == Color.DarkSlateGray && label2.ForeColor == Color.DarkSlateGray && label3.ForeColor == Color.DarkSlateGray)
+            if (idDificultad == 1)
+            { 
+                if (esCasa && esGato && esRaton)
                 {
                     Gif();
                 }
             }
-            else if (this.Tag.ToString() == "Intermedia")
+            else if (idDificultad == 2)
             {
-                if (label1.ForeColor == Color.DarkSlateGray && label2.ForeColor == Color.DarkSlateGray &&
-                    label3.ForeColor == Color.DarkSlateGray && label4.ForeColor == Color.DarkSlateGray &&
-                    label5.ForeColor == Color.DarkSlateGray)
+                if (esEscuela && esBanana && esPlato && esPizza && esLapiz)
                 {
                     Gif();
                 }
             }
-            else if (this.Tag.ToString() == "Dificil")
+            else if (idDificultad == 3)
             {
-                if (label1.ForeColor == Color.DarkSlateGray && label2.ForeColor == Color.DarkSlateGray &&
-                    label3.ForeColor == Color.DarkSlateGray && label4.ForeColor == Color.DarkSlateGray &&
-                    label5.ForeColor == Color.DarkSlateGray && label6.ForeColor == Color.DarkSlateGray &&
-                    label7.ForeColor == Color.DarkSlateGray)
+                if (esReloj && esMuñeca && esAbuelo && esPapa && esRegla && esAzul && esMilanesa)
                 {
                     Gif();
                 }
@@ -142,13 +136,13 @@ namespace Omega
 
         private void IniciarPalabras()
         {
-            cfgelegido = cfg.Next(1, 4);
+            cfgelegido = letras.Next(1, 4);
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 for (int j = 0; j < dataGridView1.ColumnCount; j++)
                 {
                     dataGridView1[j, i].Value = Convert.ToChar(letras.Next(65, 90));
-                    if (this.Tag.ToString() == "Facil")
+                    if (idDificultad == 1)
                     {
                         switch (cfgelegido)
                         {
@@ -163,7 +157,7 @@ namespace Omega
                                 break;
                         }
                     }
-                    else if (this.Tag.ToString() == "Intermedia")
+                    else if (idDificultad == 2)
                     {
                         switch (cfgelegido)
                         {
@@ -178,7 +172,7 @@ namespace Omega
                                 break;
                         }
                     }
-                    else if (this.Tag.ToString() == "Dificil")
+                    else if (idDificultad == 3)
                     {
                         switch (cfgelegido)
                         {
@@ -208,7 +202,7 @@ namespace Omega
             dataGridView1[1, 3].Value = 'A';
             dataGridView1[2, 3].Value = 'T';
             dataGridView1[3, 3].Value = 'O';
-            //raton
+
             dataGridView1[3, 0].Value = 'R';
             dataGridView1[3, 1].Value = 'A';
             dataGridView1[3, 2].Value = 'T';
@@ -227,7 +221,7 @@ namespace Omega
             dataGridView1[1, 1].Value = 'A';
             dataGridView1[2, 1].Value = 'S';
             dataGridView1[3, 1].Value = 'A';
-            //raton
+
             dataGridView1[3, 0].Value = 'R';
             dataGridView1[3, 1].Value = 'A';
             dataGridView1[3, 2].Value = 'T';
@@ -246,7 +240,7 @@ namespace Omega
             dataGridView1[1, 1].Value = 'A';
             dataGridView1[2, 1].Value = 'T';
             dataGridView1[3, 1].Value = 'O';
-            //raton
+
             dataGridView1[1, 0].Value = 'R';
             dataGridView1[1, 1].Value = 'A';
             dataGridView1[1, 2].Value = 'T';
@@ -257,7 +251,6 @@ namespace Omega
 
         private void Mediocfg1()
         {
-            //Escuela//Banana//Plato//Pizza//Lapiz
             dataGridView1[0, 0].Value = 'E';
             dataGridView1[0, 1].Value = 'S';
             dataGridView1[0, 2].Value = 'C';
@@ -365,13 +358,6 @@ namespace Omega
         }
         private void Dificilcfg1()
         {
-            //Munheca
-            //Papa
-            //Regla
-            //Reloj
-            //Milanesa
-            //Abuelo
-            //Azul
             dataGridView1[1, 1].Value = 'M';
             dataGridView1[2, 1].Value = 'U';
             dataGridView1[3, 1].Value = 'Ñ';
@@ -542,49 +528,49 @@ namespace Omega
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.Tag.ToString() == "Facil")
+            if (idDificultad == 1)
             {
-                switch (cfgelegido)
+                if(cfgelegido == 1)
                 {
-                    case 1:
-                        VerificacionLVL1CFG1();
-                        break;
-                    case 2:
-                        VerificacionLVL1CFG2();
-                        break;
-                    case 3:
-                        VerificacionLVL1CFG3();
-                        break;
+                    VerificacionLVL1CFG1();
+                }
+                if(cfgelegido == 2)
+                {
+                    VerificacionLVL1CFG2();
+                }
+                if(cfgelegido == 3)
+                {
+                    VerificacionLVL1CFG3();
                 }
             }
-            else if (this.Tag.ToString() == "Intermedia")
+            else if (idDificultad == 2)
             {
-                switch (cfgelegido)
+                if(cfgelegido == 1)
                 {
-                    case 1:
-                        VerificacionLVL2CFG1();
-                        break;
-                    case 2:
-                        VerificacionLVL2CFG2();
-                        break;
-                    case 3:
-                        VerificacionLVL2CFG3();
-                        break;
+                    VerificacionLVL2CFG1();
+                }
+                if(cfgelegido == 2)
+                {
+                    VerificacionLVL2CFG2();
+                }
+                if(cfgelegido == 3)
+                {
+                    VerificacionLVL2CFG3();
                 }
             }
-            else if (this.Tag.ToString() == "Dificil")
+            else if (idDificultad == 3)
             {
-                switch (cfgelegido)
+                if(cfgelegido == 1)
                 {
-                    case 1:
-                        VerificacionLVL3CFG1();
-                        break;
-                    case 2:
-                        VerificacionLVL3CFG2();
-                        break;
-                    case 3:
-                        VerificacionLVL3CFG3();
-                        break;
+                    VerificacionLVL3CFG1();
+                }
+                if(cfgelegido == 2)
+                {
+                    VerificacionLVL3CFG2();
+                }
+                if(cfgelegido == 3)
+                {
+                    VerificacionLVL3CFG3();
                 }
             }
             JuegoCompleto();
@@ -595,39 +581,36 @@ namespace Omega
             puntuacion = puntuacion + 25;
             lblPuntaje.Text = puntuacion.ToString();
         }
+
+        private void Verificar(bool currentCellSelected, bool verificacionSelected)
+        {
+            if (currentCellSelected == verificacionSelected)
+            {
+                dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
+                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            }
+        }
+
         private void VerificacionLVL1CFG1()
         {
             //CASA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 3].Selected);
 
             //GATO
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 3].Selected);
 
             //RATON
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 4].Selected);
 
 
             if (dataGridView1[1, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray &&
@@ -648,10 +631,10 @@ namespace Omega
 
             if (dataGridView1[3, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray && !esGato)
+                dataGridView1[3, 4].Style.BackColor == Color.DarkSlateGray && !esRaton)
             {
                 label3.ForeColor = Color.DarkSlateGray; //RATON
-                esGato = true;
+                esRaton = true;
                 Puntuar();
             }
 
@@ -659,38 +642,24 @@ namespace Omega
 
         private void VerificacionLVL1CFG2()
         {
-
             //CASA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
 
             //GATO
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 2].Selected);
 
             //RATON
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 4].Selected);
 
             if (dataGridView1[1, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 2].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[3, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray && !esGato)
@@ -723,36 +692,23 @@ namespace Omega
         private void VerificacionLVL1CFG3()
         {
             //CASA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 3].Selected);
 
             //GATO
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
 
             //RATON
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 4].Selected);
 
             if (dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 3].Style.BackColor == Color.DarkSlateGray && !esCasa)
@@ -783,71 +739,42 @@ namespace Omega
         private void VerificacionLVL2CFG1()
         {
             //ESCUELA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 6].Selected);
 
             //BANANA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 3].Selected);
 
             //PLATO
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 5].Selected);
 
             //PIZZA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 1].Selected);
 
             //LAPIZ
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 6].Selected);
 
             if (dataGridView1[0, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[0, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray &&
@@ -895,73 +822,43 @@ namespace Omega
         }
         private void VerificacionLVL2CFG2()
         {
-
             //ESCUELA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 6].Selected);
 
             //BANANA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 5].Selected);
 
             //PLATO
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 3].Selected);
 
             //PIZZA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 6].Selected);
 
             //LAPIZ
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 1].Selected);
 
             if (dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 6].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 6].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 6].Style.BackColor == Color.DarkSlateGray &&
@@ -1010,71 +907,42 @@ namespace Omega
         private void VerificacionLVL2CFG3()
         {
             //ESCUELA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 3].Selected);
 
             //BANANA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 5].Selected);
 
             //PLATO
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 6].Selected);
 
             //PIZZA
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 5].Selected);
 
             //LAPIZ
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 1].Selected);
 
             if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
@@ -1122,96 +990,57 @@ namespace Omega
         }
         private void VerificacionLVL3CFG1()
         {
-
             //muñeca
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 1].Selected);
 
             //papa
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 8].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 8].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 8].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 8].Selected);
 
             //regla
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 8].Selected);
 
             //reloj
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[7, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[8, 0].Selected);
 
             //milanesa
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[7, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[8, 7].Selected);
 
             //abuelo
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 6].Selected);
 
             //azul
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 3].Selected);
 
             if (dataGridView1[1, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[2, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[3, 1].Style.BackColor == Color.DarkSlateGray && dataGridView1[4, 1].Style.BackColor == Color.DarkSlateGray &&
@@ -1271,96 +1100,57 @@ namespace Omega
         }
         private void VerificacionLVL3CFG2()
         {
-
             //muñeca
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[8, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[8, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[8, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[8, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[8, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[8, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[8, 5].Selected);
 
             //papa
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 8].Selected);
 
             //regla
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 7].Selected);
 
             //reloj
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 4].Selected);
 
             //milanesa
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[7, 1].Selected);
 
             //abuelo
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 6].Selected);
 
             //azul
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 4].Selected);
 
             if (dataGridView1[8, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 1].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[8, 2].Style.BackColor == Color.DarkSlateGray && dataGridView1[8, 3].Style.BackColor == Color.DarkSlateGray &&
@@ -1420,96 +1210,57 @@ namespace Omega
         }
         private void VerificacionLVL3CFG3()
         {
-
             //muñeca
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 8].Selected);
 
             //papa
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 3].Selected);
 
             //regla
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[7, 5].Selected);
 
             //reloj
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[6, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 2].Selected);
 
             //milanesa
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 0].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 1].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 2].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 3].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 4].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 1].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 2].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 3].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 4].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 7].Selected);
 
             //abuelo
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[0, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[1, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[2, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[3, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[4, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[5, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 8].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 8].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 8].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 8].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 8].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 8].Selected);
 
             //azul
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 5].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 6].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 7].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
-            if (dataGridView1.CurrentCell.Selected == dataGridView1[7, 8].Selected)
-                dataGridView1.CurrentCell.Style.BackColor = Color.DarkSlateGray;
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[7, 5].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[7, 6].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[7, 7].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[7, 8].Selected);
 
             if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 4].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[0, 5].Style.BackColor == Color.DarkSlateGray && dataGridView1[0, 6].Style.BackColor == Color.DarkSlateGray &&
@@ -1566,11 +1317,6 @@ namespace Omega
                 esAzul = true;
                 Puntuar();
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
