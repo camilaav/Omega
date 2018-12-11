@@ -196,7 +196,7 @@ namespace Omega
                 letras.Add(letra);
             }
 
-            var opcionCorrecta = random.Next(1, imagen.DescripcionImagen.Length);
+            var opcionCorrecta = random.Next(1, letras.Count - 1);
 
             for (int i = 0; i <= letras.Count() - 1; i++)
             {
@@ -229,9 +229,9 @@ namespace Omega
             }
             respuestaCorrecta = random.Next(2);
 
-            respuestaIncorrecta1 = random.Next(1, imagen.DescripcionImagen.Length);
+            respuestaIncorrecta1 = random.Next(1, abecedario.Length - 1);
 
-            respuestaIncorrecta2 = random.Next(1, imagen.DescripcionImagen.Length);
+            respuestaIncorrecta2 = random.Next(1, abecedario.Length - 1);
 
             while (opcionCorrecta == respuestaIncorrecta1 || opcionCorrecta == respuestaIncorrecta2 || respuestaIncorrecta1 == respuestaIncorrecta2)
             {
