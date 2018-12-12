@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using Acceso_a_base_de_datos;
 using Entidades;
 using System.Linq;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Configuration;
 
 namespace Regla_de_Negocios.BD
 {
@@ -21,9 +23,9 @@ namespace Regla_de_Negocios.BD
                     select p).ToList();
         }
 
-        public DataTable TablaMovimientos()
+        public System.Data.DataTable TablaMovimientos()
         {
-            DataTable dataTable = new DataTable();
+            System.Data.DataTable dataTable = new System.Data.DataTable();
             var excel = new ConexionExcel().Conexion;
 
             var movimiento = (from p in excel.Worksheet<Movimiento>("Movimiento")
@@ -55,52 +57,28 @@ namespace Regla_de_Negocios.BD
 
             foreach (var m in movimientos)
             {
-                dataTable.Rows.Add(m.Jugador,m.Puntuación,m.Juego,m.Dificultad,m.Fecha);
+                dataTable.Rows.Add(m.Jugador, m.Puntuación, m.Juego, m.Dificultad, m.Fecha);
             }
 
             return dataTable;
         }
 
-        public Boolean NuevoMovimiento(Movimiento m) //modificar para excel
+        public void NuevoMovimiento(Movimiento m) //modificar para excel
         {
-            var listaParametros = new List<SqlParameter>();
-            var puntuacion = new SqlParameter
-            {
-                ParameterName = "@puntuacion",
-                Value = m.Puntuacion,
-                SqlDbType = SqlDbType.Int
-            };
-            var fecha = new SqlParameter
-            {
-                ParameterName = "@fecha",
-                Value = m.Fecha,
-                SqlDbType = SqlDbType.DateTime
-            };
-            var jugador = new SqlParameter
-            {
-                ParameterName = "@jugador",
-                Value = Movimiento.JugadorMovimiento,
-                SqlDbType = SqlDbType.VarChar
-            };
-            var juego = new SqlParameter
-            {
-                ParameterName = "@idJuego",
-                Value = m.IdJuego,
-                SqlDbType = SqlDbType.Int
-            };
-            var dificultad = new SqlParameter
-            {
-                ParameterName = "@idDificultad",
-                Value = m.IdDificultad,
-                SqlDbType = SqlDbType.Int
-            };
-            listaParametros.Add(puntuacion);
-            listaParametros.Add(fecha);
-            listaParametros.Add(jugador);
-            listaParametros.Add(juego);
-            listaParametros.Add(dificultad);
-            string stored = "sp_InsertarMovimiento";
-            return comandos.EjecutarStore(stored, listaParametros);
+            var excel = new Excel.Application();
+            var book = new Excel.Workbook();
+            var sheet = new Excel.Worksheet();
+
+            excel.Workbooks.Open(ConfigurationManager.AppSettings["Excel"].ToString());
+
+            book = excel.ActiveWorkbook;
+            sheet = book.ActiveSheet;
+
+            excel.Visible = true;
+
+            excel.Workbooks.Add();
+
+            Excel._Worksheet worksheet = (Excel.Worksheet)excel.ActiveSheet;
         }
     }
 }

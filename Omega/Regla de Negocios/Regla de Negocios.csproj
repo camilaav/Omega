@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Databasic.OleSql" Version="1.2.8" />
     <PackageReference Include="LinqToExcel" Version="1.11.0" />
+    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1000" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
   </ItemGroup>
