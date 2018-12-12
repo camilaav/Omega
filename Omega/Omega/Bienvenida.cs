@@ -33,7 +33,7 @@ namespace Omega
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Pantalla_principal p = new Pantalla_principal();
-            Movimiento.Jugador = txtNombre.Text;
+            Movimiento.JugadorMovimiento = txtNombre.Text;
             p.Show();
             this.Hide();
         }

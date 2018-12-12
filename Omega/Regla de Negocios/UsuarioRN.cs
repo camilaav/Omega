@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Entidades;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,32 +10,6 @@ namespace Regla_de_Negocios
     public class UsuarioRN
     {
         Comandos comandos = new Comandos();
-
-        public List<Usuario> SeleccionarUsuario(Usuario u)
-        {
-            Usuario Usuario = new Usuario();
-            List<Usuario> listaUsuario = new List<Usuario>();
-            List<SqlParameter> listaparametros = new List<SqlParameter>();
-            var usuario = new SqlParameter
-            {
-                ParameterName = "@nombre",
-                SqlDbType = SqlDbType.VarChar,
-                Value = u.NombreUsuario
-            };
-            listaparametros.Add(usuario);
-            string stored = "sp_BuscarUsuarios";
-            SqlDataReader reader = comandos.EjecutarReader(stored, listaparametros);
-            while (reader.Read())
-            {
-                Usuario.IdUsuario = int.Parse(reader["IdUsuario"].ToString());
-                Usuario.NombreUsuario = reader["NombreUsuario"].ToString();
-                Usuario.FechaBloqueo = DateTime.Parse(reader["FechaBloqueo"].ToString());
-                Usuario.Contraseña = reader["Contraseña"].ToString();
-                Usuario.Eliminado = Boolean.Parse(reader["Eliminado"].ToString());
-            }
-            listaUsuario.Add(Usuario);
-            return listaUsuario;
-        }
 
         public Boolean InsertarBloqueo(Usuario u)
         {
@@ -111,16 +84,9 @@ namespace Regla_de_Negocios
             };
 
             listaParametros.Add(id);
-            listaParametros.Add(contraseña);    
+            listaParametros.Add(contraseña);
             string stored = "sp_ModificarUsuario";
             return comandos.EjecutarStore(stored, listaParametros);
-        }
-
-        public DataTable ListaPersonas()
-        {
-            var stored = "st_ListarPersonas";
-            var nombreTabla = "Usuario";
-            return comandos.Dataset(stored,nombreTabla);
         }
     }
 }

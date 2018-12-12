@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using System.Data;
 using System.Configuration;
 
 namespace Acceso_a_base_de_datos

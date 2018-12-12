@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Regla_de_Negocios;
 using Entidades;
 using System.Configuration;
 
@@ -16,7 +8,8 @@ namespace Omega
 {
     public partial class BajaUsuarios : Form
     {
-        UsuarioRN usuarioRN = new UsuarioRN();
+        Regla_de_Negocios.BD.UsuarioRN usuarioRNExcel = new Regla_de_Negocios.BD.UsuarioRN();
+        Regla_de_Negocios.UsuarioRN usuarioRN = new Regla_de_Negocios.UsuarioRN();
         public BajaUsuarios()
         {
             InitializeComponent();
@@ -32,7 +25,7 @@ namespace Omega
         private void BajaUsuarios_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = usuarioRN.ListaPersonas();
+            dataGridView1.DataSource = usuarioRNExcel.ListarUsuarios();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
             dataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black;
@@ -73,7 +66,7 @@ namespace Omega
                         {
                             MessageBox.Show("El usuario fue eliminado correctamente");
                             dataGridView1.DataSource = null;
-                            dataGridView1.DataSource = usuarioRN.ListaPersonas();
+                            dataGridView1.DataSource = usuarioRNExcel.ListarUsuarios();
                         }
                     }
 

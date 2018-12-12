@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Regla_de_Negocios;
+using Regla_de_Negocios.BD;
 using Entidades;
 using System.Configuration;
 
@@ -233,7 +233,7 @@ namespace Omega
 
             respuestaIncorrecta2 = random.Next(1, abecedario.Length - 1);
 
-            while (opcionCorrecta == respuestaIncorrecta1 || opcionCorrecta == respuestaIncorrecta2 || respuestaIncorrecta1 == respuestaIncorrecta2)
+            while (letras[opcionCorrecta] == abecedario[respuestaIncorrecta1] || letras[opcionCorrecta] == abecedario[respuestaIncorrecta2] || abecedario[respuestaIncorrecta1] == abecedario[respuestaIncorrecta2])
             {
                 respuestaIncorrecta1 = random.Next(1, imagen.DescripcionImagen.Length);
                 respuestaIncorrecta2 = random.Next(1, imagen.DescripcionImagen.Length);

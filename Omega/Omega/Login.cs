@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Regla_de_Negocios;
 using Entidades;
@@ -14,7 +7,9 @@ namespace Omega
 {
     public partial class Login : Form
     {
-        UsuarioRN usuarioRN = new UsuarioRN();
+        Regla_de_Negocios.UsuarioRN usuarioRN = new Regla_de_Negocios.UsuarioRN();
+        Regla_de_Negocios.BD.UsuarioRN usuarioRNExcel = new Regla_de_Negocios.BD.UsuarioRN();
+
         int contador = 0;
         public Login()
         {
@@ -27,7 +22,6 @@ namespace Omega
         }
         private void Login_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -51,10 +45,10 @@ namespace Omega
         {
             contador++;
             var usuario = new Usuario();
-            List<Usuario> usuarios = new List<Usuario>();
             usuario.NombreUsuario = txtUsuario.Text;
-            usuario.Contraseña = txtContraseña.Text;
-            usuarios = usuarioRN.SeleccionarUsuario(usuario);
+            usuario.Contraseña = Encriptacion.Encriptar(txtContraseña.Text);
+
+            var usuarios = usuarioRNExcel.Usuarios(usuario);
             foreach (var u in usuarios)
             {
                 if (txtUsuario.Text == u.NombreUsuario)
