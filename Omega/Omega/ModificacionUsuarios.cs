@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
-using Regla_de_Negocios;
+using ReglaDeNegocios;
 
 namespace Omega
 {
@@ -39,6 +32,7 @@ namespace Omega
                         txtContraseñaNueva.Text = null;
                         txtContraseñaVieja.Text = null;
                         txtConfirmacion.Text = null;
+                        txtContraseñaVieja.Focus();
                     }
                     else
                     {
@@ -46,6 +40,7 @@ namespace Omega
                         txtContraseñaNueva.Text = null;
                         txtContraseñaVieja.Text = null;
                         txtConfirmacion.Text = null;
+                        txtContraseñaVieja.Focus();
                     }
                 }
                 else
@@ -54,6 +49,7 @@ namespace Omega
                     txtContraseñaNueva.Text = null;
                     txtContraseñaVieja.Text = null;
                     txtConfirmacion.Text = null;
+                    txtContraseñaVieja.Focus();
                 }
             }
             else
@@ -62,6 +58,7 @@ namespace Omega
                 txtContraseñaNueva.Text = null;
                 txtContraseñaVieja.Text = null;
                 txtConfirmacion.Text = null;
+                txtContraseñaVieja.Focus();
             }
         }
 

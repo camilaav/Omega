@@ -318,9 +318,9 @@
       <Project>{9eef1130-4408-4c04-bc2a-90fe7f3f056f}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Regla de Negocios\Regla de Negocios.csproj">
-      <Project>{45f27596-28c7-4a03-b969-f60fce00f19e}</Project>
-      <Name>Regla de Negocios</Name>
+    <ProjectReference Include="..\ReglaDeNegocios\ReglaDeNegocios.csproj">
+      <Project>{d9e1f78c-1023-4a4b-ba25-61615b009621}</Project>
+      <Name>ReglaDeNegocios</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

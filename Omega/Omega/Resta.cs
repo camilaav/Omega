@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.IO;
-using Regla_de_Negocios;
+using ReglaDeNegocios;
 using Omega.Helpers;
 using System.Configuration;
 

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Regla_de_Negocios;
+using ReglaDeNegocios;
 using Entidades;
 using System.Configuration;
 
