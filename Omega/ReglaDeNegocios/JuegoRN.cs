@@ -30,7 +30,7 @@ namespace ReglaDeNegocios
 
         public DataTable TablaMovimientos()
         {
-            return comandos.Dataset("sp_ListarMovimientos", "Movimiento");
+            return comandos.Dataset("SELECT Movimiento.Jugador, Juego.NombreJuego as Juego, Dificultad.NombreDificultad as DIficultad, Movimiento.Puntuacion, Movimiento.Fecha FROM(Juego INNER JOIN(Dificultad INNER JOIN JuegoDificultad ON Dificultad.IdDificultad = JuegoDificultad.IdDificultad) ON Juego.IdJuego = JuegoDificultad.IdJuego) INNER JOIN Movimiento ON(Juego.IdJuego = Movimiento.IdJuego) AND(Movimiento.IdDificultad = JuegoDificultad.IdDificultad) AND(Movimiento.IdJuego = JuegoDificultad.IdJuego) AND(JuegoDificultad.IdDificultad = Movimiento.IdDificultad)", "Movimiento");
         }
 
         public Boolean NuevoMovimiento(Movimiento m)
