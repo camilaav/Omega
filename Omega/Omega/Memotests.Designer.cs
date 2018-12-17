@@ -77,7 +77,7 @@
             // 
             // tiempo
             // 
-            this.tiempo.Interval = 1000;
+            this.tiempo.Interval = 300;
             this.tiempo.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // pictureBox4

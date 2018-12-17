@@ -12,7 +12,7 @@ namespace AccesoDatos
         {
             using (var conexion = cnn.ObtenerDireccion())
             {
-                bool retornar = true;
+                var retornar = false;
                 conexion.Open();
                 var comando = new OleDbCommand();
                 comando.Connection = conexion;
@@ -23,16 +23,16 @@ namespace AccesoDatos
                     comando.Parameters.AddRange(parametros.ToArray());
                     comando.ExecuteNonQuery();
                     retornar = true;
-                }
+            }
                 catch (Exception)
-                {
-                    retornar = false;
-                }
-                finally
-                {
-                    conexion.Close();
-                }
-                return retornar;
+            {
+                retornar = false;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return retornar;
             }
         }
 
