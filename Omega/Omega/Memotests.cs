@@ -21,7 +21,7 @@ namespace Omega
 
         public void Gif()
         {
-            pictureBox1.Load(rutaImagenes + "//bien.gif");
+            pictureBox1.Image = Image.FromFile(rutaImagenes + "//bien.png");
             pictureBox1.Enabled = true;
             pictureBox1.Visible = true;
             tiempo2.Enabled = true;
@@ -40,7 +40,7 @@ namespace Omega
         private void tiempo2_Tick(object sender, EventArgs e)
         {
             contadorGif++;
-            if (contadorGif == 3)
+            if (contadorGif == 1)
             {
                 movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
             }

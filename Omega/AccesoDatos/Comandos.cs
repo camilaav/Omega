@@ -23,16 +23,16 @@ namespace AccesoDatos
                     comando.Parameters.AddRange(parametros.ToArray());
                     comando.ExecuteNonQuery();
                     retornar = true;
-            }
+                }
                 catch (Exception)
-            {
-                retornar = false;
-            }
-            finally
-            {
-                conexion.Close();
-            }
-            return retornar;
+                {
+                    retornar = false;
+                }
+                finally
+                {
+                    conexion.Close();
+                }
+                return retornar;
             }
         }
 

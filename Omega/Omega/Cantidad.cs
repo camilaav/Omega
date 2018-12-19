@@ -22,7 +22,7 @@ namespace Omega
             pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
             this.Controls.Add(pictureGif);
             pictureGif.BringToFront();
-            pictureGif.Load(rutaImagenes + "//bien.gif");
+            pictureGif.Image = Image.FromFile(rutaImagenes + "//bien.png");
             pictureGif.Enabled = true;
             pictureGif.Visible = true;
             tiempo.Enabled = true;
@@ -37,7 +37,7 @@ namespace Omega
             pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
             this.Controls.Add(pictureGif);
             pictureGif.BringToFront();
-            pictureGif.Load(rutaImagenes + "//mal.gif");
+            pictureGif.Image = Image.FromFile(rutaImagenes + "//mal.png");
             pictureGif.Enabled = true;
             pictureGif.Visible = true;
             tiempo2.Enabled = true;
@@ -76,7 +76,7 @@ namespace Omega
         private void tiempo2_Tick(object sender, EventArgs e)
         {
             contadorGif++;
-            if (contadorGif == 3)
+            if (contadorGif == 1)
             {
                 pictureGif.Visible = false;
                 pictureGif.Enabled = false;
@@ -88,7 +88,7 @@ namespace Omega
         private void tiempo_Tick(object sender, EventArgs e)
         {
             contadorGif++;
-            if (contadorGif == 3)
+            if (contadorGif == 1)
             {
                 Recarga();
             }

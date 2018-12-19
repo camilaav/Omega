@@ -5,10 +5,6 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Omega
@@ -23,7 +19,7 @@ namespace Omega
         
         public void Gif()
         {
-            pictureBox1.Load(startupPath + "//bien.gif");
+            pictureBox1.Image = Image.FromFile(startupPath + "//bien.png");
             pictureBox1.Enabled = true;
             pictureBox1.Visible = true;
             tiempo.Enabled = true;
@@ -520,7 +516,7 @@ namespace Omega
         private void tiempo_Tick(object sender, EventArgs e)
         {
             contadorGif++;
-            if (contadorGif == 3)
+            if (contadorGif == 1)
             {
                 movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, 4);
             }
