@@ -17,24 +17,6 @@ namespace Omega
         JuegosHelper juegoHelper = new JuegosHelper();
         Random randommizer = new Random();
 
-        public void Gif()
-        {
-            pictureBox1.Image = Image.FromFile(rutaImagenes + "//bien.png");
-            pictureBox1.Enabled = true;
-            pictureBox1.Visible = true;
-            tiempo.Enabled = true;
-            tiempo.Start();
-        }
-
-        public void GifMal()
-        {
-            pictureBox1.Image = Image.FromFile(rutaImagenes + "//mal.png");
-            pictureBox1.Enabled = true;
-            pictureBox1.Visible = true;
-            tiempo2.Enabled = true;
-            tiempo2.Start();
-        }
-
         public void Recarga()
         {
             tiempo.Stop();
@@ -121,7 +103,7 @@ namespace Omega
         {
             if (orden == 0)
             {
-                Gif();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo, "//bien", false);
                 respuestaC.Visible = true;
                 respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
@@ -130,7 +112,7 @@ namespace Omega
             }
             else
             {
-                GifMal();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo2, "//mal", false);
                 intento++;
             }
         }
@@ -145,7 +127,7 @@ namespace Omega
         {
             if (orden == 1)
             {
-                Gif();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo, "//bien", false);
                 respuestaC.Visible = true;
                 respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
@@ -154,7 +136,7 @@ namespace Omega
             }
             else
             {
-                GifMal();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo2, "//mal", false);
                 intento++;
             }
         }
@@ -163,7 +145,7 @@ namespace Omega
         {
             if (orden == 2)
             {
-                Gif();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo, "//bien", false);
                 respuestaC.Visible = true;
                 respuestaC.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaC.BackgroundImageLayout = ImageLayout.Stretch;
@@ -172,7 +154,7 @@ namespace Omega
             }
             else
             {
-                GifMal();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo2, "//mal", false);
                 intento++;
             }
         }

@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using ReglaDeNegocios;
 using Entidades;
 using System.Configuration;
+using Omega.Helpers;
 
 namespace Omega
 {
@@ -21,37 +22,7 @@ namespace Omega
         char[] abecedario = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
         public Imagen imagen = new Imagen();
         Random random = new Random();
-
-        public void Gif()
-        {
-            pictureGif = new PictureBox();
-            pictureGif.Size = new Size(654, 430);
-            pictureGif.Location = new Point(155, 219);
-            pictureGif.BackColor = Color.Transparent;
-            pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.Controls.Add(pictureGif);
-            pictureGif.BringToFront();
-            pictureGif.Image = Image.FromFile(rutaImagenes + "/bien.png");
-            pictureGif.Enabled = true;
-            pictureGif.Visible = true;
-            tiempo.Enabled = true;
-            tiempo.Start();
-        }
-        public void GifMal()
-        {
-            pictureGif = new PictureBox();
-            pictureGif.Size = new Size(654, 430);
-            pictureGif.Location = new Point(155, 219);
-            pictureGif.BackColor = Color.Transparent;
-            pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.Controls.Add(pictureGif);
-            pictureGif.BringToFront();
-            pictureGif.Image = Image.FromFile(rutaImagenes + "/mal.png");
-            pictureGif.Enabled = true;
-            pictureGif.Visible = true;
-            tiempo2.Enabled = true;
-            tiempo2.Start();
-        }
+        JuegosHelper juegosHelper = new JuegosHelper();
 
         public CompletarPalabra()
         {
@@ -84,13 +55,13 @@ namespace Omega
         {
             if (respuestaCorrecta == 1)
             {
-                Gif();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo, "/bien",true);
                 pictureVacio.Visible = true;
                 Puntuar();
             }
             else
             {
-                GifMal();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo2, "/mal",true);
                 intento++;
             }
         }
@@ -99,13 +70,13 @@ namespace Omega
         {
             if (respuestaCorrecta == 2)
             {
-                Gif();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo, "/bien",true);
                 pictureVacio.Visible = true;
                 Puntuar();
             }
             else
             {
-                GifMal();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo2, "/mal",true);
                 intento++;
             }
         }
@@ -153,13 +124,13 @@ namespace Omega
         {
             if(respuestaCorrecta == 0)
             {
-                Gif();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo, "/bien",true);
                 pictureVacio.Visible = true;
                 Puntuar();
             }
             else
             {
-                GifMal();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo2, "/mal",true);
                 intento++;
             }
         }

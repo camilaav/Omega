@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using ReglaDeNegocios;
 using System.Configuration;
+using Omega.Helpers;
 
 namespace Omega
 {
@@ -12,37 +13,7 @@ namespace Omega
         public int posicionInicialArriba, posicionInicialCostado, contador, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, intento = 1, puntuacion = 0, idJuego = 3, idDificultad = 0, contadorGif;
         public JuegoRN juegoRN = new JuegoRN();
         PictureBox pictureGif = new PictureBox();
-
-        public void Gif()
-        {
-            pictureGif = new PictureBox();
-            pictureGif.BackColor = Color.Transparent;
-            pictureGif.Size = new Size(654, 430);
-            pictureGif.Location = new Point(47, 229);
-            pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.Controls.Add(pictureGif);
-            pictureGif.BringToFront();
-            pictureGif.Image = Image.FromFile(rutaImagenes + "//bien.png");
-            pictureGif.Enabled = true;
-            pictureGif.Visible = true;
-            tiempo.Enabled = true;
-            tiempo.Start();
-        }
-        public void GifMal()
-        {
-            pictureGif = new PictureBox();
-            pictureGif.BackColor = Color.Transparent;
-            pictureGif.Size = new Size(654, 430);
-            pictureGif.Location = new Point(47, 229);
-            pictureGif.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.Controls.Add(pictureGif);
-            pictureGif.BringToFront();
-            pictureGif.Image = Image.FromFile(rutaImagenes + "//mal.png");
-            pictureGif.Enabled = true;
-            pictureGif.Visible = true;
-            tiempo2.Enabled = true;
-            tiempo2.Start();
-        }
+        JuegosHelper juegosHelper = new JuegosHelper();
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -124,12 +95,12 @@ namespace Omega
         {
             if (respuestaCorrecta == 0)
             {
-                Gif();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo, "//bien",true);
                 Puntuar();
             }
             else
             {
-                GifMal();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo2, "//mal",true);
                 intento++;
             }
         }
@@ -138,12 +109,12 @@ namespace Omega
         {
             if (respuestaCorrecta == 1)
             {
-                Gif();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo, "//bien",true);
                 Puntuar();
             }
             else
             {
-                GifMal();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo2, "//mal",true);
                 intento++;
             }
         }
@@ -152,12 +123,12 @@ namespace Omega
         {
             if (respuestaCorrecta == 2)
             {
-                Gif();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo,"//bien",true);
                 Puntuar();
             }
             else
             {
-                GifMal();
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo2, "//mal",true);
                 intento++;
             }
         }
@@ -244,7 +215,11 @@ namespace Omega
             var nombrePicture = 1;
             var random = new Random();
             var cantidadPictures = random.Next(limiteMenor, limiteMayor);
-            var imagen = random.Next(1, 51);
+            int imagen = random.Next(1, 51);
+            while (imagen == 13 || imagen == 19 || imagen == 22)
+            {
+                imagen = random.Next(1, 51);
+            }
 
             for (int i = 1; i <= cantidadPictures; i++)
             {

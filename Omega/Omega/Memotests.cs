@@ -4,29 +4,21 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Omega.Helpers;
 
 namespace Omega
 {
     public partial class Memotests : Form
     {
-        int Movimientos = 0, CantidadFotosVolteadas = 0, TamañoColumnas = 0, TamañoFilas = 0,FotoActual = 0;
+        int Movimientos = 0, CantidadFotosVolteadas = 0, TamañoColumnas = 0, TamañoFilas = 0, FotoActual = 0;
         public static string rutaImagenes = ConfigurationManager.AppSettings["Imagenes"].ToString();
         List<string> FotosEnumeradas, FotosRevueltas;
         string startupPathCartas = rutaImagenes + "//Cartas";
         int puntuacion = 0, idDificultad = 0, idJuego = 6, contadorGif;
         MovimientoHelper movimientoHelper = new MovimientoHelper();
-
-        public void Gif()
-        {
-            pictureBox1.Image = Image.FromFile(rutaImagenes + "//bien.png");
-            pictureBox1.Enabled = true;
-            pictureBox1.Visible = true;
-            tiempo2.Enabled = true;
-            tiempo2.Start();
-        }
+        JuegosHelper juegosHelper = new JuegosHelper();
 
         private void Puntuar()
         {
@@ -59,18 +51,18 @@ namespace Omega
             pictureBox1.Enabled = false;
             if (this.Tag.ToString() == "Facil")
             {
-                IniciarJuego(4,4);
+                IniciarJuego(4, 4);
                 idDificultad = 1;
 
             }
             else if (this.Tag.ToString() == "Intermedia")
             {
-                IniciarJuego(5,4);
+                IniciarJuego(5, 4);
                 idJuego = 2;
             }
             else if (this.Tag.ToString() == "Dificil")
             {
-                IniciarJuego(6,6);
+                IniciarJuego(6, 6);
                 idJuego = 3;
             }
         }
@@ -87,7 +79,7 @@ namespace Omega
             FotosEnumeradas = new List<string>(); //Instancia que inicia las fotos enumeradas
             FotosRevueltas = new List<string>(); //Instancia que inicia las fotos revueltas
             FotosSeleccionadas = new ArrayList(); //Instancia que inicia las fotos seleccionadas
-            for (int i = 0; i < (TamañoColumnas * TamañoFilas)/2 ; i++) //Ciclo for para ordenar las fotos y asignarles números de ordenamiento
+            for (int i = 0; i < (TamañoColumnas * TamañoFilas) / 2; i++) //Ciclo for para ordenar las fotos y asignarles números de ordenamiento
             {
                 FotosEnumeradas.Add(i.ToString());
                 FotosEnumeradas.Add(i.ToString());
@@ -139,7 +131,7 @@ namespace Omega
             {
                 var FotoSeleccionadaJugador = (PictureBox)sender;
 
-                var posicionJugador = int.Parse(FotoSeleccionadaJugador.Name) - 1; 
+                var posicionJugador = int.Parse(FotoSeleccionadaJugador.Name) - 1;
 
                 FotoActual = int.Parse(FotosRevueltas[posicionJugador]);
                 FotoSeleccionadaJugador.Image = RecuperarImagen(FotoActual);
@@ -164,9 +156,9 @@ namespace Omega
                         CantidadFotosVolteadas++;
 
                         Puntuar();
-                        if (CantidadFotosVolteadas > (TamañoColumnas  * TamañoFilas) / 2-1)
+                        if (CantidadFotosVolteadas > (TamañoColumnas * TamañoFilas) / 2 - 1)
                         {
-                            Gif();
+                            juegosHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo2, "/bien", false);
                         }
                         FotoTemp1.Enabled = false;
                         FotoTemp2.Enabled = false;

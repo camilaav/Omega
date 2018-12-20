@@ -1,11 +1,8 @@
-﻿using Omega.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Configuration;
-using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using Omega.Helpers;
 
 namespace Omega
 {
@@ -16,15 +13,7 @@ namespace Omega
         public int contador,contadorGif, idDificultad = 0, cfgelegido, puntuacion = 0;
         bool esCasa = false, esGato = false, esEscuela = false, esRaton = false, esBanana = false, esPlato = false, esPizza = false, esLapiz = false, esMuñeca = false, esPapa = false, esRegla = false, esReloj = false, esMilanesa = false, esAbuelo = false, esAzul = false;
         public static string startupPath = ConfigurationManager.AppSettings["Imagenes"].ToString();
-        
-        public void Gif()
-        {
-            pictureBox1.Image = Image.FromFile(startupPath + "//bien.png");
-            pictureBox1.Enabled = true;
-            pictureBox1.Visible = true;
-            tiempo.Enabled = true;
-            tiempo.Start();
-        }
+        JuegosHelper juegoHelper = new JuegosHelper();
 
         public Sopa()
         {
@@ -37,21 +26,21 @@ namespace Omega
             { 
                 if (esCasa && esGato && esRaton)
                 {
-                    Gif();
+                    juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo, "//bien", false);
                 }
             }
             else if (idDificultad == 2)
             {
                 if (esEscuela && esBanana && esPlato && esPizza && esLapiz)
                 {
-                    Gif();
+                    juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo, "//bien", false);
                 }
             }
             else if (idDificultad == 3)
             {
                 if (esReloj && esMuñeca && esAbuelo && esPapa && esRegla && esAzul && esMilanesa)
                 {
-                    Gif();
+                    juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo, "//bien", false);
                 }
             }
         }

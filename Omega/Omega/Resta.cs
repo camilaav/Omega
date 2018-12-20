@@ -18,24 +18,6 @@ namespace Omega
         JuegoRN juegoRN = new JuegoRN();
         Random randommizer = new Random();
 
-        public void Gif()
-        {
-            pictureBox1.Image = Image.FromFile(rutaImagenes + "//bien.png");
-            pictureBox1.Enabled = true;
-            pictureBox1.Visible = true;
-            tiempo.Enabled = true;
-            tiempo.Start();
-        }
-
-        public void GifMal()
-        {
-            pictureBox1.Image = Image.FromFile(rutaImagenes + "//mal.png");
-            pictureBox1.Enabled = true;
-            pictureBox1.Visible = true;
-            tiempo2.Enabled = true;
-            tiempo2.Start();
-        }
-
         public Resta()
         {
             InitializeComponent();
@@ -194,11 +176,11 @@ namespace Omega
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;               
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
-                Gif();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo, "//bien", false);
             }
             else
             {
-                GifMal();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo2, "//mal", false);
                 intento++;
             }
         }
@@ -210,13 +192,13 @@ namespace Omega
                 respuestaCorrecta.Visible = true;
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
-                Gif();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo, "//bien", false);
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
             }
             else
             {
-                GifMal();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo2, "//mal", false);
                 intento++;
             }
         }
@@ -228,13 +210,13 @@ namespace Omega
                 respuestaCorrecta.Visible = true;
                 respuestaCorrecta.BackgroundImage = Image.FromFile(startupPathNumeros + @"\" + resultado.ToString() + ".png");
                 respuestaCorrecta.BackgroundImageLayout = ImageLayout.Stretch;
-                Gif();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo, "//bien", false);
                 lblPuntaje.Text = null;
                 lblPuntaje.Text = Puntuar().ToString();
             }
             else
             {
-                GifMal();
+                juegoHelper.Gif(pictureBox1, this, 0, 0, 0, 0, tiempo2, "//mal", false);
                 intento++;
             }
         }
