@@ -68,5 +68,10 @@ namespace Omega
             pantallaPrincipal.Show();
             this.Hide();
         }
+
+        private void ModificacionUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

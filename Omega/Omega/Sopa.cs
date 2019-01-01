@@ -923,11 +923,12 @@ namespace Omega
             Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[6, 5].Selected);
 
             //LAPIZ
-            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 1].Selected);
-            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 1].Selected);
-            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 1].Selected);
-            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 1].Selected);
-            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[5, 1].Selected);
+
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[0, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[1, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[2, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[3, 0].Selected);
+            Verificar(dataGridView1.CurrentCell.Selected, dataGridView1[4, 0].Selected);
 
             if (dataGridView1[0, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 3].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[2, 3].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 3].Style.BackColor == Color.DarkSlateGray &&
@@ -964,8 +965,8 @@ namespace Omega
                 esPizza = true;
                 Puntuar();
             }
-            if (dataGridView1[0, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 0].Style.BackColor == Color.DarkSlateGray &&
-                dataGridView1[2, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[5, 0].Style.BackColor == Color.DarkSlateGray &&
+            if (dataGridView1[0, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[1, 0].Style.BackColor == Color.DarkSlateGray &&
+                dataGridView1[2, 0].Style.BackColor == Color.DarkSlateGray && dataGridView1[3, 0].Style.BackColor == Color.DarkSlateGray &&
                 dataGridView1[4, 0].Style.BackColor == Color.DarkSlateGray && !esLapiz)
             {
                 label5.ForeColor = Color.DarkSlateGray; //LAPIZ

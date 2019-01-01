@@ -38,9 +38,9 @@ namespace Omega.Helpers
                     pictureGif.BackColor = Color.Transparent;
                     formulario.Controls.Add(pictureGif);
                     pictureGif.BringToFront();
+                    pictureGif.Name = "gif";
                 }
-                pictureGif.Load(rutaImagenes + nombreGif + ".gif");
-          //      pictureGif.Image = Image.FromFile(rutaImagenes + nombreGif + ".png"); 
+                pictureGif.Image = Image.FromFile(rutaImagenes + nombreGif + ".png");
                 pictureGif.Enabled = true;
                 pictureGif.Visible = true;
                 timer.Enabled = true;

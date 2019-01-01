@@ -49,10 +49,20 @@ namespace Omega
             contadorGif++;
             if (contadorGif == 1)
             {
-                pictureGif.Visible = false;
-                pictureGif.Enabled = false;
                 tiempo2.Stop();
                 contadorGif = 0;
+                tiempo2.Enabled = false;
+                pictureGif.Enabled = false;
+                pictureGif.Visible = false;
+                for (int i = this.Controls.Count - 1; i >= 0; i--)
+                {
+                    PictureBox control = this.Controls[i] as PictureBox;
+                    if (control == null) continue;
+                    if (control.Name == "gif")
+                    {
+                        control.Dispose();
+                    }
+                }
             }
         }
 
@@ -67,7 +77,7 @@ namespace Omega
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            MovimientoHelper movimientoHelper = new MovimientoHelper();
+            var movimientoHelper = new MovimientoHelper();
             movimientoHelper.GuardarMovimiento(this, idDificultad, puntuacion, idJuego);
         }
 
@@ -95,12 +105,12 @@ namespace Omega
         {
             if (respuestaCorrecta == 0)
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo, "//bien",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo, "//bien", true);
                 Puntuar();
             }
             else
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo2, "//mal",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo2, "//mal", true);
                 intento++;
             }
         }
@@ -109,12 +119,12 @@ namespace Omega
         {
             if (respuestaCorrecta == 1)
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo, "//bien",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo, "//bien", true);
                 Puntuar();
             }
             else
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo2, "//mal",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo2, "//mal", true);
                 intento++;
             }
         }
@@ -123,12 +133,12 @@ namespace Omega
         {
             if (respuestaCorrecta == 2)
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo,"//bien",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo, "//bien", true);
                 Puntuar();
             }
             else
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo2, "//mal",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 47, 229, tiempo2, "//mal", true);
                 intento++;
             }
         }
@@ -147,6 +157,7 @@ namespace Omega
         {
             tiempo.Stop();
             contadorGif = 0;
+            pictureGif = new PictureBox();
             pictureGif.Visible = false;
             pictureGif.Enabled = false;
             intento = 1;

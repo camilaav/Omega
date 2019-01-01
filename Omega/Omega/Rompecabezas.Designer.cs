@@ -107,6 +107,7 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(135, 277);
             this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -119,6 +120,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(0, 277);
             this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -131,6 +133,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(270, 138);
             this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -143,6 +146,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(135, 138);
             this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -155,6 +159,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(0, 138);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -167,6 +172,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(270, 0);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -179,6 +185,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(135, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -191,6 +198,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

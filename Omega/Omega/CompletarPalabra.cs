@@ -19,7 +19,7 @@ namespace Omega
         PictureBox pictureGif = new PictureBox();
         PictureBox pictureVacio = new PictureBox();
         public string rutaImagenes = ConfigurationManager.AppSettings["Imagenes"].ToString();
-        char[] abecedario = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+        char[] abecedario = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
         public Imagen imagen = new Imagen();
         Random random = new Random();
         JuegosHelper juegosHelper = new JuegosHelper();
@@ -31,19 +31,19 @@ namespace Omega
         public void CargarRandom()
         {
             listaImagenes = juegoRN.ListaImagenes();
-            if(idDificultad == 1)
+            if (idDificultad == 1)
             {
                 listaImagenes = listaImagenes.Where(c => c.DescripcionImagen.Length > 6).ToList();
                 randomImagen = random.Next(0, listaImagenes.Count - 1);
                 imagen = listaImagenes[randomImagen];
             }
-            else if(idDificultad ==2)
+            else if (idDificultad == 2)
             {
-                listaImagenes = listaImagenes.Where(c => c.DescripcionImagen.Length  == 6 ).ToList();
+                listaImagenes = listaImagenes.Where(c => c.DescripcionImagen.Length == 6).ToList();
                 randomImagen = random.Next(0, listaImagenes.Count - 1);
                 imagen = listaImagenes[randomImagen];
             }
-            else if(idDificultad == 3)
+            else if (idDificultad == 3)
             {
                 listaImagenes = listaImagenes.Where(c => c.DescripcionImagen.Length <= 5).ToList();
                 randomImagen = random.Next(0, listaImagenes.Count - 1);
@@ -55,13 +55,13 @@ namespace Omega
         {
             if (respuestaCorrecta == 1)
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo, "/bien",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo, "/bien", true);
                 pictureVacio.Visible = true;
                 Puntuar();
             }
             else
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo2, "/mal",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo2, "/mal", true);
                 intento++;
             }
         }
@@ -70,13 +70,13 @@ namespace Omega
         {
             if (respuestaCorrecta == 2)
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo, "/bien",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo, "/bien", true);
                 pictureVacio.Visible = true;
                 Puntuar();
             }
             else
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo2, "/mal",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo2, "/mal", true);
                 intento++;
             }
         }
@@ -97,10 +97,20 @@ namespace Omega
             contadorGif++;
             if (contadorGif == 1)
             {
-                pictureGif.Visible = false;
-                pictureGif.Enabled = false;
                 tiempo2.Stop();
                 contadorGif = 0;
+                tiempo2.Enabled = false;
+                pictureGif.Enabled = false;
+                pictureGif.Visible = false;
+                for (int i = this.Controls.Count - 1; i >= 0; i--)
+                {
+                    PictureBox control = this.Controls[i] as PictureBox;
+                    if (control == null) continue;
+                    if (control.Name == "gif")
+                    {
+                        control.Dispose();
+                    }
+                }
             }
         }
 
@@ -122,15 +132,15 @@ namespace Omega
 
         private void opcionUno_Click(object sender, EventArgs e)
         {
-            if(respuestaCorrecta == 0)
+            if (respuestaCorrecta == 0)
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo, "/bien",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo, "/bien", true);
                 pictureVacio.Visible = true;
                 Puntuar();
             }
             else
             {
-                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo2, "/mal",true);
+                juegosHelper.Gif(pictureGif, this, 654, 430, 155, 219, tiempo2, "/mal", true);
                 intento++;
             }
         }
@@ -206,7 +216,7 @@ namespace Omega
                 respuestaIncorrecta2 = random.Next(1, imagen.DescripcionImagen.Length);
             }
 
-            if(respuestaCorrecta == 0)
+            if (respuestaCorrecta == 0)
             {
                 opcionUno.BackgroundImage = Image.FromFile(startupPathPalabras + @"\" + letras[opcionCorrecta].ToString() + ".png");
                 opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
@@ -215,7 +225,7 @@ namespace Omega
                 opcionTres.BackgroundImage = Image.FromFile(startupPathPalabras + @"\" + abecedario[respuestaIncorrecta2].ToString() + ".png");
                 opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
             }
-            if(respuestaCorrecta == 1)
+            if (respuestaCorrecta == 1)
             {
                 opcionUno.BackgroundImage = Image.FromFile(startupPathPalabras + @"\" + abecedario[respuestaIncorrecta1].ToString() + ".png");
                 opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
@@ -224,7 +234,7 @@ namespace Omega
                 opcionTres.BackgroundImage = Image.FromFile(startupPathPalabras + @"\" + abecedario[respuestaIncorrecta2].ToString() + ".png");
                 opcionTres.BackgroundImageLayout = ImageLayout.Stretch;
             }
-            if(respuestaCorrecta == 2)
+            if (respuestaCorrecta == 2)
             {
                 opcionUno.BackgroundImage = Image.FromFile(startupPathPalabras + @"\" + abecedario[respuestaIncorrecta2].ToString() + ".png");
                 opcionUno.BackgroundImageLayout = ImageLayout.Stretch;
